@@ -5,5 +5,5 @@ set(SFML_STATIC_LIBRARIES TRUE)
 set(CMAKE_CXX_STANDARD 14)
 find_package(SFML 2.5 COMPONENTS system window graphics)
 
-add_executable(LearningMan main.cpp)
+add_executable(LearningMan main.cpp define.hpp)
 target_link_libraries(LearningMan sfml-system sfml-window sfml-graphics -static)

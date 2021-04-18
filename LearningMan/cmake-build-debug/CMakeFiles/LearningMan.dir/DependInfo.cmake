@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/quent/Desktop/PA/LearningMan/main.cpp" "C:/Users/quent/Desktop/PA/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/main.cpp.obj"
+  "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/main.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,7 +15,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "C:/C++/mingw32/include"
+  "C:/Dev/C++/mingw32/include"
   )
 
 # Targets to which this target links.
