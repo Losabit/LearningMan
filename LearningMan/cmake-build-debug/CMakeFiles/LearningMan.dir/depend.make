@@ -75,6 +75,6 @@ CMakeFiles/LearningMan.dir/main.cpp.obj: C:/Dev/C++/mingw32/include/SFML/Window/
 CMakeFiles/LearningMan.dir/main.cpp.obj: C:/Dev/C++/mingw32/include/SFML/Window/Window.hpp
 CMakeFiles/LearningMan.dir/main.cpp.obj: C:/Dev/C++/mingw32/include/SFML/Window/WindowHandle.hpp
 CMakeFiles/LearningMan.dir/main.cpp.obj: C:/Dev/C++/mingw32/include/SFML/Window/WindowStyle.hpp
-CMakeFiles/LearningMan.dir/main.cpp.obj: ../define.h
+CMakeFiles/LearningMan.dir/main.cpp.obj: ../define.hpp
 CMakeFiles/LearningMan.dir/main.cpp.obj: ../main.cpp
 

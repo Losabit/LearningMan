@@ -84,7 +84,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/define.h">
+		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/define.hpp">
 			<Option target="LearningMan"/>
 		</Unit>
 		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/main.cpp">
