@@ -5,5 +5,5 @@ set(SFML_STATIC_LIBRARIES TRUE)
 set(CMAKE_CXX_STANDARD 14)
 find_package(SFML 2.5 COMPONENTS system window graphics)
 
-add_executable(LearningMan main.cpp define.hpp)
+add_executable(LearningMan main.cpp define.hpp characters/Character.cpp characters/Character.hpp controllers/PlayerController.cpp controllers/PlayerController.hpp controllers/Controller.cpp controllers/Controller.hpp characters/Heros.cpp characters/Heros.hpp)
 target_link_libraries(LearningMan sfml-system sfml-window sfml-graphics -static)

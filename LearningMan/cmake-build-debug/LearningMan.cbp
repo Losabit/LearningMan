@@ -84,6 +84,30 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.cpp">
+			<Option target="LearningMan"/>
+		</Unit>
+		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.hpp">
+			<Option target="LearningMan"/>
+		</Unit>
+		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Heros.cpp">
+			<Option target="LearningMan"/>
+		</Unit>
+		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Heros.hpp">
+			<Option target="LearningMan"/>
+		</Unit>
+		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/Controller.cpp">
+			<Option target="LearningMan"/>
+		</Unit>
+		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/Controller.hpp">
+			<Option target="LearningMan"/>
+		</Unit>
+		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/PlayerController.cpp">
+			<Option target="LearningMan"/>
+		</Unit>
+		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/PlayerController.hpp">
+			<Option target="LearningMan"/>
+		</Unit>
 		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/define.hpp">
 			<Option target="LearningMan"/>
 		</Unit>

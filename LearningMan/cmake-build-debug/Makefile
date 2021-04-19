@@ -141,6 +141,114 @@ LearningMan/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/build
 .PHONY : LearningMan/fast
 
+characters/Character.obj: characters/Character.cpp.obj
+
+.PHONY : characters/Character.obj
+
+# target to build an object file
+characters/Character.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/characters/Character.cpp.obj
+.PHONY : characters/Character.cpp.obj
+
+characters/Character.i: characters/Character.cpp.i
+
+.PHONY : characters/Character.i
+
+# target to preprocess a source file
+characters/Character.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/characters/Character.cpp.i
+.PHONY : characters/Character.cpp.i
+
+characters/Character.s: characters/Character.cpp.s
+
+.PHONY : characters/Character.s
+
+# target to generate assembly for a file
+characters/Character.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/characters/Character.cpp.s
+.PHONY : characters/Character.cpp.s
+
+characters/Heros.obj: characters/Heros.cpp.obj
+
+.PHONY : characters/Heros.obj
+
+# target to build an object file
+characters/Heros.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/characters/Heros.cpp.obj
+.PHONY : characters/Heros.cpp.obj
+
+characters/Heros.i: characters/Heros.cpp.i
+
+.PHONY : characters/Heros.i
+
+# target to preprocess a source file
+characters/Heros.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/characters/Heros.cpp.i
+.PHONY : characters/Heros.cpp.i
+
+characters/Heros.s: characters/Heros.cpp.s
+
+.PHONY : characters/Heros.s
+
+# target to generate assembly for a file
+characters/Heros.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/characters/Heros.cpp.s
+.PHONY : characters/Heros.cpp.s
+
+controllers/Controller.obj: controllers/Controller.cpp.obj
+
+.PHONY : controllers/Controller.obj
+
+# target to build an object file
+controllers/Controller.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/controllers/Controller.cpp.obj
+.PHONY : controllers/Controller.cpp.obj
+
+controllers/Controller.i: controllers/Controller.cpp.i
+
+.PHONY : controllers/Controller.i
+
+# target to preprocess a source file
+controllers/Controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/controllers/Controller.cpp.i
+.PHONY : controllers/Controller.cpp.i
+
+controllers/Controller.s: controllers/Controller.cpp.s
+
+.PHONY : controllers/Controller.s
+
+# target to generate assembly for a file
+controllers/Controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/controllers/Controller.cpp.s
+.PHONY : controllers/Controller.cpp.s
+
+controllers/PlayerController.obj: controllers/PlayerController.cpp.obj
+
+.PHONY : controllers/PlayerController.obj
+
+# target to build an object file
+controllers/PlayerController.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.obj
+.PHONY : controllers/PlayerController.cpp.obj
+
+controllers/PlayerController.i: controllers/PlayerController.cpp.i
+
+.PHONY : controllers/PlayerController.i
+
+# target to preprocess a source file
+controllers/PlayerController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.i
+.PHONY : controllers/PlayerController.cpp.i
+
+controllers/PlayerController.s: controllers/PlayerController.cpp.s
+
+.PHONY : controllers/PlayerController.s
+
+# target to generate assembly for a file
+controllers/PlayerController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.s
+.PHONY : controllers/PlayerController.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -177,6 +285,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... LearningMan
+	@echo ... characters/Character.obj
+	@echo ... characters/Character.i
+	@echo ... characters/Character.s
+	@echo ... characters/Heros.obj
+	@echo ... characters/Heros.i
+	@echo ... characters/Heros.s
+	@echo ... controllers/Controller.obj
+	@echo ... controllers/Controller.i
+	@echo ... controllers/Controller.s
+	@echo ... controllers/PlayerController.obj
+	@echo ... controllers/PlayerController.i
+	@echo ... controllers/PlayerController.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

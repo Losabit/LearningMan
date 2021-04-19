@@ -89,14 +89,78 @@ CMakeFiles/LearningMan.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LearningMan.dir/main.cpp.s"
 	C:\Dev\C++\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\quent\Desktop\PA\LearningMan\LearningMan\main.cpp -o CMakeFiles\LearningMan.dir\main.cpp.s
 
+CMakeFiles/LearningMan.dir/characters/Character.cpp.obj: CMakeFiles/LearningMan.dir/flags.make
+CMakeFiles/LearningMan.dir/characters/Character.cpp.obj: CMakeFiles/LearningMan.dir/includes_CXX.rsp
+CMakeFiles/LearningMan.dir/characters/Character.cpp.obj: ../characters/Character.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\quent\Desktop\PA\LearningMan\LearningMan\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/LearningMan.dir/characters/Character.cpp.obj"
+	C:\Dev\C++\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\LearningMan.dir\characters\Character.cpp.obj -c C:\Users\quent\Desktop\PA\LearningMan\LearningMan\characters\Character.cpp
+
+CMakeFiles/LearningMan.dir/characters/Character.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LearningMan.dir/characters/Character.cpp.i"
+	C:\Dev\C++\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\quent\Desktop\PA\LearningMan\LearningMan\characters\Character.cpp > CMakeFiles\LearningMan.dir\characters\Character.cpp.i
+
+CMakeFiles/LearningMan.dir/characters/Character.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LearningMan.dir/characters/Character.cpp.s"
+	C:\Dev\C++\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\quent\Desktop\PA\LearningMan\LearningMan\characters\Character.cpp -o CMakeFiles\LearningMan.dir\characters\Character.cpp.s
+
+CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.obj: CMakeFiles/LearningMan.dir/flags.make
+CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.obj: CMakeFiles/LearningMan.dir/includes_CXX.rsp
+CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.obj: ../controllers/PlayerController.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\quent\Desktop\PA\LearningMan\LearningMan\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.obj"
+	C:\Dev\C++\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\LearningMan.dir\controllers\PlayerController.cpp.obj -c C:\Users\quent\Desktop\PA\LearningMan\LearningMan\controllers\PlayerController.cpp
+
+CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.i"
+	C:\Dev\C++\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\quent\Desktop\PA\LearningMan\LearningMan\controllers\PlayerController.cpp > CMakeFiles\LearningMan.dir\controllers\PlayerController.cpp.i
+
+CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.s"
+	C:\Dev\C++\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\quent\Desktop\PA\LearningMan\LearningMan\controllers\PlayerController.cpp -o CMakeFiles\LearningMan.dir\controllers\PlayerController.cpp.s
+
+CMakeFiles/LearningMan.dir/controllers/Controller.cpp.obj: CMakeFiles/LearningMan.dir/flags.make
+CMakeFiles/LearningMan.dir/controllers/Controller.cpp.obj: CMakeFiles/LearningMan.dir/includes_CXX.rsp
+CMakeFiles/LearningMan.dir/controllers/Controller.cpp.obj: ../controllers/Controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\quent\Desktop\PA\LearningMan\LearningMan\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/LearningMan.dir/controllers/Controller.cpp.obj"
+	C:\Dev\C++\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\LearningMan.dir\controllers\Controller.cpp.obj -c C:\Users\quent\Desktop\PA\LearningMan\LearningMan\controllers\Controller.cpp
+
+CMakeFiles/LearningMan.dir/controllers/Controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LearningMan.dir/controllers/Controller.cpp.i"
+	C:\Dev\C++\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\quent\Desktop\PA\LearningMan\LearningMan\controllers\Controller.cpp > CMakeFiles\LearningMan.dir\controllers\Controller.cpp.i
+
+CMakeFiles/LearningMan.dir/controllers/Controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LearningMan.dir/controllers/Controller.cpp.s"
+	C:\Dev\C++\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\quent\Desktop\PA\LearningMan\LearningMan\controllers\Controller.cpp -o CMakeFiles\LearningMan.dir\controllers\Controller.cpp.s
+
+CMakeFiles/LearningMan.dir/characters/Heros.cpp.obj: CMakeFiles/LearningMan.dir/flags.make
+CMakeFiles/LearningMan.dir/characters/Heros.cpp.obj: CMakeFiles/LearningMan.dir/includes_CXX.rsp
+CMakeFiles/LearningMan.dir/characters/Heros.cpp.obj: ../characters/Heros.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\quent\Desktop\PA\LearningMan\LearningMan\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/LearningMan.dir/characters/Heros.cpp.obj"
+	C:\Dev\C++\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\LearningMan.dir\characters\Heros.cpp.obj -c C:\Users\quent\Desktop\PA\LearningMan\LearningMan\characters\Heros.cpp
+
+CMakeFiles/LearningMan.dir/characters/Heros.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LearningMan.dir/characters/Heros.cpp.i"
+	C:\Dev\C++\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\quent\Desktop\PA\LearningMan\LearningMan\characters\Heros.cpp > CMakeFiles\LearningMan.dir\characters\Heros.cpp.i
+
+CMakeFiles/LearningMan.dir/characters/Heros.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LearningMan.dir/characters/Heros.cpp.s"
+	C:\Dev\C++\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\quent\Desktop\PA\LearningMan\LearningMan\characters\Heros.cpp -o CMakeFiles\LearningMan.dir\characters\Heros.cpp.s
+
 # Object files for target LearningMan
 LearningMan_OBJECTS = \
-"CMakeFiles/LearningMan.dir/main.cpp.obj"
+"CMakeFiles/LearningMan.dir/main.cpp.obj" \
+"CMakeFiles/LearningMan.dir/characters/Character.cpp.obj" \
+"CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.obj" \
+"CMakeFiles/LearningMan.dir/controllers/Controller.cpp.obj" \
+"CMakeFiles/LearningMan.dir/characters/Heros.cpp.obj"
 
 # External object files for target LearningMan
 LearningMan_EXTERNAL_OBJECTS =
 
 LearningMan.exe: CMakeFiles/LearningMan.dir/main.cpp.obj
+LearningMan.exe: CMakeFiles/LearningMan.dir/characters/Character.cpp.obj
+LearningMan.exe: CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.obj
+LearningMan.exe: CMakeFiles/LearningMan.dir/controllers/Controller.cpp.obj
+LearningMan.exe: CMakeFiles/LearningMan.dir/characters/Heros.cpp.obj
 LearningMan.exe: CMakeFiles/LearningMan.dir/build.make
 LearningMan.exe: C:/Dev/C++/mingw32/lib/libsfml-system-s-d.a
 LearningMan.exe: C:/Dev/C++/mingw32/lib/libsfml-window-s-d.a
@@ -107,7 +171,7 @@ LearningMan.exe: C:/Dev/C++/mingw32/lib/libfreetype.a
 LearningMan.exe: CMakeFiles/LearningMan.dir/linklibs.rsp
 LearningMan.exe: CMakeFiles/LearningMan.dir/objects1.rsp
 LearningMan.exe: CMakeFiles/LearningMan.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\quent\Desktop\PA\LearningMan\LearningMan\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable LearningMan.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\quent\Desktop\PA\LearningMan\LearningMan\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable LearningMan.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\LearningMan.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
