@@ -7,11 +7,14 @@ using namespace sf;
 class Character {
 public:
     Character();
-    Character(Sprite sprite);
     void move(int direction);
+    void shoot();
     Sprite sprite;
 
-private:
+protected:
+    Texture textureIdle;
+    Texture textureShoot;
+    int health = 10;
     float speed = 1.0;
 
 };

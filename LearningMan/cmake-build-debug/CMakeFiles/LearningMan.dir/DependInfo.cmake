@@ -6,7 +6,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/characters/Character.cpp.obj"
   "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Heros.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/characters/Heros.cpp.obj"
+  "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Shotgunner.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/characters/Shotgunner.cpp.obj"
   "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/Controller.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/controllers/Controller.cpp.obj"
+  "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/IAController.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/controllers/IAController.cpp.obj"
   "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/PlayerController.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.obj"
   "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/main.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/main.cpp.obj"
   )

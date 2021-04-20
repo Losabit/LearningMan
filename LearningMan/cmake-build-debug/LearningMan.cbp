@@ -96,10 +96,22 @@
 		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Heros.hpp">
 			<Option target="LearningMan"/>
 		</Unit>
+		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Shotgunner.cpp">
+			<Option target="LearningMan"/>
+		</Unit>
+		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Shotgunner.hpp">
+			<Option target="LearningMan"/>
+		</Unit>
 		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/Controller.cpp">
 			<Option target="LearningMan"/>
 		</Unit>
 		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/Controller.hpp">
+			<Option target="LearningMan"/>
+		</Unit>
+		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/IAController.cpp">
+			<Option target="LearningMan"/>
+		</Unit>
+		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/IAController.hpp">
 			<Option target="LearningMan"/>
 		</Unit>
 		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/PlayerController.cpp">

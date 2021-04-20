@@ -2,6 +2,6 @@
 
 class PlayerController : public Controller {
 public:
-    PlayerController(Character character1);
+    PlayerController(Character* character1);
     void play();
 };

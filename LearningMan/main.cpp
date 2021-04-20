@@ -1,31 +1,25 @@
 #include <iostream>
 #include "define.hpp"
-#include "controllers//PlayerController.hpp"
+#include "controllers/PlayerController.hpp"
+#include "controllers/IAController.hpp"
 #include "characters/Heros.hpp"
+#include "characters/Shotgunner.hpp"
 
 using namespace std;
 
+//ToDo
+//animations tir en continue
 int main() {
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "LearningMan");
     window.setFramerateLimit(60);
 
+    Character heros = Heros();
+    PlayerController playerController(&heros);
+    playerController.character.sprite.move(0, 100);
 
-    View viewBack(FloatRect(0.f, 0.f, 800, 700));
-    Vector2f oldViewPos(viewBack.getCenter());
-
-
-    Texture texture;
-    texture.loadFromFile(CHARACTER_ASSETS_PATH "/player/charge.png");
-    Sprite sprite(texture,IntRect(0,0,30,30));
-    Vector2f vector = sprite.getPosition();
-    sprite.setPosition(vector.x, vector.y + 100);
-
-    Character heros(sprite);
-   /*
-    Character heros = Character();
-    heros = Heros();
-    */
-    PlayerController playerController(heros);
+    Character shotgunner = Shotgunner();
+    IAController shotgunnerController(&shotgunner);
+    shotgunnerController.character.sprite.move(600, 100);
 
     while (window.isOpen())
     {
@@ -38,8 +32,12 @@ int main() {
             }
         }
         playerController.play();
+        shotgunnerController.play();
+
         window.clear();
         window.draw(playerController.character.sprite);
+        window.draw(shotgunnerController.character.sprite);
+
         window.display();
     }
 

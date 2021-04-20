@@ -684,9 +684,17 @@ C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Heros.hpp
 Character.hpp
 C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.hpp
 
+C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Shotgunner.hpp
+Character.hpp
+C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.hpp
+
 C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/Controller.hpp
 ../characters/Character.hpp
 C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.hpp
+
+C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/IAController.hpp
+Controller.hpp
+C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/Controller.hpp
 
 C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/PlayerController.hpp
 Controller.hpp
@@ -701,6 +709,10 @@ define.hpp
 C:/Users/quent/Desktop/PA/LearningMan/LearningMan/define.hpp
 controllers/PlayerController.hpp
 C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/PlayerController.hpp
+controllers/IAController.hpp
+C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/IAController.hpp
 characters/Heros.hpp
 C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Heros.hpp
+characters/Shotgunner.hpp
+C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Shotgunner.hpp
 

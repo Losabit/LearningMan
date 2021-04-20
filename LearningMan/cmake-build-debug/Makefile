@@ -195,6 +195,33 @@ characters/Heros.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/characters/Heros.cpp.s
 .PHONY : characters/Heros.cpp.s
 
+characters/Shotgunner.obj: characters/Shotgunner.cpp.obj
+
+.PHONY : characters/Shotgunner.obj
+
+# target to build an object file
+characters/Shotgunner.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/characters/Shotgunner.cpp.obj
+.PHONY : characters/Shotgunner.cpp.obj
+
+characters/Shotgunner.i: characters/Shotgunner.cpp.i
+
+.PHONY : characters/Shotgunner.i
+
+# target to preprocess a source file
+characters/Shotgunner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/characters/Shotgunner.cpp.i
+.PHONY : characters/Shotgunner.cpp.i
+
+characters/Shotgunner.s: characters/Shotgunner.cpp.s
+
+.PHONY : characters/Shotgunner.s
+
+# target to generate assembly for a file
+characters/Shotgunner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/characters/Shotgunner.cpp.s
+.PHONY : characters/Shotgunner.cpp.s
+
 controllers/Controller.obj: controllers/Controller.cpp.obj
 
 .PHONY : controllers/Controller.obj
@@ -221,6 +248,33 @@ controllers/Controller.s: controllers/Controller.cpp.s
 controllers/Controller.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/controllers/Controller.cpp.s
 .PHONY : controllers/Controller.cpp.s
+
+controllers/IAController.obj: controllers/IAController.cpp.obj
+
+.PHONY : controllers/IAController.obj
+
+# target to build an object file
+controllers/IAController.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/controllers/IAController.cpp.obj
+.PHONY : controllers/IAController.cpp.obj
+
+controllers/IAController.i: controllers/IAController.cpp.i
+
+.PHONY : controllers/IAController.i
+
+# target to preprocess a source file
+controllers/IAController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/controllers/IAController.cpp.i
+.PHONY : controllers/IAController.cpp.i
+
+controllers/IAController.s: controllers/IAController.cpp.s
+
+.PHONY : controllers/IAController.s
+
+# target to generate assembly for a file
+controllers/IAController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/controllers/IAController.cpp.s
+.PHONY : controllers/IAController.cpp.s
 
 controllers/PlayerController.obj: controllers/PlayerController.cpp.obj
 
@@ -291,9 +345,15 @@ help:
 	@echo ... characters/Heros.obj
 	@echo ... characters/Heros.i
 	@echo ... characters/Heros.s
+	@echo ... characters/Shotgunner.obj
+	@echo ... characters/Shotgunner.i
+	@echo ... characters/Shotgunner.s
 	@echo ... controllers/Controller.obj
 	@echo ... controllers/Controller.i
 	@echo ... controllers/Controller.s
+	@echo ... controllers/IAController.obj
+	@echo ... controllers/IAController.i
+	@echo ... controllers/IAController.s
 	@echo ... controllers/PlayerController.obj
 	@echo ... controllers/PlayerController.i
 	@echo ... controllers/PlayerController.s
