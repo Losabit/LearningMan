@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/IAController.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/controllers/IAController.cpp.obj"
   "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/PlayerController.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.obj"
   "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/main.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/main.cpp.obj"
+  "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/utils/TextureManager.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/utils/TextureManager.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

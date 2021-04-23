@@ -1,4 +1,5 @@
 #include "Character.hpp"
+#include "../define.hpp"
 #include <iostream>
 
 Character::Character(){
@@ -6,24 +7,42 @@ Character::Character(){
 }
 
 void Character::move(int direction) {
+    if(clockBullet.getElapsedTime().asSeconds() > TIME_SHOOT_TO_IDLE && sprite.getTexture() != &textureIdle.texture){
+        IntRect rect = sprite.getTextureRect();
+        rect.width = 40;
+        sprite.setTextureRect(rect);
+        sprite.setTexture(textureIdle.texture);
+    }
     sprite.setScale(direction, 1);
     sprite.move(direction * speed, 0);
 }
 
 void Character::shoot(){
-    /*
-    IntRect rect = sprite.getTextureRect();
-    if (clock.getElapsedTime().asSeconds() > 1.0f){
-        if (rect.top == 120)
-            rect.top = 0;
-        else
-            rect.top += 30;
-        sprite.setTextureRect(rect);
-        clock.restart();
+    sprite.setTextureRect(textureShoot.rect);
+    sprite.setTexture(textureShoot.texture);
+}
+
+bool Character::canShoot(){
+    if(clockBullet.getElapsedTime().asSeconds() > shootCooldown){
+        clockBullet.restart();
+        return true;
     }
-     */
-    IntRect rect = sprite.getTextureRect();
-    rect.width = 70;
-    sprite.setTextureRect(rect);
-    sprite.setTexture(textureShoot);
+    return false;
+}
+
+void Character::wait() {
+    if(clockBullet.getElapsedTime().asSeconds() > TIME_SHOOT_TO_IDLE && sprite.getTexture() != &textureIdle.texture){
+        IntRect rect = sprite.getTextureRect();
+        rect.width = 40;
+        sprite.setTextureRect(rect);
+        sprite.setTexture(textureIdle.texture);
+    }
+}
+
+bool Character::takeDamage(int damage) {
+    health -= damage;
+    if(health <= 0){
+        return false;
+    }
+    return true;
 }

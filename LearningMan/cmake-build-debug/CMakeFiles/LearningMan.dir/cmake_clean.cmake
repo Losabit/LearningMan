@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/LearningMan.dir/controllers/IAController.cpp.obj"
   "CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.obj"
   "CMakeFiles/LearningMan.dir/main.cpp.obj"
+  "CMakeFiles/LearningMan.dir/utils/TextureManager.cpp.obj"
   "LearningMan.exe"
   "LearningMan.exe.manifest"
   "LearningMan.pdb"

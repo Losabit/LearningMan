@@ -126,6 +126,12 @@
 		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/main.cpp">
 			<Option target="LearningMan"/>
 		</Unit>
+		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/utils/TextureManager.cpp">
+			<Option target="LearningMan"/>
+		</Unit>
+		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/utils/TextureManager.hpp">
+			<Option target="LearningMan"/>
+		</Unit>
 		<Unit filename="C:/Users/quent/Desktop/PA/LearningMan/LearningMan/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

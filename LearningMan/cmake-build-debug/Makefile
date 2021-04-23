@@ -330,6 +330,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+utils/TextureManager.obj: utils/TextureManager.cpp.obj
+
+.PHONY : utils/TextureManager.obj
+
+# target to build an object file
+utils/TextureManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/utils/TextureManager.cpp.obj
+.PHONY : utils/TextureManager.cpp.obj
+
+utils/TextureManager.i: utils/TextureManager.cpp.i
+
+.PHONY : utils/TextureManager.i
+
+# target to preprocess a source file
+utils/TextureManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/utils/TextureManager.cpp.i
+.PHONY : utils/TextureManager.cpp.i
+
+utils/TextureManager.s: utils/TextureManager.cpp.s
+
+.PHONY : utils/TextureManager.s
+
+# target to generate assembly for a file
+utils/TextureManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LearningMan.dir\build.make CMakeFiles/LearningMan.dir/utils/TextureManager.cpp.s
+.PHONY : utils/TextureManager.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -360,6 +387,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... utils/TextureManager.obj
+	@echo ... utils/TextureManager.i
+	@echo ... utils/TextureManager.s
 .PHONY : help
 
 

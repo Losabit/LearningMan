@@ -676,43 +676,27 @@ SFML/Config.hpp
 
 C:/Dev/C++/mingw32/include/SFML/Window/WindowStyle.hpp
 
+C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.cpp
+Character.hpp
+C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.hpp
+../define.hpp
+C:/Users/quent/Desktop/PA/LearningMan/LearningMan/define.hpp
+iostream
+-
+
 C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.hpp
 SFML/Graphics.hpp
 -
-
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Heros.hpp
-Character.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.hpp
-
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Shotgunner.hpp
-Character.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.hpp
-
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/Controller.hpp
-../characters/Character.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.hpp
-
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/IAController.hpp
-Controller.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/Controller.hpp
-
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/PlayerController.hpp
-Controller.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/Controller.hpp
+../utils/TextureManager.hpp
+C:/Users/quent/Desktop/PA/LearningMan/LearningMan/utils/TextureManager.hpp
 
 C:/Users/quent/Desktop/PA/LearningMan/LearningMan/define.hpp
 
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/main.cpp
+C:/Users/quent/Desktop/PA/LearningMan/LearningMan/utils/TextureManager.hpp
+SFML/Graphics.hpp
+-
 iostream
 -
-define.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/define.hpp
-controllers/PlayerController.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/PlayerController.hpp
-controllers/IAController.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/IAController.hpp
-characters/Heros.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Heros.hpp
-characters/Shotgunner.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Shotgunner.hpp
+list
+-
 
