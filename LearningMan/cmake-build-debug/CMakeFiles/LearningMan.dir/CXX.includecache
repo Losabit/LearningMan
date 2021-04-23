@@ -6,11 +6,67 @@
 
 #IncludeRegexTransform: 
 
-C:/Dev/C++/mingw32/include/SFML/Config.hpp
-TargetConditionals.h
-C:/Dev/C++/mingw32/include/SFML/TargetConditionals.h
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/Map/Map.h
+SFML/Graphics.hpp
+-
+iostream
+-
+fstream
+-
+string
+-
+sstream
+-
+vector
+-
 
-C:/Dev/C++/mingw32/include/SFML/Graphics.hpp
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/characters/Character.hpp
+SFML/Graphics.hpp
+-
+
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/characters/Heros.hpp
+Character.hpp
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/characters/Character.hpp
+
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/characters/Shotgunner.hpp
+Character.hpp
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/characters/Character.hpp
+
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/controllers/Controller.hpp
+../characters/Character.hpp
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/characters/Character.hpp
+
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/controllers/IAController.hpp
+Controller.hpp
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/controllers/Controller.hpp
+
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/controllers/PlayerController.hpp
+Controller.hpp
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/controllers/Controller.hpp
+
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/define.hpp
+
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/main.cpp
+iostream
+-
+define.hpp
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/define.hpp
+controllers/PlayerController.hpp
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/controllers/PlayerController.hpp
+controllers/IAController.hpp
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/controllers/IAController.hpp
+characters/Heros.hpp
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/characters/Heros.hpp
+characters/Shotgunner.hpp
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/characters/Shotgunner.hpp
+Map/Map.h
+C:/Users/marvi/CLionProjects/LearningMan/LearningMan/Map/Map.h
+
+D:/lib/SMFL/C++/mingw32/include/SFML/Config.hpp
+TargetConditionals.h
+D:/lib/SMFL/C++/mingw32/include/SFML/TargetConditionals.h
+
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics.hpp
 SFML/Window.hpp
 -
 SFML/Graphics/BlendMode.hpp
@@ -66,21 +122,21 @@ SFML/Graphics/VertexBuffer.hpp
 SFML/Graphics/View.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/BlendMode.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/BlendMode.hpp
 SFML/Graphics/Export.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/CircleShape.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/CircleShape.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Shape.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Color.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Color.hpp
 SFML/Graphics/Export.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/ConvexShape.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/ConvexShape.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Shape.hpp
@@ -88,17 +144,17 @@ SFML/Graphics/Shape.hpp
 vector
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Drawable.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Drawable.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/RenderStates.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Export.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Export.hpp
 SFML/Config.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Font.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Font.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Glyph.hpp
@@ -118,7 +174,7 @@ string
 vector
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Glsl.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Glsl.hpp
 SFML/Graphics/Transform.hpp
 -
 SFML/Graphics/Color.hpp
@@ -130,15 +186,15 @@ SFML/System/Vector3.hpp
 SFML/Graphics/Glsl.inl
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Glsl.inl
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Glsl.inl
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Glyph.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Glyph.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Rect.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Image.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Image.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Color.hpp
@@ -150,9 +206,9 @@ string
 vector
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/PrimitiveType.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/PrimitiveType.hpp
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Rect.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Rect.hpp
 SFML/System/Vector2.hpp
 -
 algorithm
@@ -160,15 +216,15 @@ algorithm
 SFML/Graphics/Rect.inl
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Rect.inl
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Rect.inl
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/RectangleShape.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/RectangleShape.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Shape.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/RenderStates.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/RenderStates.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/BlendMode.hpp
@@ -176,7 +232,7 @@ SFML/Graphics/BlendMode.hpp
 SFML/Graphics/Transform.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/RenderTarget.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/RenderTarget.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Color.hpp
@@ -198,7 +254,7 @@ SFML/Graphics/Vertex.hpp
 SFML/System/NonCopyable.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/RenderTexture.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/RenderTexture.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Texture.hpp
@@ -208,7 +264,7 @@ SFML/Graphics/RenderTarget.hpp
 SFML/Window/ContextSettings.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/RenderWindow.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/RenderWindow.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/RenderTarget.hpp
@@ -220,7 +276,7 @@ SFML/Window/Window.hpp
 string
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Shader.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Shader.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Glsl.hpp
@@ -238,7 +294,7 @@ map
 string
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Shape.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Shape.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Drawable.hpp
@@ -250,7 +306,7 @@ SFML/Graphics/VertexArray.hpp
 SFML/System/Vector2.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Sprite.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Sprite.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Drawable.hpp
@@ -262,7 +318,7 @@ SFML/Graphics/Vertex.hpp
 SFML/Graphics/Rect.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Text.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Text.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Drawable.hpp
@@ -282,7 +338,7 @@ string
 vector
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Texture.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Texture.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Image.hpp
@@ -290,7 +346,7 @@ SFML/Graphics/Image.hpp
 SFML/Window/GlResource.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Transform.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Transform.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Rect.hpp
@@ -298,13 +354,13 @@ SFML/Graphics/Rect.hpp
 SFML/System/Vector2.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Transformable.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Transformable.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Transform.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/Vertex.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/Vertex.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Color.hpp
@@ -312,7 +368,7 @@ SFML/Graphics/Color.hpp
 SFML/System/Vector2.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/VertexArray.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/VertexArray.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Vertex.hpp
@@ -326,7 +382,7 @@ SFML/Graphics/Drawable.hpp
 vector
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/VertexBuffer.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/VertexBuffer.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/PrimitiveType.hpp
@@ -336,7 +392,7 @@ SFML/Graphics/Drawable.hpp
 SFML/Window/GlResource.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Graphics/View.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Graphics/View.hpp
 SFML/Graphics/Export.hpp
 -
 SFML/Graphics/Rect.hpp
@@ -346,7 +402,7 @@ SFML/Graphics/Transform.hpp
 SFML/System/Vector2.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/System.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System.hpp
 SFML/Config.hpp
 -
 SFML/System/Clock.hpp
@@ -384,23 +440,23 @@ SFML/System/Vector2.hpp
 SFML/System/Vector3.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/Clock.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/Clock.hpp
 SFML/System/Export.hpp
 -
 SFML/System/Time.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/Err.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/Err.hpp
 SFML/System/Export.hpp
 -
 ostream
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/Export.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/Export.hpp
 SFML/Config.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/FileInputStream.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/FileInputStream.hpp
 SFML/Config.hpp
 -
 SFML/System/Export.hpp
@@ -414,19 +470,19 @@ cstdio
 string
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/InputStream.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/InputStream.hpp
 SFML/Config.hpp
 -
 SFML/System/Export.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/Lock.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/Lock.hpp
 SFML/System/Export.hpp
 -
 SFML/System/NonCopyable.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/MemoryInputStream.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/MemoryInputStream.hpp
 SFML/Config.hpp
 -
 SFML/System/InputStream.hpp
@@ -436,23 +492,23 @@ SFML/System/Export.hpp
 cstdlib
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/Mutex.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/Mutex.hpp
 SFML/System/Export.hpp
 -
 SFML/System/NonCopyable.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/NonCopyable.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/NonCopyable.hpp
 SFML/System/Export.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/Sleep.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/Sleep.hpp
 SFML/System/Export.hpp
 -
 SFML/System/Time.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/String.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/String.hpp
 SFML/System/Export.hpp
 -
 SFML/System/Utf.hpp
@@ -466,9 +522,9 @@ string
 SFML/System/String.inl
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/String.inl
+D:/lib/SMFL/C++/mingw32/include/SFML/System/String.inl
 
-C:/Dev/C++/mingw32/include/SFML/System/Thread.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/Thread.hpp
 SFML/System/Export.hpp
 -
 SFML/System/NonCopyable.hpp
@@ -478,9 +534,9 @@ cstdlib
 SFML/System/Thread.inl
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/Thread.inl
+D:/lib/SMFL/C++/mingw32/include/SFML/System/Thread.inl
 
-C:/Dev/C++/mingw32/include/SFML/System/ThreadLocal.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/ThreadLocal.hpp
 SFML/System/Export.hpp
 -
 SFML/System/NonCopyable.hpp
@@ -488,19 +544,19 @@ SFML/System/NonCopyable.hpp
 cstdlib
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/ThreadLocalPtr.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/ThreadLocalPtr.hpp
 SFML/System/ThreadLocal.hpp
 -
 SFML/System/ThreadLocalPtr.inl
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/ThreadLocalPtr.inl
+D:/lib/SMFL/C++/mingw32/include/SFML/System/ThreadLocalPtr.inl
 
-C:/Dev/C++/mingw32/include/SFML/System/Time.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/Time.hpp
 SFML/System/Export.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/Utf.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/Utf.hpp
 SFML/Config.hpp
 -
 algorithm
@@ -514,21 +570,21 @@ cstdlib
 SFML/System/Utf.inl
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/Utf.inl
+D:/lib/SMFL/C++/mingw32/include/SFML/System/Utf.inl
 
-C:/Dev/C++/mingw32/include/SFML/System/Vector2.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/Vector2.hpp
 SFML/System/Vector2.inl
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/Vector2.inl
+D:/lib/SMFL/C++/mingw32/include/SFML/System/Vector2.inl
 
-C:/Dev/C++/mingw32/include/SFML/System/Vector3.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/System/Vector3.hpp
 SFML/System/Vector3.inl
 -
 
-C:/Dev/C++/mingw32/include/SFML/System/Vector3.inl
+D:/lib/SMFL/C++/mingw32/include/SFML/System/Vector3.inl
 
-C:/Dev/C++/mingw32/include/SFML/Window.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window.hpp
 SFML/System.hpp
 -
 SFML/Window/Clipboard.hpp
@@ -560,13 +616,13 @@ SFML/Window/WindowHandle.hpp
 SFML/Window/WindowStyle.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Window/Clipboard.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window/Clipboard.hpp
 SFML/Window/Export.hpp
 -
 SFML/System/String.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Window/Context.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window/Context.hpp
 SFML/Window/Export.hpp
 -
 SFML/Window/GlResource.hpp
@@ -576,11 +632,11 @@ SFML/Window/ContextSettings.hpp
 SFML/System/NonCopyable.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Window/ContextSettings.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window/ContextSettings.hpp
 SFML/Config.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Window/Cursor.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window/Cursor.hpp
 SFML/Window/Export.hpp
 -
 SFML/System/NonCopyable.hpp
@@ -588,7 +644,7 @@ SFML/System/NonCopyable.hpp
 SFML/System/Vector2.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Window/Event.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window/Event.hpp
 SFML/Config.hpp
 -
 SFML/Window/Joystick.hpp
@@ -600,33 +656,33 @@ SFML/Window/Mouse.hpp
 SFML/Window/Sensor.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Window/Export.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window/Export.hpp
 SFML/Config.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Window/GlResource.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window/GlResource.hpp
 SFML/Window/Export.hpp
 -
 SFML/System/NonCopyable.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Window/Joystick.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window/Joystick.hpp
 SFML/Window/Export.hpp
 -
 SFML/System/String.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Window/Keyboard.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window/Keyboard.hpp
 SFML/Window/Export.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Window/Mouse.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window/Mouse.hpp
 SFML/Window/Export.hpp
 -
 SFML/System/Vector2.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Window/Sensor.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window/Sensor.hpp
 SFML/Window/Export.hpp
 -
 SFML/System/Vector3.hpp
@@ -634,19 +690,19 @@ SFML/System/Vector3.hpp
 SFML/System/Time.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Window/Touch.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window/Touch.hpp
 SFML/Window/Export.hpp
 -
 SFML/System/Vector2.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Window/VideoMode.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window/VideoMode.hpp
 SFML/Window/Export.hpp
 -
 vector
 -
 
-C:/Dev/C++/mingw32/include/SFML/Window/Window.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window/Window.hpp
 SFML/Window/ContextSettings.hpp
 -
 SFML/Window/Cursor.hpp
@@ -670,49 +726,9 @@ SFML/System/String.hpp
 SFML/System/Vector2.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Window/WindowHandle.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window/WindowHandle.hpp
 SFML/Config.hpp
 -
 
-C:/Dev/C++/mingw32/include/SFML/Window/WindowStyle.hpp
-
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.hpp
-SFML/Graphics.hpp
--
-
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Heros.hpp
-Character.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.hpp
-
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Shotgunner.hpp
-Character.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.hpp
-
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/Controller.hpp
-../characters/Character.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.hpp
-
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/IAController.hpp
-Controller.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/Controller.hpp
-
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/PlayerController.hpp
-Controller.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/Controller.hpp
-
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/define.hpp
-
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/main.cpp
-iostream
--
-define.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/define.hpp
-controllers/PlayerController.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/PlayerController.hpp
-controllers/IAController.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/IAController.hpp
-characters/Heros.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Heros.hpp
-characters/Shotgunner.hpp
-C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Shotgunner.hpp
+D:/lib/SMFL/C++/mingw32/include/SFML/Window/WindowStyle.hpp
 

@@ -4,13 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Character.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/characters/Character.cpp.obj"
-  "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Heros.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/characters/Heros.cpp.obj"
-  "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/characters/Shotgunner.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/characters/Shotgunner.cpp.obj"
-  "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/Controller.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/controllers/Controller.cpp.obj"
-  "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/IAController.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/controllers/IAController.cpp.obj"
-  "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/controllers/PlayerController.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.obj"
-  "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/main.cpp" "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/main.cpp.obj"
+  "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/Map/Map.cpp" "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/Map/Map.cpp.obj"
+  "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/characters/Character.cpp" "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/characters/Character.cpp.obj"
+  "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/characters/Heros.cpp" "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/characters/Heros.cpp.obj"
+  "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/characters/Shotgunner.cpp" "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/characters/Shotgunner.cpp.obj"
+  "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/controllers/Controller.cpp" "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/controllers/Controller.cpp.obj"
+  "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/controllers/IAController.cpp" "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/controllers/IAController.cpp.obj"
+  "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/controllers/PlayerController.cpp" "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/controllers/PlayerController.cpp.obj"
+  "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/main.cpp" "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -21,7 +22,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "C:/Dev/C++/mingw32/include"
+  "D:/lib/SMFL/C++/mingw32/include"
   )
 
 # Targets to which this target links.

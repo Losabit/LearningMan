@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/LearningMan.dir/Map/Map.cpp.obj"
   "CMakeFiles/LearningMan.dir/characters/Character.cpp.obj"
   "CMakeFiles/LearningMan.dir/characters/Heros.cpp.obj"
   "CMakeFiles/LearningMan.dir/characters/Shotgunner.cpp.obj"

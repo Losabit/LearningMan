@@ -4,6 +4,8 @@
 #include "controllers/IAController.hpp"
 #include "characters/Heros.hpp"
 #include "characters/Shotgunner.hpp"
+#include "Map/Map.h"
+
 
 using namespace std;
 
@@ -20,6 +22,8 @@ int main() {
     Character shotgunner = Shotgunner();
     IAController shotgunnerController(&shotgunner);
     shotgunnerController.character.sprite.move(600, 100);
+    Map map = Map();
+
 
     while (window.isOpen())
     {
@@ -30,14 +34,26 @@ int main() {
                 window.close();
                 return 0;
             }
+
+            cout << map.bigWall.getPosition().x << endl;
+            cout << playerController.character.sprite.getPosition().x << endl;
+
+            if(  playerController.character.sprite.getGlobalBounds().intersects(map.bigWall.getGlobalBounds())){
+                cout << "On touche le mur"<< endl;
+            }
+            else {
+                cout << "On touche pas "<< endl;
+
+            }
+
         }
         playerController.play();
         shotgunnerController.play();
 
-        window.clear();
+       window.clear(sf::Color(122,160,122,0));
         window.draw(playerController.character.sprite);
         window.draw(shotgunnerController.character.sprite);
-
+        map.drawBackground(window);
         window.display();
     }
 

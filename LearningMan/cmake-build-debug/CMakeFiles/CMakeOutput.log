@@ -1,6 +1,6 @@
 The system is: Windows - 10.0.18363 - AMD64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: C:/Dev/C++/mingw32/bin/gcc.exe 
+Compiler: D:/lib/SMFL/C++/mingw32/bin/gcc.exe 
 Build flags: 
 Id flags:  
 
@@ -10,10 +10,10 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
 
-The C compiler identification is GNU, found in "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/a.exe"
+The C compiler identification is GNU, found in "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/a.exe"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: C:/Dev/C++/mingw32/bin/g++.exe 
+Compiler: D:/lib/SMFL/C++/mingw32/bin/g++.exe 
 Build flags: 
 Id flags:  
 
@@ -23,160 +23,160 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
 
-The CXX compiler identification is GNU, found in "C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/a.exe"
+The CXX compiler identification is GNU, found in "C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/a.exe"
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Dev/C++/mingw32/bin/mingw32-make.exe cmTC_bd060/fast && C:/Dev/C++/mingw32/bin/mingw32-make.exe  -f CMakeFiles\cmTC_bd060.dir\build.make CMakeFiles/cmTC_bd060.dir/build
-mingw32-make.exe[1]: Entering directory 'C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_bd060.dir/CMakeCCompilerABI.c.obj
-C:\Dev\C++\mingw32\bin\gcc.exe   -v -o CMakeFiles\cmTC_bd060.dir\CMakeCCompilerABI.c.obj -c "C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\share\cmake-3.19\Modules\CMakeCCompilerABI.c"
+Run Build Command(s):D:/lib/SMFL/C++/mingw32/bin/mingw32-make.exe cmTC_55292/fast && D:/lib/SMFL/C++/mingw32/bin/mingw32-make.exe  -f CMakeFiles\cmTC_55292.dir\build.make CMakeFiles/cmTC_55292.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_55292.dir/CMakeCCompilerABI.c.obj
+D:\lib\SMFL\C++\mingw32\bin\gcc.exe   -v -o CMakeFiles\cmTC_55292.dir\CMakeCCompilerABI.c.obj -c C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\share\cmake-3.19\Modules\CMakeCCompilerABI.c
 Using built-in specs.
-COLLECT_GCC=C:\Dev\C++\mingw32\bin\gcc.exe
+COLLECT_GCC=D:\lib\SMFL\C++\mingw32\bin\gcc.exe
 Target: i686-w64-mingw32
 Configured with: ../../../src/gcc-7.3.0/configure --host=i686-w64-mingw32 --build=i686-w64-mingw32 --target=i686-w64-mingw32 --prefix=/mingw32 --with-sysroot=/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-sjlj-exceptions --with-dwarf2 --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=i686 --with-tune=generic --with-libiconv --with-system-zlib --with-gmp=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-mpfr=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-mpc=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-isl=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-pkgversion='i686-posix-dwarf-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/lib -L/c/mingw730/prerequisites/i686-zlib-static/lib -L/c/mingw730/prerequisites/i686-w64-mingw32-static/lib -Wl,--large-address-aware'
 Thread model: posix
 gcc version 7.3.0 (i686-posix-dwarf-rev0, Built by MinGW-W64 project) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_bd060.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=i686'
- C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/cc1.exe -quiet -v -iprefix C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/ -D_REENTRANT C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\share\cmake-3.19\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=i686 -auxbase-strip CMakeFiles\cmTC_bd060.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\quent\AppData\Local\Temp\cck6Zhpq.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_55292.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=i686'
+ D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/cc1.exe -quiet -v -iprefix D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/ -D_REENTRANT C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\share\cmake-3.19\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=i686 -auxbase-strip CMakeFiles\cmTC_55292.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\marvi\AppData\Local\Temp\ccFYlTxp.s
 GNU C11 (i686-posix-dwarf-rev0, Built by MinGW-W64 project) version 7.3.0 (i686-w64-mingw32)
 	compiled by GNU C version 7.3.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include"
+ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include"
 ignoring nonexistent directory "C:/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32C:/msys64-2/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/../../../../include"
-ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"
-ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"
+ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"
+ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"
 ignoring nonexistent directory "C:/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/mingw/include"
 #include "..." search starts here:
 #include <...> search starts here:
- C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include
- C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed
- C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include
+ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include
+ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed
+ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include
 End of search list.
 GNU C11 (i686-posix-dwarf-rev0, Built by MinGW-W64 project) version 7.3.0 (i686-w64-mingw32)
 	compiled by GNU C version 7.3.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: cfb50cc9d8e205abde078862560e5595
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_bd060.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=i686'
- C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_bd060.dir\CMakeCCompilerABI.c.obj C:\Users\quent\AppData\Local\Temp\cck6Zhpq.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_55292.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=i686'
+ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_55292.dir\CMakeCCompilerABI.c.obj C:\Users\marvi\AppData\Local\Temp\ccFYlTxp.s
 GNU assembler version 2.30 (i686-w64-mingw32) using BFD version (GNU Binutils) 2.30
-COMPILER_PATH=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/;C:/Dev/C++/mingw32/bin/../libexec/gcc/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/
-LIBRARY_PATH=C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/;C:/Dev/C++/mingw32/bin/../lib/gcc/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_bd060.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=i686'
-Linking C executable cmTC_bd060.exe
-"C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_bd060.dir\link.txt --verbose=1
-"C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_bd060.dir/objects.a
-C:\Dev\C++\mingw32\bin\ar.exe cr CMakeFiles\cmTC_bd060.dir/objects.a @CMakeFiles\cmTC_bd060.dir\objects1.rsp
-C:\Dev\C++\mingw32\bin\gcc.exe  -v -Wl,--whole-archive CMakeFiles\cmTC_bd060.dir/objects.a -Wl,--no-whole-archive -o cmTC_bd060.exe -Wl,--out-implib,libcmTC_bd060.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+COMPILER_PATH=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/;D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/
+LIBRARY_PATH=D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_55292.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=i686'
+Linking C executable cmTC_55292.exe
+C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_55292.dir\link.txt --verbose=1
+C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\cmTC_55292.dir/objects.a
+D:\lib\SMFL\C++\mingw32\bin\ar.exe cr CMakeFiles\cmTC_55292.dir/objects.a @CMakeFiles\cmTC_55292.dir\objects1.rsp
+D:\lib\SMFL\C++\mingw32\bin\gcc.exe  -v -Wl,--whole-archive CMakeFiles\cmTC_55292.dir/objects.a -Wl,--no-whole-archive -o cmTC_55292.exe -Wl,--out-implib,libcmTC_55292.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
 Using built-in specs.
-COLLECT_GCC=C:\Dev\C++\mingw32\bin\gcc.exe
-COLLECT_LTO_WRAPPER=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe
+COLLECT_GCC=D:\lib\SMFL\C++\mingw32\bin\gcc.exe
+COLLECT_LTO_WRAPPER=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe
 Target: i686-w64-mingw32
 Configured with: ../../../src/gcc-7.3.0/configure --host=i686-w64-mingw32 --build=i686-w64-mingw32 --target=i686-w64-mingw32 --prefix=/mingw32 --with-sysroot=/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-sjlj-exceptions --with-dwarf2 --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=i686 --with-tune=generic --with-libiconv --with-system-zlib --with-gmp=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-mpfr=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-mpc=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-isl=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-pkgversion='i686-posix-dwarf-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/lib -L/c/mingw730/prerequisites/i686-zlib-static/lib -L/c/mingw730/prerequisites/i686-w64-mingw32-static/lib -Wl,--large-address-aware'
 Thread model: posix
 gcc version 7.3.0 (i686-posix-dwarf-rev0, Built by MinGW-W64 project) 
-COMPILER_PATH=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/;C:/Dev/C++/mingw32/bin/../libexec/gcc/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/
-LIBRARY_PATH=C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/;C:/Dev/C++/mingw32/bin/../lib/gcc/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_bd060.exe' '-mtune=generic' '-march=i686'
- C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/collect2.exe -plugin C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/liblto_plugin-0.dll -plugin-opt=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\quent\AppData\Local\Temp\ccSlRi5D.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32 -m i386pe -Bdynamic -o cmTC_bd060.exe C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtbegin.o -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0 -LC:/Dev/C++/mingw32/bin/../lib/gcc -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../.. --whole-archive CMakeFiles\cmTC_bd060.dir/objects.a --no-whole-archive --out-implib libcmTC_bd060.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtend.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_bd060.exe' '-mtune=generic' '-march=i686'
-mingw32-make.exe[1]: Leaving directory 'C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp'
+COMPILER_PATH=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/;D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/
+LIBRARY_PATH=D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_55292.exe' '-mtune=generic' '-march=i686'
+ D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/collect2.exe -plugin D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/liblto_plugin-0.dll -plugin-opt=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\marvi\AppData\Local\Temp\ccLFpdmN.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32 -m i386pe -Bdynamic -o cmTC_55292.exe D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtbegin.o -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0 -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../.. --whole-archive CMakeFiles\cmTC_55292.dir/objects.a --no-whole-archive --out-implib libcmTC_55292.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_55292.exe' '-mtune=generic' '-march=i686'
+mingw32-make.exe[1]: Leaving directory 'C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 
 Parsed C implicit include dir info from above output: rv=done
   found start of include info
   found start of implicit include info
-    add: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include]
-    add: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed]
-    add: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include]
+    add: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include]
+    add: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed]
+    add: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include]
   end of search list found
-  collapse include dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include] ==> [C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include]
-  collapse include dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed] ==> [C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed]
-  collapse include dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include] ==> [C:/Dev/C++/mingw32/i686-w64-mingw32/include]
-  implicit include dirs: [C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include;C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed;C:/Dev/C++/mingw32/i686-w64-mingw32/include]
+  collapse include dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include] ==> [D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include]
+  collapse include dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed] ==> [D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed]
+  collapse include dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include] ==> [D:/lib/SMFL/C++/mingw32/i686-w64-mingw32/include]
+  implicit include dirs: [D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include;D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed;D:/lib/SMFL/C++/mingw32/i686-w64-mingw32/include]
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):C:/Dev/C++/mingw32/bin/mingw32-make.exe cmTC_bd060/fast && C:/Dev/C++/mingw32/bin/mingw32-make.exe  -f CMakeFiles\cmTC_bd060.dir\build.make CMakeFiles/cmTC_bd060.dir/build]
-  ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_bd060.dir/CMakeCCompilerABI.c.obj]
-  ignore line: [C:\Dev\C++\mingw32\bin\gcc.exe   -v -o CMakeFiles\cmTC_bd060.dir\CMakeCCompilerABI.c.obj -c "C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\share\cmake-3.19\Modules\CMakeCCompilerABI.c"]
+  ignore line: [Run Build Command(s):D:/lib/SMFL/C++/mingw32/bin/mingw32-make.exe cmTC_55292/fast && D:/lib/SMFL/C++/mingw32/bin/mingw32-make.exe  -f CMakeFiles\cmTC_55292.dir\build.make CMakeFiles/cmTC_55292.dir/build]
+  ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_55292.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [D:\lib\SMFL\C++\mingw32\bin\gcc.exe   -v -o CMakeFiles\cmTC_55292.dir\CMakeCCompilerABI.c.obj -c C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\share\cmake-3.19\Modules\CMakeCCompilerABI.c]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=C:\Dev\C++\mingw32\bin\gcc.exe]
+  ignore line: [COLLECT_GCC=D:\lib\SMFL\C++\mingw32\bin\gcc.exe]
   ignore line: [Target: i686-w64-mingw32]
   ignore line: [Configured with: ../../../src/gcc-7.3.0/configure --host=i686-w64-mingw32 --build=i686-w64-mingw32 --target=i686-w64-mingw32 --prefix=/mingw32 --with-sysroot=/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-sjlj-exceptions --with-dwarf2 --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=i686 --with-tune=generic --with-libiconv --with-system-zlib --with-gmp=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-mpfr=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-mpc=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-isl=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-pkgversion='i686-posix-dwarf-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/lib -L/c/mingw730/prerequisites/i686-zlib-static/lib -L/c/mingw730/prerequisites/i686-w64-mingw32-static/lib -Wl,--large-address-aware']
   ignore line: [Thread model: posix]
   ignore line: [gcc version 7.3.0 (i686-posix-dwarf-rev0  Built by MinGW-W64 project) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_bd060.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=i686']
-  ignore line: [ C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/cc1.exe -quiet -v -iprefix C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/ -D_REENTRANT C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\share\cmake-3.19\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=i686 -auxbase-strip CMakeFiles\cmTC_bd060.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\quent\AppData\Local\Temp\cck6Zhpq.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_55292.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=i686']
+  ignore line: [ D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/cc1.exe -quiet -v -iprefix D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/ -D_REENTRANT C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\share\cmake-3.19\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=i686 -auxbase-strip CMakeFiles\cmTC_55292.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\marvi\AppData\Local\Temp\ccFYlTxp.s]
   ignore line: [GNU C11 (i686-posix-dwarf-rev0  Built by MinGW-W64 project) version 7.3.0 (i686-w64-mingw32)]
   ignore line: [	compiled by GNU C version 7.3.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.18-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include"]
+  ignore line: [ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include"]
   ignore line: [ignoring nonexistent directory "C:/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32C:/msys64-2/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/../../../../include"]
-  ignore line: [ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"]
-  ignore line: [ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"]
+  ignore line: [ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"]
+  ignore line: [ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"]
   ignore line: [ignoring nonexistent directory "C:/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/mingw/include"]
   ignore line: [#include "..." search starts here:]
   ignore line: [#include <...> search starts here:]
-  ignore line: [ C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include]
-  ignore line: [ C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed]
-  ignore line: [ C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include]
+  ignore line: [ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include]
+  ignore line: [ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed]
+  ignore line: [ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include]
   ignore line: [End of search list.]
   ignore line: [GNU C11 (i686-posix-dwarf-rev0  Built by MinGW-W64 project) version 7.3.0 (i686-w64-mingw32)]
   ignore line: [	compiled by GNU C version 7.3.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.18-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: cfb50cc9d8e205abde078862560e5595]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_bd060.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=i686']
-  ignore line: [ C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_bd060.dir\CMakeCCompilerABI.c.obj C:\Users\quent\AppData\Local\Temp\cck6Zhpq.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_55292.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=i686']
+  ignore line: [ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_55292.dir\CMakeCCompilerABI.c.obj C:\Users\marvi\AppData\Local\Temp\ccFYlTxp.s]
   ignore line: [GNU assembler version 2.30 (i686-w64-mingw32) using BFD version (GNU Binutils) 2.30]
-  ignore line: [COMPILER_PATH=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../libexec/gcc/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/]
-  ignore line: [LIBRARY_PATH=C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_bd060.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=i686']
-  ignore line: [Linking C executable cmTC_bd060.exe]
-  ignore line: ["C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_bd060.dir\link.txt --verbose=1]
-  ignore line: ["C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_bd060.dir/objects.a]
-  ignore line: [C:\Dev\C++\mingw32\bin\ar.exe cr CMakeFiles\cmTC_bd060.dir/objects.a @CMakeFiles\cmTC_bd060.dir\objects1.rsp]
-  ignore line: [C:\Dev\C++\mingw32\bin\gcc.exe  -v -Wl --whole-archive CMakeFiles\cmTC_bd060.dir/objects.a -Wl --no-whole-archive -o cmTC_bd060.exe -Wl --out-implib libcmTC_bd060.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
+  ignore line: [COMPILER_PATH=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/]
+  ignore line: [LIBRARY_PATH=D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_55292.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=i686']
+  ignore line: [Linking C executable cmTC_55292.exe]
+  ignore line: [C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_55292.dir\link.txt --verbose=1]
+  ignore line: [C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\cmTC_55292.dir/objects.a]
+  ignore line: [D:\lib\SMFL\C++\mingw32\bin\ar.exe cr CMakeFiles\cmTC_55292.dir/objects.a @CMakeFiles\cmTC_55292.dir\objects1.rsp]
+  ignore line: [D:\lib\SMFL\C++\mingw32\bin\gcc.exe  -v -Wl --whole-archive CMakeFiles\cmTC_55292.dir/objects.a -Wl --no-whole-archive -o cmTC_55292.exe -Wl --out-implib libcmTC_55292.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=C:\Dev\C++\mingw32\bin\gcc.exe]
-  ignore line: [COLLECT_LTO_WRAPPER=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe]
+  ignore line: [COLLECT_GCC=D:\lib\SMFL\C++\mingw32\bin\gcc.exe]
+  ignore line: [COLLECT_LTO_WRAPPER=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe]
   ignore line: [Target: i686-w64-mingw32]
   ignore line: [Configured with: ../../../src/gcc-7.3.0/configure --host=i686-w64-mingw32 --build=i686-w64-mingw32 --target=i686-w64-mingw32 --prefix=/mingw32 --with-sysroot=/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-sjlj-exceptions --with-dwarf2 --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=i686 --with-tune=generic --with-libiconv --with-system-zlib --with-gmp=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-mpfr=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-mpc=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-isl=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-pkgversion='i686-posix-dwarf-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/lib -L/c/mingw730/prerequisites/i686-zlib-static/lib -L/c/mingw730/prerequisites/i686-w64-mingw32-static/lib -Wl,--large-address-aware']
   ignore line: [Thread model: posix]
   ignore line: [gcc version 7.3.0 (i686-posix-dwarf-rev0  Built by MinGW-W64 project) ]
-  ignore line: [COMPILER_PATH=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../libexec/gcc/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/]
-  ignore line: [LIBRARY_PATH=C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_bd060.exe' '-mtune=generic' '-march=i686']
-  link line: [ C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/collect2.exe -plugin C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/liblto_plugin-0.dll -plugin-opt=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\quent\AppData\Local\Temp\ccSlRi5D.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32 -m i386pe -Bdynamic -o cmTC_bd060.exe C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtbegin.o -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0 -LC:/Dev/C++/mingw32/bin/../lib/gcc -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../.. --whole-archive CMakeFiles\cmTC_bd060.dir/objects.a --no-whole-archive --out-implib libcmTC_bd060.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtend.o]
-    arg [C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/collect2.exe] ==> ignore
+  ignore line: [COMPILER_PATH=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/]
+  ignore line: [LIBRARY_PATH=D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_55292.exe' '-mtune=generic' '-march=i686']
+  link line: [ D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/collect2.exe -plugin D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/liblto_plugin-0.dll -plugin-opt=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\marvi\AppData\Local\Temp\ccLFpdmN.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32 -m i386pe -Bdynamic -o cmTC_55292.exe D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtbegin.o -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0 -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../.. --whole-archive CMakeFiles\cmTC_55292.dir/objects.a --no-whole-archive --out-implib libcmTC_55292.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtend.o]
+    arg [D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/collect2.exe] ==> ignore
     arg [-plugin] ==> ignore
-    arg [C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/liblto_plugin-0.dll] ==> ignore
-    arg [-plugin-opt=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe] ==> ignore
-    arg [-plugin-opt=-fresolution=C:\Users\quent\AppData\Local\Temp\ccSlRi5D.res] ==> ignore
+    arg [D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/liblto_plugin-0.dll] ==> ignore
+    arg [-plugin-opt=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\marvi\AppData\Local\Temp\ccLFpdmN.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
@@ -200,20 +200,20 @@ Parsed C implicit link information from above output:
     arg [i386pe] ==> ignore
     arg [-Bdynamic] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_bd060.exe] ==> ignore
-    arg [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o] ==> ignore
-    arg [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtbegin.o] ==> ignore
-    arg [-LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0] ==> dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0]
-    arg [-LC:/Dev/C++/mingw32/bin/../lib/gcc] ==> dir [C:/Dev/C++/mingw32/bin/../lib/gcc]
-    arg [-LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib] ==> dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib]
-    arg [-LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib] ==> dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib]
-    arg [-LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib] ==> dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib]
-    arg [-LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../..] ==> dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../..]
+    arg [cmTC_55292.exe] ==> ignore
+    arg [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o] ==> ignore
+    arg [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtbegin.o] ==> ignore
+    arg [-LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0] ==> dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0]
+    arg [-LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc] ==> dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc]
+    arg [-LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib] ==> dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib]
+    arg [-LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib] ==> dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib]
+    arg [-LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib] ==> dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib]
+    arg [-LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../..] ==> dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../..]
     arg [--whole-archive] ==> ignore
-    arg [CMakeFiles\cmTC_bd060.dir/objects.a] ==> ignore
+    arg [CMakeFiles\cmTC_55292.dir/objects.a] ==> ignore
     arg [--no-whole-archive] ==> ignore
     arg [--out-implib] ==> ignore
-    arg [libcmTC_bd060.dll.a] ==> ignore
+    arg [libcmTC_55292.dll.a] ==> ignore
     arg [--major-image-version] ==> ignore
     arg [0] ==> ignore
     arg [--minor-image-version] ==> ignore
@@ -236,192 +236,192 @@ Parsed C implicit link information from above output:
     arg [-lmoldname] ==> lib [moldname]
     arg [-lmingwex] ==> lib [mingwex]
     arg [-lmsvcrt] ==> lib [msvcrt]
-    arg [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtend.o] ==> ignore
+    arg [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtend.o] ==> ignore
   remove lib [gcc_eh]
   remove lib [msvcrt]
   remove lib [gcc_eh]
   remove lib [msvcrt]
-  collapse library dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0] ==> [C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0]
-  collapse library dir [C:/Dev/C++/mingw32/bin/../lib/gcc] ==> [C:/Dev/C++/mingw32/lib/gcc]
-  collapse library dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib] ==> [C:/Dev/C++/mingw32/i686-w64-mingw32/lib]
-  collapse library dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib] ==> [C:/Dev/C++/mingw32/lib]
-  collapse library dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib] ==> [C:/Dev/C++/mingw32/i686-w64-mingw32/lib]
-  collapse library dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../..] ==> [C:/Dev/C++/mingw32/lib]
+  collapse library dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0] ==> [D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0]
+  collapse library dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc] ==> [D:/lib/SMFL/C++/mingw32/lib/gcc]
+  collapse library dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib] ==> [D:/lib/SMFL/C++/mingw32/i686-w64-mingw32/lib]
+  collapse library dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib] ==> [D:/lib/SMFL/C++/mingw32/lib]
+  collapse library dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib] ==> [D:/lib/SMFL/C++/mingw32/i686-w64-mingw32/lib]
+  collapse library dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../..] ==> [D:/lib/SMFL/C++/mingw32/lib]
   implicit libs: [mingw32;gcc;moldname;mingwex;pthread;advapi32;shell32;user32;kernel32;iconv;mingw32;gcc;moldname;mingwex]
-  implicit dirs: [C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0;C:/Dev/C++/mingw32/lib/gcc;C:/Dev/C++/mingw32/i686-w64-mingw32/lib;C:/Dev/C++/mingw32/lib]
+  implicit dirs: [D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0;D:/lib/SMFL/C++/mingw32/lib/gcc;D:/lib/SMFL/C++/mingw32/i686-w64-mingw32/lib;D:/lib/SMFL/C++/mingw32/lib]
   implicit fwks: []
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Dev/C++/mingw32/bin/mingw32-make.exe cmTC_efc3a/fast && C:/Dev/C++/mingw32/bin/mingw32-make.exe  -f CMakeFiles\cmTC_efc3a.dir\build.make CMakeFiles/cmTC_efc3a.dir/build
-mingw32-make.exe[1]: Entering directory 'C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_efc3a.dir/CMakeCXXCompilerABI.cpp.obj
-C:\Dev\C++\mingw32\bin\g++.exe   -v -o CMakeFiles\cmTC_efc3a.dir\CMakeCXXCompilerABI.cpp.obj -c "C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\share\cmake-3.19\Modules\CMakeCXXCompilerABI.cpp"
+Run Build Command(s):D:/lib/SMFL/C++/mingw32/bin/mingw32-make.exe cmTC_d545b/fast && D:/lib/SMFL/C++/mingw32/bin/mingw32-make.exe  -f CMakeFiles\cmTC_d545b.dir\build.make CMakeFiles/cmTC_d545b.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d545b.dir/CMakeCXXCompilerABI.cpp.obj
+D:\lib\SMFL\C++\mingw32\bin\g++.exe   -v -o CMakeFiles\cmTC_d545b.dir\CMakeCXXCompilerABI.cpp.obj -c C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\share\cmake-3.19\Modules\CMakeCXXCompilerABI.cpp
 Using built-in specs.
-COLLECT_GCC=C:\Dev\C++\mingw32\bin\g++.exe
+COLLECT_GCC=D:\lib\SMFL\C++\mingw32\bin\g++.exe
 Target: i686-w64-mingw32
 Configured with: ../../../src/gcc-7.3.0/configure --host=i686-w64-mingw32 --build=i686-w64-mingw32 --target=i686-w64-mingw32 --prefix=/mingw32 --with-sysroot=/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-sjlj-exceptions --with-dwarf2 --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=i686 --with-tune=generic --with-libiconv --with-system-zlib --with-gmp=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-mpfr=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-mpc=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-isl=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-pkgversion='i686-posix-dwarf-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/lib -L/c/mingw730/prerequisites/i686-zlib-static/lib -L/c/mingw730/prerequisites/i686-w64-mingw32-static/lib -Wl,--large-address-aware'
 Thread model: posix
 gcc version 7.3.0 (i686-posix-dwarf-rev0, Built by MinGW-W64 project) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_efc3a.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i686'
- C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/cc1plus.exe -quiet -v -iprefix C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/ -D_REENTRANT C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\share\cmake-3.19\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=i686 -auxbase-strip CMakeFiles\cmTC_efc3a.dir\CMakeCXXCompilerABI.cpp.obj -version -o C:\Users\quent\AppData\Local\Temp\cccYxUq0.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d545b.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i686'
+ D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/cc1plus.exe -quiet -v -iprefix D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/ -D_REENTRANT C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\share\cmake-3.19\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=i686 -auxbase-strip CMakeFiles\cmTC_d545b.dir\CMakeCXXCompilerABI.cpp.obj -version -o C:\Users\marvi\AppData\Local\Temp\cc2JuUrf.s
 GNU C++14 (i686-posix-dwarf-rev0, Built by MinGW-W64 project) version 7.3.0 (i686-w64-mingw32)
 	compiled by GNU C version 7.3.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"
-ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"
-ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward"
-ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include"
+ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"
+ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"
+ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward"
+ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include"
 ignoring nonexistent directory "C:/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32C:/msys64-2/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/../../../../include"
-ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"
-ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"
+ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"
+ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"
 ignoring nonexistent directory "C:/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/mingw/include"
 #include "..." search starts here:
 #include <...> search starts here:
- C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++
- C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32
- C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward
- C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include
- C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed
- C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include
+ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++
+ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32
+ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward
+ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include
+ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed
+ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include
 End of search list.
 GNU C++14 (i686-posix-dwarf-rev0, Built by MinGW-W64 project) version 7.3.0 (i686-w64-mingw32)
 	compiled by GNU C version 7.3.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 054f020076b735531e9621adbf45a5b2
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_efc3a.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i686'
- C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_efc3a.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\quent\AppData\Local\Temp\cccYxUq0.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d545b.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i686'
+ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_d545b.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\marvi\AppData\Local\Temp\cc2JuUrf.s
 GNU assembler version 2.30 (i686-w64-mingw32) using BFD version (GNU Binutils) 2.30
-COMPILER_PATH=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/;C:/Dev/C++/mingw32/bin/../libexec/gcc/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/
-LIBRARY_PATH=C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/;C:/Dev/C++/mingw32/bin/../lib/gcc/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_efc3a.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i686'
-Linking CXX executable cmTC_efc3a.exe
-"C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_efc3a.dir\link.txt --verbose=1
-"C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_efc3a.dir/objects.a
-C:\Dev\C++\mingw32\bin\ar.exe cr CMakeFiles\cmTC_efc3a.dir/objects.a @CMakeFiles\cmTC_efc3a.dir\objects1.rsp
-C:\Dev\C++\mingw32\bin\g++.exe  -v -Wl,--whole-archive CMakeFiles\cmTC_efc3a.dir/objects.a -Wl,--no-whole-archive -o cmTC_efc3a.exe -Wl,--out-implib,libcmTC_efc3a.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+COMPILER_PATH=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/;D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/
+LIBRARY_PATH=D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d545b.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i686'
+Linking CXX executable cmTC_d545b.exe
+C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_d545b.dir\link.txt --verbose=1
+C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\cmTC_d545b.dir/objects.a
+D:\lib\SMFL\C++\mingw32\bin\ar.exe cr CMakeFiles\cmTC_d545b.dir/objects.a @CMakeFiles\cmTC_d545b.dir\objects1.rsp
+D:\lib\SMFL\C++\mingw32\bin\g++.exe  -v -Wl,--whole-archive CMakeFiles\cmTC_d545b.dir/objects.a -Wl,--no-whole-archive -o cmTC_d545b.exe -Wl,--out-implib,libcmTC_d545b.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
 Using built-in specs.
-COLLECT_GCC=C:\Dev\C++\mingw32\bin\g++.exe
-COLLECT_LTO_WRAPPER=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe
+COLLECT_GCC=D:\lib\SMFL\C++\mingw32\bin\g++.exe
+COLLECT_LTO_WRAPPER=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe
 Target: i686-w64-mingw32
 Configured with: ../../../src/gcc-7.3.0/configure --host=i686-w64-mingw32 --build=i686-w64-mingw32 --target=i686-w64-mingw32 --prefix=/mingw32 --with-sysroot=/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-sjlj-exceptions --with-dwarf2 --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=i686 --with-tune=generic --with-libiconv --with-system-zlib --with-gmp=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-mpfr=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-mpc=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-isl=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-pkgversion='i686-posix-dwarf-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/lib -L/c/mingw730/prerequisites/i686-zlib-static/lib -L/c/mingw730/prerequisites/i686-w64-mingw32-static/lib -Wl,--large-address-aware'
 Thread model: posix
 gcc version 7.3.0 (i686-posix-dwarf-rev0, Built by MinGW-W64 project) 
-COMPILER_PATH=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/;C:/Dev/C++/mingw32/bin/../libexec/gcc/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/
-LIBRARY_PATH=C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/;C:/Dev/C++/mingw32/bin/../lib/gcc/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/;C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_efc3a.exe' '-shared-libgcc' '-mtune=generic' '-march=i686'
- C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/collect2.exe -plugin C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/liblto_plugin-0.dll -plugin-opt=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\quent\AppData\Local\Temp\ccEMnijc.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32 -m i386pe -Bdynamic -u ___register_frame_info -u ___deregister_frame_info -o cmTC_efc3a.exe C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtbegin.o -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0 -LC:/Dev/C++/mingw32/bin/../lib/gcc -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../.. --whole-archive CMakeFiles\cmTC_efc3a.dir/objects.a --no-whole-archive --out-implib libcmTC_efc3a.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtend.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_efc3a.exe' '-shared-libgcc' '-mtune=generic' '-march=i686'
-mingw32-make.exe[1]: Leaving directory 'C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp'
+COMPILER_PATH=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/;D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/
+LIBRARY_PATH=D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/;D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d545b.exe' '-shared-libgcc' '-mtune=generic' '-march=i686'
+ D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/collect2.exe -plugin D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/liblto_plugin-0.dll -plugin-opt=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\marvi\AppData\Local\Temp\ccbU2JZV.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32 -m i386pe -Bdynamic -u ___register_frame_info -u ___deregister_frame_info -o cmTC_d545b.exe D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtbegin.o -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0 -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../.. --whole-archive CMakeFiles\cmTC_d545b.dir/objects.a --no-whole-archive --out-implib libcmTC_d545b.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d545b.exe' '-shared-libgcc' '-mtune=generic' '-march=i686'
+mingw32-make.exe[1]: Leaving directory 'C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 
 Parsed CXX implicit include dir info from above output: rv=done
   found start of include info
   found start of implicit include info
-    add: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++]
-    add: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32]
-    add: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward]
-    add: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include]
-    add: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed]
-    add: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include]
+    add: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++]
+    add: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32]
+    add: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward]
+    add: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include]
+    add: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed]
+    add: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include]
   end of search list found
-  collapse include dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++] ==> [C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++]
-  collapse include dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32] ==> [C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32]
-  collapse include dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward] ==> [C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward]
-  collapse include dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include] ==> [C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include]
-  collapse include dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed] ==> [C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed]
-  collapse include dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include] ==> [C:/Dev/C++/mingw32/i686-w64-mingw32/include]
-  implicit include dirs: [C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++;C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32;C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward;C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include;C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed;C:/Dev/C++/mingw32/i686-w64-mingw32/include]
+  collapse include dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++] ==> [D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++]
+  collapse include dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32] ==> [D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32]
+  collapse include dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward] ==> [D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward]
+  collapse include dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include] ==> [D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include]
+  collapse include dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed] ==> [D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed]
+  collapse include dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include] ==> [D:/lib/SMFL/C++/mingw32/i686-w64-mingw32/include]
+  implicit include dirs: [D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++;D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32;D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward;D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include;D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed;D:/lib/SMFL/C++/mingw32/i686-w64-mingw32/include]
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):C:/Dev/C++/mingw32/bin/mingw32-make.exe cmTC_efc3a/fast && C:/Dev/C++/mingw32/bin/mingw32-make.exe  -f CMakeFiles\cmTC_efc3a.dir\build.make CMakeFiles/cmTC_efc3a.dir/build]
-  ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/quent/Desktop/PA/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_efc3a.dir/CMakeCXXCompilerABI.cpp.obj]
-  ignore line: [C:\Dev\C++\mingw32\bin\g++.exe   -v -o CMakeFiles\cmTC_efc3a.dir\CMakeCXXCompilerABI.cpp.obj -c "C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\share\cmake-3.19\Modules\CMakeCXXCompilerABI.cpp"]
+  ignore line: [Run Build Command(s):D:/lib/SMFL/C++/mingw32/bin/mingw32-make.exe cmTC_d545b/fast && D:/lib/SMFL/C++/mingw32/bin/mingw32-make.exe  -f CMakeFiles\cmTC_d545b.dir\build.make CMakeFiles/cmTC_d545b.dir/build]
+  ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_d545b.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [D:\lib\SMFL\C++\mingw32\bin\g++.exe   -v -o CMakeFiles\cmTC_d545b.dir\CMakeCXXCompilerABI.cpp.obj -c C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\share\cmake-3.19\Modules\CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=C:\Dev\C++\mingw32\bin\g++.exe]
+  ignore line: [COLLECT_GCC=D:\lib\SMFL\C++\mingw32\bin\g++.exe]
   ignore line: [Target: i686-w64-mingw32]
   ignore line: [Configured with: ../../../src/gcc-7.3.0/configure --host=i686-w64-mingw32 --build=i686-w64-mingw32 --target=i686-w64-mingw32 --prefix=/mingw32 --with-sysroot=/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-sjlj-exceptions --with-dwarf2 --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=i686 --with-tune=generic --with-libiconv --with-system-zlib --with-gmp=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-mpfr=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-mpc=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-isl=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-pkgversion='i686-posix-dwarf-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/lib -L/c/mingw730/prerequisites/i686-zlib-static/lib -L/c/mingw730/prerequisites/i686-w64-mingw32-static/lib -Wl,--large-address-aware']
   ignore line: [Thread model: posix]
   ignore line: [gcc version 7.3.0 (i686-posix-dwarf-rev0  Built by MinGW-W64 project) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_efc3a.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i686']
-  ignore line: [ C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/cc1plus.exe -quiet -v -iprefix C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/ -D_REENTRANT C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\share\cmake-3.19\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=i686 -auxbase-strip CMakeFiles\cmTC_efc3a.dir\CMakeCXXCompilerABI.cpp.obj -version -o C:\Users\quent\AppData\Local\Temp\cccYxUq0.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d545b.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i686']
+  ignore line: [ D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/cc1plus.exe -quiet -v -iprefix D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/ -D_REENTRANT C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\share\cmake-3.19\Modules\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=i686 -auxbase-strip CMakeFiles\cmTC_d545b.dir\CMakeCXXCompilerABI.cpp.obj -version -o C:\Users\marvi\AppData\Local\Temp\cc2JuUrf.s]
   ignore line: [GNU C++14 (i686-posix-dwarf-rev0  Built by MinGW-W64 project) version 7.3.0 (i686-w64-mingw32)]
   ignore line: [	compiled by GNU C version 7.3.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.18-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"]
-  ignore line: [ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"]
-  ignore line: [ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward"]
-  ignore line: [ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include"]
+  ignore line: [ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"]
+  ignore line: [ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"]
+  ignore line: [ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward"]
+  ignore line: [ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include"]
   ignore line: [ignoring nonexistent directory "C:/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32C:/msys64-2/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/../../../../include"]
-  ignore line: [ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"]
-  ignore line: [ignoring duplicate directory "C:/Dev/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"]
+  ignore line: [ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"]
+  ignore line: [ignoring duplicate directory "D:/lib/SMFL/C++/mingw32/lib/gcc/../../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"]
   ignore line: [ignoring nonexistent directory "C:/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/mingw/include"]
   ignore line: [#include "..." search starts here:]
   ignore line: [#include <...> search starts here:]
-  ignore line: [ C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++]
-  ignore line: [ C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32]
-  ignore line: [ C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward]
-  ignore line: [ C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include]
-  ignore line: [ C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed]
-  ignore line: [ C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include]
+  ignore line: [ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++]
+  ignore line: [ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32]
+  ignore line: [ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward]
+  ignore line: [ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include]
+  ignore line: [ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed]
+  ignore line: [ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include]
   ignore line: [End of search list.]
   ignore line: [GNU C++14 (i686-posix-dwarf-rev0  Built by MinGW-W64 project) version 7.3.0 (i686-w64-mingw32)]
   ignore line: [	compiled by GNU C version 7.3.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.18-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 054f020076b735531e9621adbf45a5b2]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_efc3a.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i686']
-  ignore line: [ C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_efc3a.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\quent\AppData\Local\Temp\cccYxUq0.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d545b.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i686']
+  ignore line: [ D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_d545b.dir\CMakeCXXCompilerABI.cpp.obj C:\Users\marvi\AppData\Local\Temp\cc2JuUrf.s]
   ignore line: [GNU assembler version 2.30 (i686-w64-mingw32) using BFD version (GNU Binutils) 2.30]
-  ignore line: [COMPILER_PATH=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../libexec/gcc/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/]
-  ignore line: [LIBRARY_PATH=C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_efc3a.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i686']
-  ignore line: [Linking CXX executable cmTC_efc3a.exe]
-  ignore line: ["C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_efc3a.dir\link.txt --verbose=1]
-  ignore line: ["C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_efc3a.dir/objects.a]
-  ignore line: [C:\Dev\C++\mingw32\bin\ar.exe cr CMakeFiles\cmTC_efc3a.dir/objects.a @CMakeFiles\cmTC_efc3a.dir\objects1.rsp]
-  ignore line: [C:\Dev\C++\mingw32\bin\g++.exe  -v -Wl --whole-archive CMakeFiles\cmTC_efc3a.dir/objects.a -Wl --no-whole-archive -o cmTC_efc3a.exe -Wl --out-implib libcmTC_efc3a.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
+  ignore line: [COMPILER_PATH=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/]
+  ignore line: [LIBRARY_PATH=D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_d545b.dir\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=i686']
+  ignore line: [Linking CXX executable cmTC_d545b.exe]
+  ignore line: [C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_d545b.dir\link.txt --verbose=1]
+  ignore line: [C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\cmTC_d545b.dir/objects.a]
+  ignore line: [D:\lib\SMFL\C++\mingw32\bin\ar.exe cr CMakeFiles\cmTC_d545b.dir/objects.a @CMakeFiles\cmTC_d545b.dir\objects1.rsp]
+  ignore line: [D:\lib\SMFL\C++\mingw32\bin\g++.exe  -v -Wl --whole-archive CMakeFiles\cmTC_d545b.dir/objects.a -Wl --no-whole-archive -o cmTC_d545b.exe -Wl --out-implib libcmTC_d545b.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=C:\Dev\C++\mingw32\bin\g++.exe]
-  ignore line: [COLLECT_LTO_WRAPPER=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe]
+  ignore line: [COLLECT_GCC=D:\lib\SMFL\C++\mingw32\bin\g++.exe]
+  ignore line: [COLLECT_LTO_WRAPPER=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe]
   ignore line: [Target: i686-w64-mingw32]
   ignore line: [Configured with: ../../../src/gcc-7.3.0/configure --host=i686-w64-mingw32 --build=i686-w64-mingw32 --target=i686-w64-mingw32 --prefix=/mingw32 --with-sysroot=/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-sjlj-exceptions --with-dwarf2 --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=i686 --with-tune=generic --with-libiconv --with-system-zlib --with-gmp=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-mpfr=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-mpc=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-isl=/c/mingw730/prerequisites/i686-w64-mingw32-static --with-pkgversion='i686-posix-dwarf-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/include -I/c/mingw730/prerequisites/i686-zlib-static/include -I/c/mingw730/prerequisites/i686-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32/opt/lib -L/c/mingw730/prerequisites/i686-zlib-static/lib -L/c/mingw730/prerequisites/i686-w64-mingw32-static/lib -Wl,--large-address-aware']
   ignore line: [Thread model: posix]
   ignore line: [gcc version 7.3.0 (i686-posix-dwarf-rev0  Built by MinGW-W64 project) ]
-  ignore line: [COMPILER_PATH=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../libexec/gcc/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/]
-  ignore line: [LIBRARY_PATH=C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/]
-  ignore line: [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_efc3a.exe' '-shared-libgcc' '-mtune=generic' '-march=i686']
-  link line: [ C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/collect2.exe -plugin C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/liblto_plugin-0.dll -plugin-opt=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\quent\AppData\Local\Temp\ccEMnijc.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32 -m i386pe -Bdynamic -u ___register_frame_info -u ___deregister_frame_info -o cmTC_efc3a.exe C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtbegin.o -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0 -LC:/Dev/C++/mingw32/bin/../lib/gcc -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib -LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../.. --whole-archive CMakeFiles\cmTC_efc3a.dir/objects.a --no-whole-archive --out-implib libcmTC_efc3a.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtend.o]
-    arg [C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/collect2.exe] ==> ignore
+  ignore line: [COMPILER_PATH=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/bin/]
+  ignore line: [LIBRARY_PATH=D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/]
+  ignore line: [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d545b.exe' '-shared-libgcc' '-mtune=generic' '-march=i686']
+  link line: [ D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/collect2.exe -plugin D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/liblto_plugin-0.dll -plugin-opt=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\marvi\AppData\Local\Temp\ccbU2JZV.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt --sysroot=C:/mingw730/i686-730-posix-dwarf-rt_v5-rev0/mingw32 -m i386pe -Bdynamic -u ___register_frame_info -u ___deregister_frame_info -o cmTC_d545b.exe D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtbegin.o -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0 -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib -LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../.. --whole-archive CMakeFiles\cmTC_d545b.dir/objects.a --no-whole-archive --out-implib libcmTC_d545b.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtend.o]
+    arg [D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/collect2.exe] ==> ignore
     arg [-plugin] ==> ignore
-    arg [C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/liblto_plugin-0.dll] ==> ignore
-    arg [-plugin-opt=C:/Dev/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe] ==> ignore
-    arg [-plugin-opt=-fresolution=C:\Users\quent\AppData\Local\Temp\ccEMnijc.res] ==> ignore
+    arg [D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/liblto_plugin-0.dll] ==> ignore
+    arg [-plugin-opt=D:/lib/SMFL/C++/mingw32/bin/../libexec/gcc/i686-w64-mingw32/7.3.0/lto-wrapper.exe] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\marvi\AppData\Local\Temp\ccbU2JZV.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -449,20 +449,20 @@ Parsed CXX implicit link information from above output:
     arg [-u] ==> ignore
     arg [___deregister_frame_info] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_efc3a.exe] ==> ignore
-    arg [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o] ==> ignore
-    arg [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtbegin.o] ==> ignore
-    arg [-LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0] ==> dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0]
-    arg [-LC:/Dev/C++/mingw32/bin/../lib/gcc] ==> dir [C:/Dev/C++/mingw32/bin/../lib/gcc]
-    arg [-LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib] ==> dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib]
-    arg [-LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib] ==> dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib]
-    arg [-LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib] ==> dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib]
-    arg [-LC:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../..] ==> dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../..]
+    arg [cmTC_d545b.exe] ==> ignore
+    arg [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib/crt2.o] ==> ignore
+    arg [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtbegin.o] ==> ignore
+    arg [-LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0] ==> dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0]
+    arg [-LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc] ==> dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc]
+    arg [-LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib] ==> dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib]
+    arg [-LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib] ==> dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib]
+    arg [-LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib] ==> dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib]
+    arg [-LD:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../..] ==> dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../..]
     arg [--whole-archive] ==> ignore
-    arg [CMakeFiles\cmTC_efc3a.dir/objects.a] ==> ignore
+    arg [CMakeFiles\cmTC_d545b.dir/objects.a] ==> ignore
     arg [--no-whole-archive] ==> ignore
     arg [--out-implib] ==> ignore
-    arg [libcmTC_efc3a.dll.a] ==> ignore
+    arg [libcmTC_d545b.dll.a] ==> ignore
     arg [--major-image-version] ==> ignore
     arg [0] ==> ignore
     arg [--minor-image-version] ==> ignore
@@ -486,17 +486,17 @@ Parsed CXX implicit link information from above output:
     arg [-lmoldname] ==> lib [moldname]
     arg [-lmingwex] ==> lib [mingwex]
     arg [-lmsvcrt] ==> lib [msvcrt]
-    arg [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtend.o] ==> ignore
+    arg [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/crtend.o] ==> ignore
   remove lib [msvcrt]
   remove lib [msvcrt]
-  collapse library dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0] ==> [C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0]
-  collapse library dir [C:/Dev/C++/mingw32/bin/../lib/gcc] ==> [C:/Dev/C++/mingw32/lib/gcc]
-  collapse library dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib] ==> [C:/Dev/C++/mingw32/i686-w64-mingw32/lib]
-  collapse library dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib] ==> [C:/Dev/C++/mingw32/lib]
-  collapse library dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib] ==> [C:/Dev/C++/mingw32/i686-w64-mingw32/lib]
-  collapse library dir [C:/Dev/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../..] ==> [C:/Dev/C++/mingw32/lib]
+  collapse library dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0] ==> [D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0]
+  collapse library dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc] ==> [D:/lib/SMFL/C++/mingw32/lib/gcc]
+  collapse library dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib/../lib] ==> [D:/lib/SMFL/C++/mingw32/i686-w64-mingw32/lib]
+  collapse library dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../lib] ==> [D:/lib/SMFL/C++/mingw32/lib]
+  collapse library dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/lib] ==> [D:/lib/SMFL/C++/mingw32/i686-w64-mingw32/lib]
+  collapse library dir [D:/lib/SMFL/C++/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../..] ==> [D:/lib/SMFL/C++/mingw32/lib]
   implicit libs: [stdc++;mingw32;gcc_s;gcc;moldname;mingwex;pthread;advapi32;shell32;user32;kernel32;iconv;mingw32;gcc_s;gcc;moldname;mingwex]
-  implicit dirs: [C:/Dev/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0;C:/Dev/C++/mingw32/lib/gcc;C:/Dev/C++/mingw32/i686-w64-mingw32/lib;C:/Dev/C++/mingw32/lib]
+  implicit dirs: [D:/lib/SMFL/C++/mingw32/lib/gcc/i686-w64-mingw32/7.3.0;D:/lib/SMFL/C++/mingw32/lib/gcc;D:/lib/SMFL/C++/mingw32/i686-w64-mingw32/lib;D:/lib/SMFL/C++/mingw32/lib]
   implicit fwks: []
 
 
