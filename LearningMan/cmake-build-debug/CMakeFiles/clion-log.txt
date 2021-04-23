@@ -1,5 +1,0 @@
-C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\marvi\CLionProjects\LearningMan\LearningMan
--- Found SFML 2.5.1 in D:/lib/SMFL/C++/mingw32/lib/cmake/SFML
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug

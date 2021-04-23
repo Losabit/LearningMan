@@ -1,4 +1,5 @@
 #include <iostream>
+#include <list>
 #include "define.hpp"
 #include "controllers/PlayerController.hpp"
 #include "controllers/IAController.hpp"
@@ -25,6 +26,8 @@ int main() {
     Map map = Map();
 
 
+    list<Vector2f> bullets;
+    list<Vector2f> :: iterator it;
     while (window.isOpen())
     {
         Event event;
@@ -47,13 +50,27 @@ int main() {
             }
 
         }
-        playerController.play();
+        Action playerAction = playerController.play();
         shotgunnerController.play();
 
-       window.clear(sf::Color(122,160,122,0));
+
+        if(playerAction == Action::Shoot){
+            bullets.push_back(playerController.character.sprite.getPosition());
+        }
+
+        window.clear(sf::Color(122,160,122,0));
         window.draw(playerController.character.sprite);
         window.draw(shotgunnerController.character.sprite);
         map.drawBackground(window);
+        for(it = bullets.begin(); it != bullets.end();it++){
+            it->x += playerController.character.bulletSpeed;
+            playerController.character.bullet.setPosition(it->x, it->y);
+            window.draw(playerController.character.bullet);
+            if(it->x > 800) { // ou colision
+                it = bullets.erase(it);
+            }
+        }
+
         window.display();
     }
 

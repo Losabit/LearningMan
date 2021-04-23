@@ -1,3 +1,0 @@
-C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/LearningMan.dir
-C:/Users/marvi/CLionProjects/LearningMan/LearningMan/cmake-build-debug/CMakeFiles/edit_cache.dir

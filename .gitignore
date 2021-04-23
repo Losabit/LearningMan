@@ -3,6 +3,8 @@
 
 # Assets
 LearningMan/assets/*
+LearningMan/cmake-build-release/*
+LearningMan/cmake-build-debug/*
 
 # User-specific stuff
 .idea/**/workspace.xml

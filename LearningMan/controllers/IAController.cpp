@@ -5,6 +5,6 @@ IAController::IAController(Character* character1) : Controller(character1)
 
 }
 
-void IAController::play() {
-
+Action IAController::play() {
+    return Action::None;
 }

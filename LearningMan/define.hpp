@@ -1,4 +1,6 @@
 #define CHARACTER_ASSETS_PATH "../assets/characters"
+#define TIME_SHOOT_TO_IDLE 0.5f
+#define TIME_BETWEEN_ANIMATIONS 0.4f
 #define WINDOW_WIDTH 1080
 #define WINDOW_HEIGHT 680
 

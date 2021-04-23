@@ -1,3 +1,0 @@
-C:\Users\marvi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6693.114\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\LearningMan.dir/objects.a
-D:\lib\SMFL\C++\mingw32\bin\ar.exe cr CMakeFiles\LearningMan.dir/objects.a @CMakeFiles\LearningMan.dir\objects1.rsp
-D:\lib\SMFL\C++\mingw32\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\LearningMan.dir/objects.a -Wl,--no-whole-archive -o LearningMan.exe -Wl,--out-implib,libLearningMan.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\LearningMan.dir\linklibs.rsp

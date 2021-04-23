@@ -3,5 +3,6 @@
 class PlayerController : public Controller {
 public:
     PlayerController(Character* character1);
-    void play();
+    Action play();
+
 };

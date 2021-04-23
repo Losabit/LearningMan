@@ -4,6 +4,6 @@ Controller::Controller(Character* character1) {
     character = *character1;
 }
 
-void Controller::play() {
-
+Action Controller::play() {
+    return Action::None;
 }
