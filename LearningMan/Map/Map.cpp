@@ -14,12 +14,29 @@ Map::Map(){
      *
      * Voir ou on la place car bizarre
      */
- //   backgroundMoutain = loadBackground(backgroundTextureMoutain,240,175,180,38,150,85, false);
+ /*
+  * ADD MOUTAIN TO BACKGROUND
+  * ZOOOM
+  */
+ backgroundMoutain = loadBackground(backgroundTextureMoutain,250,175,180,38,150,85, false);
+ //backgroundMoutain.setScale(10,20);
     backgroundGround = loadBackground(backgroundTexutreGround,250,105,300,38,-60,118,true);
     backgroundGround2 = loadBackground(backgroundTexutreGround2,250,105,300,38,30,118,true);
-    addWall();
+    //addWall();
 
 }
+/**
+ * FUNCTION TO LOAD BACKGROUND
+ * @param spriteTexture
+ * @param rl
+ * @param rt
+ * @param rw
+ * @param rh
+ * @param x
+ * @param y
+ * @param repeat
+ * @return
+ */
 Sprite Map::loadBackground( sf::Texture &spriteTexture,int rl, int rt , int  rw,  int rh, int x , int y,bool repeat){
     Sprite bg;
     if (!spriteTexture.loadFromFile("../assets/map/Dungeon_Ruins_Tileset/Dungeon Ruins Tileset Day.png",sf::IntRect(rl,rt,rw,rh)))
