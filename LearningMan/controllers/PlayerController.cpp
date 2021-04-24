@@ -17,10 +17,12 @@ Action PlayerController::play() {
     bool doingSomething = false;
     if(Keyboard::isKeyPressed(Keyboard::D)){
         character.velocity.x += character.speed;
+        character.sprite.setScale(1, 1);
         doingSomething = true;
     }
     else if(Keyboard::isKeyPressed(Keyboard::Q)){
         character.velocity.x -= character.speed;
+        character.sprite.setScale(-1, 1);
         doingSomething = true;
     }
 
@@ -40,7 +42,6 @@ Action PlayerController::play() {
             doingSomething = true;
             character.shoot();
             bullets.push_back(character.sprite.getPosition());
-            std::cout << character.sprite.getScale().x << std::endl;
             bulletsOrientation.push_back(character.sprite.getScale().x);
             return Action::Shoot;
         }
