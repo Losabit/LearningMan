@@ -10,27 +10,20 @@ using namespace sf;
  */
 Map::Map(){
 
-    backgroundMoon = loadBackground(backgroundTextureMoon,430,0,90,90,950,6, false);
+    backgroundMoon = loadBackground(backgroundTextureMoon,430,0,90,90,950,15, false);
+    backgroundMoon.setScale(2,2);
     backgroundCloud = loadBackground(backgroundTextureCloud,400,210,120,60,900,40, false);
-    /*
-     *
-     * Voir ou on la place car bizarre
-     */
+
  /*
   * ADD MOUTAIN TO BACKGROUND
   * ZOOOM
   */
-<<<<<<< HEAD
- // backgroundMoutain = loadBackground(backgroundTextureMoutain,250,175,180,38,150,85, false);
- //backgroundMoutain.setScale(10,20);
     backgroundGround = loadBackground(backgroundTexutreGround,250,105,300,38,-60,118,true);
     backgroundGround2 = loadBackground(backgroundTexutreGround2,250,105,300,38,30,118,true);
-=======
- backgroundMoutain = loadBackground(backgroundTextureMoutain,250,175,180,38,150,85, false);
-   backgroundMoutain.setScale(4,2);
+    backgroundMoutain = loadBackground(backgroundTextureMoutain,250,175,180,38,430,545, false);
+    backgroundMoutain.setScale(4,2);
     backgroundGround = loadBackground(backgroundTexutreGround,250,105,300,38,-60,600,true);
     backgroundGround2 = loadBackground(backgroundTexutreGround2,250,105,300,38,30,600,true);
->>>>>>> b4e1fddf7a3831bdb47cfb82b6ba9e76438b6e93
     addWall();
 
 }
@@ -68,14 +61,15 @@ void Map::addWall(){
     /**
      * TODO: Preparer la génération aléatoire
      */
-    bigWall = loadBackground(TextureBigWall,0,0,WALL_SIZE,WALL_SIZE,100,65, false);
+    bigWall = loadBackground(TextureBigWall,0,0,WALL_SIZE,WALL_SIZE,100,545, false);
 }
 
 void Map::drawBackground(RenderWindow &window)
 {
+    window.draw(backgroundMoutain);
+
     window.draw(backgroundMoon);
     window.draw(backgroundCloud);
-    window.draw(backgroundMoutain);
     window.draw(backgroundGround);
     window.draw(backgroundGround2);
     window.draw(this->bigWall);
