@@ -6,23 +6,28 @@
 
 
 /*
- [[1]]
-[[1, 2, 3],
-[4, 5, 6]]
+ * order :
+ [[0]]
+[[0, 1, 2],
+[3, 4, 5]]
 
- [[1, 3, 5],
- [2, 4, 6]]
+ [[0, 2, 4],
+ [1, 3, 5]]
  */
 //utiliser une struct et classe static pour moins d'espace utilisé ?
+//trier un tableau a l'avance pour plus de rapidité
 class TextureManager {
 public:
     TextureManager();
     TextureManager(std::string path, sf::IntRect rect1);
     TextureManager(std::string path, sf::IntRect rect1,
                    std::list<std::list<int>> order1, float topLag1, float leftLag1);
+
     sf::Texture texture;
     sf::IntRect rect;
     sf::Sprite toSprite();
+    sf::Sprite toSprite(int number);
+    int getSize();
 
 private:
     std::list<std::list<int>> order;

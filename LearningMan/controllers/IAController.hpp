@@ -6,7 +6,7 @@
 class IAController : public Controller {
 public:
     IAController(Character* character1);
-    Action play();
+    virtual Action play(Character ennemie);
 
 };
 

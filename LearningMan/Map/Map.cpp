@@ -19,10 +19,10 @@ Map::Map(){
   * ZOOOM
   */
  backgroundMoutain = loadBackground(backgroundTextureMoutain,250,175,180,38,150,85, false);
- //backgroundMoutain.setScale(10,20);
-    backgroundGround = loadBackground(backgroundTexutreGround,250,105,300,38,-60,118,true);
-    backgroundGround2 = loadBackground(backgroundTexutreGround2,250,105,300,38,30,118,true);
-    //addWall();
+   backgroundMoutain.setScale(4,2);
+    backgroundGround = loadBackground(backgroundTexutreGround,250,105,300,38,-60,600,true);
+    backgroundGround2 = loadBackground(backgroundTexutreGround2,250,105,300,38,30,600,true);
+    addWall();
 
 }
 /**

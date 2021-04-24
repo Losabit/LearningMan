@@ -21,7 +21,7 @@ protected:
     TextureManager textureIdle;
     TextureManager textureShoot;
     TextureManager textureBullet;
-    int health = 10;
+    int health = 5;
     float speed = 1.0;
     float shootCooldown = 1.0f;
 

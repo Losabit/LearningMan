@@ -1,0 +1,22 @@
+{
+  "objects": [
+    {
+      "id": 1,
+      "scaleX": 2,
+      "scaleY": 1,
+      "positionX": 300,
+      "positionY": 100
+    },
+    {
+
+    }
+  ],
+  "ennemies": [
+    {
+
+    },
+    {
+
+    }
+  ]
+}
