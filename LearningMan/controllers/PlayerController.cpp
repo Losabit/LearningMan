@@ -1,3 +1,4 @@
+#include <cmath>
 #include "PlayerController.hpp"
 #include "SFML/Graphics.hpp"
 
@@ -12,14 +13,26 @@ Action PlayerController::play(Character ennemie){
 }
 
 Action PlayerController::play() {
+    character.velocity.x *= 0.2f;
     bool doingSomething = false;
     if(Keyboard::isKeyPressed(Keyboard::D)){
+        character.velocity.x += character.speed;
         doingSomething = true;
-        character.move(1);
     }
     else if(Keyboard::isKeyPressed(Keyboard::Q)){
+        character.velocity.x -= character.speed;
         doingSomething = true;
-        character.move(-1);
+    }
+
+    if (Keyboard::isKeyPressed(Keyboard::Z) && character.canJump) {
+        character.canJump = false;
+        character.velocity.y = -sqrtf(2.0f * character.gravity * character.jumpHeight);
+    }
+    if (character.sprite.getPosition().y >= 581 - 20) {
+        character.canJump = true;
+        character.sprite.setPosition(character.sprite.getPosition().x, 580 - 15);
+    } else {
+        character.velocity.y += character.gravity;
     }
 
     if(Keyboard::isKeyPressed(Keyboard::Space)){
@@ -36,6 +49,8 @@ Action PlayerController::play() {
     if(!doingSomething){
         character.wait();
     }
+
+    character.sprite.move(character.velocity);
 
     return Action::None;
 }
