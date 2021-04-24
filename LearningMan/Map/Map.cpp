@@ -12,12 +12,8 @@ Map::Map(){
 
     backgroundMoon = loadBackground(backgroundTextureMoon,430,0,90,90,950,15, false);
     backgroundMoon.setScale(2,2);
-    backgroundCloud = loadBackground(backgroundTextureCloud,400,210,120,60,900,40, false);
-
- /*
-  * ADD MOUTAIN TO BACKGROUND
-  * ZOOOM
-  */
+    backgroundCloud = loadBackground(backgroundTextureCloud,400,210,120,60,900,75, false);
+    backgroundCloud.setScale(1.5,1.5);
     backgroundGround = loadBackground(backgroundTexutreGround,250,105,300,38,-60,118,true);
     backgroundGround2 = loadBackground(backgroundTexutreGround2,250,105,300,38,30,118,true);
     backgroundMoutain = loadBackground(backgroundTextureMoutain,250,175,180,38,430,545, false);
