@@ -42,6 +42,7 @@ int main() {
             cout << playerController.character.sprite.getPosition().x << endl;
 
             if(  playerController.character.sprite.getGlobalBounds().intersects(map.bigWall.getGlobalBounds())){
+                heros.move(-1);
                 cout << "On touche le mur"<< endl;
             }
             else {

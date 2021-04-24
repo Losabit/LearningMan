@@ -5,7 +5,9 @@
 #include "Map.h"
 using namespace std;
 using namespace sf;
-
+/**
+ * Map génération
+ */
 Map::Map(){
 
     backgroundMoon = loadBackground(backgroundTextureMoon,430,0,90,90,950,6, false);
@@ -18,11 +20,11 @@ Map::Map(){
   * ADD MOUTAIN TO BACKGROUND
   * ZOOOM
   */
- backgroundMoutain = loadBackground(backgroundTextureMoutain,250,175,180,38,150,85, false);
+ // backgroundMoutain = loadBackground(backgroundTextureMoutain,250,175,180,38,150,85, false);
  //backgroundMoutain.setScale(10,20);
     backgroundGround = loadBackground(backgroundTexutreGround,250,105,300,38,-60,118,true);
     backgroundGround2 = loadBackground(backgroundTexutreGround2,250,105,300,38,30,118,true);
-    //addWall();
+    addWall();
 
 }
 /**
