@@ -17,12 +17,17 @@ public:
     Sprite bullet;
     float bulletSpeed = 5.0f;
 
+    sf::Vector2f velocity;
+    float speed = 4;
+    bool canJump = true;
+    float gravity = 1.0f;
+    float jumpHeight = 80;
+
 protected:
     TextureManager textureIdle;
     TextureManager textureShoot;
     TextureManager textureBullet;
     int health = 5;
-    float speed = 1.0;
     float shootCooldown = 1.0f;
 
 private:
