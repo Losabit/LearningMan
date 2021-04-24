@@ -7,6 +7,10 @@ PlayerController::PlayerController(Character *character1) : Controller(character
 
 }
 
+Action PlayerController::play(Character ennemie){
+    return play();
+}
+
 Action PlayerController::play() {
     bool doingSomething = false;
     if(Keyboard::isKeyPressed(Keyboard::D)){
@@ -22,6 +26,9 @@ Action PlayerController::play() {
         if(character.canShoot()){
             doingSomething = true;
             character.shoot();
+            bullets.push_back(character.sprite.getPosition());
+            std::cout << character.sprite.getScale().x << std::endl;
+            bulletsOrientation.push_back(character.sprite.getScale().x);
             return Action::Shoot;
         }
     }

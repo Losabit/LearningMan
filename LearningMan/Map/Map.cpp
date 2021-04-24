@@ -20,10 +20,17 @@ Map::Map(){
   * ADD MOUTAIN TO BACKGROUND
   * ZOOOM
   */
+<<<<<<< HEAD
  // backgroundMoutain = loadBackground(backgroundTextureMoutain,250,175,180,38,150,85, false);
  //backgroundMoutain.setScale(10,20);
     backgroundGround = loadBackground(backgroundTexutreGround,250,105,300,38,-60,118,true);
     backgroundGround2 = loadBackground(backgroundTexutreGround2,250,105,300,38,30,118,true);
+=======
+ backgroundMoutain = loadBackground(backgroundTextureMoutain,250,175,180,38,150,85, false);
+   backgroundMoutain.setScale(4,2);
+    backgroundGround = loadBackground(backgroundTexutreGround,250,105,300,38,-60,600,true);
+    backgroundGround2 = loadBackground(backgroundTexutreGround2,250,105,300,38,30,600,true);
+>>>>>>> b4e1fddf7a3831bdb47cfb82b6ba9e76438b6e93
     addWall();
 
 }

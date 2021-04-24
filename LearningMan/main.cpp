@@ -6,28 +6,31 @@
 #include "characters/Heros.hpp"
 #include "characters/Shotgunner.hpp"
 #include "Map/Map.h"
+#include "utils/BulletManager.hpp"
 
 
 using namespace std;
 
 //ToDo
-//animations tir en continue
 int main() {
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "LearningMan");
     window.setFramerateLimit(60);
 
     Character heros = Heros();
     PlayerController playerController(&heros);
-    playerController.character.sprite.move(0, 100);
+    playerController.character.sprite.move(0, 580);
 
     Character shotgunner = Shotgunner();
     IAController shotgunnerController(&shotgunner);
-    shotgunnerController.character.sprite.move(600, 100);
+    shotgunnerController.character.sprite.move(600, 575);
+    shotgunnerController.character.sprite.setScale(-1, 1);
+
+    list<Controller*> ennemies;
+    list<Controller*> :: iterator itEnnemies;
+    ennemies.push_back(&shotgunnerController);
+
     Map map = Map();
 
-
-    list<Vector2f> bullets;
-    list<Vector2f> :: iterator it;
     while (window.isOpen())
     {
         Event event;
@@ -37,43 +40,35 @@ int main() {
                 window.close();
                 return 0;
             }
+        }
 
-            cout << map.bigWall.getPosition().x << endl;
-            cout << playerController.character.sprite.getPosition().x << endl;
-
+        /*
             if(  playerController.character.sprite.getGlobalBounds().intersects(map.bigWall.getGlobalBounds())){
                 heros.move(-1);
                 cout << "On touche le mur"<< endl;
+               cout << "On touche le mur"<< endl;
             }
             else {
-                cout << "On touche pas "<< endl;
+               cout << "On touche pas "<< endl;
 
             }
+        */
 
-        }
-        Action playerAction = playerController.play();
-        shotgunnerController.play();
-
-
-        if(playerAction == Action::Shoot){
-            bullets.push_back(playerController.character.sprite.getPosition());
+        playerController.play();
+        for(itEnnemies = ennemies.begin(); itEnnemies != ennemies.end();itEnnemies++){
+            (*itEnnemies)->play(playerController.character);
         }
 
         window.clear(sf::Color(122,160,122,0));
         window.draw(playerController.character.sprite);
-        window.draw(shotgunnerController.character.sprite);
-        map.drawBackground(window);
-        for(it = bullets.begin(); it != bullets.end();it++){
-            it->x += playerController.character.bulletSpeed;
-            playerController.character.bullet.setPosition(it->x, it->y);
-            window.draw(playerController.character.bullet);
-            if(it->x > 800) { // ou colision
-                it = bullets.erase(it);
-            }
+        BulletManager::manageBullets(&playerController, &ennemies, &window);
+        for(itEnnemies = ennemies.begin(); itEnnemies != ennemies.end();itEnnemies++) {
+            window.draw((*itEnnemies)->character.sprite);
+            BulletManager::manageBullets((*itEnnemies), &playerController, &window);
         }
+        map.drawBackground(window);
 
         window.display();
     }
-
     return 0;
 }
