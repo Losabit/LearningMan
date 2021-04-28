@@ -55,18 +55,28 @@ int main() {
 //        rectangle2.setPosition(boudingBox2.left,boudingBox2.top);
 
  // Gestion des colision en X
+
         if(playerController.character.sprite.getPosition().x + playerController.character.sprite.getGlobalBounds().width >  map.bigWall.getPosition().x
          &&  playerController.character.sprite.getPosition().x + playerController.character.sprite.getGlobalBounds().width < map.bigWall.getPosition().x + map.bigWall.getGlobalBounds().width
          ){
-            if( playerController.character.sprite.getPosition().y > map.bigWall.getPosition().y - map.bigWall.getGlobalBounds().height){
+            cout << "Before jump" << playerController.character.sprite.getPosition().y << endl ;
+            if( playerController.character.sprite.getPosition().y > map.bigWall.getGlobalBounds().top){
+                playerController.GRAVITY_POINT = 580 - 20;
                 playerController.character.sprite.setPosition(map.bigWall.getPosition().x - playerController.character.sprite.getLocalBounds().width ,playerController.character.sprite.getPosition().y);
+                cout << "La 2 " << endl;
 
             }
             else {
                 cout << "la " ;
-                playerController.character.sprite.setPosition(playerController.character.sprite.getPosition().x , map.bigWall.getPosition().y - map.bigWall.getGlobalBounds().height - 5);
+                playerController.GRAVITY_POINT = map.bigWall.getGlobalBounds().top;
+                playerController.character.sprite.setPosition(playerController.character.sprite.getPosition().x , map.bigWall.getGlobalBounds().top);
 
             }
+
+        }
+        if( playerController.character.sprite.getPosition().x + playerController.character.sprite.getGlobalBounds().width > map.bigWall.getPosition().x + map.bigWall.getGlobalBounds().width){
+            playerController.GRAVITY_POINT = 563;
+            cout << "Ap jump" << playerController.character.sprite.getPosition().y << endl ;
 
         }
         playerController.play();

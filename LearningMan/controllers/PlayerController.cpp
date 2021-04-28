@@ -30,9 +30,9 @@ Action PlayerController::play() {
         character.canJump = false;
         character.velocity.y = -sqrtf(2.0f * character.gravity * character.jumpHeight);
     }
-    if (character.sprite.getPosition().y >= 581 - 20) {
+    if (character.sprite.getPosition().y >= GRAVITY_POINT) {
         character.canJump = true;
-        character.sprite.setPosition(character.sprite.getPosition().x, 580 - 15);
+        character.sprite.setPosition(character.sprite.getPosition().x, GRAVITY_POINT);
     } else {
         character.velocity.y += character.gravity;
     }

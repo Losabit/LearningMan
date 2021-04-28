@@ -5,4 +5,5 @@ public:
     PlayerController(Character* character1);
     Action play();
     Action play(Character ennemie);
+    float GRAVITY_POINT =  581 - 20;
 };
