@@ -58,6 +58,7 @@ void Map::addWall(){
      * TODO: Preparer la génération aléatoire
      */
     bigWall = loadBackground(TextureBigWall,0,0,WALL_SIZE,WALL_SIZE,100,545, false);
+
 }
 
 void Map::drawBackground(RenderWindow &window)
