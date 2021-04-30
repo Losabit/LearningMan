@@ -2,7 +2,8 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # Assets
-LearningMan/assets/*
+LearningMan/assets/characters
+LearningMan/assets/map
 LearningMan/cmake-build-release/*
 LearningMan/cmake-build-debug/*
 
