@@ -26,14 +26,17 @@ Action PlayerController::play() {
         doingSomething = true;
     }
 
+    std::cout << character.sprite.getPosition().y << std::endl;
     if (Keyboard::isKeyPressed(Keyboard::Z) && character.canJump) {
+        jumpPosition = character.sprite.getPosition();
         character.canJump = false;
         character.velocity.y = -sqrtf(2.0f * character.gravity * character.jumpHeight);
     }
-    if (character.sprite.getPosition().y >= 581 - 20) {
+
+    if (character.sprite.getPosition().y >= GRAVITY_POINT) {
         character.canJump = true;
-        character.sprite.setPosition(character.sprite.getPosition().x, 580 - 15);
-    } else {
+        character.sprite.setPosition(character.sprite.getPosition().x, GRAVITY_POINT);
+    } else if(!character.canJump) {
         character.velocity.y += character.gravity;
     }
 
@@ -41,7 +44,12 @@ Action PlayerController::play() {
         if(character.canShoot()){
             doingSomething = true;
             character.shoot();
-            bullets.push_back(character.sprite.getPosition());
+            if(character.sprite.getScale().x == -1){
+                bullets.push_back(character.sprite.getPosition() - sf::Vector2f(100,0));
+            }
+            else{
+                bullets.push_back(character.sprite.getPosition());
+            }
             bulletsOrientation.push_back(character.sprite.getScale().x);
             return Action::Shoot;
         }

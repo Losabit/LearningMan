@@ -7,6 +7,7 @@
 #include "characters/Shotgunner.hpp"
 #include "Map/Map.h"
 #include "utils/BulletManager.hpp"
+#include "GUI/Button.hpp"
 
 
 using namespace std;
@@ -18,7 +19,7 @@ int main() {
 
     Character heros = Heros();
     PlayerController playerController(&heros);
-    playerController.character.sprite.move(0, 580);
+    playerController.character.sprite.move(0, 583);
 
     Character shotgunner = Shotgunner();
     IAController shotgunnerController(&shotgunner);
@@ -30,6 +31,18 @@ int main() {
     ennemies.push_back(&shotgunnerController);
 
     Map map = Map();
+
+
+    bool startGame = false;
+    Button button("../assets/button/simple/12.png",
+                  IntRect(40,140,480,480),
+                  "../ressources/policy/OrelegaOne-Regular.ttf");
+    button.sprite.setScale(0.5,0.5);
+    button.setPosition(Vector2f(400,300));
+    button.text.setString("Play");
+    button.text.setCharacterSize(24);
+    button.text.setFillColor(sf::Color::White);
+    button.text.move(70, 30);
 
     while (window.isOpen())
     {
@@ -52,20 +65,34 @@ int main() {
             }
         */
 
-        playerController.play();
-        for(itEnnemies = ennemies.begin(); itEnnemies != ennemies.end();itEnnemies++){
-            (*itEnnemies)->play(playerController.character);
+        if(startGame) {
+            playerController.play();
+            for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
+                (*itEnnemies)->play(playerController.character);
+            }
+        }
+        else{
+            if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
+            {
+                if(button.sprite.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                    startGame = true;
+                }
+            }
         }
 
         window.clear(sf::Color(122,160,122,0));
-        window.draw(playerController.character.sprite);
-        BulletManager::manageBullets(&playerController, &ennemies, &window);
-        for(itEnnemies = ennemies.begin(); itEnnemies != ennemies.end();itEnnemies++) {
-            window.draw((*itEnnemies)->character.sprite);
-            BulletManager::manageBullets((*itEnnemies), &playerController, &window);
+        if(startGame) {
+            window.draw(playerController.character.sprite);
+            BulletManager::manageBullets(&playerController, &ennemies, &window);
+            for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
+                window.draw((*itEnnemies)->character.sprite);
+                BulletManager::manageBullets((*itEnnemies), &playerController, &window);
+            }
+            map.drawBackground(window);
         }
-        map.drawBackground(window);
-
+        else{
+            button.draw(&window);
+        }
         window.display();
     }
     return 0;
