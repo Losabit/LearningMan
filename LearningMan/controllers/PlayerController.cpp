@@ -1,14 +1,18 @@
 #include <cmath>
 #include "PlayerController.hpp"
 #include "SFML/Graphics.hpp"
+#include "../utils/SoundPlayer.hpp"
 
 
 PlayerController::PlayerController(Character *character1) : Controller(character1)
 {
-
+    SoundPlayer soundPlayer;
+    this->sp = soundPlayer;
 }
 
 Action PlayerController::play(Character ennemie){
+    SoundPlayer soundPlayer;
+    this->sp = soundPlayer;
     return play();
 }
 
@@ -31,12 +35,13 @@ Action PlayerController::play() {
         jumpPosition = character.sprite.getPosition();
         character.canJump = false;
         character.velocity.y = -sqrtf(2.0f * character.gravity * character.jumpHeight);
+        this->sp.playSound("jump.wav");
     }
 
     if (character.sprite.getPosition().y >= GRAVITY_POINT) {
         character.canJump = true;
         character.sprite.setPosition(character.sprite.getPosition().x, GRAVITY_POINT);
-    } else if(!character.canJump) {
+    } else {
         character.velocity.y += character.gravity;
     }
 
@@ -50,6 +55,7 @@ Action PlayerController::play() {
             else{
                 bullets.push_back(character.sprite.getPosition());
             }
+            this->sp.playSound("shoot.wav");
             bulletsOrientation.push_back(character.sprite.getScale().x);
             return Action::Shoot;
         }

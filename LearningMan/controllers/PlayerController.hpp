@@ -1,4 +1,5 @@
 #include "Controller.hpp"
+#include "../utils/SoundPlayer.hpp"
 
 class PlayerController : public Controller {
 public:
@@ -8,4 +9,5 @@ public:
     float GRAVITY_POINT =  581 - 20;
 private:
     Vector2f jumpPosition;
+    SoundPlayer sp;
 };
