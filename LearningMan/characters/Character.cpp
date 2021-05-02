@@ -15,6 +15,11 @@ void Character::move(int direction) {
     sprite.move(direction * speed, 0);
 }
 
+void Character::moving(){
+    sprite.setTextureRect(textureMoving.rect);
+    sprite.setTexture(textureMoving.texture);
+}
+
 void Character::shoot(){
     Vector2f scale = sprite.getScale();
     sprite = textureShoot.toSprite(sprite.getPosition());

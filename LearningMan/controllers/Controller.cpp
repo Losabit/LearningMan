@@ -38,11 +38,13 @@ Action Controller::play() {
     bool doingSomething = false;
     if(isGoingRight()){
         character.velocity.x += character.speed;
+        character.moving();
         character.sprite.setScale(1, 1);
         doingSomething = true;
     }
     else if(isGoingLeft()){
         character.velocity.x -= character.speed;
+        character.moving();
         character.sprite.setScale(-1, 1);
         doingSomething = true;
     }

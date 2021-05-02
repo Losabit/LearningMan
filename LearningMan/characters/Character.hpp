@@ -11,6 +11,7 @@ public:
     void move(int direction);
     void shoot();
     void wait();
+    void moving();
     bool canShoot();
     bool takeDamage(int damage);
     Sprite sprite;
@@ -28,6 +29,7 @@ protected:
     TextureManager textureIdle;
     TextureManager textureShoot;
     TextureManager textureBullet;
+    TextureManager textureMoving;
     float shootCooldown = 1.0f;
 
 private:

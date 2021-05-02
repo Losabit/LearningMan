@@ -33,6 +33,8 @@ int main() {
     list<Controller*> :: iterator itEnnemies;
     ennemies.push_back(&shotgunnerController);
 
+    sf::View view(sf::FloatRect(0, 0, 400.f, 250.f));
+
     Map map = Map();
     Button button("../assets/button/simple/12.png",
                   IntRect(40,140,480,480),
@@ -128,6 +130,8 @@ int main() {
                 for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
                     (*itEnnemies)->play(playerController.character);
                 }
+                view.setCenter(playerController.character.sprite.getPosition());
+                window.setView(view);
             }
             else {
                 // Pause menu
