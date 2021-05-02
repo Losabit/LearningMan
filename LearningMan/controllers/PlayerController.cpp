@@ -19,13 +19,14 @@ Action PlayerController::play(Character ennemie){
 Action PlayerController::play() {
     character.velocity.x *= 0.2f;
     bool doingSomething = false;
-    if (Keyboard::isKeyPressed(Keyboard::D)) {
+    if(Keyboard::isKeyPressed(Keyboard::D)){
         character.velocity.x += character.speed;
         character.sprite.setScale(1, 1);
         doingSomething = true;
         right = true;
         left = false;
-    } else if (Keyboard::isKeyPressed(Keyboard::Q)) {
+    }
+    else if(Keyboard::isKeyPressed(Keyboard::Q)) {
         character.velocity.x -= character.speed;
         character.sprite.setScale(-1, 1);
         doingSomething = true;

@@ -90,21 +90,26 @@ int main() {
 
                 if (playerController.left) {
                     if (playerController.character.sprite.getPosition().x <
-                        map.bigWall.getPosition().x + map.bigWall.getGlobalBounds().width + 38) {
+                        map.bigWall.getPosition().x + map.bigWall.getGlobalBounds().width + 35 && playerController.character.sprite.getPosition().x > map.bigWall.getPosition().x ) {
                         if (playerController.character.sprite.getPosition().y > map.bigWall.getGlobalBounds().top) {
                             playerController.GRAVITY_POINT = 580 - 20;
                             playerController.character.sprite.setPosition(
-                                    map.bigWall.getPosition().x + map.bigWall.getGlobalBounds().width + 40,
+                                    map.bigWall.getPosition().x + map.bigWall.getGlobalBounds().width + 38,
                                     playerController.character.sprite.getPosition().y);
-
-                        } else {
-                            playerController.GRAVITY_POINT = map.bigWall.getGlobalBounds().top;
-                            playerController.character.sprite.setPosition(
-                                    playerController.character.sprite.getPosition().x,
-                                    map.bigWall.getGlobalBounds().top);
 
                         }
 
+//                        else {
+//                            playerController.GRAVITY_POINT = map.bigWall.getGlobalBounds().top-10;
+//                            playerController.character.sprite.setPosition(
+//                                    playerController.character.sprite.getPosition().x,
+//                                    map.bigWall.getGlobalBounds().top - 10);
+//
+//                        }
+
+                    }
+                    else {
+                        playerController.GRAVITY_POINT = 540;
                     }
                 }
                 // Gestion des colision en X
