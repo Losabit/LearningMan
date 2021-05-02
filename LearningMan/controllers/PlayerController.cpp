@@ -19,18 +19,21 @@ Action PlayerController::play(Character ennemie){
 Action PlayerController::play() {
     character.velocity.x *= 0.2f;
     bool doingSomething = false;
-    if(Keyboard::isKeyPressed(Keyboard::D)){
+    if (Keyboard::isKeyPressed(Keyboard::D)) {
         character.velocity.x += character.speed;
         character.sprite.setScale(1, 1);
         doingSomething = true;
-    }
-    else if(Keyboard::isKeyPressed(Keyboard::Q)){
+        right = true;
+        left = false;
+    } else if (Keyboard::isKeyPressed(Keyboard::Q)) {
         character.velocity.x -= character.speed;
         character.sprite.setScale(-1, 1);
         doingSomething = true;
+        right = false;
+        left = true;
     }
 
-    std::cout << character.sprite.getPosition().y << std::endl;
+    //  std::cout << character.sprite.getPosition().y << std::endl;
     if (Keyboard::isKeyPressed(Keyboard::Z) && character.canJump) {
         jumpPosition = character.sprite.getPosition();
         character.canJump = false;

@@ -18,7 +18,7 @@ public:
     void addWall();
 
     sf::Sprite bigWall;
-    int WALL_SIZE = 65;
+    int WALL_SIZE = 63;
 private:
     sf::Texture backgroundTextureMoon;
     sf::Texture TextureBigWall;

@@ -7,6 +7,9 @@ public:
     Action play();
     Action play(Character ennemie);
     float GRAVITY_POINT =  581 - 20;
+    bool  left = false;
+    bool right = true;
+    
 private:
     Vector2f jumpPosition;
     SoundPlayer sp;
