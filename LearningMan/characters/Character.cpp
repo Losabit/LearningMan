@@ -8,9 +8,7 @@ Character::Character(){
 
 void Character::move(int direction) {
     if(clockBullet.getElapsedTime().asSeconds() > TIME_SHOOT_TO_IDLE && sprite.getTexture() != &textureIdle.texture){
-        IntRect rect = sprite.getTextureRect();
-        rect.width = 40;
-        sprite.setTextureRect(rect);
+        sprite.setTextureRect(textureIdle.rect);
         sprite.setTexture(textureIdle.texture);
     }
     sprite.setScale(direction, 1);
@@ -18,8 +16,9 @@ void Character::move(int direction) {
 }
 
 void Character::shoot(){
-    sprite.setTextureRect(textureShoot.rect);
-    sprite.setTexture(textureShoot.texture);
+    Vector2f scale = sprite.getScale();
+    sprite = textureShoot.toSprite(sprite.getPosition());
+    sprite.setScale(scale);
 }
 
 bool Character::canShoot(){
@@ -32,9 +31,7 @@ bool Character::canShoot(){
 
 void Character::wait() {
     if(clockBullet.getElapsedTime().asSeconds() > TIME_SHOOT_TO_IDLE && sprite.getTexture() != &textureIdle.texture){
-        IntRect rect = sprite.getTextureRect();
-        rect.width = 40;
-        sprite.setTextureRect(rect);
+        sprite.setTextureRect(textureIdle.rect);
         sprite.setTexture(textureIdle.texture);
     }
 }

@@ -25,6 +25,18 @@ sf::Sprite TextureManager::toSprite() {
     return sf::Sprite(texture, rect);
 }
 
+sf::Sprite TextureManager::toSprite(sf::Vector2f position) {
+    sf::Sprite sprite(texture, rect);
+    sprite.setPosition(position);
+    return sprite;
+}
+
+sf::Sprite TextureManager::toSprite(int number, sf::Vector2f position) {
+    sf::Sprite sprite = toSprite(number);
+    sprite.setPosition(position);
+    return sprite;
+}
+
 sf::Sprite TextureManager::toSprite(int number) {
     bool found = false;
     int x = 0;
@@ -37,18 +49,17 @@ sf::Sprite TextureManager::toSprite(int number) {
                 found = true;
                 break;
             }
-            y++;
+            x++;
         }
         if(found){
             break;
         }
-        x++;
-        y = 0;
+        y++;
+        x = 0;
     }
-
     sf::IntRect newRect = rect;
-    rect.left += leftLag * x;
-    rect.top += topLag * x;
+    newRect.left += leftLag * x;
+    newRect.top += topLag * y;
     return sf::Sprite(texture, newRect);
 }
 

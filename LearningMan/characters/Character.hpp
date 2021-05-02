@@ -22,12 +22,12 @@ public:
     bool canJump = true;
     float gravity = 1.0f;
     float jumpHeight = 80;
+    int health = 5;
 
 protected:
     TextureManager textureIdle;
     TextureManager textureShoot;
     TextureManager textureBullet;
-    int health = 5;
     float shootCooldown = 1.0f;
 
 private:

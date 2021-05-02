@@ -1,13 +1,12 @@
 #include "Controller.hpp"
-#include "../utils/SoundPlayer.hpp"
 
 class PlayerController : public Controller {
 public:
     PlayerController(Character* character1);
-    Action play();
-    Action play(Character ennemie);
-    float GRAVITY_POINT =  581 - 20;
-private:
-    Vector2f jumpPosition;
-    SoundPlayer sp;
+
+protected:
+    virtual bool isGoingRight();
+    virtual bool isGoingLeft();
+    virtual bool isJumping();
+    virtual bool isShooting();
 };

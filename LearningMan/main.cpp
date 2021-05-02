@@ -8,6 +8,7 @@
 #include "Map/Map.h"
 #include "utils/BulletManager.hpp"
 #include "GUI/Button.hpp"
+#include "GUI/Container.hpp"
 
 
 using namespace std;
@@ -32,7 +33,6 @@ int main() {
     ennemies.push_back(&shotgunnerController);
 
     Map map = Map();
-    bool startGame = false;
     Button button("../assets/button/simple/12.png",
                   IntRect(40,140,480,480),
                   "../ressources/policy/OrelegaOne-Regular.ttf");
@@ -42,9 +42,15 @@ int main() {
     button.text.setCharacterSize(24);
     button.text.setFillColor(sf::Color::White);
     button.text.move(70, 30);
+
+    Texture textureHealth;
+    textureHealth.loadFromFile(GUI_ASSETS_PATH "/health.png");
+    Sprite spriteHealth(textureHealth, IntRect(0, 0, 901, 900));
+    spriteHealth.setScale(0.05, 0.05);
+    Container containerHealth(spriteHealth, 5, 45);
+
     bool paused = false;
-
-
+    bool startGame = false;
     while (window.isOpen())
     {
         Event event;
@@ -81,16 +87,16 @@ int main() {
                        playerController.character.sprite.getGlobalBounds().width <
                        map.bigWall.getPosition().x + map.bigWall.getGlobalBounds().width
                         ) {
-                    cout << "Before jump" << playerController.character.sprite.getPosition().y << endl;
+                    //cout << "Before jump" << playerController.character.sprite.getPosition().y << endl;
                     if (playerController.character.sprite.getPosition().y > map.bigWall.getGlobalBounds().top) {
                         playerController.GRAVITY_POINT = 580 - 20;
                         playerController.character.sprite.setPosition(
                                 map.bigWall.getPosition().x - playerController.character.sprite.getLocalBounds().width,
                                 playerController.character.sprite.getPosition().y);
-                        cout << "La 2 " << endl;
+                        //cout << "La 2 " << endl;
 
                     } else {
-                        cout << "la ";
+                        //cout << "la ";
                         playerController.GRAVITY_POINT = map.bigWall.getGlobalBounds().top;
                         playerController.character.sprite.setPosition(playerController.character.sprite.getPosition().x,
                                                                       map.bigWall.getGlobalBounds().top);
@@ -102,7 +108,7 @@ int main() {
                     playerController.character.sprite.getGlobalBounds().width >
                     map.bigWall.getPosition().x + map.bigWall.getGlobalBounds().width) {
                     playerController.GRAVITY_POINT = 563;
-                    cout << "Ap jump" << playerController.character.sprite.getPosition().y << endl;
+                    //cout << "Ap jump" << playerController.character.sprite.getPosition().y << endl;
 
                 }
                 playerController.play();
@@ -125,6 +131,8 @@ int main() {
 
         window.clear(sf::Color(122,160,122,0));
         if(startGame) {
+            containerHealth.number = playerController.character.health;
+            containerHealth.draw(&window);
             window.draw(playerController.character.sprite);
             BulletManager::manageBullets(&playerController, &ennemies, &window);
             for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {

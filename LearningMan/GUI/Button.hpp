@@ -2,7 +2,7 @@
 #define TESTSFML_BUTTON_HPP
 #include <SFML/Graphics.hpp>
 
-class Button : public sf::Sprite {
+class Button {
 public:
     Button(std::string texturePath, sf::IntRect rect1);
     Button(std::string texturePath, sf::IntRect rect1, sf::Text text1);

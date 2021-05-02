@@ -6,8 +6,12 @@
 class IAController : public Controller {
 public:
     IAController(Character* character1);
-    virtual Action play(Character ennemie);
 
+protected:
+    virtual bool isGoingRight();
+    virtual bool isGoingLeft();
+    virtual bool isJumping();
+    virtual bool isShooting();
 };
 
 

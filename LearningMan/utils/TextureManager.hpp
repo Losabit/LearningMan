@@ -27,7 +27,9 @@ public:
     sf::Texture texture;
     sf::IntRect rect;
     sf::Sprite toSprite();
+    sf::Sprite toSprite(sf::Vector2f position);
     sf::Sprite toSprite(int number);
+    sf::Sprite toSprite(int number, sf::Vector2f position);
     int getSize();
 
 private:

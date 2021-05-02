@@ -1,4 +1,6 @@
-#define CHARACTER_ASSETS_PATH "../assets/characters"
+#define ASSETS_PATH "../assets"
+#define CHARACTER_ASSETS_PATH ASSETS_PATH "/characters"
+#define GUI_ASSETS_PATH ASSETS_PATH "/GUI"
 #define TIME_SHOOT_TO_IDLE 0.5f
 #define TIME_BETWEEN_ANIMATIONS 0.4f
 #define WINDOW_WIDTH 1080
