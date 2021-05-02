@@ -1,7 +1,7 @@
 #include "Controller.hpp"
 #include <math.h>
 
-Controller::Controller(Character* character1) {
+Controller::Controller(Character *character1) {
     character = *character1;
 }
 

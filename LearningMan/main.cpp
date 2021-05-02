@@ -15,6 +15,7 @@ using namespace std;
 
 //ToDo
 int main() {
+    int SHOWHITBOX = 1;
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "LearningMan");
     window.setFramerateLimit(60);
 
@@ -68,48 +69,60 @@ int main() {
             }
 
             if (!paused) {
-                // Game is playing
-                float bottomSide = map.bigWall.getPosition().y + (map.bigWall.getLocalBounds().height);
-                // HITBOX
-                //        sf::FloatRect  boudingBox = playerController.character.sprite.getGlobalBounds();
-                //        sf::RectangleShape rectangle(sf::Vector2f(boudingBox.width,boudingBox.height));
-                //        rectangle.setOutlineColor(sf::Color(255,0,0,0));
-                //        rectangle.setPosition(boudingBox.left,boudingBox.top);
-                //        sf::FloatRect  boudingBox2 = map.bigWall.getGlobalBounds();
-                //        sf::RectangleShape rectangle2(sf::Vector2f(boudingBox2.width,boudingBox2.height));
-                //        rectangle2.setOutlineColor(sf::Color(255,0,0,0));
-                //        rectangle2.setPosition(boudingBox2.left,boudingBox2.top);
+                if (playerController.character.sprite.getScale().x > 0) {
+                    if (playerController.character.sprite.getPosition().x +
+                        playerController.character.sprite.getGlobalBounds().width > map.bigWall.getPosition().x
+                        && playerController.character.sprite.getPosition().x +
+                           playerController.character.sprite.getGlobalBounds().width <
+                           map.bigWall.getPosition().x + map.bigWall.getGlobalBounds().width
+                            ) {
+                        if (playerController.character.sprite.getPosition().y > map.bigWall.getGlobalBounds().top) {
+                            playerController.GRAVITY_POINT = 580 - 20;
+                            playerController.character.sprite.setPosition(
+                                    map.bigWall.getPosition().x -
+                                    playerController.character.sprite.getLocalBounds().width,
+                                    playerController.character.sprite.getPosition().y);
 
-                // Gestion des colision en X
-                if (playerController.character.sprite.getPosition().x +
-                    playerController.character.sprite.getGlobalBounds().width > map.bigWall.getPosition().x
-                    && playerController.character.sprite.getPosition().x +
-                       playerController.character.sprite.getGlobalBounds().width <
-                       map.bigWall.getPosition().x + map.bigWall.getGlobalBounds().width
-                        ) {
-                    //cout << "Before jump" << playerController.character.sprite.getPosition().y << endl;
-                    if (playerController.character.sprite.getPosition().y > map.bigWall.getGlobalBounds().top) {
-                        playerController.GRAVITY_POINT = 580 - 20;
-                        playerController.character.sprite.setPosition(
-                                map.bigWall.getPosition().x - playerController.character.sprite.getLocalBounds().width,
-                                playerController.character.sprite.getPosition().y);
-                        //cout << "La 2 " << endl;
+                        } else {
+                            playerController.GRAVITY_POINT = map.bigWall.getGlobalBounds().top;
+                            playerController.character.sprite.setPosition(
+                                    playerController.character.sprite.getPosition().x,
+                                    map.bigWall.getGlobalBounds().top);
 
-                    } else {
-                        //cout << "la ";
-                        playerController.GRAVITY_POINT = map.bigWall.getGlobalBounds().top;
-                        playerController.character.sprite.setPosition(playerController.character.sprite.getPosition().x,
-                                                                      map.bigWall.getGlobalBounds().top);
+                        }
+                    }
+                }
+
+                if (playerController.character.sprite.getScale().x < 0) {
+                    if (playerController.character.sprite.getPosition().x <
+                        map.bigWall.getPosition().x + map.bigWall.getGlobalBounds().width + 35 && playerController.character.sprite.getPosition().x > map.bigWall.getPosition().x ) {
+                        if (playerController.character.sprite.getPosition().y > map.bigWall.getGlobalBounds().top) {
+                            playerController.GRAVITY_POINT = 580 - 20;
+                            playerController.character.sprite.setPosition(
+                                    map.bigWall.getPosition().x + map.bigWall.getGlobalBounds().width + 38,
+                                    playerController.character.sprite.getPosition().y);
+
+                        }
+
+//                        else {
+//                            playerController.GRAVITY_POINT = map.bigWall.getGlobalBounds().top-10;
+//                            playerController.character.sprite.setPosition(
+//                                    playerController.character.sprite.getPosition().x,
+//                                    map.bigWall.getGlobalBounds().top - 10);
+//
+//                        }
 
                     }
-
+                    else {
+                        playerController.GRAVITY_POINT = 540;
+                    }
                 }
+                // Gestion des colision en X
+
                 if (playerController.character.sprite.getPosition().x +
                     playerController.character.sprite.getGlobalBounds().width >
                     map.bigWall.getPosition().x + map.bigWall.getGlobalBounds().width) {
                     playerController.GRAVITY_POINT = 563;
-                    //cout << "Ap jump" << playerController.character.sprite.getPosition().y << endl;
-
                 }
                 playerController.play();
                 for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
@@ -133,13 +146,29 @@ int main() {
         if(startGame) {
             containerHealth.number = playerController.character.health;
             containerHealth.draw(&window);
+
+            if (SHOWHITBOX) {
+                sf::FloatRect boudingBox = playerController.character.sprite.getGlobalBounds();
+                sf::RectangleShape rectangle(sf::Vector2f(boudingBox.width, boudingBox.height));
+                rectangle.setOutlineColor(sf::Color(255, 0, 0, 0));
+                rectangle.setPosition(boudingBox.left, boudingBox.top);
+                sf::FloatRect boudingBox2 = map.bigWall.getGlobalBounds();
+                sf::RectangleShape rectangle2(sf::Vector2f(boudingBox2.width, boudingBox2.height));
+                rectangle2.setOutlineColor(sf::Color(255, 0, 0, 0));
+                rectangle2.setPosition(boudingBox2.left, boudingBox2.top);
+                window.draw(rectangle);
+                window.draw(rectangle2);
+            }
+
             window.draw(playerController.character.sprite);
             BulletManager::manageBullets(&playerController, &ennemies, &window);
             for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
                 window.draw((*itEnnemies)->character.sprite);
                 BulletManager::manageBullets((*itEnnemies), &playerController, &window);
             }
+
             map.drawBackground(window);
+
         }
         else{
             button.draw(&window);

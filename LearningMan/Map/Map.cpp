@@ -1,7 +1,3 @@
-//
-// Created by Mirii on 20/04/2021.
-//
-
 #include "Map.h"
 using namespace std;
 using namespace sf;
@@ -57,7 +53,7 @@ void Map::addWall(){
     /**
      * TODO: Preparer la génération aléatoire
      */
-    bigWall = loadBackground(TextureBigWall,0,0,WALL_SIZE,WALL_SIZE,100,545, false);
+    bigWall = loadBackground(TextureBigWall,10,0,WALL_SIZE,WALL_SIZE,100,545, false);
 
 }
 
