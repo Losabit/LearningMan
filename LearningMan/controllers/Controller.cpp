@@ -1,6 +1,6 @@
 #include "Controller.hpp"
 
-Controller::Controller(Character* character1) {
+Controller::Controller(Character *character1) {
     character = *character1;
 }
 
