@@ -16,6 +16,8 @@ Map::Map(){
     backgroundMoutain.setScale(4,2);
     backgroundGround = loadBackground(backgroundTexutreGround,250,105,300,38,-60,600,true);
     backgroundGround2 = loadBackground(backgroundTexutreGround2,250,105,300,38,30,600,true);
+    platform = loadBackground(texturePlatform,10,70,65,30,400,550, false);
+    platform.setScale(1.2,1.2);
     addWall();
 
 }
@@ -60,10 +62,10 @@ void Map::addWall(){
 void Map::drawBackground(RenderWindow &window)
 {
     window.draw(backgroundMoutain);
-
     window.draw(backgroundMoon);
     window.draw(backgroundCloud);
     window.draw(backgroundGround);
     window.draw(backgroundGround2);
     window.draw(this->bigWall);
+    window.draw(platform);
 }
