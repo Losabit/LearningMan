@@ -1,4 +1,5 @@
 #include "TextureManager.hpp"
+#include "../define.hpp"
 
 TextureManager::TextureManager() {}
 
@@ -19,6 +20,32 @@ TextureManager::TextureManager(std::string path, sf::IntRect rect1,
     order = order1;
     topLag = topLag1;
     leftLag = leftLag1;
+    size = getSize();
+}
+
+sf::Sprite TextureManager::getCurrentSprite() {
+    sf::Sprite sprite;
+    if (clock.getElapsedTime().asSeconds() > TIME_BETWEEN_ANIMATIONS){
+        sprite = toSprite(currentIt);
+        currentIt++;
+        clock.restart();
+        if(currentIt == size){
+            currentIt = 0;
+        }
+    }
+    return sprite;
+}
+
+sf::Sprite TextureManager::getCurrentSprite(sf::Vector2f position) {
+    sf::Sprite sprite = toSprite(currentIt, position);
+    if (clock.getElapsedTime().asSeconds() > TIME_BETWEEN_ANIMATIONS){
+        currentIt++;
+        clock.restart();
+        if(currentIt == size){
+            currentIt = 0;
+        }
+    }
+    return sprite;
 }
 
 sf::Sprite TextureManager::toSprite() {

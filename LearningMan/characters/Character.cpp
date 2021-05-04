@@ -16,8 +16,7 @@ void Character::move(int direction) {
 }
 
 void Character::moving(){
-    sprite.setTextureRect(textureMoving.rect);
-    sprite.setTexture(textureMoving.texture);
+    sprite = textureMoving.getCurrentSprite(sprite.getPosition());
 }
 
 void Character::shoot(){
@@ -32,6 +31,11 @@ bool Character::canShoot(){
         return true;
     }
     return false;
+}
+
+bool Character::dying() {
+    sprite = textureDeath.toSprite(sprite.getPosition());
+    return true;
 }
 
 void Character::wait() {

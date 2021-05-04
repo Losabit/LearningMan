@@ -6,7 +6,8 @@
 
 enum Action {
     None,
-    Shoot
+    Shoot,
+    ToDestroy
 };
 
 class Controller {
@@ -17,7 +18,7 @@ public:
     Character character;
     std::list<Vector2f> bullets;
     std::list<int> bulletsOrientation;
-    float GRAVITY_POINT =  581 - 20;
+    float GRAVITY_POINT = 583;
 
 protected:
     virtual bool isGoingRight();

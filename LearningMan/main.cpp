@@ -9,14 +9,15 @@
 #include "utils/BulletManager.hpp"
 #include "GUI/Button.hpp"
 #include "GUI/Container.hpp"
-
+#include "utils/HitboxManager.hpp"
 
 using namespace std;
 
 //ToDo
 int main() {
     bool onPlatform = false;
-    int SHOWHITBOX = 1;
+    bool SHOWHITBOX = false;
+    sf::Clock hitboxClock = sf::Clock();
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "LearningMan");
     window.setFramerateLimit(60);
 
@@ -69,6 +70,11 @@ int main() {
         if(startGame) {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
                 paused = !paused;
+            }
+            else if(sf::Keyboard::isKeyPressed(sf::Keyboard::H)
+            && hitboxClock.getElapsedTime().asSeconds() > 0.5){
+                SHOWHITBOX = !SHOWHITBOX;
+                hitboxClock.restart();
             }
 
             if (!paused) {
@@ -142,12 +148,18 @@ int main() {
                     || map.platform.getPosition().x + map.platform.getGlobalBounds().width < playerController.character.sprite.getPosition().x + playerController.character.sprite.getGlobalBounds().width)) {
                     playerController.GRAVITY_POINT = 563;
                 }
-                playerController.play();
+
+                if(playerController.play() == Action::ToDestroy){
+                    startGame = false;
+                    playerController.character.health = 5;
+                    //faire un reste de toute les infos
+                }
+
                 for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
                     (*itEnnemies)->play(playerController.character);
                 }
-                view.setCenter(playerController.character.sprite.getPosition());
-                window.setView(view);
+                //view.setCenter(playerController.character.sprite.getPosition());
+                //window.setView(view);
             }
             else {
                 // Pause menu
@@ -168,16 +180,9 @@ int main() {
             containerHealth.draw(&window);
 
             if (SHOWHITBOX) {
-                sf::FloatRect boudingBox = playerController.character.sprite.getGlobalBounds();
-                sf::RectangleShape rectangle(sf::Vector2f(boudingBox.width, boudingBox.height));
-                rectangle.setOutlineColor(sf::Color(255, 0, 0, 0));
-                rectangle.setPosition(boudingBox.left, boudingBox.top);
-                sf::FloatRect boudingBox2 = map.platform.getGlobalBounds();
-                sf::RectangleShape rectangle2(sf::Vector2f(boudingBox2.width, boudingBox2.height));
-                rectangle2.setOutlineColor(sf::Color(255, 0, 0, 0));
-                rectangle2.setPosition(boudingBox2.left, boudingBox2.top);
-                window.draw(rectangle);
-                window.draw(rectangle2);
+                window.draw(HitboxManager::getHitboxSprite(playerController.character.sprite.getGlobalBounds()));
+                window.draw(HitboxManager::getHitboxSprite(map.platform.getGlobalBounds()));
+                window.draw(HitboxManager::getHitboxSprite(map.bigWall.getGlobalBounds()));
             }
 
             window.draw(playerController.character.sprite);
@@ -186,9 +191,7 @@ int main() {
                 window.draw((*itEnnemies)->character.sprite);
                 BulletManager::manageBullets((*itEnnemies), &playerController, &window);
             }
-
             map.drawBackground(window);
-
         }
         else{
             button.draw(&window);

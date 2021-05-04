@@ -26,17 +26,21 @@ public:
 
     sf::Texture texture;
     sf::IntRect rect;
+    int size = 1;
+    sf::Sprite getCurrentSprite();
+    sf::Sprite getCurrentSprite(sf::Vector2f position);
     sf::Sprite toSprite();
     sf::Sprite toSprite(sf::Vector2f position);
     sf::Sprite toSprite(int number);
     sf::Sprite toSprite(int number, sf::Vector2f position);
-    int getSize();
 
 private:
     std::list<std::list<int>> order;
     float topLag;
     float leftLag;
-
+    int getSize();
+    sf::Clock clock;
+    int currentIt = 0;
 };
 
 

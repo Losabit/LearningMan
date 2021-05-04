@@ -14,6 +14,7 @@ public:
     void moving();
     bool canShoot();
     bool takeDamage(int damage);
+    bool dying();
     Sprite sprite;
     Sprite bullet;
     float bulletSpeed = 5.0f;
@@ -22,7 +23,7 @@ public:
     float speed = 4;
     bool canJump = true;
     float gravity = 1.0f;
-    float jumpHeight = 80;
+    float jumpHeight = 100;
     int health = 5;
 
 protected:
@@ -30,6 +31,7 @@ protected:
     TextureManager textureShoot;
     TextureManager textureBullet;
     TextureManager textureMoving;
+    TextureManager textureDeath;
     float shootCooldown = 1.0f;
 
 private:
