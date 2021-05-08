@@ -57,14 +57,13 @@ Action Controller::play() {
     }
 
     if (isJumping() && character.canJump) {
-        jumpPosition = character.sprite.getPosition();
         character.canJump = false;
         character.velocity.y = -sqrtf(2.0f * character.gravity * character.jumpHeight);
         this->sp.playSound("jump.wav");
     }
 
+
     if (character.sprite.getPosition().y > GRAVITY_POINT || character.canJump) {
-        std::cout << character.sprite.getPosition().y << " / " << GRAVITY_POINT << std::endl;
         character.canJump = true;
         character.sprite.setPosition(character.sprite.getPosition().x, GRAVITY_POINT);
         character.velocity.y = 0;
@@ -72,18 +71,12 @@ Action Controller::play() {
         character.velocity.y += character.gravity;
     }
 
-/*
-    if(character.sprite.getPosition().y >= GRAVITY_POINT && character.canJump){
-        character.velocity.y = 0;
-        std::cout << "in" << std::endl;
-    }
-*/
     if(isShooting()){
         if(character.canShoot()){
             doingSomething = true;
             character.shoot();
             if(character.sprite.getScale().x == -1){
-                bullets.push_back(character.sprite.getPosition() - sf::Vector2f(100,0));
+                bullets.push_back(character.sprite.getPosition() - sf::Vector2f(60,0));
             }
             else{
                 bullets.push_back(character.sprite.getPosition());
@@ -98,8 +91,6 @@ Action Controller::play() {
         character.wait();
     }
 
-    std::cout << character.sprite.getPosition().y << std::endl;
     character.sprite.move(character.velocity);
-    std::cout << character.sprite.getPosition().y << std::endl;
     return Action::None;
 }

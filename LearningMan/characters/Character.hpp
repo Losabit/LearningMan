@@ -20,7 +20,7 @@ public:
     float bulletSpeed = 5.0f;
 
     sf::Vector2f velocity;
-    float speed = 4;
+    float speed = 3;
     bool canJump = true;
     float gravity = 1.0f;
     float jumpHeight = 100;

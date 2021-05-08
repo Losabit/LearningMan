@@ -16,13 +16,13 @@ class Map {
 public:
     Map();
     void drawBackground(sf::RenderWindow &window);
-    void addWall();
+    void addWall(float x, float y);
     // Element de la map ou une colision est possible
     std::vector<MapEnvironnement> mapElement;
 
 
-    sf::Sprite bigWall;
-    int WALL_SIZE = 63;
+    std::vector<sf::Sprite> walls;
+    int WALL_SIZE = 50;
     sf::Sprite platform;
 private:
     sf::Texture backgroundTextureMoon;

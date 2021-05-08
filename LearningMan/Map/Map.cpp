@@ -5,7 +5,6 @@ using namespace sf;
  * Map génération
  */
 Map::Map(){
-
     backgroundMoon = loadBackground(backgroundTextureMoon,430,0,90,90,950,15, false);
     backgroundMoon.setScale(2,2);
     backgroundCloud = loadBackground(backgroundTextureCloud,400,210,120,60,900,75, false);
@@ -16,10 +15,12 @@ Map::Map(){
     backgroundMoutain.setScale(4,2);
     backgroundGround = loadBackground(backgroundTexutreGround,250,105,300,38,-60,600,true);
     backgroundGround2 = loadBackground(backgroundTexutreGround2,250,105,300,38,30,600,true);
-    platform = loadBackground(texturePlatform,10,70,65,30,400,550, false);
+    platform = loadBackground(texturePlatform,15,78,50,20,400,550, false);
     platform.setScale(1.2,1.2);
-    addWall();
-
+    addWall(100,560);
+    addWall(150,560);
+    //addWall(150,510);
+    addWall(250,560);
 }
 /**
  * FUNCTION TO LOAD BACKGROUND
@@ -49,13 +50,13 @@ Sprite Map::loadBackground( sf::Texture &spriteTexture,int rl, int rt , int  rw,
     }
     return bg;
 }
-void Map::addWall(){
+void Map::addWall(float x, float y){
     // TEST WALL POSITION
 
     /**
      * TODO: Preparer la génération aléatoire
      */
-    bigWall = loadBackground(TextureBigWall,10,0,WALL_SIZE,WALL_SIZE,100,545, false);
+    walls.push_back(loadBackground(TextureBigWall,15,15,WALL_SIZE,WALL_SIZE, x, y, false));
 
 }
 
@@ -66,6 +67,8 @@ void Map::drawBackground(RenderWindow &window)
     window.draw(backgroundCloud);
     window.draw(backgroundGround);
     window.draw(backgroundGround2);
-    window.draw(this->bigWall);
+    for(int i = 0; i < walls.size(); i++) {
+        window.draw(walls.at(i));
+    }
     window.draw(platform);
 }

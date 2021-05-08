@@ -4,7 +4,7 @@
 
 Heros::Heros() : Character() {
     textureIdle = TextureManager(CHARACTER_ASSETS_PATH "/player/charge.png", IntRect(14, 0, 30, 25));
-    textureShoot = TextureManager(CHARACTER_ASSETS_PATH "/player/shoot without FX.png", IntRect(14, 0, 30, 28));
+    textureShoot = TextureManager(CHARACTER_ASSETS_PATH "/player/shoot without FX.png", IntRect(14, 0, 30, 25));
     std::list<std::list<int>> l2 = {{3},
                                     {2},
                                     {1},

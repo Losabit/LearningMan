@@ -25,7 +25,6 @@ protected:
     virtual bool isGoingLeft();
     virtual bool isJumping();
     virtual bool isShooting();
-    Vector2f jumpPosition;
     SoundPlayer sp;
 };
 #endif
