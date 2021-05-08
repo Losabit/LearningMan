@@ -4,11 +4,12 @@
 
 class Container {
 public:
-    Container(sf::Sprite sprite1, int number1, int leftLag1);
+    Container(sf::Sprite sprite1, int number1, int leftLag1, sf::Sprite player);
     void draw(sf::RenderWindow* window);
     int number;
 private:
     int leftLag;
+    float playerXPosition;
     sf::Sprite sprite;
 };
 

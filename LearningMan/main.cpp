@@ -37,7 +37,7 @@ int main() {
     list<Controller*> :: iterator itEnnemies;
     ennemies.push_back(&shotgunnerController);
 
-    sf::View view(sf::FloatRect(0, 0, 400.f, 250.f));
+    sf::View view(sf::FloatRect(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT));
 
     Map map = Map();
     Button button("../assets/button/simple/12.png",
@@ -54,7 +54,7 @@ int main() {
     textureHealth.loadFromFile(GUI_ASSETS_PATH "/health.png");
     Sprite spriteHealth(textureHealth, IntRect(0, 0, 901, 900));
     spriteHealth.setScale(0.05, 0.05);
-    Container containerHealth(spriteHealth, 5, 45);
+    Container containerHealth(spriteHealth, 5, 45, playerController.character.sprite);
 
     bool paused = false;
     bool startGame = false;
@@ -163,11 +163,11 @@ int main() {
                 for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
                     (*itEnnemies)->play(playerController.character);
                 }
-                view.setCenter(playerController.character.sprite.getPosition());
+                view.setCenter(playerController.character.sprite.getPosition().x, 500);
                 window.setView(view);
             }
             else {
-                // Pause menu
+                window.clear(sf::Color(0,0,0, 50));
             }
         }
         else{
