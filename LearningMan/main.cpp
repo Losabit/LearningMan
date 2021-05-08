@@ -54,7 +54,7 @@ int main() {
     textureHealth.loadFromFile(GUI_ASSETS_PATH "/health.png");
     Sprite spriteHealth(textureHealth, IntRect(0, 0, 901, 900));
     spriteHealth.setScale(0.05, 0.05);
-    Container containerHealth(spriteHealth, 5, 45, playerController.character.sprite);
+    Container containerHealth(spriteHealth, 5, 45);
 
     bool paused = false;
     bool startGame = false;
@@ -182,6 +182,7 @@ int main() {
         window.clear(sf::Color(122,160,122,0));
         if(startGame) {
             containerHealth.number = playerController.character.health;
+            containerHealth.setPlayerXPosition(playerController.character.sprite);
             containerHealth.draw(&window);
 
             if (SHOWHITBOX) {
