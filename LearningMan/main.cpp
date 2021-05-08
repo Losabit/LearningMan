@@ -53,8 +53,9 @@ int main() {
     Texture textureHealth;
     textureHealth.loadFromFile(GUI_ASSETS_PATH "/health.png");
     Sprite spriteHealth(textureHealth, IntRect(0, 0, 901, 900));
-    spriteHealth.setScale(0.05, 0.05);
-    Container containerHealth(spriteHealth, 5, 45);
+    spriteHealth.setScale(0.02, 0.02);
+
+    Container containerHealth(spriteHealth, 5, 25);
 
     bool paused = false;
     bool startGame = false;
