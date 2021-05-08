@@ -108,9 +108,6 @@ int main() {
                 view.setCenter(playerController.character.sprite.getPosition().x, 500);
                 window.setView(view);
             }
-            else {
-                window.clear(sf::Color(0,0,0, 50));
-            }
         }
         else{
             if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
@@ -133,6 +130,21 @@ int main() {
                 for(int i = 0; i < map.walls.size(); i++) {
                     window.draw(HitboxManager::getHitboxSprite(map.walls.at(i).getGlobalBounds()));
                 }
+            }
+
+            // Pause menu
+            if(paused) {
+                float x = playerController.character.sprite.getPosition().x - 200;
+                float y = 375.0f;
+                sf::RectangleShape darkerForeground(sf::Vector2f(CAMERA_WIDTH, CAMERA_HEIGHT));
+                darkerForeground.setPosition(x, y);
+                darkerForeground.setFillColor(sf::Color(0, 0, 0, 75));
+                window.draw(darkerForeground);
+
+                sf::Text text;
+                text.setString("PAUSE");
+                text.setPosition(x + 200, 300);
+                window.draw(text);
             }
 
             window.draw(playerController.character.sprite);
