@@ -5,10 +5,12 @@
 class Container {
 public:
     Container(sf::Sprite sprite1, int number1, int leftLag1);
+    void setPlayerXPosition(sf::Sprite player);
     void draw(sf::RenderWindow* window);
     int number;
 private:
     int leftLag;
+    float playerXPosition;
     sf::Sprite sprite;
 };
 

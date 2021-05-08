@@ -19,8 +19,13 @@ int main() {
     bool onPlatform = false;
     bool SHOWHITBOX = false;
     sf::Clock hitboxClock = sf::Clock();
+    sf::Clock pauseClock = sf::Clock();
+    float pauseCooldown = 0.5f;
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "LearningMan");
     window.setFramerateLimit(60);
+    sf::Image icon;
+    icon.loadFromFile("../assets/others/logo.png");
+    window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
     Character heros = Heros();
     PlayerController playerController(&heros);
@@ -37,7 +42,7 @@ int main() {
     list<Controller*> :: iterator itEnnemies;
     ennemies.push_back(&shotgunnerController);
 
-    sf::View view(sf::FloatRect(0, 0, 400.f, 250.f));
+    sf::View view(sf::FloatRect(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT));
 
     Map map = Map();
     playerCollision.addObject(map.walls);
@@ -55,8 +60,9 @@ int main() {
     Texture textureHealth;
     textureHealth.loadFromFile(GUI_ASSETS_PATH "/health.png");
     Sprite spriteHealth(textureHealth, IntRect(0, 0, 901, 900));
-    spriteHealth.setScale(0.05, 0.05);
-    Container containerHealth(spriteHealth, 5, 45);
+    spriteHealth.setScale(0.02, 0.02);
+
+    Container containerHealth(spriteHealth, 5, 25);
 
     bool paused = false;
     bool startGame = false;
@@ -73,7 +79,10 @@ int main() {
 
         if(startGame) {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-                paused = !paused;
+                if(pauseClock.getElapsedTime().asSeconds() > pauseCooldown) {
+                    paused = !paused;
+                    pauseClock.restart();
+                }
             }
             else if(sf::Keyboard::isKeyPressed(sf::Keyboard::H)
             && hitboxClock.getElapsedTime().asSeconds() > 0.5){
@@ -96,11 +105,11 @@ int main() {
                 for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
                     (*itEnnemies)->play(playerController.character);
                 }
-                //view.setCenter(playerController.character.sprite.getPosition());
-                //window.setView(view);
+                view.setCenter(playerController.character.sprite.getPosition().x, 500);
+                window.setView(view);
             }
             else {
-                // Pause menu
+                window.clear(sf::Color(0,0,0, 50));
             }
         }
         else{
@@ -115,6 +124,7 @@ int main() {
         window.clear(sf::Color(122,160,122,0));
         if(startGame) {
             containerHealth.number = playerController.character.health;
+            containerHealth.setPlayerXPosition(playerController.character.sprite);
             containerHealth.draw(&window);
 
             if (SHOWHITBOX) {
