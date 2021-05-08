@@ -18,6 +18,8 @@ int main() {
     bool onPlatform = false;
     bool SHOWHITBOX = false;
     sf::Clock hitboxClock = sf::Clock();
+    sf::Clock pauseClock = sf::Clock();
+    float pauseCooldown = 0.5f;
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "LearningMan");
     window.setFramerateLimit(60);
 
@@ -69,7 +71,10 @@ int main() {
 
         if(startGame) {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-                paused = !paused;
+                if(pauseClock.getElapsedTime().asSeconds() > pauseCooldown) {
+                    paused = !paused;
+                    pauseClock.restart();
+                }
             }
             else if(sf::Keyboard::isKeyPressed(sf::Keyboard::H)
             && hitboxClock.getElapsedTime().asSeconds() > 0.5){
@@ -158,8 +163,8 @@ int main() {
                 for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
                     (*itEnnemies)->play(playerController.character);
                 }
-                //view.setCenter(playerController.character.sprite.getPosition());
-                //window.setView(view);
+                view.setCenter(playerController.character.sprite.getPosition());
+                window.setView(view);
             }
             else {
                 // Pause menu
