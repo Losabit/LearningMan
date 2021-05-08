@@ -22,6 +22,9 @@ int main() {
     float pauseCooldown = 0.5f;
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "LearningMan");
     window.setFramerateLimit(60);
+    sf::Image icon;
+    icon.loadFromFile("../assets/others/logo.png");
+    window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
     Character heros = Heros();
     PlayerController playerController(&heros);
