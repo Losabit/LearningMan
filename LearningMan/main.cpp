@@ -45,7 +45,9 @@ int main() {
     sf::View view(sf::FloatRect(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT));
 
     Map map = Map();
-    playerCollision.addObject(map.walls);
+    map.loadAll("../ressources/map1.json");
+    playerCollision.addObject(map.walls, ObjectType::Wall);
+    playerCollision.addObject(map.platform, ObjectType::Platform);
     Button button("../assets/button/simple/12.png",
                   IntRect(40,140,480,480),
                   "../ressources/policy/OrelegaOne-Regular.ttf");
@@ -92,8 +94,10 @@ int main() {
 
             if (!paused) {
                 for(int i = 0; i < map.walls.size(); i++) {
+                    /*
                     if(i != 3)
                         std::cout << i << std::endl;
+                        */
                     playerCollision.checkCollisions();
                 }
                 if(playerController.play() == Action::ToDestroy){
@@ -112,7 +116,7 @@ int main() {
         else{
             if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
             {
-                if(button.sprite.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                if(button.sprite.getGlobalBounds().contains( window.mapPixelToCoords(Vector2i (event.mouseButton.x, event.mouseButton.y)))) {
                     startGame = true;
                 }
             }

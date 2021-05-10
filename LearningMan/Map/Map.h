@@ -17,6 +17,8 @@ public:
     Map();
     void drawBackground(sf::RenderWindow &window);
     void addWall(float x, float y);
+    void loadAll(std::string path);
+    std::vector<std::string> getAll();
     // Element de la map ou une colision est possible
     std::vector<MapEnvironnement> mapElement;
 

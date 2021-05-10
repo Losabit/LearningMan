@@ -4,18 +4,25 @@
 #include "../controllers/Controller.hpp"
 #include <vector>
 
+enum ObjectType{
+    Wall,
+    Platform
+};
+
 class CollisionManager {
 public:
     CollisionManager(Controller* controller1);
     void checkCollisions();
-    void addObject(sf::Sprite sprite);
-    void addObject(std::vector<sf::Sprite> sprite);
+    void addObject(sf::Sprite sprite, ObjectType objectType);
+    void addObject(std::vector<sf::Sprite> sprite, ObjectType objectType);
 
 private:
-    std::vector<sf::Sprite> walls;
+    std::vector<sf::Sprite> objects;
+    std::vector<ObjectType> types;
     std::vector<bool> isFalling;
     Controller* controller;
     sf::Vector2f wallCollision(int indice);
+    sf::Vector2f platformCollision(int indice);
 };
 
 

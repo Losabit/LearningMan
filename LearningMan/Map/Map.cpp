@@ -1,4 +1,10 @@
 #include "Map.h"
+#include <dirent.h>
+#include <fstream>
+#include "../lib/json/json.h"
+#include "../define.hpp"
+#include "MapModel.hpp"
+
 using namespace std;
 using namespace sf;
 /**
@@ -18,9 +24,9 @@ Map::Map(){
     platform = loadBackground(texturePlatform,15,78,50,20,400,550, false);
     platform.setScale(1.2,1.2);
     addWall(100,560);
-    addWall(150,560);
+    //addWall(150,560);
     //addWall(150,510);
-    addWall(250,560);
+    //addWall(250,560);
 }
 /**
  * FUNCTION TO LOAD BACKGROUND
@@ -34,6 +40,32 @@ Map::Map(){
  * @param repeat
  * @return
  */
+
+void Map::loadAll(std::string path) {
+    Json::Value root;
+    std::ifstream file;
+    file.open(path);
+    file >> root;
+    file.close();
+
+    MapModel mapModel(root);
+}
+
+std::vector<std::string> Map::getAll(){
+    DIR *dir;
+    std::vector<std::string> result;
+    struct dirent *ent;
+    if ((dir = opendir(MAP_PATH)) != NULL) {
+        while ((ent = readdir(dir)) != NULL) {
+            result.push_back(ent->d_name);
+        }
+        closedir (dir);
+    } else {
+        perror ("");
+    }
+    return result;
+}
+
 Sprite Map::loadBackground( sf::Texture &spriteTexture,int rl, int rt , int  rw,  int rh, int x , int y,bool repeat){
     Sprite bg;
     if (!spriteTexture.loadFromFile("../assets/map/Dungeon_Ruins_Tileset/Dungeon Ruins Tileset Day.png",sf::IntRect(rl,rt,rw,rh)))
@@ -50,6 +82,7 @@ Sprite Map::loadBackground( sf::Texture &spriteTexture,int rl, int rt , int  rw,
     }
     return bg;
 }
+
 void Map::addWall(float x, float y){
     // TEST WALL POSITION
 

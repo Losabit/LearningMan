@@ -1,4 +1,5 @@
 #define ASSETS_PATH "../assets"
+#define MAP_PATH "../ressources"
 #define CHARACTER_ASSETS_PATH ASSETS_PATH "/characters"
 #define GUI_ASSETS_PATH ASSETS_PATH "/GUI"
 #define TIME_SHOOT_TO_IDLE 0.5f
