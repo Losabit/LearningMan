@@ -21,8 +21,8 @@ private:
     std::vector<ObjectType> types;
     std::vector<bool> isFalling;
     Controller* controller;
-    sf::Vector2f wallCollision(int indice);
-    sf::Vector2f platformCollision(int indice);
+    void wallCollision(int indice);
+    void platformCollision(int indice);
     bool isOver(int indice);
 };
 

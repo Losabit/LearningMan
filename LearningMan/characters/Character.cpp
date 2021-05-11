@@ -15,6 +15,11 @@ void Character::move(int direction) {
     sprite.move(direction * speed, 0);
 }
 
+void Character::reset(sf::Vector2f position) {
+    health = 5;
+    sprite.setPosition(position);
+}
+
 void Character::moving(){
     sprite = textureMoving.getCurrentSprite(sprite.getPosition());
 }

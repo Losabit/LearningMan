@@ -29,12 +29,12 @@ int main() {
 
     Character heros = Heros();
     PlayerController playerController(&heros);
-    playerController.character.sprite.move(0, 583);
+    playerController.character.sprite.setPosition(HEROS_INITIAL_POSITION);
     CollisionManager playerCollision(&playerController);
 
     Character shotgunner = Shotgunner();
     IAController shotgunnerController(&shotgunner);
-    shotgunnerController.character.sprite.move(600, 575);
+    shotgunnerController.character.sprite.move(ENNEMI_INITIAL_POSITION);
     shotgunnerController.character.sprite.setScale(-1, 1);
 
     Sprite player =  playerController.character.sprite;
@@ -43,6 +43,7 @@ int main() {
     ennemies.push_back(&shotgunnerController);
 
     sf::View view(sf::FloatRect(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT));
+    sf::View initialView = window.getView();
 
     Map map = Map("../ressources/map1.json");
     playerCollision.addObject(map.walls, ObjectType::Wall);
@@ -93,22 +94,26 @@ int main() {
 
             if (!paused) {
                 for(int i = 0; i < map.walls.size(); i++) {
-                    if(i != 3)
-                        std::cout << i << std::endl;
-
                     playerCollision.checkCollisions();
                 }
+
                 if(playerController.play() == Action::ToDestroy){
                     startGame = false;
-                    playerController.character.health = 5;
-                    //faire un reste de toute les infos
+                    playerController.character.reset(HEROS_INITIAL_POSITION);
+                    window.setView(initialView);
+                    for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
+                        (*itEnnemies)->character.reset(ENNEMI_INITIAL_POSITION);
+                    }
+                }
+                else{
+                    view.setCenter(playerController.character.sprite.getPosition().x, 500);
+                    window.setView(view);
                 }
 
                 for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
                     (*itEnnemies)->play(playerController.character);
                 }
-                view.setCenter(playerController.character.sprite.getPosition().x, 500);
-                window.setView(view);
+
             }
         }
         else{

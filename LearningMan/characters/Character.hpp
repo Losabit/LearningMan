@@ -15,6 +15,7 @@ public:
     bool canShoot();
     bool takeDamage(int damage);
     bool dying();
+    void reset(sf::Vector2f position);
     Sprite sprite;
     Sprite bullet;
     float bulletSpeed = 5.0f;

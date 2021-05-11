@@ -17,6 +17,7 @@ public:
     Action play(Character ennemi);
     Character character;
     std::list<Vector2f> bullets;
+    std::list<Vector2f> bulletsOrigin;
     std::list<int> bulletsOrientation;
     float GRAVITY_POINT = 583;
 

@@ -48,7 +48,21 @@
       "id": 1,
       "scaleX": 1,
       "scaleY": 1,
-      "positionX": 250,
+      "positionX": 200,
+      "positionY": 560
+    },
+    {
+      "id": 1,
+      "scaleX": 1,
+      "scaleY": 1,
+      "positionX": 200,
+      "positionY": 510
+    },
+    {
+      "id": 1,
+      "scaleX": 1,
+      "scaleY": 1,
+      "positionX": 300,
       "positionY": 560
     },
     {

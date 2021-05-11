@@ -77,9 +77,11 @@ Action Controller::play() {
             character.shoot();
             if(character.sprite.getScale().x == -1){
                 bullets.push_back(character.sprite.getPosition() - sf::Vector2f(60,0));
+                bulletsOrigin.push_back(character.sprite.getPosition() - sf::Vector2f(60,0));
             }
             else{
                 bullets.push_back(character.sprite.getPosition());
+                bulletsOrigin.push_back(character.sprite.getPosition());
             }
             this->sp.playSound("shoot.wav");
             bulletsOrientation.push_back(character.sprite.getScale().x);

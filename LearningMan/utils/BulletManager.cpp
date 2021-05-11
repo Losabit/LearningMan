@@ -2,11 +2,12 @@
 
 void BulletManager::manageBullets(Controller* shooter, std::list<Controller*>* ennemies, sf::RenderWindow* window) {
     std::list<Vector2f> :: iterator it;
+    std::list<Vector2f> :: iterator itOrigin;
     std::list<Controller*> :: iterator itEnnemies;
     std::list<int> :: iterator itOrientation;
 
-    for (it = shooter->bullets.begin(), itOrientation = shooter->bulletsOrientation.begin();
-         it != shooter->bullets.end(); it++, itOrientation++) {
+    for (it = shooter->bullets.begin(), itOrientation = shooter->bulletsOrientation.begin(), itOrigin = shooter->bulletsOrigin.begin();
+         it != shooter->bullets.end(); it++, itOrientation++, itOrigin++) {
         if(*itOrientation == 1){
             it->x += shooter->character.bulletSpeed;
         }
@@ -23,10 +24,12 @@ void BulletManager::manageBullets(Controller* shooter, std::list<Controller*>* e
                 }
                 it = shooter->bullets.erase(it);
                 itOrientation = shooter->bulletsOrientation.erase(itOrientation);
+                itOrigin = shooter->bulletsOrigin.erase(itOrigin);
             }
         }
-        if (it->x > 800 || it->x < -200) {
+        if (it->x > (itOrigin->x + 2000) || it->x < (itOrigin->x- 2000)) {
             it = shooter->bullets.erase(it);
+            itOrigin = shooter->bulletsOrigin.erase(itOrigin);
             itOrientation = shooter->bulletsOrientation.erase(itOrientation);
         }
     }
