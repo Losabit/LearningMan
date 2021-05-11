@@ -11,13 +11,14 @@
 #include <sstream>
 #include <vector>
 #include "MapEnvironnement.h"
+#include "MapModel.hpp"
 
 class Map {
 public:
-    Map();
+    Map(std::string path);
     void drawBackground(sf::RenderWindow &window);
-    void addWall(float x, float y);
-    void loadAll(std::string path);
+    void addWall(float x, float y, int i, int i1, int i2, int i3);
+
     std::vector<std::string> getAll();
     // Element de la map ou une colision est possible
     std::vector<MapEnvironnement> mapElement;
@@ -43,7 +44,7 @@ private:
 
     // Element de la map qui sert de décor, exemple : Lune, Montagne , Nuage etc.
     std::vector<MapEnvironnement> decor;
-
+    MapModel loadAll(std::string path);
     static sf::Sprite loadBackground(sf::Texture &texture,int rl, int rt, int rw, int rh, int x , int y, bool repeat);
 };
 

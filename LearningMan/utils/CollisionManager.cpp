@@ -19,6 +19,13 @@ void CollisionManager::addObject(std::vector<sf::Sprite> sprite, ObjectType obje
 }
 
 void CollisionManager::checkCollisions() {
+    std::vector<int> areOver;
+    for(int i = 0; i < objects.size(); i++){
+        if(isOver(i)){
+            areOver.push_back(i);
+        }
+    }
+
     for(int i = 0; i < objects.size(); i++){
         if(types.at(i) == ObjectType::Wall)
             controller->character.sprite.setPosition(wallCollision(i));
@@ -52,11 +59,19 @@ sf::Vector2f CollisionManager::platformCollision(int indice){
     */
 }
 
+bool CollisionManager::isOver(int indice){
+    int decalage2 = 8;
+    int decalage = 0;
+    sf::Sprite sprite2 = objects.at(indice);
+    return  controller->character.sprite.getPosition().x >= sprite2.getPosition().x  + controller->character.sprite.getGlobalBounds().width / 2 - decalage
+               && controller->character.sprite.getPosition().x <= sprite2.getPosition().x + sprite2.getGlobalBounds().width - decalage + decalage2
+                && controller->character.sprite.getPosition().y <= sprite2.getPosition().y - sprite2.getGlobalBounds().height / 2;
+}
+
 sf::Vector2f CollisionManager::wallCollision(int indice) {
     sf::Sprite sprite2 = objects.at(indice);
     int decalage2 = 8;
     int decalage = 0;
-    //faire ca proprement  + enlever eventuel problemes (utiliser une vraie classe ?)
     if(controller->character.sprite.getScale().x > 0){
         decalage = 20;
     }
@@ -71,7 +86,8 @@ sf::Vector2f CollisionManager::wallCollision(int indice) {
                                 controller->character.sprite.getPosition().y);
         }
     }
-    else if(controller->character.sprite.getPosition().y >= sprite2.getPosition().y - sprite2.getGlobalBounds().height / 2){
+    //controller->character.sprite.getPosition().y >= sprite2.getPosition().y - sprite2.getGlobalBounds().height / 2
+    else if(isFalling.at(indice)){
         float right = sprite2.getPosition().x + sprite2.getGlobalBounds().width + controller->character.sprite.getGlobalBounds().width;
         float left = sprite2.getPosition().x - controller->character.sprite.getLocalBounds().width;
 

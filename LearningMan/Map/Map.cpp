@@ -3,14 +3,13 @@
 #include <fstream>
 #include "../lib/json/json.h"
 #include "../define.hpp"
-#include "MapModel.hpp"
 
 using namespace std;
 using namespace sf;
 /**
  * Map génération
  */
-Map::Map(){
+Map::Map(std::string path){
     backgroundMoon = loadBackground(backgroundTextureMoon,430,0,90,90,950,15, false);
     backgroundMoon.setScale(2,2);
     backgroundCloud = loadBackground(backgroundTextureCloud,400,210,120,60,900,75, false);
@@ -21,9 +20,32 @@ Map::Map(){
     backgroundMoutain.setScale(4,2);
     backgroundGround = loadBackground(backgroundTexutreGround,250,105,300,38,-60,600,true);
     backgroundGround2 = loadBackground(backgroundTexutreGround2,250,105,300,38,30,600,true);
-    platform = loadBackground(texturePlatform,15,78,50,20,400,550, false);
-    platform.setScale(1.2,1.2);
-    addWall(100,560);
+
+    MapModel mapModel = loadAll(path);
+    for(int i = 0; i < mapModel.objects.size(); i++){
+        for(int j = 0; j < mapModel.references.size(); j++){
+            for(int k = 0; k < mapModel.references[j].objects.size(); k++){
+                ObjectReference objectReference = mapModel.references[j].objects[k];
+                if(mapModel.objects[i].id == objectReference.id){
+                    if(objectReference.type == ObjectType::Wall){
+                        addWall(mapModel.objects[i].positionX, mapModel.objects[i].positionY,
+                                objectReference.left, objectReference.top,
+                                objectReference.width, objectReference.height);
+                    }
+                    else if(objectReference.type == ObjectType::Platform){
+                        platform = loadBackground(texturePlatform, objectReference.left,
+                                                  objectReference.top, objectReference.width,
+                                                  objectReference.height, mapModel.objects[i].positionX,
+                                                  mapModel.objects[i].positionY, false);
+                        platform.setScale(1.2,1.2);
+                    }
+                }
+            }
+        }
+    }
+
+
+    //addWall(100, 560, 0, 0, 0, 0);
     //addWall(150,560);
     //addWall(150,510);
     //addWall(250,560);
@@ -41,14 +63,13 @@ Map::Map(){
  * @return
  */
 
-void Map::loadAll(std::string path) {
+MapModel Map::loadAll(std::string path) {
     Json::Value root;
     std::ifstream file;
     file.open(path);
     file >> root;
     file.close();
-
-    MapModel mapModel(root);
+    return MapModel(root);
 }
 
 std::vector<std::string> Map::getAll(){
@@ -83,14 +104,12 @@ Sprite Map::loadBackground( sf::Texture &spriteTexture,int rl, int rt , int  rw,
     return bg;
 }
 
-void Map::addWall(float x, float y){
+void Map::addWall(float x, float y, int left, int top, int width, int height){
     // TEST WALL POSITION
-
     /**
      * TODO: Preparer la génération aléatoire
      */
-    walls.push_back(loadBackground(TextureBigWall,15,15,WALL_SIZE,WALL_SIZE, x, y, false));
-
+    walls.push_back(loadBackground(TextureBigWall, left, top, width, height, x, y, false));
 }
 
 void Map::drawBackground(RenderWindow &window)

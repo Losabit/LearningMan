@@ -44,8 +44,7 @@ int main() {
 
     sf::View view(sf::FloatRect(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT));
 
-    Map map = Map();
-    map.loadAll("../ressources/map1.json");
+    Map map = Map("../ressources/map1.json");
     playerCollision.addObject(map.walls, ObjectType::Wall);
     playerCollision.addObject(map.platform, ObjectType::Platform);
     Button button("../assets/button/simple/12.png",
@@ -94,10 +93,9 @@ int main() {
 
             if (!paused) {
                 for(int i = 0; i < map.walls.size(); i++) {
-                    /*
                     if(i != 3)
                         std::cout << i << std::endl;
-                        */
+
                     playerCollision.checkCollisions();
                 }
                 if(playerController.play() == Action::ToDestroy){

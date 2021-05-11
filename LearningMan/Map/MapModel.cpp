@@ -6,6 +6,21 @@ ObjectReference::ObjectReference(Json::Value root) {
     top = root["top"].asUInt();
     width = root["width"].asUInt();
     height = root["height"].asUInt();
+    std::string buffType = root["type"].asString();
+    if(buffType == "wall"){
+        type = ObjectType::Wall;
+    }
+    else{
+        type = ObjectType::Platform;
+    }
+}
+
+Object::Object(Json::Value root) {
+    id = root["id"].asUInt();
+    scaleX = root["scaleX"].asUInt();
+    scaleY = root["scaleY"].asUInt();
+    positionX = root["positionX"].asUInt();
+    positionY = root["positionY"].asUInt();
 }
 
 Reference::Reference(Json::Value root) {
@@ -18,7 +33,11 @@ Reference::Reference(Json::Value root) {
 
 MapModel::MapModel(Json::Value root){
     const Json::Value& references1 = root["references"];
+    const Json::Value& objects1 = root["objects"];
     for (int i = 0; i < references1.size(); i++){
         references.push_back(Reference(references1[i]));
+    }
+    for(int i = 0; i < objects1.size(); i++){
+        objects.push_back(Object(objects1[i]));
     }
 }

@@ -23,6 +23,7 @@ private:
     Controller* controller;
     sf::Vector2f wallCollision(int indice);
     sf::Vector2f platformCollision(int indice);
+    bool isOver(int indice);
 };
 
 
