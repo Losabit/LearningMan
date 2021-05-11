@@ -38,8 +38,8 @@ int main() {
     shotgunnerController.character.sprite.setScale(-1, 1);
 
     Sprite player =  playerController.character.sprite;
-    list<Controller*> ennemies;
-    list<Controller*> :: iterator itEnnemies;
+    list<IAController*> ennemies;
+    list<IAController*> :: iterator itEnnemies;
     ennemies.push_back(&shotgunnerController);
 
     sf::View view(sf::FloatRect(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT));
@@ -111,9 +111,10 @@ int main() {
                 }
 
                 for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
+                    (*itEnnemies)->setPlayerPosition(playerController.character.sprite.getPosition());
                     (*itEnnemies)->play(playerController.character);
                 }
-
+                shotgunnerController.setPlayerPosition(playerController.character.sprite.getPosition());
             }
         }
         else{

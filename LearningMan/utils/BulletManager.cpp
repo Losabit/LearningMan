@@ -1,9 +1,9 @@
 #include "BulletManager.hpp"
 
-void BulletManager::manageBullets(Controller* shooter, std::list<Controller*>* ennemies, sf::RenderWindow* window) {
+void BulletManager::manageBullets(Controller* shooter, std::list<IAController*>* ennemies, sf::RenderWindow* window) {
     std::list<Vector2f> :: iterator it;
     std::list<Vector2f> :: iterator itOrigin;
-    std::list<Controller*> :: iterator itEnnemies;
+    std::list<IAController*> :: iterator itEnnemies;
     std::list<int> :: iterator itOrientation;
 
     for (it = shooter->bullets.begin(), itOrientation = shooter->bulletsOrientation.begin(), itOrigin = shooter->bulletsOrigin.begin();
