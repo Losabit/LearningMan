@@ -6,9 +6,9 @@ Controller::Controller(Character *character1) {
 }
 
 Action Controller::play(Character ennemi) {
-    float scopeVision = 150;
+    float scopeVision = 300;
     if(ennemi.sprite.getPosition().x + scopeVision > character.sprite.getPosition().x
-       && ennemi.sprite.getPosition().x - scopeVision < character.sprite.getPosition().x) {
+       || ennemi.sprite.getPosition().x - scopeVision < character.sprite.getPosition().x) {
         play();
     }
     else{
