@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="MapCreator" targetName="MapCreator" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a65c3a0d-431f-4e26-ab05-b2527b1a1e7d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/MapCreator.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/Button.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/Button.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/Container.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GUI/Container.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/shiny/9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/button/simple/9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/characters/player/GAS dash FX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/characters/player/GAS dash with FX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/characters/player/charge.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/characters/player/damaged.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/characters/player/death.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/characters/player/hot wheels flatten.aseprite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/characters/player/hot wheels flatten.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/characters/player/hot wheels small.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/characters/player/hot wheels.aseprite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/characters/player/move with FX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/characters/player/move without FX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/characters/player/shoot FX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/characters/player/shoot with FX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/characters/player/shoot without FX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/characters/player/static idle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/characters/player/wake.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fondblanc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fondgris.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/map/Dungeon_Ruins_Tileset/Dungeon Ruins Tileset Day.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/map/Dungeon_Ruins_Tileset/Dungeon Ruins Tileset Night.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/selectedfondblanc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/define.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/json/json-forwards.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/json/json.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jsoncpp.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ressources/OrelegaOne-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ressources/map/Dungeon_Ruins.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/HitboxManager.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/HitboxManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/MapManager.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/MapManager.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/MapModel.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/MapModel.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/ressources/test.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/ressources/test2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/Map.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/Map.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/Map.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/Map.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/MapModel.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/MapModel.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/MapModel.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/MapModel.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/CollisionManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/CollisionManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/CollisionManager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/CollisionManager.hpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1sQo9yb4GJP4y3hVVCORusPBf2F" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+  </component>
+  <component name="RunManager">
+    <configuration name="MapCreator" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MapCreator" TARGET_NAME="MapCreator" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MapCreator" RUN_TARGET_NAME="MapCreator">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a65c3a0d-431f-4e26-ab05-b2527b1a1e7d" name="Default Changelist" comment="" />
+      <created>1620814027023</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620814027023</updated>
+      <workItem from="1620814028483" duration="16994000" />
+      <workItem from="1620901002111" duration="5147000" />
+      <workItem from="1621083097475" duration="9805000" />
+      <workItem from="1621160131235" duration="9072000" />
+      <workItem from="1621251716008" duration="3990000" />
+      <workItem from="1621325856128" duration="6900000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

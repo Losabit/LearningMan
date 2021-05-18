@@ -2,17 +2,6 @@
 #define LEARNINGMAN_MAPMODEL_HPP
 
 #include "../lib/json/json.h"
-#include "../utils/CollisionManager.hpp"
-
-class Colors {
-public:
-    Colors();
-    Colors(Json::Value root);
-    int red;
-    int green;
-    int blue;
-    int alpha;
-};
 
 class ObjectReference {
 public:
@@ -22,7 +11,7 @@ public:
     int left;
     int width;
     int height;
-    ObjectType type;
+    std::string type;
 };
 
 class Reference {
@@ -36,10 +25,10 @@ class Object{
 public:
     Object(Json::Value root);
     int id;
-    float scaleX;
-    float scaleY;
-    float positionX;
-    float positionY;
+    int scaleX;
+    int scaleY;
+    int positionX;
+    int positionY;
 };
 
 class MapModel {
@@ -47,7 +36,6 @@ public:
     MapModel(Json::Value root);
     std::vector<Reference> references;
     std::vector<Object> objects;
-    Colors colors;
 };
 
 

@@ -6,7 +6,8 @@
 
 enum ObjectType{
     Wall,
-    Platform
+    Platform,
+    Decor
 };
 
 class CollisionManager {

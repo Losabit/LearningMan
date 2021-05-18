@@ -1,0 +1,141 @@
+{
+  "path": "../assets/map/Dungeon_Ruins_Tileset/Dungeon Ruins Tileset Night.png",
+  "sprites": [
+    {
+      "id": 1,
+      "type": "decor",
+      "left": 430,
+      "top": 0,
+      "width": 90,
+      "height": 90
+    },
+    {
+      "id": 2,
+      "type": "decor",
+      "left": 400,
+      "top": 210,
+      "width": 120,
+      "height": 60
+    },
+    {
+      "id": 3,
+      "type": "decor",
+      "left": 250,
+      "top": 105,
+      "width": 300,
+      "height": 38
+    },
+    {
+      "id": 4,
+      "type": "decor",
+      "left": 250,
+      "top": 175,
+      "width": 180,
+      "height": 38
+    },
+    {
+      "id": 5,
+      "type": "wall",
+      "left": 15,
+      "top": 15,
+      "width": 50,
+      "height": 50
+    },
+    {
+      "id": 6,
+      "type": "platform",
+      "left": 15,
+      "top": 78,
+      "width": 50,
+      "height": 20
+    },
+    {
+      "id": 7,
+      "type": "platform",
+      "left": 15,
+      "top": 112,
+      "width": 50,
+      "height": 20
+    },
+    {
+      "id": 8,
+      "type": "wall",
+      "left": 80,
+      "top": 15,
+      "width": 50,
+      "height": 50
+    },
+    {
+      "id": 9,
+      "type": "wall",
+      "left": 80,
+      "top": 78,
+      "width": 20,
+      "height": 50
+    },
+    {
+      "id": 10,
+      "type": "wall",
+      "left": 114,
+      "top": 78,
+      "width": 20,
+      "height": 50
+    },
+    {
+      "id": 11,
+      "type": "decor",
+      "left": 15,
+      "top": 200,
+      "width": 50,
+      "height": 40
+    },
+    {
+      "id": 12,
+      "type": "decor",
+      "left": 75,
+      "top": 200,
+      "width": 40,
+      "height": 40
+    },
+    {
+      "id": 13,
+      "type": "decor",
+      "left": 270,
+      "top": 120,
+      "width": 300,
+      "height": 38
+    },
+    {
+      "id": 14,
+      "type": "decor",
+      "left": 300,
+      "top": 0,
+      "width": 135,
+      "height": 95
+    },
+    {
+      "id": 15,
+      "type": "decor",
+      "left": 95,
+      "top": 120,
+      "width": 65,
+      "height": 60
+    },
+    {
+      "id": 16,
+      "type": "decor",
+      "left": 170,
+      "top": 120,
+      "width": 50,
+      "height": 65
+    },
+    {
+      "id": 17,
+      "type": "decor",
+      "left": 225,
+      "top": 160,
+      "width": 30,
+      "height": 20
+    }
+  ]
+}

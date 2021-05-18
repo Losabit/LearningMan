@@ -31,7 +31,7 @@ void CollisionManager::checkCollisions() {
         else{
             if(types.at(i) == ObjectType::Wall)
                 wallCollision(i);
-            else
+            else if(types.at(i) == ObjectType::Decor)
                 platformCollision(i);
         }
     }

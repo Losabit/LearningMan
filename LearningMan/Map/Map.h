@@ -10,6 +10,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <map>
 #include "MapEnvironnement.h"
 #include "MapModel.hpp"
 
@@ -18,34 +19,21 @@ public:
     Map(std::string path);
     void drawBackground(sf::RenderWindow &window);
     void addWall(float x, float y, int i, int i1, int i2, int i3);
-
     std::vector<std::string> getAll();
     // Element de la map ou une colision est possible
     std::vector<MapEnvironnement> mapElement;
 
-
     std::vector<sf::Sprite> walls;
-    int WALL_SIZE = 50;
-    sf::Sprite platform;
+    std::vector<sf::Sprite> platforms;
+    std::vector<sf::Sprite> decors;
+    sf::Color backgroundColor;
 private:
-    sf::Texture backgroundTextureMoon;
-    sf::Texture TextureBigWall;
-    sf::Texture backgroundTextureCloud;
-    sf::Texture backgroundTextureMoutain;
-    sf::Texture backgroundTexutreGround;
-    sf::Texture backgroundTexutreGround2;
-    sf::Texture texturePlatform;
-
-    sf::Sprite backgroundMoon;
-    sf::Sprite backgroundCloud;
-    sf::Sprite backgroundMoutain;
-    sf::Sprite backgroundGround;
-    sf::Sprite backgroundGround2;
-
+    Texture textureGround;
+    std::map<int, sf::Texture> textures;
     // Element de la map qui sert de décor, exemple : Lune, Montagne , Nuage etc.
     std::vector<MapEnvironnement> decor;
     MapModel loadAll(std::string path);
-    static sf::Sprite loadBackground(sf::Texture &texture,int rl, int rt, int rw, int rh, int x , int y, bool repeat);
+    static sf::Sprite loadBackground(sf::Texture &texture, bool repeat);
 };
 
 

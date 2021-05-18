@@ -10,45 +10,55 @@ using namespace sf;
  * Map génération
  */
 Map::Map(std::string path){
-    backgroundMoon = loadBackground(backgroundTextureMoon,430,0,90,90,950,15, false);
-    backgroundMoon.setScale(2,2);
-    backgroundCloud = loadBackground(backgroundTextureCloud,400,210,120,60,900,75, false);
-    backgroundCloud.setScale(1.5,1.5);
-    backgroundGround = loadBackground(backgroundTexutreGround,250,105,300,38,-60,118,true);
-    backgroundGround2 = loadBackground(backgroundTexutreGround2,250,105,300,38,30,118,true);
-    backgroundMoutain = loadBackground(backgroundTextureMoutain,250,175,180,38,430,545, false);
-    backgroundMoutain.setScale(4,2);
-    backgroundGround = loadBackground(backgroundTexutreGround,250,105,300,38,-60,600,true);
-    backgroundGround2 = loadBackground(backgroundTexutreGround2,250,105,300,38,30,600,true);
-
     MapModel mapModel = loadAll(path);
+    backgroundColor = sf::Color(mapModel.colors.red, mapModel.colors.green, mapModel.colors.blue, mapModel.colors.alpha);
+
+    for(int i = 0; i < mapModel.references.size(); i++){
+        for(int k = 0; k < mapModel.references[i].objects.size(); k++) {
+            ObjectReference objectReference = mapModel.references.at(i).objects.at(k);
+            sf::Texture texture;
+            if(!texture.loadFromFile(mapModel.references.at(i).path, sf::IntRect(objectReference.left, objectReference.top, objectReference.width, objectReference.height)))
+            {
+                cout << "Erreur durant le chargement de la texture." << endl;
+            }
+            textures.insert(std::pair<int,sf::Texture>(objectReference.id, texture));
+        }
+    }
+
     for(int i = 0; i < mapModel.objects.size(); i++){
         for(int j = 0; j < mapModel.references.size(); j++){
             for(int k = 0; k < mapModel.references[j].objects.size(); k++){
                 ObjectReference objectReference = mapModel.references[j].objects[k];
                 if(mapModel.objects[i].id == objectReference.id){
+                    sf::Sprite obj = loadBackground(textures.at(objectReference.id), false);
+                    obj.setPosition(mapModel.objects[i].positionX, mapModel.objects[i].positionY);
+                    obj.setScale(mapModel.objects[i].scaleX, mapModel.objects[i].scaleY);
+
                     if(objectReference.type == ObjectType::Wall){
-                        addWall(mapModel.objects[i].positionX, mapModel.objects[i].positionY,
-                                objectReference.left, objectReference.top,
-                                objectReference.width, objectReference.height);
+                        walls.push_back(obj);
                     }
                     else if(objectReference.type == ObjectType::Platform){
-                        platform = loadBackground(texturePlatform, objectReference.left,
-                                                  objectReference.top, objectReference.width,
-                                                  objectReference.height, mapModel.objects[i].positionX,
-                                                  mapModel.objects[i].positionY, false);
-                        platform.setScale(1.2,1.2);
+                        platforms.push_back(obj);
+                    }
+                    else if(objectReference.type == ObjectType::Decor){
+                        decors.push_back(obj);
                     }
                 }
             }
         }
     }
 
+    textureGround.loadFromFile("../assets/map/Dungeon_Ruins_Tileset/Dungeon Ruins Tileset Night.png", IntRect(250,105,300,38));
+    textureGround.setRepeated(true);
+    Sprite spriteGround(textureGround);
+    spriteGround.setPosition(-60,600);
+    spriteGround.setTextureRect({100,0,2000,30});
+    decors.push_back(spriteGround);
 
-    //addWall(100, 560, 0, 0, 0, 0);
-    //addWall(150,560);
-    //addWall(150,510);
-    //addWall(250,560);
+    Sprite spriteGround2(textureGround);
+    spriteGround2.setPosition(30,600);
+    spriteGround2.setTextureRect({100,0,2000,30});
+    decors.push_back(spriteGround2);
 }
 /**
  * FUNCTION TO LOAD BACKGROUND
@@ -87,40 +97,27 @@ std::vector<std::string> Map::getAll(){
     return result;
 }
 
-Sprite Map::loadBackground( sf::Texture &spriteTexture,int rl, int rt , int  rw,  int rh, int x , int y,bool repeat){
+Sprite Map::loadBackground(sf::Texture &spriteTexture, bool repeat){
     Sprite bg;
-    if (!spriteTexture.loadFromFile("../assets/map/Dungeon_Ruins_Tileset/Dungeon Ruins Tileset Day.png",sf::IntRect(rl,rt,rw,rh)))
-    {
-        cout << "Erreur durant le chargement de la texture." << endl;
-    }
-    else {
-        spriteTexture.setRepeated(repeat);
-        bg.setTexture(spriteTexture);
-        if(repeat){
-            bg.setTextureRect({100,0,2000,30});
-        }
-        bg.setPosition(x, y);
+    spriteTexture.setRepeated(repeat);
+    bg.setTexture(spriteTexture);
+    if(repeat){
+        bg.setTextureRect({100,0,2000,30});
     }
     return bg;
 }
 
-void Map::addWall(float x, float y, int left, int top, int width, int height){
-    // TEST WALL POSITION
-    /**
-     * TODO: Preparer la génération aléatoire
-     */
-    walls.push_back(loadBackground(TextureBigWall, left, top, width, height, x, y, false));
-}
-
 void Map::drawBackground(RenderWindow &window)
 {
-    window.draw(backgroundMoutain);
-    window.draw(backgroundMoon);
-    window.draw(backgroundCloud);
-    window.draw(backgroundGround);
-    window.draw(backgroundGround2);
+    for(int i = 0; i < platforms.size(); i++) {
+        window.draw(platforms.at(i));
+    }
+
     for(int i = 0; i < walls.size(); i++) {
         window.draw(walls.at(i));
     }
-    window.draw(platform);
+
+    for(int i = 0; i < decors.size(); i++) {
+        window.draw(decors.at(i));
+    }
 }

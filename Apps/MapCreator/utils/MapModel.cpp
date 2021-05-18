@@ -1,18 +1,5 @@
 #include "MapModel.hpp"
 #include <iostream>
-Colors::Colors() {
-    red = 0;
-    green = 0;
-    blue = 0;
-    alpha = 0;
-}
-
-Colors::Colors(Json::Value root) {
-    red = root["red"].asUInt();
-    green = root["green"].asUInt();
-    blue = root["blue"].asUInt();
-    alpha = 0;
-}
 
 ObjectReference::ObjectReference(Json::Value root) {
     id = root["id"].asUInt();
@@ -20,24 +7,15 @@ ObjectReference::ObjectReference(Json::Value root) {
     top = root["top"].asUInt();
     width = root["width"].asUInt();
     height = root["height"].asUInt();
-    std::string buffType = root["type"].asString();
-    if(buffType == "wall"){
-        type = ObjectType::Wall;
-    }
-    else if(buffType == "platform"){
-        type = ObjectType::Platform;
-    }
-    else if(buffType == "decor"){
-        type = ObjectType::Decor;
-    }
+    type = root["type"].asString();
 }
 
 Object::Object(Json::Value root) {
     id = root["id"].asUInt();
-    scaleX = root["scaleX"].asFloat();
-    scaleY = root["scaleY"].asFloat();
-    positionX = root["positionX"].asFloat();
-    positionY = root["positionY"].asFloat();
+    scaleX = root["scaleX"].asUInt();
+    scaleY = root["scaleY"].asUInt();
+    positionX = root["positionX"].asUInt();
+    positionY = root["positionY"].asUInt();
 }
 
 Reference::Reference(Json::Value root) {
@@ -57,5 +35,4 @@ MapModel::MapModel(Json::Value root){
     for(int i = 0; i < objects1.size(); i++){
         objects.push_back(Object(objects1[i]));
     }
-    colors = Colors(root["colors"]);
 }

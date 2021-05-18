@@ -45,9 +45,9 @@ int main() {
     sf::View view(sf::FloatRect(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT));
     sf::View initialView = window.getView();
 
-    Map map = Map("../ressources/map1.json");
+    Map map = Map("../ressources/test2.json");
     playerCollision.addObject(map.walls, ObjectType::Wall);
-    playerCollision.addObject(map.platform, ObjectType::Platform);
+    playerCollision.addObject(map.platforms, ObjectType::Platform);
     Button button("../assets/button/simple/12.png",
                   IntRect(40,140,480,480),
                   "../ressources/policy/OrelegaOne-Regular.ttf");
@@ -126,7 +126,7 @@ int main() {
             }
         }
 
-        window.clear(sf::Color(122,160,122,0));
+        window.clear(map.backgroundColor);
         if(startGame) {
             containerHealth.number = playerController.character.health;
             containerHealth.setPlayerXPosition(playerController.character.sprite);
@@ -134,7 +134,7 @@ int main() {
 
             if (SHOWHITBOX) {
                 window.draw(HitboxManager::getHitboxSprite(playerController.character.sprite.getGlobalBounds()));
-                window.draw(HitboxManager::getHitboxSprite(map.platform.getGlobalBounds()));
+                //window.draw(HitboxManager::getHitboxSprite(map.platform.getGlobalBounds()));
                 for(int i = 0; i < map.walls.size(); i++) {
                     window.draw(HitboxManager::getHitboxSprite(map.walls.at(i).getGlobalBounds()));
                 }
