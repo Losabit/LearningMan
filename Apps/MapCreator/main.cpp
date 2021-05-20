@@ -19,7 +19,7 @@ int main() {
     }
     sf::View view = window.getView();
     view.move(0, yLag);
-
+    bool showView = false;
 
     Texture textureGround;
     textureGround.loadFromFile("../assets/map/Dungeon_Ruins_Tileset/Dungeon Ruins Tileset Night.png", IntRect(250,105,300,38));
@@ -62,6 +62,9 @@ int main() {
     textureWhiteSelected.loadFromFile("../assets/selectedfondblanc.png");
     Texture textureGrey;
     textureGrey.loadFromFile("../assets/fondgris.png");
+
+    Sprite spriteView(textureWhite, sf::IntRect(0, 0, 10000, CAMERA_HEIGHT));
+    sf::Clock viewClock;
 
     sf::Text textColorRGB;
     textColorRGB.setFont(font);
@@ -317,7 +320,7 @@ int main() {
                 else{
                     if(choosenObject != -1){
                         Sprite sprite = mapManager.sprites.at(choosenObject);
-                        sprite.setPosition(event.mouseButton.x, event.mouseButton.y);
+                        sprite.setPosition(window.mapPixelToCoords(Vector2i (event.mouseButton.x, event.mouseButton.y)));
                         mapSprites.push_back(sprite);
                         mapSpritesIds.push_back(mapManager.mapReferences.objects.at(choosenObject).id);
                         choosenObject = -1;
@@ -401,6 +404,11 @@ int main() {
             }
 
             if(!containerObjectIsPrinted && !containerSaveIsPrinted && !containerColorIsPrinted) {
+                if (Keyboard::isKeyPressed(Keyboard::V) && viewClock.getElapsedTime().asSeconds() > 0.5) {
+                    showView = !showView;
+                    viewClock.restart();
+                }
+
                 float x = 0;
                 float y = 0;
                 if (Keyboard::isKeyPressed(Keyboard::Q)) {
@@ -463,6 +471,14 @@ int main() {
             }
 
             if (event.type == sf::Event::TextEntered) {
+                if(!containerObjectIsPrinted && !containerSaveIsPrinted && !containerColorIsPrinted && choosenMapSprite != -1){
+                    if (event.text.unicode == 8) {
+                        mapSprites.erase(mapSprites.begin() + choosenMapSprite);
+                        mapSpritesIds.erase(mapSpritesIds.begin() + choosenMapSprite);
+                        choosenMapSprite = -1;
+                    }
+                }
+
                 if(containerColorIsPrinted && choosenColor != -1) {
                     if (event.text.unicode == 8) {
                         containerColorInput.texts.at(choosenColor).setString(
@@ -525,6 +541,12 @@ int main() {
         }
 
         window.clear(sf::Color(red,green,blue,0));
+
+        if(showView){
+            spriteView.setPosition(spriteHeros.getPosition().x - CAMERA_WIDTH / 2, spriteHeros.getPosition().y - CAMERA_HEIGHT + 70);
+            window.draw(spriteView);
+        }
+
         window.setView(view);
         buttonColor.draw(&window);
         buttonObject.draw(&window);

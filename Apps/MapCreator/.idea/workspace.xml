@@ -12,99 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a65c3a0d-431f-4e26-ab05-b2527b1a1e7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/MapCreator.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/Button.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/Button.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/Container.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GUI/Container.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/shiny/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/button/simple/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/characters/player/GAS dash FX.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/characters/player/GAS dash with FX.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/characters/player/charge.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/characters/player/damaged.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/characters/player/death.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/characters/player/hot wheels flatten.aseprite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/characters/player/hot wheels flatten.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/characters/player/hot wheels small.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/characters/player/hot wheels.aseprite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/characters/player/move with FX.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/characters/player/move without FX.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/characters/player/shoot FX.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/characters/player/shoot with FX.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/characters/player/shoot without FX.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/characters/player/static idle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/characters/player/wake.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fondblanc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fondgris.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/map/Dungeon_Ruins_Tileset/Dungeon Ruins Tileset Day.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/map/Dungeon_Ruins_Tileset/Dungeon Ruins Tileset Night.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/selectedfondblanc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/define.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/json/json-forwards.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/json/json.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jsoncpp.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ressources/OrelegaOne-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ressources/map/Dungeon_Ruins.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/HitboxManager.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/HitboxManager.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/MapManager.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/MapManager.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/MapModel.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/MapModel.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/ressources/test.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/ressources/test2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/Map.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/Map.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/Map.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/Map.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/MapModel.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/MapModel.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/MapModel.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/MapModel.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/CollisionManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/CollisionManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/CollisionManager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/CollisionManager.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,8 +47,12 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -149,17 +62,17 @@
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RunManager">
-    <configuration name="MapCreator" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MapCreator" TARGET_NAME="MapCreator" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MapCreator" RUN_TARGET_NAME="MapCreator">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapCreator" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MapCreator" TARGET_NAME="MapCreator" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MapCreator" RUN_TARGET_NAME="MapCreator">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -179,6 +92,7 @@
       <workItem from="1621160131235" duration="9072000" />
       <workItem from="1621251716008" duration="3990000" />
       <workItem from="1621325856128" duration="6900000" />
+      <workItem from="1621503840762" duration="2193000" />
     </task>
     <servers />
   </component>
