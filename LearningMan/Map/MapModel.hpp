@@ -25,6 +25,22 @@ public:
     ObjectType type;
 };
 
+class Ennemie {
+public:
+    Ennemie();
+    Ennemie(Json::Value root);
+    std::string id;
+    int positionX;
+    int positionY;
+};
+
+class Boss {
+    Boss(Json::Value root);
+    std::string id;
+    int positionX;
+    int positionY;
+};
+
 class Reference {
 public:
     Reference(Json::Value root);
@@ -47,6 +63,7 @@ public:
     MapModel(Json::Value root);
     std::vector<Reference> references;
     std::vector<Object> objects;
+    std::vector<Ennemie> ennemies;
     Colors colors;
 };
 

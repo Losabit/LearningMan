@@ -18,6 +18,12 @@ void CollisionManager::addObject(std::vector<sf::Sprite> sprite, ObjectType obje
     }
 }
 
+void CollisionManager::clear() {
+    objects.clear();
+    types.clear();
+    isFalling.clear();
+}
+
 void CollisionManager::checkCollisions() {
     int highestOver = -1;
     int highestOverValue = -1;

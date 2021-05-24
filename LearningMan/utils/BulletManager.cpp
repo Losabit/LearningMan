@@ -1,6 +1,6 @@
 #include "BulletManager.hpp"
 
-void BulletManager::manageBullets(Controller* shooter, std::list<IAController*>* ennemies, sf::RenderWindow* window) {
+void BulletManager::manageBullets(Controller* shooter, std::list<IAController*>* ennemies, std::vector<sf::Sprite> walls, sf::RenderWindow* window) {
     std::list<Vector2f> :: iterator it;
     std::list<Vector2f> :: iterator itOrigin;
     std::list<IAController*> :: iterator itEnnemies;
@@ -15,6 +15,7 @@ void BulletManager::manageBullets(Controller* shooter, std::list<IAController*>*
             it->x -= shooter->character.bulletSpeed;
         }
         shooter->character.bullet.setPosition(it->x, it->y);
+        shooter->character.bullet.setScale(-*itOrientation, 1);
         window->draw(shooter->character.bullet);
         for (itEnnemies = ennemies->begin(); itEnnemies != ennemies->end(); itEnnemies++) {
             if (shooter->character.bullet.getGlobalBounds().intersects(
@@ -25,8 +26,21 @@ void BulletManager::manageBullets(Controller* shooter, std::list<IAController*>*
                 it = shooter->bullets.erase(it);
                 itOrientation = shooter->bulletsOrientation.erase(itOrientation);
                 itOrigin = shooter->bulletsOrigin.erase(itOrigin);
+                continue;
             }
         }
+
+        for(int i = 0; i < walls.size(); i++){
+            sf::Rect<float> rectBullet = shooter->character.bullet.getGlobalBounds();
+            rectBullet.height -= 5;
+            if (rectBullet.intersects(
+                    walls.at(i).getGlobalBounds())) {
+                it = shooter->bullets.erase(it);
+                itOrientation = shooter->bulletsOrientation.erase(itOrientation);
+                continue;
+            }
+        }
+
         if (it->x > (itOrigin->x + 2000) || it->x < (itOrigin->x- 2000)) {
             it = shooter->bullets.erase(it);
             itOrigin = shooter->bulletsOrigin.erase(itOrigin);
@@ -35,12 +49,13 @@ void BulletManager::manageBullets(Controller* shooter, std::list<IAController*>*
     }
 }
 
-void BulletManager::manageBullets(Controller* shooter, Controller* ennemies, sf::RenderWindow* window) {
+void BulletManager::manageBullets(Controller* shooter, Controller* ennemies, std::vector<sf::Sprite> walls, sf::RenderWindow* window) {
     std::list<Vector2f> :: iterator it;
+    std::list<Vector2f> :: iterator itOrigin;
     std::list<int> :: iterator itOrientation;
 
-    for (it = shooter->bullets.begin(), itOrientation = shooter->bulletsOrientation.begin();
-    it != shooter->bullets.end(); it++, itOrientation++) {
+    for (it = shooter->bullets.begin(), itOrientation = shooter->bulletsOrientation.begin(), itOrigin = shooter->bulletsOrigin.begin();
+         it != shooter->bullets.end(); it++, itOrientation++, itOrigin++) {
         if(*itOrientation == 1){
             it->x += shooter->character.bulletSpeed;
         }
@@ -48,6 +63,7 @@ void BulletManager::manageBullets(Controller* shooter, Controller* ennemies, sf:
             it->x -= shooter->character.bulletSpeed;
         }
         shooter->character.bullet.setPosition(it->x, it->y);
+        shooter->character.bullet.setScale(-*itOrientation, 1);
         window->draw(shooter->character.bullet);
 
         if (shooter->character.bullet.getGlobalBounds().intersects(
@@ -58,7 +74,19 @@ void BulletManager::manageBullets(Controller* shooter, Controller* ennemies, sf:
             it = shooter->bullets.erase(it);
             itOrientation = shooter->bulletsOrientation.erase(itOrientation);
         }
-        if (it->x > 800 || it->x < -200) {
+
+        for(int i = 0; i < walls.size(); i++){
+            sf::Rect<float> rectBullet = shooter->character.bullet.getGlobalBounds();
+            rectBullet.height -= 5;
+            if (rectBullet.intersects(
+                    walls.at(i).getGlobalBounds())) {
+                it = shooter->bullets.erase(it);
+                itOrientation = shooter->bulletsOrientation.erase(itOrientation);
+                continue;
+            }
+        }
+
+        if (it->x > (itOrigin->x + 2000) || it->x < (itOrigin->x- 2000)) {
             it = shooter->bullets.erase(it);
             itOrientation = shooter->bulletsOrientation.erase(itOrientation);
         }

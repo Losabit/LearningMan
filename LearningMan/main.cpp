@@ -1,5 +1,6 @@
 #include <iostream>
 #include <list>
+#include <regex>
 #include "define.hpp"
 #include "controllers/PlayerController.hpp"
 #include "controllers/IAController.hpp"
@@ -20,6 +21,7 @@ int main() {
     bool SHOWHITBOX = false;
     sf::Clock hitboxClock = sf::Clock();
     sf::Clock pauseClock = sf::Clock();
+    sf::Clock levelClock;
     float pauseCooldown = 0.5f;
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "LearningMan");
     window.setFramerateLimit(60);
@@ -27,47 +29,47 @@ int main() {
     icon.loadFromFile("../assets/others/logo.png");
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
-    Character heros = Heros();
-    PlayerController playerController(&heros);
-    playerController.character.sprite.setPosition(HEROS_INITIAL_POSITION);
-    CollisionManager playerCollision(&playerController);
-
-    Character shotgunner = Shotgunner();
-    IAController shotgunnerController(&shotgunner);
-    shotgunnerController.character.sprite.move(ENNEMI_INITIAL_POSITION);
-    shotgunnerController.character.sprite.setScale(-1, 1);
-
-    Sprite player =  playerController.character.sprite;
-    list<IAController*> ennemies;
-    list<IAController*> :: iterator itEnnemies;
-    ennemies.push_back(&shotgunnerController);
-
     sf::View view(sf::FloatRect(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT));
     sf::View initialView = window.getView();
 
-    Map map = Map("../ressources/test2.json");
-    playerCollision.addObject(map.walls, ObjectType::Wall);
-    playerCollision.addObject(map.platforms, ObjectType::Platform);
+    vector<string> mapsName = Map::getAvailableMapNames();
+    list<Button> buttonsMap;
     Button button("../assets/button/simple/12.png",
-                  IntRect(40,140,480,480),
+                  IntRect(40, 140, 480, 200),
                   "../ressources/policy/OrelegaOne-Regular.ttf");
-    button.sprite.setScale(0.5,0.5);
-    button.setPosition(Vector2f(400,300));
-    button.text.setString("Play");
+    button.sprite.setScale(0.5, 0.5);
     button.text.setCharacterSize(24);
     button.text.setFillColor(sf::Color::White);
     button.text.move(70, 30);
+    for(int i = 0; i < mapsName.size(); i++) {
+        button.setPosition(Vector2f(400, 200 + 100 * i));
+        button.text.setString(std::regex_replace(mapsName.at(i), std::regex("\\.json"), ""));
 
+        buttonsMap.push_back(button);
+    }
 
     Texture textureHealth;
     textureHealth.loadFromFile(GUI_ASSETS_PATH "/health.png");
     Sprite spriteHealth(textureHealth, IntRect(0, 0, 901, 900));
     spriteHealth.setScale(0.02, 0.02);
-
     Container containerHealth(spriteHealth, 5, 25);
+
+    Character heros = Heros();
+    PlayerController playerController(&heros);
+    playerController.character.sprite.setPosition(HEROS_INITIAL_POSITION);
+    CollisionManager playerCollision(&playerController);
+    Sprite player =  playerController.character.sprite;
+
+    Map map;
+    std::list<Character> ennemiesCharacters;
+    list<IAController> ennemiesRef;
+    list<IAController*> ennemies;
+    list<IAController*> :: iterator itEnnemies;
+    list<CollisionManager> ennemiesCollisions;
 
     bool paused = false;
     bool startGame = false;
+
     while (window.isOpen())
     {
         Event event;
@@ -93,8 +95,9 @@ int main() {
             }
 
             if (!paused) {
-                for(int i = 0; i < map.walls.size(); i++) {
-                    playerCollision.checkCollisions();
+                playerCollision.checkCollisions();
+                for(auto itEnnemiCollision = ennemiesCollisions.begin(); itEnnemiCollision != ennemiesCollisions.end(); itEnnemiCollision++){
+                    itEnnemiCollision->checkCollisions();
                 }
 
                 if(playerController.play() == Action::ToDestroy){
@@ -102,7 +105,7 @@ int main() {
                     playerController.character.reset(HEROS_INITIAL_POSITION);
                     window.setView(initialView);
                     for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
-                        (*itEnnemies)->character.reset(ENNEMI_INITIAL_POSITION);
+                        //(*itEnnemies)->character.reset();
                     }
                 }
                 else{
@@ -114,20 +117,60 @@ int main() {
                     (*itEnnemies)->setPlayerPosition(playerController.character.sprite.getPosition());
                     (*itEnnemies)->play(playerController.character);
                 }
-                shotgunnerController.setPlayerPosition(playerController.character.sprite.getPosition());
             }
         }
         else{
             if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
             {
-                if(button.sprite.getGlobalBounds().contains( window.mapPixelToCoords(Vector2i (event.mouseButton.x, event.mouseButton.y)))) {
-                    startGame = true;
+                for(auto buttonRef = buttonsMap.begin(); buttonRef != buttonsMap.end(); buttonRef++){
+                    if((*buttonRef).sprite.getGlobalBounds().contains( window.mapPixelToCoords(Vector2i (event.mouseButton.x, event.mouseButton.y)))) {
+                        string choosenMap = MAP_PATH "/" + (*buttonRef).text.getString().toAnsiString() + ".json";
+                        map = Map(choosenMap);
+                        //impossible de le mettre sous forme de fonction en fonction // problèmes adresses mémoires avec l'héritage sur  les textures
+                        ennemiesCharacters.clear();
+                        ennemiesRef.clear();
+                        ennemies.clear();
+                        ennemiesCollisions.clear();
+                        for(int i = 0; i < map.ennemies.size(); i++){
+                            if(map.ennemies.at(i).id == "shotgunner"){
+                                Character shotgunner = Shotgunner();
+                                shotgunner.sprite.setPosition(map.ennemies.at(i).positionX, map.ennemies.at(i).positionY);
+                                shotgunner.sprite.setScale(-1, 1);
+                                ennemiesCharacters.push_back(shotgunner);
+                            }
+                            else{
+                                std::cout << "ennemie " << map.ennemies.at(i).id << " not found" << std::endl;
+                                continue;
+                            }
+                        }
+                        for(auto itEnnemiesCharacters =  ennemiesCharacters.begin(); itEnnemiesCharacters !=  ennemiesCharacters.end(); itEnnemiesCharacters++){
+                            ennemiesRef.push_back(IAController(&(*itEnnemiesCharacters)));
+                        }
+                        for(auto itEnnemiesRef = ennemiesRef.begin(); itEnnemiesRef != ennemiesRef.end(); itEnnemiesRef++){
+                            ennemies.push_back(&(*itEnnemiesRef));
+                        }
+                        for(auto itEnnemi = ennemies.begin(); itEnnemi != ennemies.end(); itEnnemi++){
+                            ennemiesCollisions.push_back(CollisionManager(*itEnnemi));
+                        }
+
+                        for(auto itEnnemiCollision = ennemiesCollisions.begin(); itEnnemiCollision != ennemiesCollisions.end(); itEnnemiCollision++){
+                            itEnnemiCollision->addObject(map.walls, ObjectType::Wall);
+                            itEnnemiCollision->addObject(map.platforms, ObjectType::Platform);
+                        }
+
+                        playerCollision.clear();
+                        playerCollision.addObject(map.walls, ObjectType::Wall);
+                        playerCollision.addObject(map.platforms, ObjectType::Platform);
+
+                        startGame = true;
+                        break;
+                    }
                 }
             }
         }
 
-        window.clear(map.backgroundColor);
         if(startGame) {
+            window.clear(map.backgroundColor);
             containerHealth.number = playerController.character.health;
             containerHealth.setPlayerXPosition(playerController.character.sprite);
             containerHealth.draw(&window);
@@ -156,15 +199,18 @@ int main() {
             }
 
             window.draw(playerController.character.sprite);
-            BulletManager::manageBullets(&playerController, &ennemies, &window);
+            BulletManager::manageBullets(&playerController, &ennemies, map.walls,&window);
             for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
                 window.draw((*itEnnemies)->character.sprite);
-                BulletManager::manageBullets((*itEnnemies), &playerController, &window);
+                BulletManager::manageBullets((*itEnnemies), &playerController, map.walls, &window);
             }
             map.drawBackground(window);
         }
         else{
-            button.draw(&window);
+            window.clear(DEFAULT_COLOR);
+            for(auto buttonRef = buttonsMap.begin(); buttonRef != buttonsMap.end(); buttonRef++){
+               (*buttonRef).draw(&window);
+            }
         }
         window.display();
     }

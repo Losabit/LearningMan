@@ -1,6 +1,3 @@
-//
-// Created by quent on 25/04/2021.
-//
 #include <iostream>
 #include "Button.hpp"
 

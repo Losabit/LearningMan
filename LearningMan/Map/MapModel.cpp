@@ -32,6 +32,16 @@ ObjectReference::ObjectReference(Json::Value root) {
     }
 }
 
+Ennemie::Ennemie() {
+
+}
+
+Ennemie::Ennemie(Json::Value root) {
+    id = root["id"].asString();
+    positionX = root["positionX"].asFloat();
+    positionY = root["positionY"].asFloat();
+}
+
 Object::Object(Json::Value root) {
     id = root["id"].asUInt();
     scaleX = root["scaleX"].asFloat();
@@ -51,11 +61,15 @@ Reference::Reference(Json::Value root) {
 MapModel::MapModel(Json::Value root){
     const Json::Value& references1 = root["references"];
     const Json::Value& objects1 = root["objects"];
+    const Json::Value& ennemies1 = root["ennemies"];
     for (int i = 0; i < references1.size(); i++){
         references.push_back(Reference(references1[i]));
     }
     for(int i = 0; i < objects1.size(); i++){
         objects.push_back(Object(objects1[i]));
+    }
+    for(int i = 0; i < ennemies1.size(); i++){
+        ennemies.push_back(Ennemie(ennemies1[i]));
     }
     colors = Colors(root["colors"]);
 }

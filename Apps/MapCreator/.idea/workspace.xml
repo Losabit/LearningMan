@@ -13,7 +13,19 @@
   <component name="ChangeListManager">
     <list default="true" id="a65c3a0d-431f-4e26-ab05-b2527b1a1e7d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/Map.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/Map.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/Map.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/Map.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/MapModel.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/MapModel.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/MapModel.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/MapModel.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/Character.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/Character.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/Shotgunner.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/Shotgunner.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/controllers/Controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/controllers/Controller.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/define.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/define.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/map1.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/ressources/map1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/test2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/ressources/test2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,11 +74,6 @@
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MapCreator" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MapCreator" TARGET_NAME="MapCreator" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MapCreator" RUN_TARGET_NAME="MapCreator">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -92,7 +99,8 @@
       <workItem from="1621160131235" duration="9072000" />
       <workItem from="1621251716008" duration="3990000" />
       <workItem from="1621325856128" duration="6900000" />
-      <workItem from="1621503840762" duration="2193000" />
+      <workItem from="1621503840762" duration="2507000" />
+      <workItem from="1621695760647" duration="808000" />
     </task>
     <servers />
   </component>

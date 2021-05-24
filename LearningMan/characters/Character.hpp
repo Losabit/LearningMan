@@ -26,7 +26,7 @@ public:
     float gravity = 1.0f;
     float jumpHeight = 100;
     int health = 5;
-
+    std::string id = "null";
 protected:
     TextureManager textureIdle;
     TextureManager textureShoot;

@@ -3,22 +3,36 @@
 	{
 		"blue" : 122,
 		"green" : 160,
-		"red" : 160
+		"red" : 122
 	},
 	"objects" : 
 	[
 		{
+			"id" : 5,
+			"positionX" : 93.0,
+			"positionY" : 554.0,
+			"scaleX" : 2.0,
+			"scaleY" : 1.0
+		},
+		{
 			"id" : 14,
-			"positionX" : 111.0,
-			"positionY" : 446.0,
+			"positionX" : 244.0,
+			"positionY" : 512.0,
 			"scaleX" : 1.0,
 			"scaleY" : 1.0
 		},
 		{
-			"id" : 5,
-			"positionX" : 335.0,
-			"positionY" : 495.0,
-			"scaleX" : 2.0,
+			"id" : 1,
+			"positionX" : 362.0,
+			"positionY" : 286.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 2,
+			"positionX" : 78.0,
+			"positionY" : 374.0,
+			"scaleX" : 1.0,
 			"scaleY" : 1.0
 		}
 	],
@@ -165,6 +179,25 @@
 				}
 			],
 			"path" : "../assets/map/Dungeon_Ruins_Tileset/Dungeon Ruins Tileset Night.png"
+		}
+	],
+	"ennemies": [
+		{
+			"id": "shotgunner",
+			"positionX": 600,
+			"positionY": 575
+		},
+		{
+			"id": "shotgunner",
+			"positionX": 900,
+			"positionY": 575
+		}
+	],
+	"boss": [
+		{
+			"id": "shotgunner",
+			"positionX": 2000,
+			"positionY": 575
 		}
 	]
 }

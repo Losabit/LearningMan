@@ -6,8 +6,8 @@
 
 class BulletManager {
 public:
-    static void manageBullets(Controller* shooter, std::list<IAController*>* ennemies, sf::RenderWindow* window);
-    static void manageBullets(Controller* shooter, Controller* ennemies, sf::RenderWindow* window);
+    static void manageBullets(Controller* shooter, std::list<IAController*>* ennemies, std::vector<sf::Sprite> walls, sf::RenderWindow* window);
+    static void manageBullets(Controller* shooter, Controller* ennemies, std::vector<sf::Sprite> walls, sf::RenderWindow* window);
 };
 
 

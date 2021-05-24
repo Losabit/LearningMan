@@ -75,7 +75,16 @@
   ],
   "ennemies": [
     {
-
+      "id": "shotgunner",
+      "positionX": 600,
+      "positionY": 575
+    }
+  ],
+  "boss": [
+    {
+      "id": "shotgunner",
+      "positionX": 2000,
+      "positionY": 575
     }
   ]
 }

@@ -16,6 +16,7 @@ public:
     void checkCollisions();
     void addObject(sf::Sprite sprite, ObjectType objectType);
     void addObject(std::vector<sf::Sprite> sprite, ObjectType objectType);
+    void clear();
 
 private:
     std::vector<sf::Sprite> objects;
