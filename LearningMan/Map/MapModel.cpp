@@ -42,6 +42,23 @@ Ennemie::Ennemie(Json::Value root) {
     positionY = root["positionY"].asFloat();
 }
 
+Boss::BossPortal::BossPortal(Json::Value root) {
+    path = root["path"].asString();
+    positionX = root["positionX"].asFloat();
+    positionY = root["positionY"].asFloat();
+}
+
+Boss::BossCharacter::BossCharacter(Json::Value root) {
+    id = root["id"].asString();
+    positionX = root["positionX"].asFloat();
+    positionY = root["positionY"].asFloat();
+}
+
+Boss::Boss(Json::Value root) {
+    character = BossCharacter(root["character"]);
+    portal = BossPortal(root["portal"]);
+}
+
 Object::Object(Json::Value root) {
     id = root["id"].asUInt();
     scaleX = root["scaleX"].asFloat();
@@ -72,4 +89,5 @@ MapModel::MapModel(Json::Value root){
         ennemies.push_back(Ennemie(ennemies1[i]));
     }
     colors = Colors(root["colors"]);
+    boss = Boss(root["boss"]);
 }

@@ -85,8 +85,8 @@ sf::Sprite TextureManager::toSprite(int number) {
         x = 0;
     }
     sf::IntRect newRect = rect;
-    newRect.left += leftLag * x;
-    newRect.top += topLag * y;
+    newRect.left = rect.left + leftLag * x;
+    newRect.top = rect.top + topLag * y;
     return sf::Sprite(texture, newRect);
 }
 

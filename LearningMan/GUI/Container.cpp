@@ -3,19 +3,26 @@
 #include <iostream>
 
 Container::Container(sf::Sprite sprite1, int number1, int leftLag1){
-    sprite = sprite1;
+    sprites.push_back(sprite1);
     number = number1;
     leftLag = leftLag1;
-}
-
-void Container::setPlayerXPosition(sf::Sprite player){
-    playerXPosition = player.getPosition().x;
-}
-
-void Container::draw(sf::RenderWindow* window){
     for(int i = 0; i < number; i++){
-        sf::Sprite sprite1 = sprite;
-        sprite1.move((playerXPosition - 200)+ leftLag * i, WINDOW_HEIGHT - CAMERA_HEIGHT - 50);
+        textureIndices.push_back(0);
+    }
+}
+
+void Container::AddSecondarySprite(sf::Sprite sprite1){
+    sprites.push_back(sprite1);
+}
+
+void Container::changeTextureOf(int indice, int textureIndice){
+    textureIndices.at(indice) = textureIndice;
+}
+
+void Container::draw(sf::RenderWindow* window, float positionX, float positionY){
+    for(int i = 0; i < number; i++){
+        sf::Sprite sprite1 = sprites.at(textureIndices.at(i));
+        sprite1.move(positionX + leftLag * i, positionY);
         window->draw(sprite1);
     }
 }

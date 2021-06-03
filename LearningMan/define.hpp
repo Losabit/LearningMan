@@ -17,4 +17,5 @@
 #define CAMERA_WIDTH 400.f
 #define CAMERA_HEIGHT 250.f
 #define DEFAULT_COLOR sf::Color(122, 160, 122, 0)
+#define BOSS_LIFEBAR_POSITION_X -120
 

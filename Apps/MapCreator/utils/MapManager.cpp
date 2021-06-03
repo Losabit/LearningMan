@@ -52,6 +52,15 @@ MapCut MapManager::loadAll(std::string path) {
     return MapCut(root);
 }
 
+Json::Value MapManager::load(std::string path) {
+    Json::Value loadedRoot;
+    std::ifstream file;
+    file.open(path);
+    file >> loadedRoot;
+    file.close();
+    return loadedRoot;
+}
+
 void MapManager::save(std::string path, std::vector<sf::Sprite> objects,  std::vector<int> ids, sf::Vector3i colors) {
     std::ofstream outfile (path);
     Json::Value root;

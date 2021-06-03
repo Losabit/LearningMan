@@ -37,11 +37,47 @@ int main() {
     Sprite spriteHeros(textureHeros);
     spriteHeros.setPosition(0, 583);
 
-    // Color
+
     int red = 122;
     int green = 160;
     int blue = 122;
+    std::map<int, Texture> mapTextures;
+    std::vector<Sprite> mapSprites;
+    std::vector<int> mapSpritesIds;
 
+    MapManager mapManager(USED_MAP);
+    if(USE_PRELOAD_MAP){
+        Json::Value loadedRoot = mapManager.load(PRELOAD_MAP);
+        red = loadedRoot["colors"]["red"].asInt();
+        green = loadedRoot["colors"]["green"].asInt();
+        blue = loadedRoot["colors"]["blue"].asInt();
+
+        const Json::Value& references = loadedRoot["references"];
+        for(int i = 0; i < references.size(); i++){
+            string path = references[i]["path"].asString();
+            const Json::Value& objects = references[i]["objects"];
+            for(int j = 0; j < objects.size(); j++) {
+                Texture texture;
+                texture.loadFromFile(path, IntRect(objects[j]["left"].asInt(),objects[j]["top"].asInt(),
+                                                   objects[j]["width"].asInt(), objects[j]["height"].asInt()));
+                mapTextures.insert({objects[j]["id"].asInt(), texture});
+            }
+        }
+
+        const Json::Value& objects = loadedRoot["objects"];
+        for(int i = 0; i < objects.size(); i++){
+            mapSpritesIds.push_back(objects[i]["id"].asInt());
+            Sprite sprite;
+            sprite.setTexture(mapTextures.find(objects[i]["id"].asInt())->second);
+            sprite.setScale(objects[i]["scaleX"].asFloat(), objects[i]["scaleY"].asFloat());
+            sprite.setPosition(objects[i]["positionX"].asFloat(), objects[i]["positionY"].asFloat());
+            mapSprites.push_back(sprite);
+        }
+
+    }
+
+
+    // Color
     sf::Text textColor;
     textColor.setFont(font);
     textColor.setString("Color");
@@ -118,11 +154,8 @@ int main() {
     buttonObject.sprite.setScale(0.5,0.5);
     buttonObject.move(sf::Vector2f(300, 0 + yLag));
 
-    MapManager mapManager(USED_MAP);
     bool containerObjectIsPrinted = false;
     int choosenObject = -1;
-    std::vector<Sprite> mapSprites;
-    std::vector<int> mapSpritesIds;
     int choosenMapSprite = -1;
 
 

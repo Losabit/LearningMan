@@ -5,13 +5,16 @@
 class Container {
 public:
     Container(sf::Sprite sprite1, int number1, int leftLag1);
-    void setPlayerXPosition(sf::Sprite player);
-    void draw(sf::RenderWindow* window);
+    void AddSecondarySprite(sf::Sprite sprite1);
+    void draw(sf::RenderWindow* window, float positionX, float positionY);
+    void changeTextureOf(int indice, int textureIndice);
     int number;
+
 private:
+    std::vector<int> textureIndices;
     int leftLag;
     float playerXPosition;
-    sf::Sprite sprite;
+    std::vector<sf::Sprite> sprites;
 };
 
 

@@ -63,9 +63,9 @@ Action Controller::play() {
     }
 
 
-    if (character.sprite.getPosition().y > GRAVITY_POINT || character.canJump) {
+    if (character.sprite.getPosition().y > GRAVITY_POINT + character.gravityDecalage || character.canJump) {
         character.canJump = true;
-        character.sprite.setPosition(character.sprite.getPosition().x, GRAVITY_POINT);
+        character.sprite.setPosition(character.sprite.getPosition().x, GRAVITY_POINT + character.gravityDecalage);
         character.velocity.y = 0;
     } else {
         character.velocity.y += character.gravity;

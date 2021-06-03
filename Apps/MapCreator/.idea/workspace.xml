@@ -12,20 +12,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a65c3a0d-431f-4e26-ab05-b2527b1a1e7d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/in/basic.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/characters/Golem.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/characters/Golem.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/define.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/define.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/MapManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/utils/MapManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/MapManager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/utils/MapManager.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/Map.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/Map.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/Map.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/Map.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/MapModel.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/MapModel.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/MapModel.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/MapModel.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/Character.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/Character.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/Shotgunner.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/Shotgunner.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/controllers/Controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/controllers/Controller.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/define.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/define.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/map1.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/ressources/map1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/test2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/ressources/test2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/basic.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/ressources/basic.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,15 +76,15 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\quent\Desktop\PA\LearningMan\Apps\MapCreator\in" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="MapCreator" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MapCreator" TARGET_NAME="MapCreator" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MapCreator" RUN_TARGET_NAME="MapCreator">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -101,6 +104,9 @@
       <workItem from="1621325856128" duration="6900000" />
       <workItem from="1621503840762" duration="2507000" />
       <workItem from="1621695760647" duration="808000" />
+      <workItem from="1621958858881" duration="801000" />
+      <workItem from="1621973227209" duration="1975000" />
+      <workItem from="1622135153969" duration="2678000" />
     </task>
     <servers />
   </component>

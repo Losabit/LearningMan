@@ -34,11 +34,11 @@ public:
     MapCut mapReferences;
     void draw(sf::RenderWindow &window);
     void move(sf::Vector2f vector2F);
+    Json::Value load(std::string path);
     void save(std::string path, std::vector<sf::Sprite> objects, std::vector<int> ids, sf::Vector3i colors);
 private:
     MapCut loadAll(std::string path);
     sf::Sprite loadBackground(std::string path, sf::Texture &spriteTexture, int rl, int rt, int rw, int rh, bool repeat);
-
 };
 
 

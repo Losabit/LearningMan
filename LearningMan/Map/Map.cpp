@@ -19,6 +19,7 @@ Map::Map(){
 Map::Map(std::string path){
     MapModel mapModel = loadAll(path);
     backgroundColor = sf::Color(mapModel.colors.red, mapModel.colors.green, mapModel.colors.blue, mapModel.colors.alpha);
+    boss = mapModel.boss;
     ennemies = mapModel.ennemies;
 
     sf::Texture texture;

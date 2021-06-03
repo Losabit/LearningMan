@@ -25,9 +25,9 @@ public:
     std::vector<sf::Sprite> platforms;
     std::vector<sf::Sprite> decors;
     std::vector<Ennemie> ennemies;
+    Boss boss;
     sf::Color backgroundColor;
 private:
-    Texture textureGround;
     std::map<int, sf::Texture> textures;
 
     MapModel loadAll(std::string path);

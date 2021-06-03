@@ -6,12 +6,14 @@
 #include "controllers/IAController.hpp"
 #include "characters/Heros.hpp"
 #include "characters/Shotgunner.hpp"
+#include "characters/Golem.hpp"
 #include "Map/Map.h"
 #include "utils/BulletManager.hpp"
 #include "GUI/Button.hpp"
 #include "GUI/Container.hpp"
 #include "utils/HitboxManager.hpp"
 #include "utils/CollisionManager.hpp"
+#include "utils/Portal.hpp"
 
 using namespace std;
 
@@ -28,6 +30,22 @@ int main() {
     sf::Image icon;
     icon.loadFromFile("../assets/others/logo.png");
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+
+    sf::Texture lifebar;
+    lifebar.loadFromFile("../assets/GUI/lifebar.png", IntRect(52, 61, 50, 28));
+    sf::Texture lifebarEmpty;
+    lifebarEmpty.loadFromFile("../assets/GUI/lifebar.png", IntRect(190, 61, 50, 28));
+    Sprite lifebarSprite;
+    lifebarSprite.setTexture(lifebar);
+    lifebarSprite.setPosition(BOSS_LIFEBAR_POSITION_X, 615);
+    lifebarSprite.setScale(0.5,0.5);
+    Sprite lifebarEmptySprite;
+    lifebarEmptySprite.setTexture(lifebarEmpty);
+    lifebarEmptySprite.setPosition(BOSS_LIFEBAR_POSITION_X, 615);
+    lifebarEmptySprite.setScale(0.5,0.5);
+
+    Container containerLifebar(lifebarSprite, 10, 25);
+    containerLifebar.AddSecondarySprite(lifebarEmptySprite);
 
     sf::View view(sf::FloatRect(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT));
     sf::View initialView = window.getView();
@@ -66,6 +84,10 @@ int main() {
     list<IAController*> ennemies;
     list<IAController*> :: iterator itEnnemies;
     list<CollisionManager> ennemiesCollisions;
+    Character boss;
+    IAController bossController(&boss);
+    Portal portal;
+    bool takePortal = false;
 
     bool paused = false;
     bool startGame = false;
@@ -113,10 +135,16 @@ int main() {
                     window.setView(view);
                 }
 
+                if(playerController.character.sprite.getGlobalBounds().intersects(portal.getSprite().getGlobalBounds())) {
+                    playerController.character.sprite.setPosition(map.boss.character.positionX, map.boss.character.positionY);
+                    takePortal = true;
+                }
+
                 for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
                     (*itEnnemies)->setPlayerPosition(playerController.character.sprite.getPosition());
                     (*itEnnemies)->play(playerController.character);
                 }
+                bossController.play(playerController.character);
             }
         }
         else{
@@ -131,17 +159,29 @@ int main() {
                         ennemiesRef.clear();
                         ennemies.clear();
                         ennemiesCollisions.clear();
+
+                        if(map.boss.character.id == "golem"){
+                            boss = Golem();
+                            boss.sprite.setPosition(map.boss.character.positionX, map.boss.character.positionY);
+                            boss.sprite.setScale(-1, 1);
+                            bossController = IAController(&boss);
+                        }
+
+                        portal = Portal(map.boss.portal.path, Vector2f(map.boss.portal.positionX, map.boss.portal.positionY));
+
                         for(int i = 0; i < map.ennemies.size(); i++){
-                            if(map.ennemies.at(i).id == "shotgunner"){
-                                Character shotgunner = Shotgunner();
-                                shotgunner.sprite.setPosition(map.ennemies.at(i).positionX, map.ennemies.at(i).positionY);
-                                shotgunner.sprite.setScale(-1, 1);
-                                ennemiesCharacters.push_back(shotgunner);
+                            Character shotgunner;
+                            if(map.ennemies.at(i).id == "shotgunner") {
+                                shotgunner = Shotgunner();
                             }
                             else{
                                 std::cout << "ennemie " << map.ennemies.at(i).id << " not found" << std::endl;
                                 continue;
                             }
+
+                            shotgunner.sprite.setPosition(map.ennemies.at(i).positionX, map.ennemies.at(i).positionY);
+                            shotgunner.sprite.setScale(-1, 1);
+                            ennemiesCharacters.push_back(shotgunner);
                         }
                         for(auto itEnnemiesCharacters =  ennemiesCharacters.begin(); itEnnemiesCharacters !=  ennemiesCharacters.end(); itEnnemiesCharacters++){
                             ennemiesRef.push_back(IAController(&(*itEnnemiesCharacters)));
@@ -171,13 +211,14 @@ int main() {
 
         if(startGame) {
             window.clear(map.backgroundColor);
+            if(takePortal) {
+                containerLifebar.draw(&window, playerController.character.sprite.getPosition().x - lifebarSprite.getPosition().x + BOSS_LIFEBAR_POSITION_X, 0);
+            }
             containerHealth.number = playerController.character.health;
-            containerHealth.setPlayerXPosition(playerController.character.sprite);
-            containerHealth.draw(&window);
+            containerHealth.draw(&window, playerController.character.sprite.getPosition().x - 200,  WINDOW_HEIGHT - CAMERA_HEIGHT - 50);
 
             if (SHOWHITBOX) {
                 window.draw(HitboxManager::getHitboxSprite(playerController.character.sprite.getGlobalBounds()));
-                //window.draw(HitboxManager::getHitboxSprite(map.platform.getGlobalBounds()));
                 for(int i = 0; i < map.walls.size(); i++) {
                     window.draw(HitboxManager::getHitboxSprite(map.walls.at(i).getGlobalBounds()));
                 }
@@ -199,10 +240,17 @@ int main() {
             }
 
             window.draw(playerController.character.sprite);
-            BulletManager::manageBullets(&playerController, &ennemies, map.walls,&window);
-            for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
-                window.draw((*itEnnemies)->character.sprite);
-                BulletManager::manageBullets((*itEnnemies), &playerController, map.walls, &window);
+            if(takePortal){
+                //BulletManager::manageBullets(&playerController, &ennemies, map.walls,&window);
+                window.draw(bossController.character.sprite);
+            }
+            else{
+                BulletManager::manageBullets(&playerController, &ennemies, map.walls,&window);
+                for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
+                    window.draw((*itEnnemies)->character.sprite);
+                    BulletManager::manageBullets((*itEnnemies), &playerController, map.walls, &window);
+                }
+                window.draw(portal.getSprite());
             }
             map.drawBackground(window);
         }

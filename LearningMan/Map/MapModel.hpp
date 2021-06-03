@@ -34,11 +34,32 @@ public:
     int positionY;
 };
 
+
+
 class Boss {
+public:
+    Boss(){};
     Boss(Json::Value root);
-    std::string id;
-    int positionX;
-    int positionY;
+
+    class BossCharacter {
+    public:
+        BossCharacter(){};
+        BossCharacter(Json::Value root);
+        std::string id;
+        int positionX;
+        int positionY;
+    };
+    BossCharacter character;
+
+    class BossPortal {
+    public:
+        BossPortal(){};
+        BossPortal(Json::Value root);
+        std::string path;
+        int positionX;
+        int positionY;
+    };
+    BossPortal portal;
 };
 
 class Reference {
@@ -64,6 +85,7 @@ public:
     std::vector<Reference> references;
     std::vector<Object> objects;
     std::vector<Ennemie> ennemies;
+    Boss boss;
     Colors colors;
 };
 

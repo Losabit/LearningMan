@@ -193,11 +193,17 @@
 			"positionY": 575
 		}
 	],
-	"boss": [
-		{
-			"id": "shotgunner",
-			"positionX": 2000,
-			"positionY": 575
+	"boss":
+	{
+		"character": {
+			"id": "golem",
+			"positionX": 4000,
+			"positionY": 475
+		},
+		"portal": {
+			"path": "../assets/portals/Portal01/Portal001 Sprite Sheet.png",
+			"positionX": 1500,
+			"positionY": 475
 		}
-	]
+	}
 }
