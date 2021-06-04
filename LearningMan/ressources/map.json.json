@@ -1,0 +1,345 @@
+{
+	"colors" : 
+	{
+		"blue" : 92,
+		"green" : 130,
+		"red" : 92
+	},
+	"objects" : 
+	[
+		{
+			"id" : 5,
+			"positionX" : 98.0,
+			"positionY" : 559.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 5,
+			"positionX" : 146.0,
+			"positionY" : 559.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 5,
+			"positionX" : 146.0,
+			"positionY" : 516.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 240.0,
+			"positionY" : 471.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 320.0,
+			"positionY" : 471.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 368.0,
+			"positionY" : 471.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 449.0,
+			"positionY" : 471.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 11,
+			"positionX" : 523.0,
+			"positionY" : 527.0,
+			"scaleX" : 2.0,
+			"scaleY" : 2.0
+		},
+		{
+			"id" : 1,
+			"positionX" : 560.0,
+			"positionY" : 289.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 2,
+			"positionX" : 582.0,
+			"positionY" : 321.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 5,
+			"positionX" : 1013.0,
+			"positionY" : 560.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 5,
+			"positionX" : 1013.0,
+			"positionY" : 512.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 5,
+			"positionX" : 1013.0,
+			"positionY" : 465.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 927.0833740234375,
+			"positionY" : 558.02362060546875,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 849.5833740234375,
+			"positionY" : 536.07672119140625,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 771.25006103515625,
+			"positionY" : 498.31857299804688,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 843.3333740234375,
+			"positionY" : 442.94985961914062,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 950.416748046875,
+			"positionY" : 420.38348388671875,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 5,
+			"positionX" : 1060.0,
+			"positionY" : 512.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 5,
+			"positionX" : 1060.0,
+			"positionY" : 560.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 5,
+			"positionX" : 1105.0,
+			"positionY" : 560.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 1390.4166259765625,
+			"positionY" : 519.43951416015625,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 1438.0,
+			"positionY" : 519.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 2,
+			"positionX" : 1570.4166259765625,
+			"positionY" : 379.4100341796875,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 1,
+			"positionX" : 1647.5,
+			"positionY" : 343.893798828125,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 14,
+			"positionX" : 1820.0,
+			"positionY" : 512.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 2,
+			"positionX" : 1701.0,
+			"positionY" : 381.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		}
+	],
+	"references" : 
+	[
+		{
+			"objects" : 
+			[
+				{
+					"height" : 90,
+					"id" : 1,
+					"left" : 430,
+					"top" : 0,
+					"type" : "decor",
+					"width" : 90
+				},
+				{
+					"height" : 60,
+					"id" : 2,
+					"left" : 400,
+					"top" : 210,
+					"type" : "decor",
+					"width" : 120
+				},
+				{
+					"height" : 38,
+					"id" : 3,
+					"left" : 250,
+					"top" : 105,
+					"type" : "decor",
+					"width" : 300
+				},
+				{
+					"height" : 38,
+					"id" : 4,
+					"left" : 250,
+					"top" : 175,
+					"type" : "decor",
+					"width" : 180
+				},
+				{
+					"height" : 50,
+					"id" : 5,
+					"left" : 15,
+					"top" : 15,
+					"type" : "wall",
+					"width" : 50
+				},
+				{
+					"height" : 20,
+					"id" : 6,
+					"left" : 15,
+					"top" : 78,
+					"type" : "platform",
+					"width" : 50
+				},
+				{
+					"height" : 20,
+					"id" : 7,
+					"left" : 15,
+					"top" : 112,
+					"type" : "platform",
+					"width" : 50
+				},
+				{
+					"height" : 50,
+					"id" : 8,
+					"left" : 80,
+					"top" : 15,
+					"type" : "wall",
+					"width" : 50
+				},
+				{
+					"height" : 50,
+					"id" : 9,
+					"left" : 80,
+					"top" : 78,
+					"type" : "wall",
+					"width" : 20
+				},
+				{
+					"height" : 50,
+					"id" : 10,
+					"left" : 114,
+					"top" : 78,
+					"type" : "wall",
+					"width" : 20
+				},
+				{
+					"height" : 40,
+					"id" : 11,
+					"left" : 15,
+					"top" : 200,
+					"type" : "decor",
+					"width" : 50
+				},
+				{
+					"height" : 40,
+					"id" : 12,
+					"left" : 75,
+					"top" : 200,
+					"type" : "decor",
+					"width" : 40
+				},
+				{
+					"height" : 38,
+					"id" : 13,
+					"left" : 270,
+					"top" : 120,
+					"type" : "decor",
+					"width" : 300
+				},
+				{
+					"height" : 95,
+					"id" : 14,
+					"left" : 300,
+					"top" : 0,
+					"type" : "decor",
+					"width" : 135
+				},
+				{
+					"height" : 60,
+					"id" : 15,
+					"left" : 95,
+					"top" : 120,
+					"type" : "decor",
+					"width" : 65
+				},
+				{
+					"height" : 65,
+					"id" : 16,
+					"left" : 170,
+					"top" : 120,
+					"type" : "decor",
+					"width" : 50
+				},
+				{
+					"height" : 20,
+					"id" : 17,
+					"left" : 225,
+					"top" : 160,
+					"type" : "decor",
+					"width" : 30
+				}
+			],
+			"path" : "../assets/map/Dungeon_Ruins_Tileset/Dungeon Ruins Tileset Night.png"
+		}
+	]
+}
