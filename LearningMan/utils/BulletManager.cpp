@@ -18,16 +18,19 @@ void BulletManager::manageBullets(Controller* shooter, std::list<IAController*>*
         shooter->character.bullet.setScale(-*itOrientation, 1);
         window->draw(shooter->character.bullet);
         for (itEnnemies = ennemies->begin(); itEnnemies != ennemies->end(); itEnnemies++) {
-            if (shooter->character.bullet.getGlobalBounds().intersects(
-                    (*itEnnemies)->character.sprite.getGlobalBounds())) {
-                if (!(*itEnnemies)->character.takeDamage(1)) {
-                    itEnnemies = ennemies->erase(itEnnemies);
+            if(shooter->character.id != "healer"){
+                if (shooter->character.bullet.getGlobalBounds().intersects(
+                        (*itEnnemies)->character.sprite.getGlobalBounds())) {
+                    if (!(*itEnnemies)->character.takeDamage(1)) {
+                        itEnnemies = ennemies->erase(itEnnemies);
+                    }
+                    it = shooter->bullets.erase(it);
+                    itOrientation = shooter->bulletsOrientation.erase(itOrientation);
+                    itOrigin = shooter->bulletsOrigin.erase(itOrigin);
+                    continue;
                 }
-                it = shooter->bullets.erase(it);
-                itOrientation = shooter->bulletsOrientation.erase(itOrientation);
-                itOrigin = shooter->bulletsOrigin.erase(itOrigin);
-                continue;
             }
+
         }
 
         for(int i = 0; i < walls.size(); i++){
@@ -68,11 +71,22 @@ void BulletManager::manageBullets(Controller* shooter, Controller* ennemies, std
 
         if (shooter->character.bullet.getGlobalBounds().intersects(
                 ennemies->character.sprite.getGlobalBounds())) {
-            if (ennemies->character.takeDamage(1)) {
-                // player  mort
+            if(shooter->character.id != "healer"){
+                if (ennemies->character.takeDamage(1)) {
+                    // player  mort
+                }
+                it = shooter->bullets.erase(it);
+                itOrientation = shooter->bulletsOrientation.erase(itOrientation);
+
             }
-            it = shooter->bullets.erase(it);
-            itOrientation = shooter->bulletsOrientation.erase(itOrientation);
+            else{
+                if(ennemies->character.id != "null"){
+                    ennemies->character.takeDamage(-1);
+                }
+                it = shooter->bullets.erase(it);
+                itOrientation = shooter->bulletsOrientation.erase(itOrientation);
+            }
+
         }
 
         for(int i = 0; i < walls.size(); i++){

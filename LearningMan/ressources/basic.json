@@ -183,13 +183,13 @@
 	],
 	"ennemies": [
 		{
-			"id": "shotgunner",
+			"id": "healer",
 			"positionX": 600,
 			"positionY": 575
 		},
 		{
 			"id": "shotgunner",
-			"positionX": 900,
+			"positionX": 575,
 			"positionY": 575
 		}
 	],

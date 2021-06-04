@@ -30,6 +30,12 @@ bool IAController::isShooting() {
     }
     return false;
 }
+bool IAController::isHealing() {
+    if(character.sprite.getPosition().x - (scope / 2) < playerPosition.x && character.sprite.getPosition().x + (scope / 2) > playerPosition.x){
+        return true;
+    }
+    return false;
+}
 
 void IAController::setPlayerPosition(Vector2f position){
     playerPosition = position;

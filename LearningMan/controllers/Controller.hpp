@@ -7,6 +7,7 @@
 enum Action {
     None,
     Shoot,
+    Heal,
     ToDestroy
 };
 
@@ -26,6 +27,7 @@ protected:
     virtual bool isGoingLeft();
     virtual bool isJumping();
     virtual bool isShooting();
+    virtual bool isHealing();
     SoundPlayer sp;
 };
 #endif

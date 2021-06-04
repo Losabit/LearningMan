@@ -10,9 +10,11 @@ public:
     Character();
     void move(int direction);
     void shoot();
+    void heal();
     void wait();
     void moving();
     bool canShoot();
+    bool canHeal();
     bool takeDamage(int damage);
     bool dying();
     void reset(sf::Vector2f position);
