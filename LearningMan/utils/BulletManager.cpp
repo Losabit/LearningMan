@@ -71,6 +71,7 @@ void BulletManager::manageBullets(Controller* shooter, Controller* ennemies, std
 
         if (shooter->character.bullet.getGlobalBounds().intersects(
                 ennemies->character.sprite.getGlobalBounds())) {
+            printf("la");
             if(shooter->character.id != "healer"){
                 if (ennemies->character.takeDamage(1)) {
                     // player  mort
@@ -80,8 +81,14 @@ void BulletManager::manageBullets(Controller* shooter, Controller* ennemies, std
 
             }
             else{
+                printf("ici");
+                std::cout<<ennemies->character.id << std::endl;
                 if(ennemies->character.id != "null"){
+                    printf("ici 2");
+                    std::cout << ennemies->character.health << std::endl;
                     ennemies->character.takeDamage(-1);
+                    std::cout << ennemies->character.health << std::endl;
+
                 }
                 it = shooter->bullets.erase(it);
                 itOrientation = shooter->bulletsOrientation.erase(itOrientation);

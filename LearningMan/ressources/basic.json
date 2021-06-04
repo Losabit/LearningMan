@@ -186,10 +186,9 @@
 			"id": "healer",
 			"positionX": 600,
 			"positionY": 575
-		},
-		{
+		},{
 			"id": "shotgunner",
-			"positionX": 575,
+			"positionX": 530,
 			"positionY": 575
 		}
 	],

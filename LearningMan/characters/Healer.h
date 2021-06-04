@@ -13,6 +13,10 @@ public:
     bool isShooting();
     bool  canshoot(){return false;}
 
+protected:
+    float shootCooldown = 2.0f;
+
+
 };
 
 
