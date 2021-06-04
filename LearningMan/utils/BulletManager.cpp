@@ -30,6 +30,18 @@ void BulletManager::manageBullets(Controller* shooter, std::list<IAController*>*
                     continue;
                 }
             }
+            else{
+                if (shooter->character.bullet.getGlobalBounds().intersects(
+                        (*itEnnemies)->character.sprite.getGlobalBounds())) {
+                    if((*itEnnemies)->character.id != "null"){
+                        (*itEnnemies)->character.takeDamage(-1);
+                    }
+                    it = shooter->bullets.erase(it);
+                    itOrientation = shooter->bulletsOrientation.erase(itOrientation);
+                    itOrigin = shooter->bulletsOrigin.erase(itOrigin);
+                    continue;
+                }
+            }
 
         }
 

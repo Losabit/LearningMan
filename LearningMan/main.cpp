@@ -182,7 +182,7 @@ int main() {
                             else if(map.ennemies.at(i).id == "healer") {
                                 healer = Healer();
                                 healer.sprite.setPosition(map.ennemies.at(i).positionX, map.ennemies.at(i).positionY);
-                                healer.sprite.setScale(-1, 1);
+                                healer.sprite.setScale(1, 1);
                                 ennemiesCharacters.push_back(healer);
                             }
                             else{
@@ -259,7 +259,7 @@ int main() {
                 for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
                     window.draw((*itEnnemies)->character.sprite);
                     if((*itEnnemies)->character.id != "healer"){
-                        BulletManager::manageBullets((*itEnnemies), &playerController, map.walls, &window);
+                     //   BulletManager::manageBullets((*itEnnemies), &playerController, map.walls, &window);
 
                     }else{
                         BulletManager::manageBullets((*itEnnemies), &ennemies, map.walls, &window);
