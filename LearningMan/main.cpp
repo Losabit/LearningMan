@@ -259,11 +259,15 @@ int main() {
                 for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
                     window.draw((*itEnnemies)->character.sprite);
                     if((*itEnnemies)->character.id != "healer"){
-                     //   BulletManager::manageBullets((*itEnnemies), &playerController, map.walls, &window);
+                        BulletManager::manageBullets((*itEnnemies), &playerController, map.walls, &window);
 
                     }else{
-                        BulletManager::manageBullets((*itEnnemies), &ennemies, map.walls, &window);
+                            /**
+                             * TODO: heal
+                             */
+                            Healer::heal((*itEnnemies),&ennemies);
 
+                        
                     }
                 }
                 window.draw(portal.getSprite());

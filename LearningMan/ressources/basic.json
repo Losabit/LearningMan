@@ -185,7 +185,12 @@
 		{
 			"id": "healer",
 			"positionX": 600,
-			"positionY": 575
+			"positionY": 565
+		},
+		{
+			"id": "shotgunner",
+			"positionX": 575,
+			"positionY": 565
 		}
 	],
 	"boss":
