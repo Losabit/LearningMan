@@ -504,12 +504,11 @@ int main() {
             }
 
             if (event.type == sf::Event::TextEntered) {
-                if(!containerObjectIsPrinted && !containerSaveIsPrinted && !containerColorIsPrinted && choosenMapSprite != -1){
-                    if (event.text.unicode == 8) {
+                if (Keyboard::isKeyPressed(Keyboard::K)){
                         mapSprites.erase(mapSprites.begin() + choosenMapSprite);
                         mapSpritesIds.erase(mapSpritesIds.begin() + choosenMapSprite);
                         choosenMapSprite = -1;
-                    }
+
                 }
 
                 if(containerColorIsPrinted && choosenColor != -1) {
