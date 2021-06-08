@@ -11,6 +11,7 @@
 #include "utils/BulletManager.hpp"
 #include "GUI/Button.hpp"
 #include "GUI/Container.hpp"
+#include "GUI/EndLevelView.h"
 #include "utils/HitboxManager.hpp"
 #include "utils/CollisionManager.hpp"
 #include "utils/Portal.hpp"
@@ -24,6 +25,7 @@ int main() {
     sf::Clock hitboxClock = sf::Clock();
     sf::Clock pauseClock = sf::Clock();
     sf::Clock levelClock;
+    bool endLevel = false;
     float pauseCooldown = 0.5f;
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "LearningMan");
     window.setFramerateLimit(60);
@@ -62,7 +64,6 @@ int main() {
     for(int i = 0; i < mapsName.size(); i++) {
         button.setPosition(Vector2f(400, 200 + 100 * i));
         button.text.setString(std::regex_replace(mapsName.at(i), std::regex("\\.json"), ""));
-
         buttonsMap.push_back(button);
     }
 
@@ -71,6 +72,8 @@ int main() {
     Sprite spriteHealth(textureHealth, IntRect(0, 0, 901, 900));
     spriteHealth.setScale(0.02, 0.02);
     Container containerHealth(spriteHealth, 5, 25);
+
+    EndLevelView endLevelView;
 
     Character heros = Heros();
     PlayerController playerController(&heros);
@@ -88,6 +91,7 @@ int main() {
     IAController bossController(&boss);
     Portal portal;
     bool takePortal = false;
+    int ennemiesCount = 0;
 
     bool paused = false;
     bool startGame = false;
@@ -103,7 +107,20 @@ int main() {
             }
         }
 
-        if(startGame) {
+        if(endLevel){
+            if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
+            {
+                if(endLevelView.buttonSpriteContinue.getGlobalBounds().contains( window.mapPixelToCoords(Vector2i (event.mouseButton.x, event.mouseButton.y)))) {
+                    endLevel = false;
+                    startGame = false;
+                    takePortal = false;
+                    levelClock.restart();
+                    containerLifebar.reset(0);
+                    playerController.character.reset(HEROS_INITIAL_POSITION);
+                }
+            }
+        }
+        else if(startGame) {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
                 if(pauseClock.getElapsedTime().asSeconds() > pauseCooldown) {
                     paused = !paused;
@@ -118,9 +135,6 @@ int main() {
 
             if (!paused) {
                 playerCollision.checkCollisions();
-                for(auto itEnnemiCollision = ennemiesCollisions.begin(); itEnnemiCollision != ennemiesCollisions.end(); itEnnemiCollision++){
-                    itEnnemiCollision->checkCollisions();
-                }
 
                 if(playerController.play() == Action::ToDestroy){
                     startGame = false;
@@ -135,16 +149,32 @@ int main() {
                     window.setView(view);
                 }
 
-                if(playerController.character.sprite.getGlobalBounds().intersects(portal.getSprite().getGlobalBounds())) {
-                    playerController.character.sprite.setPosition(map.boss.character.positionX, map.boss.character.positionY);
-                    takePortal = true;
-                }
+                if(!takePortal) {
+                    for(auto itEnnemiCollision = ennemiesCollisions.begin(); itEnnemiCollision != ennemiesCollisions.end(); itEnnemiCollision++){
+                        itEnnemiCollision->checkCollisions();
+                    }
 
-                for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
-                    (*itEnnemies)->setPlayerPosition(playerController.character.sprite.getPosition());
-                    (*itEnnemies)->play(playerController.character);
+                    if (playerController.character.sprite.getGlobalBounds().intersects(
+                            portal.getSprite().getGlobalBounds())) {
+                        playerController.character.sprite.setPosition(map.boss.character.positionX,
+                                                                      map.boss.character.positionY);
+                        takePortal = true;
+                    }
+
+                    for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
+                        (*itEnnemies)->setPlayerPosition(playerController.character.sprite.getPosition());
+                        (*itEnnemies)->play(playerController.character);
+                    }
                 }
-                bossController.play(playerController.character);
+                else {
+                    Action actionBoss = bossController.play(playerController.character);
+                    if(actionBoss == Action::ToDestroy){
+                        endLevel = true;
+                        endLevelView.setTime(levelClock.getElapsedTime());
+                        endLevelView.setKill(ennemiesCount - ennemies.size());
+                        window.setView(initialView);
+                    }
+                }
             }
         }
         else{
@@ -167,6 +197,7 @@ int main() {
                             bossController = IAController(&boss);
                         }
 
+                        containerLifebar.number = boss.health;
                         portal = Portal(map.boss.portal.path, Vector2f(map.boss.portal.positionX, map.boss.portal.positionY));
 
                         for(int i = 0; i < map.ennemies.size(); i++){
@@ -201,7 +232,7 @@ int main() {
                         playerCollision.clear();
                         playerCollision.addObject(map.walls, ObjectType::Wall);
                         playerCollision.addObject(map.platforms, ObjectType::Platform);
-
+                        ennemiesCount = ennemies.size();
                         startGame = true;
                         break;
                     }
@@ -209,7 +240,11 @@ int main() {
             }
         }
 
-        if(startGame) {
+        if(endLevel){
+            window.clear(map.backgroundColor);
+            endLevelView.draw(&window);
+        }
+        else if(startGame) {
             window.clear(map.backgroundColor);
             if(takePortal) {
                 containerLifebar.draw(&window, playerController.character.sprite.getPosition().x - lifebarSprite.getPosition().x + BOSS_LIFEBAR_POSITION_X, 0);
@@ -241,7 +276,13 @@ int main() {
 
             window.draw(playerController.character.sprite);
             if(takePortal){
-                //BulletManager::manageBullets(&playerController, &ennemies, map.walls,&window);
+                int healthBefore = bossController.character.health;
+                if(bossController.character.health > 0) {
+                    BulletManager::manageBullets(&playerController, &bossController, map.walls, &window);
+                }
+                if(healthBefore != bossController.character.health){
+                    containerLifebar.changeTextureOf(bossController.character.health, 1);
+                }
                 window.draw(bossController.character.sprite);
             }
             else{

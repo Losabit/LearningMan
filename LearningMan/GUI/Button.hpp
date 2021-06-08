@@ -4,6 +4,7 @@
 
 class Button {
 public:
+    Button(){};
     Button(std::string texturePath, sf::IntRect rect1);
     Button(std::string texturePath, sf::IntRect rect1, sf::Text text1);
     Button(std::string texturePath, sf::IntRect rect1, std::string policyPath);

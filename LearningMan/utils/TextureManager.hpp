@@ -27,6 +27,7 @@ public:
     sf::Texture texture;
     sf::IntRect rect;
     int size = 1;
+    int currentIt = 0;
     sf::Sprite getCurrentSprite();
     sf::Sprite getCurrentSprite(sf::Vector2f position);
     sf::Sprite toSprite();
@@ -40,7 +41,6 @@ private:
     float leftLag;
     int getSize();
     sf::Clock clock;
-    int currentIt = 0;
 };
 
 

@@ -19,3 +19,7 @@
 #define DEFAULT_COLOR sf::Color(122, 160, 122, 0)
 #define BOSS_LIFEBAR_POSITION_X -120
 
+//Other
+#define POINTS_BY_KILL 200
+#define POINTS_BY_SECOND 50
+

@@ -8,6 +8,7 @@ public:
     void AddSecondarySprite(sf::Sprite sprite1);
     void draw(sf::RenderWindow* window, float positionX, float positionY);
     void changeTextureOf(int indice, int textureIndice);
+    void reset(int indice);
     int number;
 
 private:

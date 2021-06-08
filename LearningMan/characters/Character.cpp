@@ -39,8 +39,10 @@ bool Character::canShoot(){
 }
 
 bool Character::dying() {
-    sprite = textureDeath.toSprite(sprite.getPosition());
-    return true;
+    sprite = textureDeath.getCurrentSprite(sprite.getPosition());
+    if(textureDeath.currentIt == textureDeath.size - 1)
+        return true;
+    return false;
 }
 
 void Character::wait() {

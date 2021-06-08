@@ -26,3 +26,9 @@ void Container::draw(sf::RenderWindow* window, float positionX, float positionY)
         window->draw(sprite1);
     }
 }
+
+void Container::reset(int indice) {
+    for(int i = 0; i < textureIndices.size(); i++){
+        textureIndices.at(i) = indice;
+    }
+}

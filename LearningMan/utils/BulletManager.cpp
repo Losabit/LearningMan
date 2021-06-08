@@ -73,6 +73,8 @@ void BulletManager::manageBullets(Controller* shooter, Controller* ennemies, std
             }
             it = shooter->bullets.erase(it);
             itOrientation = shooter->bulletsOrientation.erase(itOrientation);
+            itOrigin = shooter->bulletsOrigin.erase(itOrigin);
+            continue;
         }
 
         for(int i = 0; i < walls.size(); i++){
