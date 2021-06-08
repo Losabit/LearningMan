@@ -8,20 +8,6 @@
 	"objects" : 
 	[
 		{
-			"id" : 5,
-			"positionX" : 93.0,
-			"positionY" : 554.0,
-			"scaleX" : 2.0,
-			"scaleY" : 1.0
-		},
-		{
-			"id" : 14,
-			"positionX" : 244.0,
-			"positionY" : 512.0,
-			"scaleX" : 1.0,
-			"scaleY" : 1.0
-		},
-		{
 			"id" : 1,
 			"positionX" : 362.0,
 			"positionY" : 286.0,
@@ -30,8 +16,162 @@
 		},
 		{
 			"id" : 2,
-			"positionX" : 78.0,
-			"positionY" : 374.0,
+			"positionX" : 338.0,
+			"positionY" : 314.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 5,
+			"positionX" : 128.0,
+			"positionY" : 557.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 5,
+			"positionX" : 175.0,
+			"positionY" : 557.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 5,
+			"positionX" : 176.0,
+			"positionY" : 509.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 284.0,
+			"positionY" : 500.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 415.0,
+			"positionY" : 501.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 462.0,
+			"positionY" : 501.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 551.0,
+			"positionY" : 501.0,
+			"scaleX" : 2.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 11,
+			"positionX" : 1035.0,
+			"positionY" : 526.0,
+			"scaleX" : 3.0,
+			"scaleY" : 2.0
+		},
+		{
+			"id" : 5,
+			"positionX" : 727.0,
+			"positionY" : 557.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 1732.0,
+			"positionY" : 553.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 1662.0,
+			"positionY" : 515.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 1595.0,
+			"positionY" : 473.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 5,
+			"positionX" : 1832.0,
+			"positionY" : 420.0,
+			"scaleX" : 2.0,
+			"scaleY" : 2.0
+		},
+		{
+			"id" : 3,
+			"positionX" : 1830.0,
+			"positionY" : 600.0,
+			"scaleX" : 3.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 5,
+			"positionX" : 1920.0,
+			"positionY" : 510.0,
+			"scaleX" : 2.0,
+			"scaleY" : 2.0
+		},
+		{
+			"id" : 3,
+			"positionX" : 2441.0,
+			"positionY" : 600.0,
+			"scaleX" : 3.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 2613.0,
+			"positionY" : 505.0,
+			"scaleX" : 2.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 1,
+			"positionX" : 2372.0,
+			"positionY" : 282.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 2,
+			"positionX" : 2379.0,
+			"positionY" : 325.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 16,
+			"positionX" : 2941.0,
+			"positionY" : 550.0,
+			"scaleX" : 1.0,
+			"scaleY" : 1.0
+		},
+		{
+			"id" : 5,
+			"positionX" : 1832.0,
+			"positionY" : 510.0,
+			"scaleX" : 2.0,
+			"scaleY" : 2.0
+		},
+		{
+			"id" : 6,
+			"positionX" : 1701.66650390625,
+			"positionY" : 414.01181030273438,
 			"scaleX" : 1.0,
 			"scaleY" : 1.0
 		}
@@ -180,30 +320,5 @@
 			],
 			"path" : "../assets/map/Dungeon_Ruins_Tileset/Dungeon Ruins Tileset Night.png"
 		}
-	],
-	"ennemies": [
-		{
-			"id": "healer",
-			"positionX": 600,
-			"positionY": 565
-		},
-		{
-			"id": "shotgunner",
-			"positionX": 575,
-			"positionY": 565
-		}
-	],
-	"boss":
-	{
-		"character": {
-			"id": "golem",
-			"positionX": 4000,
-			"positionY": 475
-		},
-		"portal": {
-			"path": "../assets/portals/Portal01/Portal001 Sprite Sheet.png",
-			"positionX": 1500,
-			"positionY": 475
-		}
-	}
+	]
 }

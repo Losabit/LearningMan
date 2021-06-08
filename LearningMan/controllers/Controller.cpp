@@ -32,6 +32,9 @@ bool Controller::isJumping() {
 bool Controller::isShooting() {
     return false;
 }
+bool Controller::isHealing() {
+    return false;
+}
 
 Action Controller::play() {
     if(character.health <= 0){
@@ -70,22 +73,41 @@ Action Controller::play() {
     } else {
         character.velocity.y += character.gravity;
     }
-
-    if(isShooting()){
-        if(character.canShoot()){
-            doingSomething = true;
-            character.shoot();
-            if(character.sprite.getScale().x == -1){
-                bullets.push_back(character.sprite.getPosition() - sf::Vector2f(60,0));
-                bulletsOrigin.push_back(character.sprite.getPosition() - sf::Vector2f(60,0));
+    if(character.id == "null" ||  character.id == "shotgunner"){
+        if(isShooting()){
+            if(character.canShoot()){
+                doingSomething = true;
+                character.shoot();
+                if(character.sprite.getScale().x == -1){
+                    bullets.push_back(character.sprite.getPosition() - sf::Vector2f(60,0));
+                    bulletsOrigin.push_back(character.sprite.getPosition() - sf::Vector2f(60,0));
+                }
+                else{
+                    bullets.push_back(character.sprite.getPosition() + sf::Vector2f(60,0));
+                    bulletsOrigin.push_back(character.sprite.getPosition() + sf::Vector2f(60,0));
+                }
+                this->sp.playSound("shoot.wav");
+                bulletsOrientation.push_back(character.sprite.getScale().x);
+                return Action::Shoot;
             }
-            else{
-                bullets.push_back(character.sprite.getPosition() + sf::Vector2f(60,0));
-                bulletsOrigin.push_back(character.sprite.getPosition() + sf::Vector2f(60,0));
+        }
+    }
+    if(character.id == "healer"){
+        if(isHealing()){
+            if(character.canHeal()){
+                doingSomething = true;
+                character.heal();
+                if(character.sprite.getScale().x == -1){
+                    bullets.push_back(character.sprite.getPosition() - sf::Vector2f(60,0));
+                    bulletsOrigin.push_back(character.sprite.getPosition() - sf::Vector2f(60,0));
+                }
+                else{
+                    bullets.push_back(character.sprite.getPosition() + sf::Vector2f(60,0));
+                    bulletsOrigin.push_back(character.sprite.getPosition() + sf::Vector2f(60,0));
+                }
+                bulletsOrientation.push_back(character.sprite.getScale().x);
+                return  Action::Heal;
             }
-            this->sp.playSound("shoot.wav");
-            bulletsOrientation.push_back(character.sprite.getScale().x);
-            return Action::Shoot;
         }
     }
 

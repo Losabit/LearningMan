@@ -6,6 +6,7 @@
 #include "controllers/IAController.hpp"
 #include "characters/Heros.hpp"
 #include "characters/Shotgunner.hpp"
+#include "characters/Healer.h"
 #include "characters/Golem.hpp"
 #include "Map/Map.h"
 #include "utils/BulletManager.hpp"
@@ -202,17 +203,26 @@ int main() {
 
                         for(int i = 0; i < map.ennemies.size(); i++){
                             Character shotgunner;
+                            Character healer;
                             if(map.ennemies.at(i).id == "shotgunner") {
                                 shotgunner = Shotgunner();
+                                shotgunner.sprite.setPosition(map.ennemies.at(i).positionX, map.ennemies.at(i).positionY);
+                                shotgunner.sprite.setScale(-1, 1);
+                                ennemiesCharacters.push_back(shotgunner);
+                            }
+                            else if(map.ennemies.at(i).id == "healer") {
+                                healer = Healer();
+                                healer.sprite.setPosition(map.ennemies.at(i).positionX, map.ennemies.at(i).positionY);
+                                healer.sprite.setScale(1, 1);
+                                ennemiesCharacters.push_back(healer);
                             }
                             else{
                                 std::cout << "ennemie " << map.ennemies.at(i).id << " not found" << std::endl;
                                 continue;
                             }
 
-                            shotgunner.sprite.setPosition(map.ennemies.at(i).positionX, map.ennemies.at(i).positionY);
-                            shotgunner.sprite.setScale(-1, 1);
-                            ennemiesCharacters.push_back(shotgunner);
+
+
                         }
                         for(auto itEnnemiesCharacters =  ennemiesCharacters.begin(); itEnnemiesCharacters !=  ennemiesCharacters.end(); itEnnemiesCharacters++){
                             ennemiesRef.push_back(IAController(&(*itEnnemiesCharacters)));
@@ -289,7 +299,17 @@ int main() {
                 BulletManager::manageBullets(&playerController, &ennemies, map.walls,&window);
                 for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
                     window.draw((*itEnnemies)->character.sprite);
-                    BulletManager::manageBullets((*itEnnemies), &playerController, map.walls, &window);
+                    if((*itEnnemies)->character.id != "healer"){
+                        BulletManager::manageBullets((*itEnnemies), &playerController, map.walls, &window);
+
+                    }else{
+                            /**
+                             * TODO: heal
+                             */
+                            Healer::heal((*itEnnemies),&ennemies);
+
+                        
+                    }
                 }
                 window.draw(portal.getSprite());
             }

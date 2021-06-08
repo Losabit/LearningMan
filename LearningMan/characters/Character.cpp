@@ -29,8 +29,20 @@ void Character::shoot(){
     sprite = textureShoot.toSprite(sprite.getPosition());
     sprite.setScale(scale);
 }
+void Character::heal(){
+    Vector2f scale = sprite.getScale();
+    sprite = textureShoot.toSprite(sprite.getPosition());
+    sprite.setScale(scale);
+}
 
 bool Character::canShoot(){
+    if(clockBullet.getElapsedTime().asSeconds() > shootCooldown){
+        clockBullet.restart();
+        return true;
+    }
+    return false;
+}
+bool Character::canHeal(){
     if(clockBullet.getElapsedTime().asSeconds() > shootCooldown){
         clockBullet.restart();
         return true;
