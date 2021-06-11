@@ -88,7 +88,7 @@ int main() {
     list<IAController*> ennemies;
     list<IAController*> :: iterator itEnnemies;
     list<CollisionManager> ennemiesCollisions;
-    Character boss;
+    BossCharacter boss;
     IAController bossController(&boss);
     Portal portal;
     bool takePortal = false;
@@ -267,6 +267,12 @@ int main() {
                 for(int i = 0; i < map.walls.size(); i++) {
                     window.draw(HitboxManager::getHitboxSprite(map.walls.at(i).getGlobalBounds()));
                 }
+                for(int i = 0; i < map.platforms.size(); i++) {
+                    window.draw(HitboxManager::getHitboxSprite(map.platforms.at(i).getGlobalBounds()));
+                }
+                for(itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++){
+                    window.draw(HitboxManager::getHitboxSprite((*itEnnemies)->character.sprite.getGlobalBounds()));
+                }
             }
 
             // Pause menu
@@ -284,6 +290,7 @@ int main() {
                 window.draw(text);
             }
 
+            map.drawBackground(window);
             window.draw(playerController.character.sprite);
             if(takePortal){
                 int healthBefore = bossController.character.health;
@@ -313,7 +320,6 @@ int main() {
                 }
                 window.draw(portal.getSprite());
             }
-            map.drawBackground(window);
         }
         else{
             window.clear(DEFAULT_COLOR);

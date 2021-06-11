@@ -26,12 +26,12 @@ void Character::moving(){
 
 void Character::shoot(){
     Vector2f scale = sprite.getScale();
-    sprite = textureShoot.toSprite(sprite.getPosition());
+    sprite = textureShoot.getCurrentSprite(sprite.getPosition());
     sprite.setScale(scale);
 }
 void Character::heal(){
     Vector2f scale = sprite.getScale();
-    sprite = textureShoot.toSprite(sprite.getPosition());
+    sprite = textureShoot.getCurrentSprite(sprite.getPosition());
     sprite.setScale(scale);
 }
 

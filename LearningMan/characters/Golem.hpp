@@ -1,8 +1,8 @@
 #ifndef LEARNINGMAN_GOLEM_HPP
 #define LEARNINGMAN_GOLEM_HPP
-#include "Character.hpp"
+#include "BossCharacter.h"
 
-class Golem : public Character {
+class Golem : public BossCharacter {
 public:
     Golem();
 };

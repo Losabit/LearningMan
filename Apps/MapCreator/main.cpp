@@ -597,6 +597,9 @@ int main() {
             mapManager.draw(window);
         }
         else{
+            for(int i = 0; i < mapSprites.size(); i++){
+                window.draw(mapSprites.at(i));
+            }
             if(choosenMapSprite != -1){
                 window.draw(containerObjectModifier);
                 window.draw(textObjectModifierPosition);
@@ -615,9 +618,6 @@ int main() {
                 window.draw(textInputObjectModifierScaleY);
                 buttonApplyObjectModifier.draw(&window);
                 window.draw(HitboxManager::getHitboxSprite(mapSprites.at(choosenMapSprite).getGlobalBounds()));
-            }
-            for(int i = 0; i < mapSprites.size(); i++){
-                window.draw(mapSprites.at(i));
             }
         }
 
