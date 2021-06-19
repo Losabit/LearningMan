@@ -49,11 +49,13 @@ sf::Sprite TextureManager::getCurrentSprite(sf::Vector2f position) {
 }
 
 sf::Sprite TextureManager::toSprite() {
-    return sf::Sprite(texture, rect);
+    sf::Sprite sprite(texture, rect);
+    sprite.setScale(scale);
+    return sprite;
 }
 
 sf::Sprite TextureManager::toSprite(sf::Vector2f position) {
-    sf::Sprite sprite(texture, rect);
+    sf::Sprite sprite = toSprite();
     sprite.setPosition(position);
     return sprite;
 }
@@ -87,7 +89,9 @@ sf::Sprite TextureManager::toSprite(int number) {
     sf::IntRect newRect = rect;
     newRect.left = rect.left + leftLag * x;
     newRect.top = rect.top + topLag * y;
-    return sf::Sprite(texture, newRect);
+    sf::Sprite sprite(texture, newRect);
+    sprite.setScale(scale);
+    return sprite;
 }
 
 int TextureManager::getSize() {

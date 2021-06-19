@@ -12,6 +12,7 @@ protected:
     Vector2f playerPosition = Vector2f(0.0f, 0.0f);
     Sprite ennemi;
     float scope = 300.f;
+    float detectScope = 70.0f;
     virtual bool isGoingRight();
     virtual bool isGoingLeft();
     virtual bool isJumping();

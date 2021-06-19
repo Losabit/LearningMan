@@ -92,7 +92,7 @@ void EndLevelView::setTime(sf::Time time) {
     std::string s = stream.str();
 
     textTimeValue.setString(s + " sec");
-    timePoints = time.asSeconds() > 60 ? 0 : (60 - time.asSeconds()) * POINTS_BY_SECOND;
+    timePoints = time.asSeconds() > MAX_LEVEL_TIME ? 0 : (MAX_LEVEL_TIME - time.asSeconds()) * POINTS_BY_SECOND;
     textTimePoints.setString(std::to_string(timePoints));
     textTotalPoints.setString(std::to_string(killsPoints + timePoints));
 }

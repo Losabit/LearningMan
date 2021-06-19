@@ -56,6 +56,26 @@ void CollisionManager::checkCollisions() {
      }
 }
 
+void CollisionManager::checkCharacterCollisions(Sprite chara) {
+    float right = chara.getPosition().x + chara.getGlobalBounds().width + controller->character.sprite.getGlobalBounds().width;
+    float left = chara.getPosition().x - controller->character.sprite.getLocalBounds().width;
+
+    if(controller->character.sprite.getPosition().y > chara.getPosition().y - chara.getGlobalBounds().height / 2){
+        if (controller->character.sprite.getPosition().x < chara.getPosition().x
+            && controller->character.sprite.getPosition().x > left
+            && controller->character.sprite.getScale().x > 0) {
+            controller->character.sprite.setPosition(left,
+                                                     controller->character.sprite.getPosition().y);
+        }
+
+        if (controller->character.sprite.getPosition().x < right
+            && controller->character.sprite.getPosition().x > chara.getPosition().x + chara.getGlobalBounds().width
+            && controller->character.sprite.getScale().x < 0){
+            controller->character.sprite.setPosition(right,
+                                                     controller->character.sprite.getPosition().y);
+        }
+    }
+}
 
 
 void CollisionManager::platformCollision(int indice){

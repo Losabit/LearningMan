@@ -1,11 +1,11 @@
 {
-	"colors" : 
+	"colors" :
 	{
 		"blue" : 122,
 		"green" : 160,
 		"red" : 122
 	},
-	"objects" : 
+	"objects" :
 	[
 		{
 			"id" : 1,
@@ -127,20 +127,6 @@
 			"scaleY" : 2.0
 		},
 		{
-			"id" : 5,
-			"positionX" : 2013.0,
-			"positionY" : 510.0,
-			"scaleX" : 2.0,
-			"scaleY" : 2.0
-		},
-		{
-			"id" : 5,
-			"positionX" : 1924.0,
-			"positionY" : 417.0,
-			"scaleX" : 2.0,
-			"scaleY" : 2.0
-		},
-		{
 			"id" : 3,
 			"positionX" : 2441.0,
 			"positionY" : 600.0,
@@ -183,31 +169,17 @@
 			"scaleY" : 2.0
 		},
 		{
-			"id" : 5,
-			"positionX" : 1832.0,
-			"positionY" : 332.0,
-			"scaleX" : 2.0,
-			"scaleY" : 2.0
-		},
-		{
 			"id" : 6,
 			"positionX" : 1701.66650390625,
 			"positionY" : 414.01181030273438,
 			"scaleX" : 1.0,
 			"scaleY" : 1.0
-		},
-		{
-			"id" : 6,
-			"positionX" : 1786.0,
-			"positionY" : 359.0,
-			"scaleX" : 1.0,
-			"scaleY" : 1.0
 		}
 	],
-	"references" : 
+	"references" :
 	[
 		{
-			"objects" : 
+			"objects" :
 			[
 				{
 					"height" : 90,

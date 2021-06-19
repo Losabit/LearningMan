@@ -6,6 +6,14 @@ Character::Character(){
 
 }
 
+void Character::awake(){
+
+}
+
+void Character::attack(int i){
+
+}
+
 void Character::move(int direction) {
     if(clockBullet.getElapsedTime().asSeconds() > TIME_SHOOT_TO_IDLE && sprite.getTexture() != &textureIdle.texture){
         sprite.setTextureRect(textureIdle.rect);
@@ -29,10 +37,12 @@ void Character::shoot(){
     sprite = textureShoot.getCurrentSprite(sprite.getPosition());
     sprite.setScale(scale);
 }
-void Character::heal(){
+
+bool Character::heal(){
     Vector2f scale = sprite.getScale();
     sprite = textureShoot.getCurrentSprite(sprite.getPosition());
     sprite.setScale(scale);
+    return textureShoot.currentIt == textureShoot.size - 1;
 }
 
 bool Character::canShoot(){
@@ -42,8 +52,9 @@ bool Character::canShoot(){
     }
     return false;
 }
+
 bool Character::canHeal(){
-    if(clockBullet.getElapsedTime().asSeconds() > shootCooldown){
+    if(clockBullet.getElapsedTime().asSeconds() > 6){
         clockBullet.restart();
         return true;
     }

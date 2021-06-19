@@ -12,12 +12,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a65c3a0d-431f-4e26-ab05-b2527b1a1e7d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/controllers/BossController.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/controllers/BossController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/ressources/Level 1.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in/myMap.json" beforeDir="false" afterPath="$PROJECT_DIR$/in/myMap.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/Map.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/Map.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/BossCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/BossCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/BossCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/BossCharacter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/Character.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/Character.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/Healer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/Healer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/controllers/Controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/controllers/Controller.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/Character.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/Character.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/Golem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/Golem.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/basic.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/ressources/basic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/endMap.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/TextureManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/TextureManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/TextureManager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/TextureManager.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,9 +91,14 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="MapCreator" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MapCreator" TARGET_NAME="MapCreator" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MapCreator" RUN_TARGET_NAME="MapCreator">
+    <configuration name="MapCreator" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MapCreator" TARGET_NAME="MapCreator" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MapCreator" RUN_TARGET_NAME="MapCreator">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -109,6 +127,7 @@
       <workItem from="1623143650004" duration="195000" />
       <workItem from="1623174176031" duration="4000" />
       <workItem from="1623225940630" duration="1266000" />
+      <workItem from="1623519359060" duration="3245000" />
     </task>
     <servers />
   </component>

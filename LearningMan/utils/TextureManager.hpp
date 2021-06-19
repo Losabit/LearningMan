@@ -28,6 +28,8 @@ public:
     sf::IntRect rect;
     int size = 1;
     int currentIt = 0;
+    sf::Vector2f scale = sf::Vector2f(1.0,1.0);
+
     sf::Sprite getCurrentSprite();
     sf::Sprite getCurrentSprite(sf::Vector2f position);
     sf::Sprite toSprite();

@@ -29,6 +29,7 @@ protected:
     virtual bool isShooting();
     virtual bool isHealing();
     SoundPlayer sp;
+    bool startHealAnimation = false;
 };
 #endif
 

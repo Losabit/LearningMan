@@ -8,9 +8,11 @@ using namespace sf;
 class Character {
 public:
     Character();
+    void awake();
+    void attack(int i);
     void move(int direction);
     void shoot();
-    void heal();
+    bool heal();
     void wait();
     void moving();
     bool canShoot();
@@ -21,6 +23,7 @@ public:
     Sprite sprite;
     Sprite bullet;
     float bulletSpeed = 5.0f;
+    bool canMove = true;
 
     sf::Vector2f velocity;
     float speed = 3;
@@ -28,8 +31,11 @@ public:
     float gravity = 1.0f;
     float jumpHeight = 100;
     int health = 5;
+    bool launchHeal = false;
     int gravityDecalage = 0;
     std::string id = "null";
+    sf::Clock clockJumpCooldown;
+
 protected:
     TextureManager textureIdle;
     TextureManager textureShoot;

@@ -26,6 +26,7 @@ Healer::Healer(): Character() {
             lMoving, 91, 0);
     speed = 2;
     id = "healer";
+    shootCooldown = 6.0;
     sprite = textureIdle.toSprite();
     bullet = textureBullet.toSprite();
     gravityDecalage = -15;
@@ -41,7 +42,6 @@ void Healer::heal(Controller *shooter, std::list<IAController *> *ennemies) {
     for(itEnnemies = ennemies->begin();itEnnemies != ennemies->end();itEnnemies++){
         if(shooter->character.sprite.getGlobalBounds().intersects((*itEnnemies)->character.sprite.getGlobalBounds())){
             (*itEnnemies)->character.takeDamage(-1);
-
         }
     }
 }

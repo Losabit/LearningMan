@@ -40,6 +40,7 @@ Ennemie::Ennemie(Json::Value root) {
     id = root["id"].asString();
     positionX = root["positionX"].asFloat();
     positionY = root["positionY"].asFloat();
+    canMove = root["canMove"].asBool();
 }
 
 Boss::BossPortal::BossPortal(Json::Value root) {

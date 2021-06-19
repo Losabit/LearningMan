@@ -6,14 +6,14 @@ IAController::IAController(Character* character1) : Controller(character1) {
 
 
 bool IAController::isGoingRight(){
-    if(character.sprite.getPosition().x + scope > playerPosition.x && !(character.sprite.getPosition().x + (scope / 2) > playerPosition.x)) {
+    if(character.sprite.getPosition().x + scope > playerPosition.x && !(character.sprite.getPosition().x + detectScope > playerPosition.x)) {
         return true;
     }
     return false;
 }
 
 bool IAController::isGoingLeft() {
-    if(character.sprite.getPosition().x - scope < playerPosition.x && !(character.sprite.getPosition().x - (scope / 2) < playerPosition.x)) {
+    if(character.sprite.getPosition().x - scope < playerPosition.x && !(character.sprite.getPosition().x - detectScope < playerPosition.x)) {
        //printf("\nLEFT");
         return true;
     }

@@ -12,7 +12,6 @@
 #include <vector>
 #include <map>
 #include "../controllers/IAController.hpp"
-#include "MapEnvironnement.h"
 #include "MapModel.hpp"
 
 class Map {

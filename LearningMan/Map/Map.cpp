@@ -106,7 +106,7 @@ Sprite Map::loadBackground(sf::Texture &spriteTexture, bool repeat){
     spriteTexture.setRepeated(repeat);
     bg.setTexture(spriteTexture);
     if(repeat){
-        bg.setTextureRect({100,0,2000,30});
+        bg.setTextureRect({100,0,6000,30});
     }
     return bg;
 }

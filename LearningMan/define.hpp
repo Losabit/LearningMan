@@ -21,5 +21,6 @@
 
 //Other
 #define POINTS_BY_KILL 200
-#define POINTS_BY_SECOND 50
+#define POINTS_BY_SECOND 30
+#define MAX_LEVEL_TIME 120
 

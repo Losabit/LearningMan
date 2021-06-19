@@ -4,6 +4,7 @@
 #include "define.hpp"
 #include "controllers/PlayerController.hpp"
 #include "controllers/IAController.hpp"
+#include "controllers/BossController.h"
 #include "characters/Heros.hpp"
 #include "characters/Shotgunner.hpp"
 #include "characters/Healer.h"
@@ -89,9 +90,10 @@ int main() {
     list<IAController*> :: iterator itEnnemies;
     list<CollisionManager> ennemiesCollisions;
     BossCharacter boss;
-    IAController bossController(&boss);
+    BossController bossController(&boss);
     Portal portal;
     bool takePortal = false;
+    //playerController.character.sprite.setPosition(4000, 475);
     int ennemiesCount = 0;
 
     bool paused = false;
@@ -153,6 +155,12 @@ int main() {
                 if(!takePortal) {
                     for(auto itEnnemiCollision = ennemiesCollisions.begin(); itEnnemiCollision != ennemiesCollisions.end(); itEnnemiCollision++){
                         itEnnemiCollision->checkCollisions();
+                        /*
+                        for(auto itEnnemi = ennemies.begin(); itEnnemi != ennemies.end(); itEnnemi++){
+                            if(itEnnemiCollision->controller != (*itEnnemi))
+                                itEnnemiCollision->checkCharacterCollisions((*itEnnemi)->character.sprite);
+                        }
+                         */
                     }
 
                     if (playerController.character.sprite.getGlobalBounds().intersects(
@@ -195,7 +203,7 @@ int main() {
                             boss = Golem();
                             boss.sprite.setPosition(map.boss.character.positionX, map.boss.character.positionY);
                             boss.sprite.setScale(-1, 1);
-                            bossController = IAController(&boss);
+                            bossController = BossController(&boss);
                         }
 
                         containerLifebar.number = boss.health;
@@ -208,19 +216,20 @@ int main() {
                                 shotgunner = Shotgunner();
                                 shotgunner.sprite.setPosition(map.ennemies.at(i).positionX, map.ennemies.at(i).positionY);
                                 shotgunner.sprite.setScale(-1, 1);
+                                shotgunner.canMove = map.ennemies.at(i).canMove;
                                 ennemiesCharacters.push_back(shotgunner);
                             }
                             else if(map.ennemies.at(i).id == "healer") {
                                 healer = Healer();
                                 healer.sprite.setPosition(map.ennemies.at(i).positionX, map.ennemies.at(i).positionY);
                                 healer.sprite.setScale(1, 1);
+                                healer.canMove = map.ennemies.at(i).canMove;
                                 ennemiesCharacters.push_back(healer);
                             }
                             else{
                                 std::cout << "ennemie " << map.ennemies.at(i).id << " not found" << std::endl;
                                 continue;
                             }
-
 
 
                         }
@@ -240,6 +249,7 @@ int main() {
                         }
 
                         playerCollision.clear();
+                        //playerCollision.addObject(bossController.character.sprite, ObjectType::Wall);
                         playerCollision.addObject(map.walls, ObjectType::Wall);
                         playerCollision.addObject(map.platforms, ObjectType::Platform);
                         ennemiesCount = ennemies.size();
@@ -273,6 +283,12 @@ int main() {
                 for(itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++){
                     window.draw(HitboxManager::getHitboxSprite((*itEnnemies)->character.sprite.getGlobalBounds()));
                 }
+                if(takePortal){
+                    for(int i = 0; i < bossController.character.projectiles.size(); i++){
+                        window.draw(HitboxManager::getHitboxSprite(bossController.character.projectiles.at(i).getGlobalBounds()));
+                    }
+                    window.draw(HitboxManager::getHitboxSprite(bossController.character.sprite.getGlobalBounds()));
+                }
             }
 
             // Pause menu
@@ -296,11 +312,42 @@ int main() {
                 int healthBefore = bossController.character.health;
                 if(bossController.character.health > 0) {
                     BulletManager::manageBullets(&playerController, &bossController, map.walls, &window);
+                    if (healthBefore != bossController.character.health) {
+                        containerLifebar.changeTextureOf(bossController.character.health, 1);
+                    }
                 }
-                if(healthBefore != bossController.character.health){
-                    containerLifebar.changeTextureOf(bossController.character.health, 1);
-                }
+
                 window.draw(bossController.character.sprite);
+                for(int i = 0; i < bossController.character.projectiles.size(); i++){
+                    window.draw(bossController.character.projectiles.at(i));
+
+                    if(bossController.character.projectiles.at(i).getGlobalBounds().intersects(playerController.character.sprite.getGlobalBounds())){
+                        bossController.character.projectiles.erase(bossController.character.projectiles.begin() + i);
+                        bossController.character.projectilesMovement.erase(bossController.character.projectilesMovement.begin() + i);
+                        i--;
+                        playerController.character.takeDamage(1);
+                        continue;
+                    }
+
+                    if(bossController.character.projectilesMovement.at(i) == ProjectileMovement::Down){
+                        bossController.character.projectiles.at(i).move(0, 4);
+                        if(bossController.character.projectiles.at(i).getPosition().y > 600){
+                            bossController.character.projectiles.erase(bossController.character.projectiles.begin() + i);
+                            bossController.character.projectilesMovement.erase(bossController.character.projectilesMovement.begin() + i);
+                            bossController.character.projectilesClock.erase(bossController.character.projectilesClock.begin() + i);
+                            i--;
+                        }
+                    }
+                    else if(bossController.character.projectilesMovement.at(i) == ProjectileMovement::Immobile){
+                        if(bossController.character.projectilesClock.at(i).getElapsedTime().asMilliseconds() > 600){
+                            bossController.character.projectiles.erase(bossController.character.projectiles.begin() + i);
+                            bossController.character.projectilesMovement.erase(bossController.character.projectilesMovement.begin() + i);
+                            bossController.character.projectilesClock.erase(bossController.character.projectilesClock.begin() + i);
+                            i--;
+                        }
+                    }
+                }
+
             }
             else{
                 BulletManager::manageBullets(&playerController, &ennemies, map.walls,&window);
@@ -310,12 +357,10 @@ int main() {
                         BulletManager::manageBullets((*itEnnemies), &playerController, map.walls, &window);
 
                     }else{
-                            /**
-                             * TODO: heal
-                             */
-                            Healer::heal((*itEnnemies),&ennemies);
-
-                        
+                        if((*itEnnemies)->character.launchHeal) {
+                            Healer::heal((*itEnnemies), &ennemies);
+                            (*itEnnemies)->character.launchHeal = false;
+                        }
                     }
                 }
                 window.draw(portal.getSprite());

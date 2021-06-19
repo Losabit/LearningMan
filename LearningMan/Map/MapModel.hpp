@@ -32,6 +32,7 @@ public:
     std::string id;
     int positionX;
     int positionY;
+    bool canMove;
 };
 
 

@@ -11,7 +11,8 @@ Shotgunner::Shotgunner() : Character() {
                                          {6},{7}};
     textureMoving = TextureManager(CHARACTER_ASSETS_PATH "/shotgunner/run.png", IntRect(0, 0, 40, 33),
                                    lMoving, 35, 0);
-    speed = 2;
+    speed = 1.5;
+    shootCooldown = 3.0;
     id = "shotgunner";
     sprite = textureIdle.toSprite();
     bullet = textureBullet.toSprite();
