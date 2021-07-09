@@ -17,11 +17,13 @@
 #include "utils/HitboxManager.hpp"
 #include "utils/CollisionManager.hpp"
 #include "utils/Portal.hpp"
+//#include "utils/curlFunction.h"
 
 using namespace std;
 
 //ToDo
 int main() {
+//    cout << getInfo(TOKENURL) << endl;
     bool onPlatform = false;
     bool SHOWHITBOX = false;
     sf::Clock hitboxClock = sf::Clock();
