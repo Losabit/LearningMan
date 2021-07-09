@@ -1,7 +1,7 @@
+//////
+////// Created by Mirii on 09/07/2021.
+//////
 ////
-//// Created by Mirii on 09/07/2021.
-////
-//
 //#ifndef LEARNINGMAN_CURLFUNCTION_H
 //#include <curl/curl.h>
 //#include <string>
@@ -13,4 +13,5 @@
 //
 //size_t writeFunction(void* ptr, size_t size, size_t nmemb, std::string* data);
 //std::string getInfo(std::string url);
+//int addUser(std::string username, std::string token);
 //#endif //LEARNINGMAN_CURLFUNCTION_H
