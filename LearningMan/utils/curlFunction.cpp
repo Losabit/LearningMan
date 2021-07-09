@@ -1,0 +1,35 @@
+////
+//// Created by Mirii on 09/07/2021.
+////
+//
+//#include "curlFunction.h"
+//
+//size_t   writeFunction(void* ptr, size_t size, size_t nmemb, std::string* data) {
+//    data->append((char*)ptr, size * nmemb);
+//    return size * nmemb;
+//}
+//std::string  getInfo(std::string url){
+//    curl_global_init(CURL_GLOBAL_DEFAULT);
+//    auto curl = curl_easy_init();
+//    if (curl) {
+//        char *nurl = const_cast<char *>(url.c_str());
+//        curl_easy_setopt(curl, CURLOPT_URL, nurl);
+//        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
+//        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);
+//        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeFunction);
+//
+//        std::string response_string;
+//        std::string header_string;
+//        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_string);
+//        curl_easy_setopt(curl, CURLOPT_HEADERDATA, &header_string);
+//        CURLcode res = curl_easy_perform(curl);
+//
+//        curl_easy_perform(curl);
+//        curl_easy_cleanup(curl);
+//        curl_global_cleanup();
+//        curl = NULL;
+//        return response_string ;
+//
+//    }
+//    return "NULL";
+//}
