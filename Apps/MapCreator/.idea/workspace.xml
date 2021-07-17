@@ -12,25 +12,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a65c3a0d-431f-4e26-ab05-b2527b1a1e7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/controllers/BossController.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/controllers/BossController.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/ressources/Level 1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/GUI/UserConfiguration.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/GUI/UserConfiguration.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/assets/GUI/fondblanc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/assets/GUI/selectedfondblanc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/controllers/PredefineController.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/controllers/PredefineController.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/Environment.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/Environment.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/QLearning.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/QLearning.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/trainEnvironnement.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/ressources/learning/logs/1/1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/ressources/user/config.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/utils/RecordInputs.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/utils/RecordInputs.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/in/myMap.json" beforeDir="false" afterPath="$PROJECT_DIR$/in/myMap.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/Map/Map.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/Map/Map.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/BossCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/BossCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/BossCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/BossCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/Character.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/Character.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/Character.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/Character.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/Golem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/Golem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/controllers/Controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/controllers/Controller.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/controllers/PlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/controllers/PlayerController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/define.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/define.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/basic.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/ressources/basic.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/endMap.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/TextureManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/TextureManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/TextureManager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/TextureManager.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +130,9 @@
       <workItem from="1623174176031" duration="4000" />
       <workItem from="1623225940630" duration="1266000" />
       <workItem from="1623519359060" duration="3245000" />
+      <workItem from="1625780889984" duration="674000" />
+      <workItem from="1625817496943" duration="10000" />
+      <workItem from="1626524765289" duration="1914000" />
     </task>
     <servers />
   </component>

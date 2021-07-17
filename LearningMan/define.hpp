@@ -24,3 +24,6 @@
 #define POINTS_BY_SECOND 30
 #define MAX_LEVEL_TIME 120
 
+// IA
+#define RECORD_INPUT true
+

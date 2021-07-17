@@ -1,44 +1,57 @@
-#include "Controller.hpp"
-#include <math.h>
-#include "../define.hpp"
 #include "PredefineController.hpp"
+#include <math.h>
 
-Controller::Controller(Character *character1) {
-    character = *character1;
+PredefineController::PredefineController(Character* character1) : Controller(character1) {
+
 }
 
-Action Controller::play(Character ennemi) {
-    float scopeVision = 300;
-    if(ennemi.sprite.getPosition().x + scopeVision > character.sprite.getPosition().x
-       || ennemi.sprite.getPosition().x - scopeVision < character.sprite.getPosition().x) {
-        return play();
+PredefineController::PredefineController(Character* character1,  std::vector<int> actions1) : Controller(character1) {
+    for(int i = 0; i < actions1.size(); i++){
+        actions.push_back(actions1.at(i));
     }
-    else{
-        character.wait();
+}
+
+bool PredefineController::isGoingRight(){
+    if(actualActionIndice < actions.size()) {
+        if (static_cast<PredefineAction>(actions.at(actualActionIndice)) == PredefineAction::RightAction) {
+            actualActionIndice++;
+            return true;
+        }
     }
-    return Action::None;
-}
-
-bool Controller::isGoingRight() {
     return false;
 }
 
-bool Controller::isGoingLeft() {
+bool PredefineController::isGoingLeft() {
+    if(actualActionIndice < actions.size()) {
+        if (static_cast<PredefineAction>(actions[actualActionIndice]) == PredefineAction::LeftAction) {
+            actualActionIndice++;
+            return true;
+        }
+    }
     return false;
 }
 
-bool Controller::isJumping() {
+bool PredefineController::isJumping() {
+    if(actualActionIndice < actions.size()) {
+        if (static_cast<PredefineAction>(actions[actualActionIndice]) == PredefineAction::JumpAction) {
+            actualActionIndice++;
+            return true;
+        }
+    }
     return false;
 }
 
-bool Controller::isShooting() {
-    return false;
-}
-bool Controller::isHealing() {
+bool PredefineController::isShooting() {
+    if(actualActionIndice < actions.size()) {
+        if (static_cast<PredefineAction>(actions[actualActionIndice]) == PredefineAction::ShootAction) {
+            actualActionIndice++;
+            return true;
+        }
+    }
     return false;
 }
 
-Action Controller::play() {
+Action PredefineController::play(PredefineAction action){
     if(character.health <= 0){
         if(character.dying()) {
             return Action::ToDestroy;
@@ -49,14 +62,14 @@ Action Controller::play() {
     character.velocity.x *= 0.2f;
     bool doingSomething = false;
 
-    if (isGoingRight()) {
+    if (action == PredefineAction::RightAction) {
         if(character.canMove) {
             character.velocity.x += character.speed;
             character.moving();
         }
         character.sprite.setScale(1, 1);
         doingSomething = true;
-    } else if (isGoingLeft()) {
+    } else if (action == PredefineAction::LeftAction) {
         if(character.canMove) {
             character.velocity.x -= character.speed;
             character.moving();
@@ -66,7 +79,7 @@ Action Controller::play() {
     }
 
 
-    if (isJumping() && character.canJump && character.clockJumpCooldown.getElapsedTime().asMilliseconds() > 300) {
+    if (action == PredefineAction::JumpAction && character.canJump && character.clockJumpCooldown.getElapsedTime().asMilliseconds() > 300) {
         character.canJump = false;
         character.velocity.y = -sqrtf(2.0f * character.gravity * character.jumpHeight);
         this->sp.playSound("jump.wav");
@@ -83,7 +96,7 @@ Action Controller::play() {
     }
 
     if(character.id == "null" ||  character.id == "shotgunner"){
-        if(isShooting() && character.canShoot()){
+        if(action == PredefineAction::ShootAction && character.canShoot()){
             doingSomething = true;
             character.shoot();
             if(character.sprite.getScale().x == -1){
@@ -97,22 +110,6 @@ Action Controller::play() {
             this->sp.playSound("shoot.wav");
             bulletsOrientation.push_back(character.sprite.getScale().x);
             return Action::Shoot;
-        }
-    }
-    else if(character.id == "healer"){
-        if(isHealing() && character.canHeal()){
-            startHealAnimation = true;
-            doingSomething = true;
-            character.heal();
-            return Action::Heal;
-        }
-        else if(startHealAnimation){
-            if(character.heal()){
-                character.launchHeal = true;
-                startHealAnimation = false;
-            }
-            doingSomething = true;
-            return Action::Heal;
         }
     }
 

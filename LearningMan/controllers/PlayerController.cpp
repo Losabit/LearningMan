@@ -3,7 +3,6 @@
 #include "SFML/Graphics.hpp"
 #include "../utils/SoundPlayer.hpp"
 
-
 PlayerController::PlayerController(Character *character1) : Controller(character1)
 {
     SoundPlayer soundPlayer;
