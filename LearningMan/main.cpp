@@ -21,13 +21,13 @@
 #include "utils/Portal.hpp"
 #include "learningAlgorithms/QLearning.hpp"
 #include "learningAlgorithms/Environment.h"
-//#include "utils/curlFunction.h"
+#include "utils/curlFunction.h"
 
 using namespace std;
 
 //ToDo
 int main() {
-//    cout << getInfo(TOKENURL) << endl;
+    cout << getInfo(TOKENURL) << endl;
     bool onPlatform = false;
     bool SHOWHITBOX = false;
     sf::Clock hitboxClock = sf::Clock();
