@@ -28,7 +28,11 @@ using namespace std;
 
 //ToDo
 int main() {
-    std::string startDateTime;
+    time_t now = time(0);
+    tm *ltm = localtime(&now);
+    std::string startDateTime = dateFormat(ltm);
+    int startTimestamp = 0;
+
     bool onPlatform = false;
     bool SHOWHITBOX = false;
     sf::Clock hitboxClock = sf::Clock();
@@ -179,10 +183,9 @@ int main() {
                         model.debug(60.0);
                         if (predefinePlayerController.play(action) == Action::ToDestroy) {
                             time_t now = time(0);
-                            tm *ltm = localtime(&now);
                             endLevelView.maximumTime();
                             endLevelView.setKill(ennemiesCount - ennemies.size());
-                            addGame(startDateTime, dateFormat(ltm),"\"" + userConfiguration.token + "\"", 1,1, endLevelView.score,ennemiesCount - ennemies.size(),deathPosition(HEROS_INITIAL_POSITION.x, playerController.character.sprite.getPosition().x, map.boss.portal.positionX, takePortal),"NULL");
+                            addGame(startDateTime, now - startTimestamp, "\"" + userConfiguration.token + "\"", 1,1, endLevelView.score,ennemiesCount - ennemies.size(),deathPosition(HEROS_INITIAL_POSITION.x, playerController.character.sprite.getPosition().x, map.boss.portal.positionX, takePortal));
 
                             startGame = false;
                             predefinePlayerController.character.reset(HEROS_INITIAL_POSITION);
@@ -208,12 +211,11 @@ int main() {
                     playerCollision.checkCollisions();
                     if (playerController.play() == Action::ToDestroy) {
                         time_t now = time(0);
-                        tm *ltm = localtime(&now);
                         endLevel = true;
                         endLevelView.maximumTime();
                         endLevelView.setKill(ennemiesCount - ennemies.size());
 
-                        addGame(startDateTime, dateFormat(ltm),"\"" + userConfiguration.token + "\"", 1,0, endLevelView.score,ennemiesCount - ennemies.size(),deathPosition(HEROS_INITIAL_POSITION.x, playerController.character.sprite.getPosition().x, map.boss.portal.positionX, takePortal),"NULL");
+                        addGame(startDateTime, now - startTimestamp,"\"" + userConfiguration.token + "\"", 1,0, endLevelView.score,ennemiesCount - ennemies.size(),deathPosition(HEROS_INITIAL_POSITION.x, playerController.character.sprite.getPosition().x, map.boss.portal.positionX, takePortal));
                         startGame = false;
                         playerController.character.reset(HEROS_INITIAL_POSITION);
                         window.setView(initialView);
@@ -274,8 +276,8 @@ int main() {
                         endLevelView.setTime(levelClock.getElapsedTime());
                         endLevelView.setKill(ennemiesCount - ennemies.size());
                         time_t now = time(0);
-                        tm *ltm = localtime(&now);
-                        addGame(startDateTime, dateFormat(ltm),"\"" + userConfiguration.token + "\"", 0,checkBoxAI ? 1 : 0, endLevelView.score,ennemiesCount - ennemies.size(),0,"NULL");
+
+                        addGame(startDateTime, now - startTimestamp, "\"" + userConfiguration.token + "\"", 0,checkBoxAI ? 1 : 0, endLevelView.score,ennemiesCount - ennemies.size(),0);
                         window.setView(initialView);
                     }
                 }
@@ -365,8 +367,7 @@ int main() {
                         ennemiesCount = ennemies.size();
                         startGame = true;
                         time_t now = time(0);
-                        tm *ltm = localtime(&now);
-                        startDateTime = dateFormat(ltm);
+                        startTimestamp = now;
                         break;
                     }
                 }

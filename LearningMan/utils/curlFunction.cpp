@@ -57,7 +57,7 @@ int addUser(std::string username, std::string token) {
     curl = NULL ;
     return 0;
 }
-int addGame(std::string date, float time,std::string token, int isDead, int playerType, int score, int nbKill, int deathPosition) {
+int addGame(std::string date, float time, std::string token, int isDead, int playerType, int score, int nbKill, int deathPosition) {
     CURL *curl;
 
     std::string  output;
@@ -90,9 +90,6 @@ std::string dateFormat(tm* ltm){
     std::string startDateTime = std::to_string(1900 + ltm->tm_year) + "-";
     startDateTime +=  1 + ltm->tm_mon < 10 ? "0" + std::to_string(1 + ltm->tm_mon) : std::to_string(1 + ltm->tm_mon);
     startDateTime += "-" + (ltm->tm_mday < 10 ? "0" + std::to_string(ltm->tm_mday) : std::to_string(ltm->tm_mday));
-    startDateTime += " " + (ltm->tm_hour < 10 ? "0" + std::to_string(ltm->tm_hour) : std::to_string(ltm->tm_hour));
-    startDateTime += ":" + (ltm->tm_min < 10 ? "0" + std::to_string(ltm->tm_min) : std::to_string(ltm->tm_min));
-    startDateTime += ":" + (ltm->tm_sec < 10 ? "0" + std::to_string(ltm->tm_sec) : std::to_string(ltm->tm_sec));
     return startDateTime;
 }
 
