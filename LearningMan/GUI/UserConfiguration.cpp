@@ -1,7 +1,9 @@
 #include "UserConfiguration.hpp"
 #include "../define.hpp"
+#include "../utils/curlFunction.h"
 #include <iostream>
 #include <fstream>
+
 
 UserConfiguration::UserConfiguration() {
     textureUser.loadFromFile(GUI_ASSETS_PATH "/user.png");
@@ -59,20 +61,20 @@ void UserConfiguration::clickEvent(sf::Vector2f point) {
 
     if(spriteButton.getGlobalBounds().contains(point) && eventClock.getElapsedTime().asSeconds() > 0.3
     && textSaveInput.getString().toAnsiString().length() > 2){
+        saveUser(textSaveInput.getString());
         isOpen = false;
         exist = true;
-        saveUser(textSaveInput.getString());
         eventClock.restart();
     }
 }
 
 void UserConfiguration::keyEvent(int letter){
-    if(eventClock.getElapsedTime().asSeconds() > 0.1 && textSaveInput.getString().toAnsiString().length() < 10) {
+    if(eventClock.getElapsedTime().asSeconds() > 0.1) {
         if (letter == 8) {
             textSaveInput.setString(
                     textSaveInput.getString().toAnsiString().substr(0, textSaveInput.getString().toAnsiString().size() -
                                                                        1));
-        } else {
+        } else if(textSaveInput.getString().toAnsiString().length() < 12){
             textSaveInput.setString(
                     textSaveInput.getString().toAnsiString() + static_cast<char>(letter));
         }
@@ -82,7 +84,15 @@ void UserConfiguration::keyEvent(int letter){
 
 void UserConfiguration::saveUser(std::string pseudo){
     std::ofstream o("../ressources/user/config.txt");
-    o << pseudo + ";" + "njdnjnvdvaiuahsb" << std::endl;
+    if(token == "") {
+        token = getInfo(TOKENURL);
+        token = token.substr(1, token.length() - 2);
+    }
+    o << pseudo + ";" + token << std::endl;
+
+    if(!exist){
+        addUser(pseudo, "\"" + token + "\"");
+    }
 }
 
 void UserConfiguration::draw(sf::RenderWindow *window) {
