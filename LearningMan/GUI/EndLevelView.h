@@ -8,7 +8,9 @@ public:
     EndLevelView();
     void draw(sf::RenderWindow* window);
     void setTime(sf::Time time);
+    void maximumTime();
     void setKill(int kills);
+    int score = 0;
     sf::Sprite buttonSpriteContinue;
 
 private:
