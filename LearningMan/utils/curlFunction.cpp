@@ -57,7 +57,7 @@ int addUser(std::string username, std::string token) {
     curl = NULL ;
     return 0;
 }
-int addGame(std::string start,std::string end,std::string token, int isDead, int playerType, int score, int nbKill, int deathPosition , std::string killer) {
+int addGame(std::string date, float time,std::string token, int isDead, int playerType, int score, int nbKill, int deathPosition) {
     CURL *curl;
 
     std::string  output;
@@ -69,8 +69,10 @@ int addGame(std::string start,std::string end,std::string token, int isDead, int
         curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
         curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);
         std::ostringstream out;
-        out << "{\"token\": " << token<<R"(,"dateStart":")" << start << R"(" ,"isDead" : )" << isDead  << ", \"playerType\" : " << playerType  <<   ", \"scoreTotal\" :"  << score << ", \"nbKill\": " << nbKill << ", \"deathPosition\" :" << deathPosition<< R"(, "killer":" )" <<  killer   << R"(", "dateEnd":)"   "\""<< end <<    R"(","idMap":)"   << 1  << "}  ";
-
+        out << "{\"token\": " << token << R"(,"date":")" << date << R"(" ,"isDead" : )" << isDead
+            << ", \"playerType\" : " << playerType << ", \"scoreTotal\" :" << score << ", \"nbKill\": " << nbKill
+            << ", \"deathPosition\" :" << deathPosition << R"(, "elapsedTime":)" << time << R"(,"idMap":)" << 1
+            << "}  ";
         std::cout << out.str() << std::endl;
         std::string temp = out.str();
         char * postValue =  const_cast<char *>(temp.c_str());
