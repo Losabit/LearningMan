@@ -1,7 +1,6 @@
 ////
 //// Created by Mirii on 09/07/2021.
 ////
-
 #ifndef LEARNINGMAN_CURLFUNCTION_H
 #include <curl/curl.h>
 #include <string>
