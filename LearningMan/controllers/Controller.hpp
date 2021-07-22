@@ -20,6 +20,8 @@ public:
     std::list<Vector2f> bullets;
     std::list<Vector2f> bulletsOrigin;
     std::list<int> bulletsOrientation;
+    Vector2f lastBulletOrigin;
+    int lastBulletOrientation;
     float GRAVITY_POINT = 583;
 
 protected:

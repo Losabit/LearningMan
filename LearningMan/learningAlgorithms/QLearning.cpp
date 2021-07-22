@@ -1,4 +1,7 @@
 #include "QLearning.hpp"
+#include <fstream>
+#include <iostream>
+#include <dirent.h>
 
 QLearning::QLearning(float alpha1, float epsilon1, float gamma1) {
     if(epsilon1 <= 0.0){
@@ -54,8 +57,10 @@ int QLearning::randomChoice(std::map<int, float> probalities){
             return it->first;
         }
     }
-    std::cout << "error in QLearning random choice return" << std::endl;
-    return -1;
+    if(probality > 1) {
+        std::cout << "error in QLearning random choice return" << std::endl;
+    }
+    return rand() % probalities.size();
 }
 
 PredefineAction QLearning::getAction(int state, int score) {
@@ -154,4 +159,38 @@ PolicyAndActionValueFunction QLearning::compile() {
         }
     }
     return PolicyAndActionValueFunction{.pi =  pi, .q =  q};
+}
+
+void QLearning::save(PolicyAndActionValueFunction policyAndActionValueFunction) {
+    DIR *dir;
+    struct dirent *ent;
+    int it = -2;
+    if ((dir = opendir("../ressources/policyAndActionValueFunction")) != NULL) {
+        while ((ent = readdir (dir)) != NULL) {
+            it++;
+        }
+        closedir (dir);
+    } else {
+       std::cout << "directory not find" << std::endl;
+       return;
+    }
+    std::ofstream outfile;
+    outfile.open("../ressources/policyAndActionValueFunction/model_" + std::to_string(it) + ".txt");
+    for(std::map<int, std::map<int, float>>::iterator it = policyAndActionValueFunction.q.begin(); it != policyAndActionValueFunction.q.end(); ++it) {
+        outfile << it->first << ":{";
+        for(std::map<int, float>::iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
+            outfile << it2->first << ":" << it2->second;
+        }
+        outfile << "};";
+    }
+    outfile << std::endl;
+    for(std::map<int, std::map<int, float>>::iterator it = policyAndActionValueFunction.pi.begin(); it != policyAndActionValueFunction.pi.end(); ++it) {
+        outfile << it->first << ":{";
+        for(std::map<int, float>::iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
+            outfile << it2->first << ":" << it2->second;
+        }
+        outfile << "};";
+    }
+    outfile << std::endl;
+    outfile.close();
 }

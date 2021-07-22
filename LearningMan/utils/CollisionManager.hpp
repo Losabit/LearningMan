@@ -14,6 +14,7 @@ class CollisionManager {
 public:
     CollisionManager(Controller* controller1);
     void checkCollisions();
+    float checkCollisionsAndGetNewGravity();
     void checkCharacterCollisions(Sprite chara);
     void addObject(sf::Sprite sprite, ObjectType objectType);
     void addObject(std::vector<sf::Sprite> sprite, ObjectType objectType);

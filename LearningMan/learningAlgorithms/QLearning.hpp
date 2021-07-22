@@ -17,9 +17,10 @@ public:
     bool canPlay();
     void debug(float seconds);
     PolicyAndActionValueFunction compile();
+    void save(PolicyAndActionValueFunction policyAndActionValueFunction);
 
 private:
-    const static int canPlayEvery = 3;
+    const static int canPlayEvery = 0;
     const static bool saveChosenActions = true;
     std::map<int, int> chosenActions;
     float alpha;
@@ -28,7 +29,7 @@ private:
     std::map<int, std::map<int, float>> pi;
     std::map<int, std::map<int, float>> q;
     std::map<int, std::map<int, float>> b;
-    int numberOfActions = 3;
+    int numberOfActions = 7;
     int scoreBeforeAction;
     int stateBeforeAction;
     int chosenAction;

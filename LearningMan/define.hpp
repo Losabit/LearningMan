@@ -25,5 +25,9 @@
 #define MAX_LEVEL_TIME 120
 
 // IA
-#define RECORD_INPUT true
-
+#define RECORD_INPUT false
+#define IA_MODE_USER_INPUTS false
+#define ENNEMIES_CAN_PLAY true
+#define ONLY_TRAIN_ON_BOSS true
+#define AUTO_RESTART true
+#define SEND_HTTP_REQUEST false
