@@ -5,6 +5,7 @@ void BulletManager::manageBullets(Controller* shooter, std::list<IAController*>*
     std::list<Vector2f> :: iterator itOrigin;
     std::list<IAController*> :: iterator itEnnemies;
     std::list<int> :: iterator itOrientation;
+    //std::cout << "1 : " << shooter->bullets.size() << " / " << shooter->bulletsOrientation.size() << " / " << shooter->bulletsOrigin.size() << std::endl;
 
     for (it = shooter->bullets.begin(), itOrientation = shooter->bulletsOrientation.begin(), itOrigin = shooter->bulletsOrigin.begin();
          it != shooter->bullets.end(); it++, itOrientation++, itOrigin++) {
@@ -53,14 +54,16 @@ void BulletManager::manageBullets(Controller* shooter, std::list<IAController*>*
                     walls.at(i).getGlobalBounds())) {
                 it = shooter->bullets.erase(it);
                 itOrientation = shooter->bulletsOrientation.erase(itOrientation);
+                itOrigin = shooter->bulletsOrigin.erase(itOrigin);
                 continue;
             }
         }
 
-        if (it->x > (itOrigin->x + 2000) || it->x < (itOrigin->x- 2000)) {
+        if (it->x > (itOrigin->x + bulletScope) || it->x < (itOrigin->x- bulletScope)) {
             it = shooter->bullets.erase(it);
             itOrigin = shooter->bulletsOrigin.erase(itOrigin);
             itOrientation = shooter->bulletsOrientation.erase(itOrientation);
+            continue;
         }
     }
 }
@@ -69,6 +72,7 @@ void BulletManager::manageBullets(Controller* shooter, Controller* ennemies, std
     std::list<Vector2f> :: iterator it;
     std::list<Vector2f> :: iterator itOrigin;
     std::list<int> :: iterator itOrientation;
+    //std::cout << "2 : " << shooter->bullets.size() << " / " << shooter->bulletsOrientation.size() << " / " << shooter->bulletsOrigin.size() << std::endl;
 
     for (it = shooter->bullets.begin(), itOrientation = shooter->bulletsOrientation.begin(), itOrigin = shooter->bulletsOrigin.begin();
          it != shooter->bullets.end(); it++, itOrientation++, itOrigin++) {
@@ -116,7 +120,7 @@ void BulletManager::manageBullets(Controller* shooter, Controller* ennemies, std
             }
         }
 
-        if (it->x > (itOrigin->x + 2000) || it->x < (itOrigin->x- 2000)) {
+        if (it->x > (itOrigin->x + bulletScope) || it->x < (itOrigin->x - bulletScope)) {
             it = shooter->bullets.erase(it);
             itOrientation = shooter->bulletsOrientation.erase(itOrientation);
         }
@@ -128,6 +132,7 @@ void BulletManager::manageBullets(Controller* shooter, BossController* ennemies,
     std::list<Vector2f> :: iterator itOrigin;
     std::list<int> :: iterator itOrientation;
 
+    //std::cout << "3 : " << shooter->bullets.size() << " / " << shooter->bulletsOrientation.size() << " / " << shooter->bulletsOrigin.size() << std::endl;
     for (it = shooter->bullets.begin(), itOrientation = shooter->bulletsOrientation.begin(), itOrigin = shooter->bulletsOrigin.begin();
          it != shooter->bullets.end(); it++, itOrientation++, itOrigin++) {
         if(*itOrientation == 1){
@@ -145,6 +150,8 @@ void BulletManager::manageBullets(Controller* shooter, BossController* ennemies,
                 ennemies->character.takeDamage(1);
                 it = shooter->bullets.erase(it);
                 itOrientation = shooter->bulletsOrientation.erase(itOrientation);
+                itOrigin = shooter->bulletsOrigin.erase(itOrigin);
+                continue;
         }
 
         for(int i = 0; i < walls.size(); i++){
@@ -154,13 +161,16 @@ void BulletManager::manageBullets(Controller* shooter, BossController* ennemies,
                     walls.at(i).getGlobalBounds())) {
                 it = shooter->bullets.erase(it);
                 itOrientation = shooter->bulletsOrientation.erase(itOrientation);
+                itOrigin = shooter->bulletsOrigin.erase(itOrigin);
                 continue;
             }
         }
 
-        if (it->x > (itOrigin->x + 2000) || it->x < (itOrigin->x- 2000)) {
+        if (it->x > (itOrigin->x + bulletScope) || it->x < (itOrigin->x - bulletScope)) {
             it = shooter->bullets.erase(it);
             itOrientation = shooter->bulletsOrientation.erase(itOrientation);
+            itOrigin = shooter->bulletsOrigin.erase(itOrigin);
+            continue;
         }
     }
 }

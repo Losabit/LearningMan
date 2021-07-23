@@ -6,6 +6,10 @@ enum PredefineAction {
     LeftAction,
     RightAction,
     JumpAction,
+    JumpRightAction,
+    JumpLeftAction,
+    ShootRightAction,
+    ShootLeftAction,
     ShootAction,
     WaitAction
 };
@@ -15,7 +19,8 @@ public:
     PredefineController(Character* character1);
     PredefineController(Character* character1, std::vector<int> actions1);
     Action play(PredefineAction action);
-    float GRAVITY_POINT =  581 - 20;
+    static PredefineAction getActionFromInputs();
+    float GRAVITY_POINT = 583;
     std::vector<int> actions;
 
 protected:
@@ -25,7 +30,6 @@ protected:
     virtual bool isShooting();
 
 private:
-
     int actualActionIndice = 0;
     Vector2f jumpPosition;
     SoundPlayer sp;

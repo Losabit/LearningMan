@@ -56,6 +56,38 @@ void CollisionManager::checkCollisions() {
      }
 }
 
+float CollisionManager::checkCollisionsAndGetNewGravity() {
+    int highestOver = -1;
+    int highestOverValue = -1;
+    for(int i = 0; i < objects.size(); i++){
+        if(isOver(i)){
+            if(objects[i].getPosition().y < highestOverValue || highestOver == -1){
+                highestOverValue = objects[i].getPosition().y;
+                highestOver = i;
+            }
+        }
+        else{
+            if(types.at(i) == ObjectType::Wall)
+                wallCollision(i);
+            else if(types.at(i) == ObjectType::Decor)
+                platformCollision(i);
+        }
+    }
+
+    if(highestOver != -1) {
+        if (types.at(highestOver) == ObjectType::Wall) {
+            wallCollision(highestOver);
+            return objects[highestOver].getPosition().y - objects[highestOver].getGlobalBounds().height / 2;
+        } else {
+            platformCollision(highestOver);
+            return objects[highestOver].getPosition().y - objects[highestOver].getGlobalBounds().height ;
+        }
+    }
+    else{
+        return 583;
+    }
+}
+
 void CollisionManager::checkCharacterCollisions(Sprite chara) {
     float right = chara.getPosition().x + chara.getGlobalBounds().width + controller->character.sprite.getGlobalBounds().width;
     float left = chara.getPosition().x - controller->character.sprite.getLocalBounds().width;

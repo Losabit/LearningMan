@@ -12,27 +12,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a65c3a0d-431f-4e26-ab05-b2527b1a1e7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/GUI/UserConfiguration.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/GUI/UserConfiguration.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/assets/GUI/fondblanc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/assets/GUI/selectedfondblanc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/controllers/PredefineController.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/controllers/PredefineController.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/Environment.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/Environment.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/QLearning.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/QLearning.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/trainEnvironnement.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/ressources/learning/logs/1/1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/ressources/user/config.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/utils/RecordInputs.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/utils/RecordInputs.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/in/Level 1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/BossEnvironment.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/BossEnvironment.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/ressources/Level 2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../LearningMan/ressources/policyAndActionValueFunction/model_1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/define.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/define.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/controllers/Controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/controllers/Controller.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/controllers/PlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/controllers/PlayerController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/controllers/PredefineController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/controllers/PredefineController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/controllers/PredefineController.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/controllers/PredefineController.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/define.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/define.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/Environment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/Environment.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/Environment.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/Environment.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/QLearning.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/QLearning.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/QLearning.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/QLearning.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/learning/logs/1/1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/BulletManager.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/CollisionManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/CollisionManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/CollisionManager.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/CollisionManager.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,11 +98,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -133,6 +128,8 @@
       <workItem from="1625780889984" duration="674000" />
       <workItem from="1625817496943" duration="10000" />
       <workItem from="1626524765289" duration="1914000" />
+      <workItem from="1626796022101" duration="892000" />
+      <workItem from="1626882745930" duration="137000" />
     </task>
     <servers />
   </component>

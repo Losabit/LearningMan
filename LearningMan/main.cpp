@@ -22,6 +22,7 @@
 #include "utils/Portal.hpp"
 #include "learningAlgorithms/QLearning.hpp"
 #include "learningAlgorithms/Environment.h"
+#include "learningAlgorithms/BossEnvironment.h"
 #include "utils/curlFunction.h"
 
 using namespace std;
@@ -32,6 +33,9 @@ int main() {
     tm *ltm = localtime(&now);
     std::string startDateTime = dateFormat(ltm);
     int startTimestamp = 0;
+    int choosenMapIndice = 0;
+    bool showRewardsCases = false;
+    bool showStatesCases = false;
 
     bool onPlatform = false;
     bool SHOWHITBOX = false;
@@ -115,8 +119,9 @@ int main() {
     CollisionManager playerCollision(&playerController);
 
     PredefineController predefinePlayerController(&heros);
-    QLearning model(0.1, 1.0, 0.9);
-    Environment env(HEROS_INITIAL_POSITION);
+    QLearning model(0.1, 0.2, 0.9);
+    Environment env(HEROS_INITIAL_POSITION, sf::Vector2f(3100, 475));
+    BossEnvironment bossEnv(475);
     predefinePlayerController.character.sprite.setPosition(HEROS_INITIAL_POSITION);
     CollisionManager predefinePlayerCollision(&predefinePlayerController);
 
@@ -130,7 +135,10 @@ int main() {
     BossController bossController(&boss);
     Portal portal;
     bool takePortal = false;
-    //playerController.character.sprite.setPosition(4000, 475);
+    if(ONLY_TRAIN_ON_BOSS) {
+        predefinePlayerController.character.sprite.setPosition(4000, 475);
+        takePortal = true;
+    }
     int ennemiesCount = 0;
 
     bool paused = false;
@@ -159,6 +167,21 @@ int main() {
                     playerController.character.reset(HEROS_INITIAL_POSITION);
                 }
             }
+            if(checkBoxAI && AUTO_RESTART){
+                if(!ONLY_TRAIN_ON_BOSS){
+                    takePortal = false;
+                    predefinePlayerController.character.reset(HEROS_INITIAL_POSITION);
+                }
+                else{
+                    predefinePlayerController.character.sprite.setPosition(4000, 475);
+                }
+                predefinePlayerController.character.health = 5;
+                bossEnv.reset();
+                endLevel = false;
+                startGame = false;
+                levelClock.restart();
+                containerLifebar.reset(0);
+            }
         }
         else if(startGame) {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
@@ -172,21 +195,60 @@ int main() {
                 SHOWHITBOX = !SHOWHITBOX;
                 hitboxClock.restart();
             }
+            if(hitboxClock.getElapsedTime().asSeconds() > 0.5 && checkBoxAI) {
+                if(paused) {
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+                        PolicyAndActionValueFunction policyAndActionValueFunction = model.compile();
+                        model.save(policyAndActionValueFunction);
+                        cout << "policyAndActionValueFunction saved" << endl;
+                        hitboxClock.restart();
+                    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+                        endLevel = true;
+                        startGame = false;
+                        predefinePlayerController.character.reset(HEROS_INITIAL_POSITION);
+                        paused = false;
+                        hitboxClock.restart();
+                    }
+                }
+                else{
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+                        showStatesCases = !showStatesCases;
+                        hitboxClock.restart();
+                    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+                        showRewardsCases = !showRewardsCases;
+                        hitboxClock.restart();
+                    }
+                }
+            }
 
             if (!paused) {
                 if(checkBoxAI){
                     if(model.canPlay()) {
-                        predefinePlayerCollision.checkCollisions();
-                        PredefineAction action = model.getAction(
-                                env.getState(predefinePlayerController.character.sprite.getPosition()),
-                                env.getReward(predefinePlayerController.character.sprite.getPosition()));
-                        model.debug(60.0);
+                        predefinePlayerController.GRAVITY_POINT = predefinePlayerCollision.checkCollisionsAndGetNewGravity();
+                        PredefineAction action;
+                        if(IA_MODE_USER_INPUTS){
+                            action = PredefineController::getActionFromInputs();
+                        }
+                        else {
+                            if(takePortal){
+                                action = model.getAction(
+                                        bossEnv.getState(predefinePlayerController.character.sprite.getPosition()),
+                                        bossEnv.getReward(predefinePlayerController, bossController.character.sprite));
+                            }
+                            else {
+                                action = model.getAction(
+                                        env.getState(predefinePlayerController.character.sprite.getPosition()),
+                                        env.getReward(predefinePlayerController.character.sprite.getPosition()));
+                            }
+                            //model.debug(60.0);
+                        }
+
                         if (predefinePlayerController.play(action) == Action::ToDestroy) {
                             time_t now = time(0);
                             endLevelView.maximumTime();
                             endLevelView.setKill(ennemiesCount - ennemies.size());
                             addGame(startDateTime, now - startTimestamp, "\"" + userConfiguration.token + "\"", 1,1, endLevelView.score,ennemiesCount - ennemies.size(),deathPosition(HEROS_INITIAL_POSITION.x, playerController.character.sprite.getPosition().x, map.boss.portal.positionX, takePortal));
-
+                            endLevel = true;
                             startGame = false;
                             predefinePlayerController.character.reset(HEROS_INITIAL_POSITION);
                             window.setView(initialView);
@@ -197,11 +259,15 @@ int main() {
                             view.setCenter(predefinePlayerController.character.sprite.getPosition().x, 500);
                             window.setView(view);
                         }
-                        model.getActionReward(env.getState(predefinePlayerController.character.sprite.getPosition()),
-                                              env.getReward(predefinePlayerController.character.sprite.getPosition()),
-                                              false);
+                        if(!IA_MODE_USER_INPUTS && !ENNEMIES_CAN_PLAY) {
+                            model.getActionReward(
+                                    env.getState(predefinePlayerController.character.sprite.getPosition()),
+                                    env.getReward(predefinePlayerController.character.sprite.getPosition()),
+                                    false);
+                        }
                     }
                     else{
+                        predefinePlayerCollision.checkCollisions();
                         predefinePlayerController.play(PredefineAction::WaitAction);
                         view.setCenter(predefinePlayerController.character.sprite.getPosition().x, 500);
                         window.setView(view);
@@ -245,9 +311,16 @@ int main() {
                             takePortal = true;
                         }
 
-                        for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
-                            (*itEnnemies)->setPlayerPosition(predefinePlayerController.character.sprite.getPosition());
-                            (*itEnnemies)->play(predefinePlayerController.character);
+                        if(ENNEMIES_CAN_PLAY) {
+                            for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
+                                (*itEnnemies)->setPlayerPosition(
+                                        predefinePlayerController.character.sprite.getPosition());
+                                (*itEnnemies)->play(predefinePlayerController.character);
+                            }
+                            model.getActionReward(
+                                    env.getState(predefinePlayerController.character.sprite.getPosition()),
+                                    env.getReward(predefinePlayerController.character.sprite.getPosition()),
+                                    false);
                         }
                     }
                     else {
@@ -277,14 +350,14 @@ int main() {
                         endLevelView.setKill(ennemiesCount - ennemies.size());
                         time_t now = time(0);
 
-                        addGame(startDateTime, now - startTimestamp, "\"" + userConfiguration.token + "\"", 0,checkBoxAI ? 1 : 0, endLevelView.score,ennemiesCount - ennemies.size(),0);
+                        addGame(startDateTime, now - startTimestamp, "\"" + userConfiguration.token + "\"", 0,checkBoxAI ? 1 : 0, endLevelView.score,ennemiesCount - ennemies.size(),100);
                         window.setView(initialView);
                     }
                 }
             }
         }
         else{
-            if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left)
+            if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left || (checkBoxAI && AUTO_RESTART && choosenMapIndice != 0))
             {
                 userConfiguration.clickEvent(window.mapPixelToCoords(Vector2i (event.mouseButton.x, event.mouseButton.y)));
                 if(checkBoxAIUnchecked.getGlobalBounds().contains( window.mapPixelToCoords(Vector2i (event.mouseButton.x, event.mouseButton.y)))
@@ -293,8 +366,12 @@ int main() {
                     checkboxClock.restart();
                 }
 
+                int it = 0;
                 for(auto buttonRef = buttonsMap.begin(); buttonRef != buttonsMap.end(); buttonRef++){
-                    if((*buttonRef).sprite.getGlobalBounds().contains( window.mapPixelToCoords(Vector2i (event.mouseButton.x, event.mouseButton.y)))) {
+                    it++;
+                    if((*buttonRef).sprite.getGlobalBounds().contains( window.mapPixelToCoords(Vector2i (event.mouseButton.x, event.mouseButton.y)))
+                    || (checkBoxAI && AUTO_RESTART && choosenMapIndice == it)){
+                        choosenMapIndice = it;
                         string choosenMap = MAP_PATH "/" + (*buttonRef).text.getString().toAnsiString() + ".json";
                         map = Map(choosenMap);
                         //impossible de le mettre sous forme de fonction en fonction // problèmes adresses mémoires avec l'héritage sur  les textures
@@ -455,13 +532,29 @@ int main() {
                 window.draw(bossController.character.sprite);
                 for(int i = 0; i < bossController.character.projectiles.size(); i++){
                     window.draw(bossController.character.projectiles.at(i));
-
-                    if(bossController.character.projectiles.at(i).getGlobalBounds().intersects(playerController.character.sprite.getGlobalBounds())){
-                        bossController.character.projectiles.erase(bossController.character.projectiles.begin() + i);
-                        bossController.character.projectilesMovement.erase(bossController.character.projectilesMovement.begin() + i);
-                        i--;
-                        playerController.character.takeDamage(1);
-                        continue;
+                    if(checkBoxAI){
+                        if (bossController.character.projectiles.at(i).getGlobalBounds().intersects(
+                                predefinePlayerController.character.sprite.getGlobalBounds())) {
+                            bossController.character.projectiles.erase(
+                                    bossController.character.projectiles.begin() + i);
+                            bossController.character.projectilesMovement.erase(
+                                    bossController.character.projectilesMovement.begin() + i);
+                            i--;
+                            predefinePlayerController.character.takeDamage(1);
+                            continue;
+                        }
+                    }
+                    else {
+                        if (bossController.character.projectiles.at(i).getGlobalBounds().intersects(
+                                playerController.character.sprite.getGlobalBounds())) {
+                            bossController.character.projectiles.erase(
+                                    bossController.character.projectiles.begin() + i);
+                            bossController.character.projectilesMovement.erase(
+                                    bossController.character.projectilesMovement.begin() + i);
+                            i--;
+                            playerController.character.takeDamage(1);
+                            continue;
+                        }
                     }
 
                     if(bossController.character.projectilesMovement.at(i) == ProjectileMovement::Down){
@@ -483,6 +576,12 @@ int main() {
                     }
                 }
 
+                if(ENNEMIES_CAN_PLAY && checkBoxAI){
+                    model.getActionReward(
+                            bossEnv.getState(predefinePlayerController.character.sprite.getPosition()),
+                            bossEnv.getReward(predefinePlayerController, bossController.character.sprite),
+                            false);
+                }
             }
             else{
                 if(checkBoxAI)
@@ -505,6 +604,12 @@ int main() {
                     }
                 }
                 window.draw(portal.getSprite());
+            }
+            if(showStatesCases) {
+                env.drawStateCases(&window, view);
+            }
+            if(showRewardsCases) {
+                env.drawRewardCases(&window, view);
             }
         }
         else{

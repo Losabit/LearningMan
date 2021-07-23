@@ -9,6 +9,9 @@ public:
     static void manageBullets(Controller* shooter, std::list<IAController*>* ennemies, std::vector<sf::Sprite> walls, sf::RenderWindow* window);
     static void manageBullets(Controller* shooter, Controller* ennemies, std::vector<sf::Sprite> walls, sf::RenderWindow* window);
     static void manageBullets(Controller* shooter, BossController* ennemies, std::vector<sf::Sprite> walls, sf::RenderWindow* window);
+
+private:
+    constexpr static const float bulletScope = 400.0;
 };
 
 

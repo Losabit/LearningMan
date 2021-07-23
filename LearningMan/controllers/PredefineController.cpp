@@ -2,13 +2,42 @@
 #include <math.h>
 
 PredefineController::PredefineController(Character* character1) : Controller(character1) {
-
+    SoundPlayer soundPlayer;
+    this->sp = soundPlayer;
 }
 
 PredefineController::PredefineController(Character* character1,  std::vector<int> actions1) : Controller(character1) {
     for(int i = 0; i < actions1.size(); i++){
         actions.push_back(actions1.at(i));
     }
+}
+
+PredefineAction PredefineController::getActionFromInputs() {
+    if(Keyboard::isKeyPressed(Keyboard::Z) && Keyboard::isKeyPressed(Keyboard::D)){
+        return PredefineAction::JumpRightAction;
+    }
+    else if(Keyboard::isKeyPressed(Keyboard::Z) && Keyboard::isKeyPressed(Keyboard::Q)){
+        return PredefineAction::JumpLeftAction;
+    }
+    else if(Keyboard::isKeyPressed(Keyboard::Q) && Keyboard::isKeyPressed(Keyboard::Space)){
+        return PredefineAction::ShootLeftAction;
+    }
+    else if(Keyboard::isKeyPressed(Keyboard::D) && Keyboard::isKeyPressed(Keyboard::Space)){
+        return PredefineAction::ShootRightAction;
+    }
+    else if(Keyboard::isKeyPressed(Keyboard::Z)){
+        return PredefineAction::JumpAction;
+    }
+    else if(Keyboard::isKeyPressed(Keyboard::D)){
+        return PredefineAction::RightAction;
+    }
+    else if(Keyboard::isKeyPressed(Keyboard::Q)){
+        return PredefineAction::LeftAction;
+    }
+    else if(Keyboard::isKeyPressed(Keyboard::Space)){
+        return PredefineAction::ShootAction;
+    }
+    return PredefineAction::WaitAction;
 }
 
 bool PredefineController::isGoingRight(){
@@ -52,6 +81,9 @@ bool PredefineController::isShooting() {
 }
 
 Action PredefineController::play(PredefineAction action){
+    lastBulletOrigin = Vector2f(0,0);
+    lastBulletOrientation = 0;
+
     if(character.health <= 0){
         if(character.dying()) {
             return Action::ToDestroy;
@@ -62,14 +94,16 @@ Action PredefineController::play(PredefineAction action){
     character.velocity.x *= 0.2f;
     bool doingSomething = false;
 
-    if (action == PredefineAction::RightAction) {
+    if (action == PredefineAction::RightAction || action == PredefineAction::JumpRightAction
+    || action == PredefineAction::ShootRightAction) {
         if(character.canMove) {
             character.velocity.x += character.speed;
             character.moving();
         }
         character.sprite.setScale(1, 1);
         doingSomething = true;
-    } else if (action == PredefineAction::LeftAction) {
+    } else if (action == PredefineAction::LeftAction || action == PredefineAction::JumpLeftAction
+    || action == PredefineAction::ShootLeftAction) {
         if(character.canMove) {
             character.velocity.x -= character.speed;
             character.moving();
@@ -79,7 +113,7 @@ Action PredefineController::play(PredefineAction action){
     }
 
 
-    if (action == PredefineAction::JumpAction && character.canJump && character.clockJumpCooldown.getElapsedTime().asMilliseconds() > 300) {
+    if ((action == PredefineAction::JumpAction || action == PredefineAction::JumpRightAction || action == PredefineAction::JumpLeftAction) && character.canJump && character.clockJumpCooldown.getElapsedTime().asMilliseconds() > 300) {
         character.canJump = false;
         character.velocity.y = -sqrtf(2.0f * character.gravity * character.jumpHeight);
         this->sp.playSound("jump.wav");
@@ -95,23 +129,27 @@ Action PredefineController::play(PredefineAction action){
         character.velocity.y += character.gravity;
     }
 
-    if(character.id == "null" ||  character.id == "shotgunner"){
-        if(action == PredefineAction::ShootAction && character.canShoot()){
-            doingSomething = true;
-            character.shoot();
-            if(character.sprite.getScale().x == -1){
-                bullets.push_back(character.sprite.getPosition() - sf::Vector2f(60,0));
-                bulletsOrigin.push_back(character.sprite.getPosition() - sf::Vector2f(60,0));
-            }
-            else{
-                bullets.push_back(character.sprite.getPosition() + sf::Vector2f(60,0));
-                bulletsOrigin.push_back(character.sprite.getPosition() + sf::Vector2f(60,0));
-            }
-            this->sp.playSound("shoot.wav");
-            bulletsOrientation.push_back(character.sprite.getScale().x);
-            return Action::Shoot;
+
+    if((action == PredefineAction::ShootAction || action == PredefineAction::ShootLeftAction || action == PredefineAction::ShootRightAction)
+    && character.canShoot()){
+        doingSomething = true;
+        character.shoot();
+        if(character.sprite.getScale().x == -1){
+            bullets.push_back(character.sprite.getPosition() - sf::Vector2f(60,0));
+            bulletsOrigin.push_back(character.sprite.getPosition() - sf::Vector2f(60,0));
+            lastBulletOrigin = character.sprite.getPosition() - sf::Vector2f(60,0);
         }
+        else{
+            bullets.push_back(character.sprite.getPosition() + sf::Vector2f(60,0));
+            bulletsOrigin.push_back(character.sprite.getPosition() + sf::Vector2f(60,0));
+            lastBulletOrigin = character.sprite.getPosition() + sf::Vector2f(60,0);
+        }
+        this->sp.playSound("shoot.wav");
+        bulletsOrientation.push_back(character.sprite.getScale().x);
+        lastBulletOrientation = character.sprite.getScale().x;
+        return Action::Shoot;
     }
+
 
     if(!doingSomething){
         character.wait();

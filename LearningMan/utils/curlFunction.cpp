@@ -72,6 +72,7 @@ int addGame(std::string date, float time, std::string token, int isDead, int pla
         out << "{\"token\": " << token << R"(,"date":")" << date << R"(" ,"isDead" : )" << isDead
             << ", \"playerType\" : " << playerType << ", \"scoreTotal\" :" << score << ", \"nbKill\": " << nbKill
             << ", \"deathPosition\" :" << deathPosition << R"(, "elapsedTime":)" << time << R"(,"idMap":)" << 1
+            << R"(, "learningModel":)" << "\"NULL\""
             << "}  ";
         std::cout << out.str() << std::endl;
         std::string temp = out.str();
