@@ -11,5 +11,3 @@ if __name__ == '__main__':
     plotKillsByTimes()
     plotScoreByTimes()
     plotPlayersByScore()
-
-    # generateDfRequest()

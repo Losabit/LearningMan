@@ -16,15 +16,6 @@ def savePlotAsFile(fig, filename):
     fig.savefig(filename)
 
 
-def dbConnector():
-    return mysql.connector.connect(
-        host="learningman-db.cqrratbcqklq.eu-west-3.rds.amazonaws.com",
-        user="admin",
-        password="o9pMj4Aw",
-        database="learningman"
-    )
-
-
 # def generateDf(query):
 #     db = dbConnector()
 #     mycursor = db.cursor()
@@ -35,11 +26,11 @@ def dbConnector():
 #     return dataToDf(df, result)
 
 
-def dataToDf(df, result):
-    dataDf = [i for i in result]
-    for i in range(len(dataDf)):
-        df.loc[len(df)] = list(dataDf[i])
-    return df
+# def dataToDf(df, result):
+#     dataDf = [i for i in result]
+#     for i in range(len(dataDf)):
+#         df.loc[len(df)] = list(dataDf[i])
+#     return df
 
 
 def plotByTimeWinning():
