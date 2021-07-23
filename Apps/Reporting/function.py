@@ -2,7 +2,14 @@ import mysql.connector
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import requests
 from pandas import DataFrame
+
+
+def generateDf():
+    r = requests.get('https://b4xcv1e397.execute-api.eu-west-3.amazonaws.com/dev/partie')
+    x = pd.json_normalize(r.json())
+    return x
 
 
 def savePlotAsFile(fig, filename):
@@ -18,14 +25,14 @@ def dbConnector():
     )
 
 
-def generateDf(query):
-    db = dbConnector()
-    mycursor = db.cursor()
-    mycursor.execute(query)
-    fields_names = [i[0] for i in mycursor.description]
-    df = DataFrame(columns=fields_names)
-    result = mycursor.fetchall()
-    return dataToDf(df, result)
+# def generateDf(query):
+#     db = dbConnector()
+#     mycursor = db.cursor()
+#     mycursor.execute(query)
+#     fields_names = [i[0] for i in mycursor.description]
+#     df = DataFrame(columns=fields_names)
+#     result = mycursor.fetchall()
+#     return dataToDf(df, result)
 
 
 def dataToDf(df, result):
@@ -36,7 +43,8 @@ def dataToDf(df, result):
 
 
 def plotByTimeWinning():
-    df = generateDf("select * from partie where deathPosition = 100")
+    df = generateDf()
+    df = df.loc[(df['deathPosition']) == 100]
     elaspedDf = ((df["elapsedTime"].value_counts()).to_frame()).sort_index()
     labels = ["{0} - {1}".format(i, i + 19) for i in range(0, 200, 20)]
     c = pd.cut(elaspedDf.index, np.arange(0, 201, 20),
@@ -52,7 +60,8 @@ def plotByTimeWinning():
 
 
 def plotByDeathPosition():
-    df = generateDf("select * from partie where deathPosition !=100")
+    df = generateDf()
+    df = df.loc[df["deathPosition"] != 100]
     deathPosDf = ((df["deathPosition"].value_counts()).to_frame()).sort_index()
     labels = ["{0} - {1}".format(i, i + 9) for i in range(0, 100, 10)]
     c = pd.cut(deathPosDf.index, np.arange(0, 101, 10),
@@ -68,7 +77,8 @@ def plotByDeathPosition():
 
 
 def plotPlayersByScore():
-    df = generateDf("select * from partie where deathPosition !=100")
+    df = generateDf()
+    df = df.loc[df["deathPosition"] != 100]
     scoreDf = ((df["scoreTotal"].value_counts()).to_frame()).sort_index()
     labels = ["{0} - {1}".format(i, i + 99) for i in range(0, 2000, 100)]
     c = pd.cut(scoreDf.index, np.arange(0, 2001, 100),
@@ -82,15 +92,14 @@ def plotPlayersByScore():
 
 
 def plotKillsByTimes():
-    df = generateDf("select * from partie where deathPosition !=100")
-
+    df = generateDf()
     df.groupby("elapsedTime").sum().plot(kind='line', y='nbKill', ylabel="Nombre d'ennemie tué", xlabel='Temps passé')
     savePlotAsFile(plt.gcf(), 'resources/plotKillsByTimes')
     plt.show()
 
 
 def plotScoreByTimes():
-    df = generateDf("select * from partie where deathPosition !=100")
+    df = generateDf()
     # df.plot(kind='scatter', y='scoreTotal', x='elapsedTime')
 
     df.groupby("elapsedTime").sum().plot(kind='line', y='scoreTotal', ylabel="Score total", xlabel="Temps passé")
@@ -100,7 +109,7 @@ def plotScoreByTimes():
 
 
 def endGamePourcentage():
-    df = generateDf("select * from partie")
+    df = generateDf()
     pourcentageDf = (df["isDead"].value_counts()).to_frame()
     x = getRealValue(pourcentageDf.values)
     plt.pie(x, labels=['Niveau Fini', "Niveau non terminé"], autopct='%1.1f%%', shadow=True,
