@@ -53,6 +53,13 @@ bool Character::canShoot(){
     return false;
 }
 
+bool Character::canShootWithoutReset(){
+    if(clockBullet.getElapsedTime().asSeconds() > shootCooldown){
+        return true;
+    }
+    return false;
+}
+
 bool Character::canHeal(){
     if(clockBullet.getElapsedTime().asSeconds() > 6){
         clockBullet.restart();

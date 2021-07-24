@@ -48,22 +48,47 @@ void QLearning::debug(float seconds){
     }
 }
 
+int QLearning::randomChoice(std::map<int, float> probalities, std::vector<int> availableActions) {
+    std::map<int, float> new_probabilites;
+    for(int a = 0; a < numberOfActions; a++){
+        bool isAvailable = false;
+        for(int j = 0; j < availableActions.size(); j++){
+            if(a == availableActions.at(j)){
+                new_probabilites.insert(std::pair<int, float>(a, probalities[a]));
+                isAvailable = true;
+                break;
+            }
+        }
+        if(!isAvailable){
+            new_probabilites.insert(std::pair<int, float>(a, -1.0));
+        }
+    }
+    return randomChoice(new_probabilites);
+}
+
 int QLearning::randomChoice(std::map<int, float> probalities){
     float rd = ((double) rand() / (RAND_MAX));
     float probality = 0.0;
     for(std::map<int,float>::iterator it = probalities.begin(); it != probalities.end(); ++it){
-        probality += it->second;
-        if(probality >= rd && it->second != 0.0){
-            return it->first;
+        if(it->second > 0) {
+            probality += it->second;
+            if (probality >= rd) {
+                return it->first;
+            }
         }
     }
     if(probality > 1) {
         std::cout << "error in QLearning random choice return" << std::endl;
     }
-    return rand() % probalities.size();
+
+    int actionToDo = rand() % probalities.size();
+    while(probalities[actionToDo] == -1.0){
+        actionToDo = rand() % probalities.size();
+    }
+    return actionToDo;
 }
 
-PredefineAction QLearning::getAction(int state, int score) {
+PredefineAction QLearning::getAction(int state, int score, std::vector<int> availableActions) {
     if(pi.find(state) == pi.end()) {
         pi.insert(std::pair<int, std::map<int, float>>(state,{}));
         q.insert(std::pair<int, std::map<int, float>>(state,{}));
@@ -93,7 +118,7 @@ PredefineAction QLearning::getAction(int state, int score) {
         }
     }
 
-    chosenAction = randomChoice(b[state]);
+    chosenAction = randomChoice(b[state], availableActions);
     scoreBeforeAction = score;
     stateBeforeAction = state;
     //debug

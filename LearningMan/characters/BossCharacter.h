@@ -16,6 +16,7 @@ public:
     void awake();
     bool attack(int i);
     void setTextureOrientation(int orientation);
+    void eraseProjectile(int i);
     std::vector<sf::Sprite> projectiles;
     std::vector<sf::Clock> projectilesClock;
     std::vector<ProjectileMovement> projectilesMovement;

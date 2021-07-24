@@ -158,3 +158,20 @@ Action PredefineController::play(PredefineAction action){
     character.sprite.move(character.velocity);
     return Action::None;
 }
+
+std::vector<int> PredefineController::availableActions(){
+    std::vector<int> actionsAvailables;
+    actionsAvailables.push_back(static_cast<int>(PredefineAction::LeftAction));
+    actionsAvailables.push_back(static_cast<int>(PredefineAction::RightAction));
+
+    if(character.canJump && character.clockJumpCooldown.getElapsedTime().asMilliseconds() > 300){
+        actionsAvailables.push_back(static_cast<int>(PredefineAction::JumpAction));
+        actionsAvailables.push_back(static_cast<int>(PredefineAction::JumpLeftAction));
+        actionsAvailables.push_back(static_cast<int>(PredefineAction::JumpRightAction));
+    }
+    if(character.canShootWithoutReset()){
+        actionsAvailables.push_back(static_cast<int>(PredefineAction::ShootLeftAction));
+        actionsAvailables.push_back(static_cast<int>(PredefineAction::ShootRightAction));
+    }
+    return actionsAvailables;
+}

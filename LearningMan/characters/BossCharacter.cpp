@@ -26,6 +26,14 @@ void BossCharacter::setTextureOrientation(int orientation){
     projectileAttack3.scale.x = getCorrectScale(orientation, projectileAttack3.scale.x);
 }
 
+void BossCharacter::eraseProjectile(int i) {
+    if(i >= 0 && i < projectiles.size()) {
+        projectiles.erase(projectiles.begin() + i);
+        projectilesMovement.erase(projectilesMovement.begin() + i);
+        projectilesClock.erase(projectilesClock.begin() + i);
+    }
+}
+
 bool BossCharacter::attack(int i){
     sf::Vector2f position = sprite.getPosition();
     if(i == 1) {

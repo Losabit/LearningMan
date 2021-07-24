@@ -16,6 +16,7 @@ public:
     void wait();
     void moving();
     bool canShoot();
+    bool canShootWithoutReset();
     bool canHeal();
     bool takeDamage(int damage);
     bool dying();

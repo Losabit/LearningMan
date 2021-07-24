@@ -20,6 +20,7 @@ public:
     PredefineController(Character* character1, std::vector<int> actions1);
     Action play(PredefineAction action);
     static PredefineAction getActionFromInputs();
+    std::vector<int> availableActions();
     float GRAVITY_POINT = 583;
     std::vector<int> actions;
 

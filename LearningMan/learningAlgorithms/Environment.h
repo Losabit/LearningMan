@@ -16,7 +16,7 @@ private:
     sf::Vector2f portalPosition;
     sf::Vector2f initialPosition;
     float lagXForReward = 4.0;
-    float lagYForReward = 3.0;
+    float lagYForReward = 2.0;
     float sizeXState = 15.0;
     float sizeYState = 32.0;
     int health = 5;

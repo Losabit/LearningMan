@@ -18,33 +18,24 @@ void BulletManager::manageBullets(Controller* shooter, std::list<IAController*>*
         shooter->character.bullet.setPosition(it->x, it->y);
         shooter->character.bullet.setScale(-*itOrientation, 1);
         window->draw(shooter->character.bullet);
-        for (itEnnemies = ennemies->begin(); itEnnemies != ennemies->end(); itEnnemies++) {
-            if(shooter->character.id != "healer"){
-                if (shooter->character.bullet.getGlobalBounds().intersects(
-                        (*itEnnemies)->character.sprite.getGlobalBounds())) {
-                    if (!(*itEnnemies)->character.takeDamage(1)) {
-                        itEnnemies = ennemies->erase(itEnnemies);
-                    }
-                    it = shooter->bullets.erase(it);
-                    itOrientation = shooter->bulletsOrientation.erase(itOrientation);
-                    itOrigin = shooter->bulletsOrigin.erase(itOrigin);
-                    continue;
-                }
-            }
-            else{
-                if (shooter->character.bullet.getGlobalBounds().intersects(
-                        (*itEnnemies)->character.sprite.getGlobalBounds())) {
-                    if((*itEnnemies)->character.id != "null"){
-                        (*itEnnemies)->character.takeDamage(-1);
-                        std::cout << (*itEnnemies)->character.health << std::endl;
-                    }
-                    it = shooter->bullets.erase(it);
-                    itOrientation = shooter->bulletsOrientation.erase(itOrientation);
-                    itOrigin = shooter->bulletsOrigin.erase(itOrigin);
-                    continue;
-                }
-            }
 
+        for (itEnnemies = ennemies->begin(); itEnnemies != ennemies->end(); itEnnemies++) {
+            if (shooter->character.bullet.getGlobalBounds().intersects(
+                    (*itEnnemies)->character.sprite.getGlobalBounds())) {
+                if (!(*itEnnemies)->character.takeDamage(1)) {
+                    itEnnemies = ennemies->erase(itEnnemies);
+                }
+                it = shooter->bullets.erase(it);
+                itOrientation = shooter->bulletsOrientation.erase(itOrientation);
+                itOrigin = shooter->bulletsOrigin.erase(itOrigin);
+                if(it == shooter->bullets.end()){
+                    break;
+                }
+            }
+        }
+
+        if(it == shooter->bullets.end()){
+            break;
         }
 
         for(int i = 0; i < walls.size(); i++){
@@ -55,15 +46,20 @@ void BulletManager::manageBullets(Controller* shooter, std::list<IAController*>*
                 it = shooter->bullets.erase(it);
                 itOrientation = shooter->bulletsOrientation.erase(itOrientation);
                 itOrigin = shooter->bulletsOrigin.erase(itOrigin);
-                continue;
+                if(it == shooter->bullets.end()){
+                    break;
+                }
             }
+        }
+
+        if(it == shooter->bullets.end()){
+            break;
         }
 
         if (it->x > (itOrigin->x + bulletScope) || it->x < (itOrigin->x- bulletScope)) {
             it = shooter->bullets.erase(it);
             itOrigin = shooter->bulletsOrigin.erase(itOrigin);
             itOrientation = shooter->bulletsOrientation.erase(itOrientation);
-            continue;
         }
     }
 }

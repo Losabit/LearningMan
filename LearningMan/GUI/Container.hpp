@@ -11,7 +11,8 @@ public:
     void reset(int indice);
     int number;
 
-private:
+protected:
+    Container();
     std::vector<int> textureIndices;
     int leftLag;
     float playerXPosition;

@@ -12,7 +12,7 @@ struct PolicyAndActionValueFunction {
 class QLearning {
 public:
     QLearning(float alpha1, float epsilon1, float gamma1);
-    PredefineAction getAction(int state, int score);
+    PredefineAction getAction(int state, int score, std::vector<int> availableActions);
     void getActionReward(int state, int score, bool gameOver);
     bool canPlay();
     void debug(float seconds);
@@ -36,6 +36,7 @@ private:
     sf::Clock debugClock;
     int actionIteration = 0;
     int randomChoice(std::map<int, float> probalities);
+    int randomChoice(std::map<int, float> probalities, std::vector<int> availableActions);
 };
 
 

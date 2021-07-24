@@ -2,6 +2,10 @@
 #include "../define.hpp"
 #include <iostream>
 
+Container::Container() {
+
+}
+
 Container::Container(sf::Sprite sprite1, int number1, int leftLag1){
     sprites.push_back(sprite1);
     number = number1;

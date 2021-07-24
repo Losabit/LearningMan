@@ -23,11 +23,13 @@
 #define POINTS_BY_KILL 200
 #define POINTS_BY_SECOND 30
 #define MAX_LEVEL_TIME 120
+#define SEND_HTTP_REQUEST false
+#define ACTIVE_DEBUG_KEYS true
 
 // IA
-#define RECORD_INPUT false
 #define IA_MODE_USER_INPUTS false
 #define ENNEMIES_CAN_PLAY true
-#define ONLY_TRAIN_ON_BOSS true
+#define ONLY_TRAIN_ON_BOSS false
 #define AUTO_RESTART true
-#define SEND_HTTP_REQUEST false
+#define SEE_IA_LOGS true
+
