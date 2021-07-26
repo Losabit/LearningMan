@@ -15,12 +15,12 @@ private:
     void drawCases(sf::RenderWindow* window, sf::View view, float xLag, float yLag, sf::Color color);
     sf::Vector2f portalPosition;
     sf::Vector2f initialPosition;
-    float lagXForReward = 4.0;
+    float lagXForReward = 0.75;
     float lagYForReward = 2.0;
     float sizeXState = 15.0;
     float sizeYState = 32.0;
     int health = 5;
-    int loseHealthReward = -100;
+    int loseHealthReward = -1000;
 };
 
 

@@ -23,7 +23,7 @@
 #define POINTS_BY_KILL 200
 #define POINTS_BY_SECOND 30
 #define MAX_LEVEL_TIME 120
-#define SEND_HTTP_REQUEST false
+#define SEND_HTTP_REQUEST true
 #define ACTIVE_DEBUG_KEYS true
 
 // IA

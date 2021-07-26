@@ -50,9 +50,8 @@ int addUser(std::string username, std::string token) {
         char * postValue =  const_cast<char *>(temp.c_str());
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, postValue );
         res = curl_easy_perform(curl);
-        if (res != CURLE_OK) {
-            return 1;
-        }
+        curl_easy_cleanup(curl);
+
     }
     curl = NULL ;
     return 0;
