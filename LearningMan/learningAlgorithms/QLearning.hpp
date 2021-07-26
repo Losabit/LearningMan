@@ -13,11 +13,15 @@ class QLearning {
 public:
     QLearning(float alpha1, float epsilon1, float gamma1);
     PredefineAction getAction(int state, int score, std::vector<int> availableActions);
+    PredefineAction getBestAction(int state, int score, std::vector<int> availableActions);
     void getActionReward(int state, int score, bool gameOver);
     bool canPlay();
     void debug(float seconds);
+    void loadModel(PolicyAndActionValueFunction model);
     PolicyAndActionValueFunction compile();
-    void save(PolicyAndActionValueFunction policyAndActionValueFunction);
+    static void save(PolicyAndActionValueFunction policyAndActionValueFunction, PolicyAndActionValueFunction policyAndActionValueFunctionBoss);
+    static std::vector<PolicyAndActionValueFunction> loadFromFile(std::string fileName);
+    static std::string getModel(PolicyAndActionValueFunction policyAndActionValueFunction, PolicyAndActionValueFunction policyAndActionValueFunctionBoss);
 
 private:
     const static int canPlayEvery = 0;
@@ -37,6 +41,8 @@ private:
     int actionIteration = 0;
     int randomChoice(std::map<int, float> probalities);
     int randomChoice(std::map<int, float> probalities, std::vector<int> availableActions);
+    static std::string mapToString(std::map<int, std::map<int, float>> parameter);
+    static std::map<int, std::map<int, float>> stringToMap(std::string parameter);
 };
 
 

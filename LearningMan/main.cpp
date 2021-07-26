@@ -20,6 +20,7 @@
 #include "GUI/Premade/ContainerLifebar.h"
 #include "GUI/Premade/ContainerHerosHealth.h"
 #include "GUI/Premade/AICheckBox.h"
+#include "GUI/Premade/ModelConfiguration.h"
 #include "utils/HitboxManager.hpp"
 #include "utils/CollisionManager.hpp"
 #include "utils/Portal.hpp"
@@ -63,6 +64,22 @@ int main() {
     AICheckBox aiCheckBox;
     EndLevelView endLevelView;
     UserConfiguration userConfiguration;
+    ModelConfiguration modelConfiguration;
+
+    vector<string> modelsName = ModelConfiguration::getAllModelsName();
+    list<Button> buttonsModel;
+    Button buttonModel("../assets/button/simple/12.png",
+                  IntRect(40, 140, 480, 200),
+                  "../ressources/policy/OrelegaOne-Regular.ttf");
+    buttonModel.sprite.setScale(0.5, 0.5);
+    buttonModel.text.setCharacterSize(24);
+    buttonModel.text.setFillColor(sf::Color::White);
+    buttonModel.text.move(65, 30);
+    for(int i = 0; i < modelsName.size(); i++) {
+        buttonModel.setPosition(Vector2f(400, 100 * i));
+        buttonModel.text.setString(std::regex_replace(modelsName.at(i), std::regex("\\.model"), ""));
+        buttonsModel.push_back(buttonModel);
+    }
 
     //Init Heros (AI & normal) + ennemis + boss + collisions
     Character heros = Heros();
@@ -108,7 +125,11 @@ int main() {
 
     sf::Clock keyClock = sf::Clock();
     float keyCooldown = 0.5f;
+    sf::Clock clickClock = sf::Clock();
+    float clickCooldown = 0.5f;
     sf::Clock levelClock;
+
+    vector<PolicyAndActionValueFunction> models;
 
     if(ONLY_TRAIN_ON_BOSS) {
         playerController.character.sprite.setPosition(4000, 475);
@@ -137,12 +158,30 @@ int main() {
             if(userConfiguration.isOpen && event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left){
                 userConfiguration.clickEvent(window.mapPixelToCoords(Vector2i (event.mouseButton.x, event.mouseButton.y)));
             }
-            else if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left
+            else if(modelConfiguration.isOpen && event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left
+            && clickClock.getElapsedTime().asSeconds() > clickCooldown){
+                modelConfiguration.clickEvent(window.mapPixelToCoords(Vector2i (event.mouseButton.x, event.mouseButton.y)));
+                for(auto buttonRef = buttonsModel.begin(); buttonRef != buttonsModel.end(); buttonRef++){
+                    if((*buttonRef).sprite.getGlobalBounds().contains(window.mapPixelToCoords(Vector2i (event.mouseButton.x, event.mouseButton.y)))){
+                        modelConfiguration.setModel((*buttonRef).text.getString().toAnsiString());
+                        modelConfiguration.isOpen = false;
+                        models = QLearning::loadFromFile((*buttonRef).text.getString().toAnsiString());
+                        model.loadModel(models.at(0));
+                        if(models.size() > 1){
+                            modelBoss.loadModel(models.at(1));
+                        }
+                        clickClock.restart();
+                    }
+                }
+            }
+            else if ((event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left && clickClock.getElapsedTime().asSeconds() > clickCooldown)
             || (AUTO_RESTART && aiCheckBox.isChecked && choosenMapIndice != 0))
             {
+                clickClock.restart();
                 if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
                     userConfiguration.clickEvent(
                             window.mapPixelToCoords(Vector2i(event.mouseButton.x, event.mouseButton.y)));
+                    modelConfiguration.clickEvent(window.mapPixelToCoords(Vector2i(event.mouseButton.x, event.mouseButton.y)));
                     aiCheckBox.clickEvent(window.mapPixelToCoords(Vector2i(event.mouseButton.x, event.mouseButton.y)));
                 }
 
@@ -246,11 +285,11 @@ int main() {
                 if (paused) {
                     if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
                         PolicyAndActionValueFunction policyAndActionValueFunction = model.compile();
-                        model.save(policyAndActionValueFunction);
+                        PolicyAndActionValueFunction policyAndActionValueFunctionBoss;
                         if(takePortal){
-                            PolicyAndActionValueFunction policyAndActionValueFunction = modelBoss.compile();
-                            modelBoss.save(policyAndActionValueFunction);
+                            policyAndActionValueFunctionBoss = modelBoss.compile();
                         }
+                        modelBoss.save(policyAndActionValueFunction, policyAndActionValueFunctionBoss);
                         cout << "policyAndActionValueFunction saved" << endl;
                         keyClock.restart();
                     } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
@@ -314,23 +353,39 @@ int main() {
                 }
                 else {
                     if(takePortal){
-                        action = modelBoss.getAction(
-                                bossEnv.getState(predefinePlayerController.character.sprite.getPosition()),
-                                bossEnv.getReward(predefinePlayerController, bossController.character.sprite),
-                                predefinePlayerController.availableActions());
+                        if(modelConfiguration.useExistingModel){
+                            action = modelBoss.getAction(
+                                    bossEnv.getState(predefinePlayerController.character.sprite.getPosition()),
+                                    bossEnv.getReward(predefinePlayerController, bossController.character.sprite),
+                                    predefinePlayerController.availableActions());
+                        }
+                        else {
+                            action = modelBoss.getAction(
+                                    bossEnv.getState(predefinePlayerController.character.sprite.getPosition()),
+                                    bossEnv.getReward(predefinePlayerController, bossController.character.sprite),
+                                    predefinePlayerController.availableActions());
+                        }
                     }
                     else {
-                        action = model.getAction(
-                                env.getState(predefinePlayerController.character.sprite.getPosition()),
-                                env.getReward(predefinePlayerController.character.sprite.getPosition()),
-                                predefinePlayerController.availableActions());
+                        if(modelConfiguration.useExistingModel) {
+                            action = model.getAction(
+                                    env.getState(predefinePlayerController.character.sprite.getPosition()),
+                                    env.getReward(predefinePlayerController.character.sprite.getPosition()),
+                                    predefinePlayerController.availableActions());
+                        }
+                        else {
+                            action = model.getAction(
+                                    env.getState(predefinePlayerController.character.sprite.getPosition()),
+                                    env.getReward(predefinePlayerController.character.sprite.getPosition()),
+                                    predefinePlayerController.availableActions());
+                        }
                     }
                     //model.debug(60.0);
                 }
 
                 if (predefinePlayerController.play(action) == Action::ToDestroy) {
                     herosIsDead = true;
-                    deathPos = deathPosition(HEROS_INITIAL_POSITION.x, playerController.character.sprite.getPosition().x,
+                    deathPos = deathPosition(HEROS_INITIAL_POSITION.x, predefinePlayerController.character.sprite.getPosition().x,
                                               map.boss.portal.positionX, takePortal);
                     predefinePlayerController.character.reset(HEROS_INITIAL_POSITION);
                 } else {
@@ -368,8 +423,14 @@ int main() {
                 endLevelView.maximumTime();
                 endLevelView.setKill(ennemiesCount - ennemies.size());
                 if (SEND_HTTP_REQUEST) {
+                    PolicyAndActionValueFunction policyAndActionValueFunction = model.compile();
+                    PolicyAndActionValueFunction policyAndActionValueFunctionBoss;
+                    if(takePortal){
+                        policyAndActionValueFunctionBoss = modelBoss.compile();
+                    }
                     addGame(startDateTime, now - startTimestamp, "\"" + userConfiguration.token + "\"", 1, aiCheckBox.isChecked ? 1 : 0,
-                            endLevelView.score, ennemiesCount - ennemies.size(), deathPos);
+                            endLevelView.score, ennemiesCount - ennemies.size(), deathPos,
+                            aiCheckBox.isChecked ? QLearning::getModel(policyAndActionValueFunction, policyAndActionValueFunctionBoss) : "NULL");
                 }
                 if(SEE_IA_LOGS){
                     cout << gameNumber << " -> victory : false ; time : " << now - startTimestamp << " ; deathPos : " << deathPos << endl;
@@ -430,8 +491,14 @@ int main() {
                     endLevelView.setKill(ennemiesCount - ennemies.size());
                     time_t now = time(0);
                     if(SEND_HTTP_REQUEST) {
+                        PolicyAndActionValueFunction policyAndActionValueFunction = model.compile();
+                        PolicyAndActionValueFunction policyAndActionValueFunctionBoss;
+                        if(takePortal){
+                            policyAndActionValueFunctionBoss = modelBoss.compile();
+                        }
                         addGame(startDateTime, now - startTimestamp, "\"" + userConfiguration.token + "\"", 0,
-                                aiCheckBox.isChecked ? 1 : 0, endLevelView.score, ennemiesCount - ennemies.size(), 100);
+                                aiCheckBox.isChecked ? 1 : 0, endLevelView.score, ennemiesCount - ennemies.size(), 100,
+                                aiCheckBox.isChecked ? QLearning::getModel(policyAndActionValueFunction, policyAndActionValueFunctionBoss) : "NULL");
                     }
                     if(SEE_IA_LOGS){
                         cout << gameNumber << " -> victory : true ; time : " << now - startTimestamp << endl;
@@ -447,11 +514,19 @@ int main() {
         if(!startGame && !endLevel){
             window.clear(DEFAULT_COLOR);
             userConfiguration.draw(&window);
-            if(!userConfiguration.isOpen) {
+            if(!userConfiguration.isOpen && !modelConfiguration.isOpen) {
                 for (auto buttonRef = buttonsMap.begin(); buttonRef != buttonsMap.end(); buttonRef++) {
                     (*buttonRef).draw(&window);
                 }
                 aiCheckBox.draw(&window);
+            }
+            if(aiCheckBox.isChecked) {
+                modelConfiguration.draw(&window);
+                if(modelConfiguration.isOpen){
+                    for (auto buttonRef = buttonsModel.begin(); buttonRef != buttonsModel.end(); buttonRef++) {
+                        (*buttonRef).draw(&window);
+                    }
+                }
             }
         }
         else if(startGame) {
@@ -505,22 +580,25 @@ int main() {
 
             if(!takePortal) {
                 //cout << "before player shoot" << endl;
-                if(aiCheckBox.isChecked) {
-                    BulletManager::manageBullets(&predefinePlayerController, &ennemies, map.walls, &window);
-                }
-                else {
-                    BulletManager::manageBullets(&playerController, &ennemies, map.walls, &window);
+                if(!paused) {
+                    if (aiCheckBox.isChecked) {
+                        BulletManager::manageBullets(&predefinePlayerController, &ennemies, map.walls, &window);
+                    } else {
+                        BulletManager::manageBullets(&playerController, &ennemies, map.walls, &window);
+                    }
                 }
                 //cout << "after player shoot" << endl;
 
                 for (itEnnemies = ennemies.begin(); itEnnemies != ennemies.end(); itEnnemies++) {
                     window.draw((*itEnnemies)->character.sprite);
                     if((*itEnnemies)->character.id != "healer"){
-                        if(aiCheckBox.isChecked) {
-                            BulletManager::manageBullets((*itEnnemies), &predefinePlayerController, map.walls, &window);
-                        }
-                        else {
-                            BulletManager::manageBullets((*itEnnemies), &playerController, map.walls, &window);
+                        if(!paused) {
+                            if (aiCheckBox.isChecked) {
+                                BulletManager::manageBullets((*itEnnemies), &predefinePlayerController, map.walls,
+                                                             &window);
+                            } else {
+                                BulletManager::manageBullets((*itEnnemies), &playerController, map.walls, &window);
+                            }
                         }
                     }
                     else if((*itEnnemies)->character.launchHeal) {
@@ -533,11 +611,13 @@ int main() {
             else {
                 int healthBefore = bossController.character.health;
                 if(bossController.character.health > 0) {
-                    if(aiCheckBox.isChecked) {
-                        BulletManager::manageBullets(&predefinePlayerController, &bossController, map.walls, &window);
-                    }
-                    else {
-                        BulletManager::manageBullets(&playerController, &bossController, map.walls, &window);
+                    if(!paused) {
+                        if (aiCheckBox.isChecked) {
+                            BulletManager::manageBullets(&predefinePlayerController, &bossController, map.walls,
+                                                         &window);
+                        } else {
+                            BulletManager::manageBullets(&playerController, &bossController, map.walls, &window);
+                        }
                     }
 
                     if (healthBefore != bossController.character.health) {

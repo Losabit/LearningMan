@@ -88,6 +88,49 @@ int QLearning::randomChoice(std::map<int, float> probalities){
     return actionToDo;
 }
 
+void QLearning::loadModel(PolicyAndActionValueFunction model){
+    pi = model.pi;
+    q = model.q;
+    for(auto it = q.begin(); it != q.end(); it++) {
+        int state = it->first;
+        int optimal_a;
+        float bestValue = 0.0;
+        for (int a = 0; a < numberOfActions; a++) {
+            if (q[state][a] > bestValue) {
+                optimal_a = a;
+                bestValue = q[state][a];
+            }
+        }
+
+        for (std::map<int, float>::iterator it = q[state].begin(); it != q[state].end(); ++it) {
+            if (it->first == optimal_a) {
+                b[state][it->first] = 1 - epsilon + epsilon / numberOfActions;
+            } else {
+                b[state][it->first] = epsilon / numberOfActions;
+            }
+        }
+    }
+}
+
+PredefineAction QLearning::getBestAction(int state, int score, std::vector<int> availableActions){
+    if(pi.find(state) != pi.end()){
+        int bestAction = -1;
+        float bestActionValue;
+        for (std::map<int, float>::iterator it = q[state].begin(); it != q[state].end(); ++it) {
+            if (std::find(availableActions.begin(), availableActions.end(), it->first) != availableActions.end()) {
+                if (bestAction == -1 || it->second > bestActionValue) {
+                    bestActionValue = it->second;
+                    bestAction = it->first;
+                }
+            }
+        }
+        if(bestAction != -1){
+            return static_cast<PredefineAction>(bestAction);
+        }
+    }
+    return getAction(state, score, availableActions);
+}
+
 PredefineAction QLearning::getAction(int state, int score, std::vector<int> availableActions) {
     if(pi.find(state) == pi.end()) {
         pi.insert(std::pair<int, std::map<int, float>>(state,{}));
@@ -186,7 +229,98 @@ PolicyAndActionValueFunction QLearning::compile() {
     return PolicyAndActionValueFunction{.pi =  pi, .q =  q};
 }
 
-void QLearning::save(PolicyAndActionValueFunction policyAndActionValueFunction) {
+std::string QLearning::mapToString(std::map<int, std::map<int, float>> parameter){
+    std::string result;
+    int count = 0;
+    for(std::map<int, std::map<int, float>>::iterator it = parameter.begin(); it != parameter.end(); ++it) {
+        result += std::to_string(it->first) + ":{";
+        int count2 = 0;
+        for(std::map<int, float>::iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
+            result += std::to_string(it2->first) + ":" + std::to_string(it2->second);
+            if(count2 != it->second.size() - 1) {
+                result += ",";
+            }
+            count2++;
+        }
+        result += "}";
+        if(count != parameter.size() - 1) {
+            result += ";";
+        }
+        count++;
+    }
+    return result;
+}
+
+std::map<int, std::map<int, float>> QLearning::stringToMap(std::string parameter){
+    size_t pos = 0;
+    std::vector<std::string> states;
+    while ((pos = parameter.find(";")) != std::string::npos) {
+        states.push_back(parameter.substr(0, pos));
+        parameter.erase(0, pos + 1);
+    }
+
+    std::map<int, std::map<int, float>> result;
+    for(int i = 0; i < states.size(); i++){
+        pos = states.at(i).find(":");
+        int state = stoi(states.at(i).substr(0, pos));
+        result.insert(std::pair<int, std::map<int, float>>(state,{}));
+        int it = 0;
+        while ((pos = states.at(i).find(",")) != std::string::npos) {
+            std::string actionContent = states.at(i).substr(0, pos);
+            if(it == 0){
+                size_t newPos = actionContent.find("{") + 1;
+                actionContent = actionContent.substr(newPos, actionContent.length());
+                it++;
+            }
+            states.at(i).erase(0, pos + 1);
+            pos = states.at(i).find(":");
+            int action = stoi(actionContent.substr(0, pos));
+            float proba = stof(actionContent.substr(pos + 1, actionContent.length()));
+            result[state].insert(std::pair<int, float>(action, proba));
+        }
+        std::string actionContent = states.at(i).substr(0, states.at(i).length());
+        pos = states.at(i).find(":");
+        int action = stoi(actionContent.substr(0, pos));
+        float proba = stof(actionContent.substr(pos + 1, actionContent.length()));
+        result[state].insert(std::pair<int, float>(action, proba));
+    }
+    return result;
+}
+
+std::vector<PolicyAndActionValueFunction> QLearning::loadFromFile(std::string fileName){
+    std::ifstream MyReadFile("../ressources/policyAndActionValueFunction/" + fileName + ".model");
+    std::string content;
+    std::string line;
+    while (getline (MyReadFile, line)) {
+        content += line;
+    }
+    MyReadFile.close();
+
+    std::string delimiter = "/";
+    size_t pos = 0;
+    std::vector<std::string> models;
+    while ((pos = content.find(delimiter)) != std::string::npos) {
+        models.push_back(content.substr(0, pos));
+        content.erase(0, pos + delimiter.length());
+    }
+
+    std::vector<PolicyAndActionValueFunction> result;
+    result.push_back(PolicyAndActionValueFunction{.pi = stringToMap(models.at(0)), .q = stringToMap(models.at(1))});
+    if(models.at(2).length() != 0) {
+        result.push_back(PolicyAndActionValueFunction{.pi = stringToMap(models.at(2)), .q = stringToMap(models.at(3))});
+    }
+    return result;
+}
+
+std::string QLearning::getModel(PolicyAndActionValueFunction policyAndActionValueFunction, PolicyAndActionValueFunction policyAndActionValueFunctionBoss){
+    return mapToString(policyAndActionValueFunction.pi) + "/"
+    + mapToString(policyAndActionValueFunction.q) + "/"
+    + mapToString(policyAndActionValueFunctionBoss.pi) + "/"
+    + mapToString(policyAndActionValueFunctionBoss.q);
+
+}
+
+void QLearning::save(PolicyAndActionValueFunction policyAndActionValueFunction, PolicyAndActionValueFunction policyAndActionValueFunctionBoss) {
     DIR *dir;
     struct dirent *ent;
     int it = -2;
@@ -200,22 +334,7 @@ void QLearning::save(PolicyAndActionValueFunction policyAndActionValueFunction) 
        return;
     }
     std::ofstream outfile;
-    outfile.open("../ressources/policyAndActionValueFunction/model_" + std::to_string(it) + ".txt");
-    for(std::map<int, std::map<int, float>>::iterator it = policyAndActionValueFunction.q.begin(); it != policyAndActionValueFunction.q.end(); ++it) {
-        outfile << it->first << ":{";
-        for(std::map<int, float>::iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
-            outfile << it2->first << ":" << it2->second;
-        }
-        outfile << "};";
-    }
-    outfile << std::endl;
-    for(std::map<int, std::map<int, float>>::iterator it = policyAndActionValueFunction.pi.begin(); it != policyAndActionValueFunction.pi.end(); ++it) {
-        outfile << it->first << ":{";
-        for(std::map<int, float>::iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
-            outfile << it2->first << ":" << it2->second;
-        }
-        outfile << "};";
-    }
-    outfile << std::endl;
+    outfile.open("../ressources/policyAndActionValueFunction/model_" + std::to_string(it) + ".model");
+    outfile << getModel(policyAndActionValueFunction, policyAndActionValueFunctionBoss) << std::endl;
     outfile.close();
 }

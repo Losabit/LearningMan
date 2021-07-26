@@ -14,7 +14,7 @@
 size_t writeFunction(void* ptr, size_t size, size_t nmemb, std::string* data);
 std::string getInfo(std::string url);
 int addUser(std::string username, std::string token);
-int addGame(std::string date, float time, std::string token, int isDead, int playerType, int score, int nbKill, int deathPosition);
+int addGame(std::string date, float time, std::string token, int isDead, int playerType, int score, int nbKill, int deathPosition, std::string model);
 std::string dateFormat(tm* ltm);
 int deathPosition(float startPosition, float currentPosition, float portalPosition, bool takePortal);
 #endif //LEARNINGMAN_CURLFUNCTION_H
