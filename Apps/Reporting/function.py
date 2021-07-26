@@ -16,23 +16,6 @@ def savePlotAsFile(fig, filename):
     fig.savefig(filename)
 
 
-# def generateDf(query):
-#     db = dbConnector()
-#     mycursor = db.cursor()
-#     mycursor.execute(query)
-#     fields_names = [i[0] for i in mycursor.description]
-#     df = DataFrame(columns=fields_names)
-#     result = mycursor.fetchall()
-#     return dataToDf(df, result)
-
-
-# def dataToDf(df, result):
-#     dataDf = [i for i in result]
-#     for i in range(len(dataDf)):
-#         df.loc[len(df)] = list(dataDf[i])
-#     return df
-
-
 def plotByTimeWinning():
     df = generateDf()
     df = df.loc[(df['deathPosition']) == 100]
@@ -69,12 +52,13 @@ def plotByDeathPosition():
 
 def plotPlayersByScore():
     df = generateDf()
-    df = df.loc[df["deathPosition"] != 100]
+    df = df.loc[df["deathPosition"] != 101]
     scoreDf = ((df["scoreTotal"].value_counts()).to_frame()).sort_index()
-    labels = ["{0} - {1}".format(i, i + 99) for i in range(0, 2000, 100)]
-    c = pd.cut(scoreDf.index, np.arange(0, 2001, 100),
+    labels = ["{0} - {1}".format(i, i + 199) for i in range(0, 2600, 200)]
+    c = pd.cut(scoreDf.index, np.arange(0, 2601, 200),
                include_lowest=True, right=False,
                labels=labels)
+    print(df["scoreTotal"])
     ploter = scoreDf.groupby(c).sum()
     ploter.plot(kind='bar', figsize=(7, 10.5), xlabel="Score total", ylabel="Nombre de joueur",
                 colormap="terrain")
