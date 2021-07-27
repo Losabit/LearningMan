@@ -251,6 +251,34 @@ std::string QLearning::mapToString(std::map<int, std::map<int, float>> parameter
     return result;
 }
 
+std::vector<std::string> QLearning::mapToStrings(std::map<int, std::map<int, float>> parameter){
+    std::vector<std::string> result;
+    std::string val;
+    int count = 0;
+    for(std::map<int, std::map<int, float>>::iterator it = parameter.begin(); it != parameter.end(); ++it) {
+        val += std::to_string(it->first) + ":{";
+        int count2 = 0;
+        for(std::map<int, float>::iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
+            val += std::to_string(it2->first) + ":" + std::to_string(it2->second);
+            if(count2 != it->second.size() - 1) {
+                val += ",";
+            }
+            count2++;
+        }
+        val += "}";
+        if(count != parameter.size() - 1) {
+            val += ";";
+        }
+
+        if(val.length() >= 63000){
+            result.push_back(val);
+            val = "";
+        }
+        count++;
+    }
+    return result;
+}
+
 std::map<int, std::map<int, float>> QLearning::stringToMap(std::string parameter){
     size_t pos = 0;
     std::vector<std::string> states;
@@ -312,12 +340,9 @@ std::vector<PolicyAndActionValueFunction> QLearning::loadFromFile(std::string fi
     return result;
 }
 
-std::string QLearning::getModel(PolicyAndActionValueFunction policyAndActionValueFunction, PolicyAndActionValueFunction policyAndActionValueFunctionBoss){
+std::string QLearning::getModel(PolicyAndActionValueFunction policyAndActionValueFunction){
     return mapToString(policyAndActionValueFunction.pi) + "/"
-    + mapToString(policyAndActionValueFunction.q) + "/"
-    + mapToString(policyAndActionValueFunctionBoss.pi) + "/"
-    + mapToString(policyAndActionValueFunctionBoss.q);
-
+    + mapToString(policyAndActionValueFunction.q);
 }
 
 void QLearning::save(PolicyAndActionValueFunction policyAndActionValueFunction, PolicyAndActionValueFunction policyAndActionValueFunctionBoss) {
@@ -335,6 +360,32 @@ void QLearning::save(PolicyAndActionValueFunction policyAndActionValueFunction, 
     }
     std::ofstream outfile;
     outfile.open("../ressources/policyAndActionValueFunction/model_" + std::to_string(it) + ".model");
-    outfile << getModel(policyAndActionValueFunction, policyAndActionValueFunctionBoss) << std::endl;
+
+    std::vector<std::string> piLevel = mapToStrings(policyAndActionValueFunction.pi);
+    for(int i = 0; i < piLevel.size(); i++){
+        outfile << piLevel.at(i);
+    }
+    outfile << "/";
+
+    std::vector<std::string> qLevel = mapToStrings(policyAndActionValueFunction.q);
+    for(int i = 0; i < qLevel.size(); i++){
+        outfile << qLevel.at(i);
+    }
+    outfile << "/";
+
+    std::vector<std::string> piBoss = mapToStrings(policyAndActionValueFunctionBoss.pi);
+    for(int i = 0; i < piBoss.size(); i++){
+        outfile << piBoss.at(i);
+    }
+    outfile << "/";
+
+    std::vector<std::string> qBoss = mapToStrings(policyAndActionValueFunctionBoss.q);
+    for(int i = 0; i < qBoss.size(); i++){
+        outfile << qBoss.at(i);
+    }
+    outfile << std::endl;
+
+    //outfile << getModel(policyAndActionValueFunction) + "/";
+    //outfile << getModel(policyAndActionValueFunctionBoss) << std::endl;
     outfile.close();
 }

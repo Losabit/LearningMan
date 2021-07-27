@@ -7,19 +7,81 @@ Environment::Environment(sf::Vector2f initialPosition1, sf::Vector2f portalPosit
     portalPosition = portalPosition1;
 }
 
+void Environment::setWalls(std::vector<sf::Sprite> walls1){
+    walls = walls1;
+}
+
+int Environment::getReward(Controller controller, std::list<IAController*> ennnemies) {
+    bool haveTouch = false;
+    bool touchWall = false;
+    if(controller.lastBulletOrientation != 0){
+        if(controller.lastBulletOrientation < 0){
+            sf::Sprite bullet = controller.character.bullet;
+            float y = bullet.getPosition().y;
+            for(float x = controller.lastBulletOrigin.x; x > controller.lastBulletOrigin.x - 400; x -= controller.character.bulletSpeed){
+                bullet.setPosition(x, y);
+                for(int i = 0; i < walls.size(); i++){
+                    if (bullet.getGlobalBounds().intersects(walls.at(i).getGlobalBounds())) {
+                        touchWall = true;
+                        break;
+                    }
+                }
+                if(!touchWall) {
+                    for (auto ennemi = ennnemies.begin(); ennemi != ennnemies.end(); ennemi++) {
+                        if (bullet.getGlobalBounds().intersects((*ennemi)->character.sprite.getGlobalBounds())) {
+                            haveTouch = true;
+                            break;
+                        }
+                    }
+                }
+                if(haveTouch || touchWall){
+                    break;
+                }
+            }
+        }
+        else if(controller.lastBulletOrientation > 0){
+            sf::Sprite bullet = controller.character.bullet;
+            float y = bullet.getPosition().y;
+            for(float x = controller.lastBulletOrigin.x; x < controller.lastBulletOrigin.x + 400; x += controller.character.bulletSpeed){
+                bullet.setPosition(x, y);
+                for(int i = 0; i < walls.size(); i++){
+                    if (bullet.getGlobalBounds().intersects(walls.at(i).getGlobalBounds())) {
+                        touchWall = true;
+                        break;
+                    }
+                }
+                if(!touchWall) {
+                    for (auto ennemi = ennnemies.begin(); ennemi != ennnemies.end(); ennemi++) {
+                        if (bullet.getGlobalBounds().intersects((*ennemi)->character.sprite.getGlobalBounds())) {
+                            haveTouch = true;
+                            break;
+                        }
+                    }
+                }
+                if(haveTouch || touchWall){
+                    break;
+                }
+            }
+        }
+    }
+    return getReward(controller.character.sprite.getPosition(), controller.character.health)
+    + (haveTouch && !touchWall ? shootReward : 0);
+}
+
 int Environment::getReward(sf::Vector2f position, int newHealth){
-    //std::cout << "reward " << (int)((position.x - initialPosition.x) / lagForReward) << std::endl;
-    //(int)((position.x - initialPosition.x) / lagForReward);
     int healthDifference = health - newHealth;
     if(healthDifference != 0){
         health = newHealth;
     }
-    return (int)((position.x - initialPosition.x) / lagXForReward + (initialPosition.y - position.y) / lagYForReward
-    + healthDifference * loseHealthReward);
+    return (int)(getReward(position) + healthDifference * loseHealthReward);
 }
 
 int Environment::getReward(sf::Vector2f position){
-    return (int)((position.x - initialPosition.x) / lagXForReward + (initialPosition.y - position.y) / lagYForReward);
+    int decalageX = position.x - initialPosition.x;
+    if(position.x > portalPosition.x){
+        decalageX = portalPosition.x - position.x;
+    }
+    return (int)(decalageX / lagXForReward + (initialPosition.y - position.y) / lagYForReward);
 }
 
 int Environment::getState(sf::Vector2f position){

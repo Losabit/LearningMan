@@ -61,3 +61,11 @@ int BossEnvironment::getState(sf::Vector2f position){
     return (int)(xState + availablesXStates * yState);
 }
 
+int BossEnvironment::getBossState(sf::Vector2f position, sf::Vector2f bossPosition){
+    int availablesXStates = (highestX - lowestX) / sizeXState;
+    int xState = (position.x - lowestX) / sizeXState;
+    int yState = (initialPositionY - position.y) / sizeYState;
+    int bossStateY = (initialPositionY - bossPosition.y) / sizeYState;
+    return (int)((xState + availablesXStates * yState) * bossStateY);
+}
+

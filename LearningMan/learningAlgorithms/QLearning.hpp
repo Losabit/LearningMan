@@ -11,6 +11,7 @@ struct PolicyAndActionValueFunction {
 
 class QLearning {
 public:
+    QLearning(){};
     QLearning(float alpha1, float epsilon1, float gamma1);
     PredefineAction getAction(int state, int score, std::vector<int> availableActions);
     PredefineAction getBestAction(int state, int score, std::vector<int> availableActions);
@@ -21,7 +22,7 @@ public:
     PolicyAndActionValueFunction compile();
     static void save(PolicyAndActionValueFunction policyAndActionValueFunction, PolicyAndActionValueFunction policyAndActionValueFunctionBoss);
     static std::vector<PolicyAndActionValueFunction> loadFromFile(std::string fileName);
-    static std::string getModel(PolicyAndActionValueFunction policyAndActionValueFunction, PolicyAndActionValueFunction policyAndActionValueFunctionBoss);
+    static std::string getModel(PolicyAndActionValueFunction policyAndActionValueFunction);
 
 private:
     const static int canPlayEvery = 0;
@@ -42,6 +43,7 @@ private:
     int randomChoice(std::map<int, float> probalities);
     int randomChoice(std::map<int, float> probalities, std::vector<int> availableActions);
     static std::string mapToString(std::map<int, std::map<int, float>> parameter);
+    static std::vector<std::string> mapToStrings(std::map<int, std::map<int, float>> parameter);
     static std::map<int, std::map<int, float>> stringToMap(std::string parameter);
 };
 

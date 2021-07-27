@@ -13,7 +13,7 @@ public:
     BossEnvironment(float lowestX1, float highestX1, float initialPositionY1);
     int getReward(Controller controller, sf::Sprite boss);
     int getState(sf::Vector2f position);
-    int getBossState(sf::Vector2f position);
+    int getBossState(sf::Vector2f position, sf::Vector2f bossPosition);
     void reset();
 
 private:
