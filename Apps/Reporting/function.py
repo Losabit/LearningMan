@@ -176,7 +176,6 @@ def endGamePourcentageIA():
     savePlotAsFile(plt.gcf(), "resources/plotEndPourcentageAI")
     plt.show()
 
-
 def getRealValue(l: list):
     x = []
     for i in range(len(l)):
