@@ -20,7 +20,7 @@ plot_kills_by_time()
 plot_scores_by_time()
 plot_players_by_score()
 
-s3 = boto3.resource('s3')
+s3 = boto3.client('s3')
 
 for file in os.listdir(str(path)):
     try:
