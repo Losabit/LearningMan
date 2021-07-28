@@ -50,8 +50,7 @@ int addUser(std::string username, std::string token) {
         out << "{\"token\":" << token<<R"(,"pseudo":")" << username << "\"}";
         std::string temp = out.str();
         char * postValue =  const_cast<char *>(temp.c_str());
-        auto f="";
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, f);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, 0);
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, postValue );
         res = curl_easy_perform(curl);
         curl_easy_cleanup(curl);

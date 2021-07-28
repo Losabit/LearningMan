@@ -82,17 +82,16 @@ void UserConfiguration::keyEvent(int letter){
     }
 }
 
-void UserConfiguration::saveUser(std::string pseudo){
+void UserConfiguration::saveUser(std::string pseudo1){
     std::ofstream o("../ressources/user/config.txt");
-    if(token == "") {
+    if(!exist || pseudo1 != pseudo){
         token = getInfo(TOKENURL);
         token = token.substr(1, token.length() - 2);
-    }
-    o << pseudo + ";" + token << std::endl;
-
-    if(!exist){
+        pseudo = pseudo1;
+        o << pseudo + ";" + token << std::endl;
         addUser(pseudo, "\"" + token + "\"");
     }
+    o.close();
 }
 
 void UserConfiguration::draw(sf::RenderWindow *window) {

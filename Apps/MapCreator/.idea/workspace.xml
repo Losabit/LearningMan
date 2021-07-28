@@ -12,22 +12,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a65c3a0d-431f-4e26-ab05-b2527b1a1e7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/GUI/Premade/AICheckBox.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/GUI/Premade/AICheckBox.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/GUI/Premade/ContainerHerosHealth.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/GUI/Premade/ContainerHerosHealth.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/GUI/Premade/ContainerLifebar.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../LearningMan/GUI/Premade/ContainerLifebar.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/define.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/define.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/GUI/Container.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/GUI/Container.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/GUI/Container.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/GUI/Container.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/BossCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/BossCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/characters/BossCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/characters/BossCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/controllers/BossController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/controllers/BossController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/GUI/EndLevelView.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/GUI/EndLevelView.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/GUI/UserConfiguration.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/GUI/UserConfiguration.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/GUI/UserConfiguration.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/GUI/UserConfiguration.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/define.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/define.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/learningAlgorithms/trainEnvironnement.cpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../LearningMan/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/user/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/ressources/user/config.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/Level 1.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/ressources/Level 1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/Level 2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/policyAndActionValueFunction/Model_end (1).model" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/policyAndActionValueFunction/Model_end.model" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/policyAndActionValueFunction/Phobos.model" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/policyAndActionValueFunction/Phobos_.model" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/policyAndActionValueFunction/model_0.model" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/ressources/policyAndActionValueFunction/model_0.model" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/policyAndActionValueFunction/model_1.model" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/ressources/policyAndActionValueFunction/model_1.model" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/policyAndActionValueFunction/model_2.model" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/policyAndActionValueFunction/model_47.model" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/ressources/policyAndActionValueFunction/model_5.model" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LearningMan/utils/curlFunction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../LearningMan/utils/curlFunction.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +129,7 @@
       <workItem from="1626796022101" duration="892000" />
       <workItem from="1626882745930" duration="137000" />
       <workItem from="1627116500758" duration="213000" />
+      <workItem from="1627483352196" duration="22000" />
     </task>
     <servers />
   </component>

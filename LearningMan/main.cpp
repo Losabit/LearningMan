@@ -33,9 +33,6 @@ using namespace std;
 
 //ToDo
 int main() {
-    std::string str ("Test string");
-    std::cout << "max_size: " << str.max_size() << "\n";
-
     // Window + View
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "LearningMan");
     window.setFramerateLimit(60);
@@ -297,6 +294,7 @@ int main() {
                         keyClock.restart();
                     } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
                         endLevel = true;
+                        window.setView(initialView);
                         startGame = false;
                         if(ONLY_TRAIN_ON_BOSS) {
                             predefinePlayerController.character.sprite.setPosition(4000, 475);
