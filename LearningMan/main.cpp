@@ -28,7 +28,7 @@
 #include "learningAlgorithms/Environment.h"
 #include "learningAlgorithms/BossEnvironment.h"
 #include "utils/curlFunction.h"
-
+#include "learningAlgorithms/trainEnvironment.h"
 using namespace std;
 
 //ToDo
@@ -358,13 +358,13 @@ int main() {
                     if(takePortal){
                         if(modelConfiguration.useExistingModel){
                             action = modelBoss.getAction(
-                                    bossEnv.getState(predefinePlayerController.character.sprite.getPosition()),
+                                    bossEnv.getBossState(predefinePlayerController.character.sprite.getPosition(), bossController.character.sprite.getPosition()),
                                     bossEnv.getReward(predefinePlayerController, bossController.character.sprite),
                                     predefinePlayerController.availableActions());
                         }
                         else {
                             action = modelBoss.getAction(
-                                    bossEnv.getState(predefinePlayerController.character.sprite.getPosition()),
+                                    bossEnv.getBossState(predefinePlayerController.character.sprite.getPosition(), bossController.character.sprite.getPosition()),
                                     bossEnv.getReward(predefinePlayerController, bossController.character.sprite),
                                     predefinePlayerController.availableActions());
                         }
@@ -433,7 +433,7 @@ int main() {
                     }
                     addGame(startDateTime, now - startTimestamp, "\"" + userConfiguration.token + "\"", 1, aiCheckBox.isChecked ? 1 : 0,
                             endLevelView.score, ennemiesCount - ennemies.size(), deathPos,
-                            aiCheckBox.isChecked ? QLearning::getModel(policyAndActionValueFunction, policyAndActionValueFunctionBoss) : "NULL");
+                            aiCheckBox.isChecked ? QLearning::getModel(policyAndActionValueFunction) + "/" + QLearning::getModel(policyAndActionValueFunctionBoss) : "NULL");
                 }
                 if(SEE_IA_LOGS){
                     cout << gameNumber << " -> victory : false ; time : " << now - startTimestamp << " ; deathPos : " << deathPos << endl;
@@ -501,7 +501,7 @@ int main() {
                         }
                         addGame(startDateTime, now - startTimestamp, "\"" + userConfiguration.token + "\"", 0,
                                 aiCheckBox.isChecked ? 1 : 0, endLevelView.score, ennemiesCount - ennemies.size(), 100,
-                                aiCheckBox.isChecked ? QLearning::getModel(policyAndActionValueFunction, policyAndActionValueFunctionBoss) : "NULL");
+                                aiCheckBox.isChecked ? QLearning::getModel(policyAndActionValueFunction) + "/" + QLearning::getModel(policyAndActionValueFunctionBoss) : "NULL");
                     }
                     if(SEE_IA_LOGS){
                         cout << gameNumber << " -> victory : true ; time : " << now - startTimestamp << endl;
@@ -661,7 +661,7 @@ int main() {
 
                 if(aiCheckBox.isChecked){
                     modelBoss.getActionReward(
-                            bossEnv.getState(predefinePlayerController.character.sprite.getPosition()),
+                            bossEnv.getBossState(predefinePlayerController.character.sprite.getPosition(), bossController.character.sprite.getPosition()),
                             bossEnv.getReward(predefinePlayerController, bossController.character.sprite),
                             false);
                 }
