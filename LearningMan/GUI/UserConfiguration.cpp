@@ -3,6 +3,7 @@
 #include "../utils/curlFunction.h"
 #include <iostream>
 #include <fstream>
+#include <sys/stat.h>
 
 
 UserConfiguration::UserConfiguration() {
@@ -40,8 +41,14 @@ UserConfiguration::UserConfiguration() {
     std::ifstream file("../ressources/user/config.txt");
     if(file.good()) {
         getline(file, myText);
-        pseudo = myText.substr(0, myText.find(";"));
-        token = myText.substr(myText.find(";") + 1, myText.length());
+        if(myText.find(";") == std::string::npos){
+            isOpen = true;
+            exist = false;
+        }
+        else {
+            pseudo = myText.substr(0, myText.find(";"));
+            token = myText.substr(myText.find(";") + 1, myText.length());
+        }
         file.close();
     }
     else{
@@ -83,6 +90,10 @@ void UserConfiguration::keyEvent(int letter){
 }
 
 void UserConfiguration::saveUser(std::string pseudo1){
+    struct stat buffer;
+    if(stat ("../ressources/user", &buffer) != 0){
+        mkdir("../ressources/user");
+    }
     std::ofstream o("../ressources/user/config.txt");
     if(!exist || pseudo1 != pseudo){
         token = getInfo(TOKENURL);
@@ -90,6 +101,9 @@ void UserConfiguration::saveUser(std::string pseudo1){
         pseudo = pseudo1;
         o << pseudo + ";" + token << std::endl;
         addUser(pseudo, "\"" + token + "\"");
+    }
+    else{
+        o << pseudo + ";" + token << std::endl;
     }
     o.close();
 }
