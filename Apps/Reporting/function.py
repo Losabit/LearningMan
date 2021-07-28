@@ -5,6 +5,10 @@ import matplotlib.pyplot as plt
 import requests
 from pandas import DataFrame
 
+def clearPlot():
+    plt.cla()   # Clear axis
+    plt.clf()
+    plt.close()
 
 def generateDf():
     r = requests.get('https://b4xcv1e397.execute-api.eu-west-3.amazonaws.com/dev/partie')
@@ -13,7 +17,7 @@ def generateDf():
 
 
 def savePlotAsFile(fig, filename):
-    fig.savefig(filename)
+    fig.savefig(filename,transparent=True)
 
 
 def plotByTimeWinning():
@@ -31,6 +35,7 @@ def plotByTimeWinning():
                 colormap="summer", title="Number of players who finished the level per time slice \n ")
     savePlotAsFile(plt.gcf(), "resources/plotTimeByWinning")
     plt.show()
+    clearPlot()
 
 
 def plotByDeathPosition():
@@ -48,6 +53,7 @@ def plotByDeathPosition():
                 colormap="RdGy")
     savePlotAsFile(plt.gcf(), 'resources/plotDeathPosition')
     plt.show()
+    clearPlot()
 
 
 def plotPlayersByScore():
@@ -64,6 +70,7 @@ def plotPlayersByScore():
     ploter.plot(kind='bar', figsize=(7, 10.5), xlabel="Total score", ylabel="Number of player", title="Players by score",colormap="terrain")
     savePlotAsFile(plt.gcf(), 'resources/plotPlayersByScore')
     plt.show()
+    clearPlot()
 
 
 def plotKillsByTimes():
@@ -71,6 +78,7 @@ def plotKillsByTimes():
     df.groupby("elapsedTime").sum().plot(kind='line', y='nbKill', ylabel="Number of ennemies killed", xlabel='Time spent', title='Kill by time for players')
     savePlotAsFile(plt.gcf(), 'resources/plotKillsByTimes')
     plt.show()
+    clearPlot()
 
 
 def plotScoreByTimes():
@@ -81,6 +89,7 @@ def plotScoreByTimes():
     savePlotAsFile(plt.gcf(), 'resources/plotScoreByTime')
 
     plt.show()
+    clearPlot()
 
 
 def endGamePourcentage():
@@ -92,6 +101,7 @@ def endGamePourcentage():
     plt.title("Level distribution completed")
     savePlotAsFile(plt.gcf(), "resources/plotEndPourcentage")
     plt.show()
+    clearPlot()
 
 
 def plotByTimeWinningAI():
@@ -109,6 +119,7 @@ def plotByTimeWinningAI():
                 colormap="summer", title="Number of IA who finished the level per time slice \n ")
     savePlotAsFile(plt.gcf(), "resources/plotTimeByWinningAI")
     plt.show()
+    clearPlot()
 
 
 def plotByDeathPositionAI():
@@ -126,6 +137,7 @@ def plotByDeathPositionAI():
                 colormap="RdGy",title='IA death localisation')
     savePlotAsFile(plt.gcf(), 'resources/plotDeathPositionAI')
     plt.show()
+    clearPlot()
 
 
 def plotPlayersByScoreAI():
@@ -143,6 +155,7 @@ def plotPlayersByScoreAI():
                 colormap="terrain", title = "Number of IA by score")
     savePlotAsFile(plt.gcf(), 'resources/plotPlayersByScoreAI')
     plt.show()
+    clearPlot()
 
 
 def plotKillsByTimesAI():
@@ -151,6 +164,7 @@ def plotKillsByTimesAI():
     df.groupby("elapsedTime").sum().plot(kind='line', y='nbKill', ylabel="Number of Ennemies Killed", xlabel='TIme spent',title = "Kill by time for AI")
     savePlotAsFile(plt.gcf(), 'resources/plotKillsByTimesAI')
     plt.show()
+    clearPlot()
 
 
 def plotScoreByTimesAI():
@@ -163,6 +177,7 @@ def plotScoreByTimesAI():
     savePlotAsFile(plt.gcf(), 'resources/plotScoreByTimeAI')
 
     plt.show()
+    clearPlot()
 
 
 def endGamePourcentageIA():
@@ -175,6 +190,7 @@ def endGamePourcentageIA():
     plt.title("Level distribution completed")
     savePlotAsFile(plt.gcf(), "resources/plotEndPourcentageAI")
     plt.show()
+    clearPlot()
 
 def getRealValue(l: list):
     x = []
