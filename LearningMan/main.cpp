@@ -33,6 +33,9 @@ using namespace std;
 
 //ToDo
 int main() {
+    std::string str ("Test string");
+    std::cout << "max_size: " << str.max_size() << "\n";
+
     // Window + View
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "LearningMan");
     window.setFramerateLimit(60);
@@ -88,7 +91,7 @@ int main() {
     CollisionManager playerCollision(&playerController);
 
     PredefineController predefinePlayerController(&heros);
-    QLearning model(0.5, 0.150, 0.9);
+    QLearning model(0.5, 0.1, 0.9);
     QLearning modelBoss(0.1, 0.2, 0.9);
     Environment env(HEROS_INITIAL_POSITION, sf::Vector2f(3100, 475));
     BossEnvironment bossEnv(475);

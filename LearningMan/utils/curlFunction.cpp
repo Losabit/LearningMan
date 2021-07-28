@@ -22,6 +22,7 @@ std::string getInfo(std::string url) {
         curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 0L);
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeFunction);
 
+
         std::string response_string;
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_string);
         CURLcode res = curl_easy_perform(curl);
@@ -49,6 +50,8 @@ int addUser(std::string username, std::string token) {
         out << "{\"token\":" << token<<R"(,"pseudo":")" << username << "\"}";
         std::string temp = out.str();
         char * postValue =  const_cast<char *>(temp.c_str());
+        auto f="";
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, f);
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, postValue );
         res = curl_easy_perform(curl);
         curl_easy_cleanup(curl);
@@ -75,16 +78,21 @@ int addGame(std::string date, float time, std::string token, int isDead, int pla
             << ", \"deathPosition\" :" << deathPosition << R"(, "elapsedTime":)" << time << R"(,"idMap":)" << 1
             << R"(, "learningModel":)" << "\"" + model + "\""
             << "}  ";
-        std::cout << out.str() << std::endl;
         std::string temp = out.str();
         char * postValue =  const_cast<char *>(temp.c_str());
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, 0);
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, postValue );
         res = curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+
         if (res != CURLE_OK) {
             return 1;
         }
+
     }
+
     curl = NULL ;
+
     return 0;
 }
 
