@@ -80,7 +80,7 @@ let app = new Vue({
             return res
         },
         generateAndDownloadFile(model, pseudo){
-            let file = new Blob([atob(model)], {type: 'text/plain'})
+            let file = new Blob([model], {type: 'text/plain'})
             let a = document.createElement('a')
             document.body.appendChild(a)
             a.style['display'] = "none"
