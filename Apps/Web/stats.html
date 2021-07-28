@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learningman</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://unpkg.com/vue-ui-preloader"></script>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/vue-ui-preloader/dist/loader.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <style>
+        body {
+            background-color: #7AA07A;
+        }
+
+        select {
+            background-color: #C4F2C4;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 4px;
+        }
+
+        .column {
+            flex: 50%;
+            padding: 0 4px;
+        }
+
+        .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div style="padding: 20px" align="right">
+    <a href="index.html">
+        <button type="button" class="btn btn-success">Scoreboard</button>
+    </a>
+</div>
+
+<div id="app">
+    <select v-model="filter" class="col-12" id="filter">
+        <option value="all">All stats</option>
+        <option value="ia">IA stats</option>
+    </select>
+    <div class="row" v-if="filter === 'all'">
+        <div align="center" class="column" style="border: solid #C4F2C4;">
+            <img src="reporting_results/plotDeathPosition.png">
+        </div>
+        <div align="center" class="column" style="border: solid #C4F2C4;">
+            <img style="padding-top: 10%" src="reporting_results/plotEndPourcentage.png">
+        </div>
+        <div align="center" class="column" style="border: solid #C4F2C4;">
+            <img src="reporting_results/plotTimeByWinning.png">
+        </div>
+        <div align="center" class="column" style="border: solid #C4F2C4;">
+            <img src="reporting_results/plotPlayersByScore.png">
+        </div>
+        <div align="center" class="column" style="border: solid #C4F2C4;">
+            <img src="reporting_results/plotScoreByTime.png">
+        </div>
+        <div align="center" class="column" style="border: solid #C4F2C4;">
+            <img src="reporting_results/plotKillsByTimes.png">
+        </div>
+    </div>
+    <div v-if="filter === 'ia'" class="row">
+        <div align="center" class="column" style="border: solid #C4F2C4;">
+            <img src="reporting_results/plotDeathPositionAI.png">
+        </div>
+        <div align="center" class="column" style="border: solid #C4F2C4;">
+            <img style="padding-top: 10%" src="reporting_results/plotEndPourcentageAI.png">
+        </div>
+        <div align="center" class="column" style="border: solid #C4F2C4;">
+            <img src="reporting_results/plotTimeByWinningAI.png">
+        </div>
+        <div align="center" class="column" style="border: solid #C4F2C4;">
+            <img src="reporting_results/plotPlayersByScoreAI.png">
+        </div>
+        <div align="center" class="column" style="border: solid #C4F2C4;">
+            <img src="reporting_results/plotScoreByTimeAI.png">
+        </div>
+        <div align="center" class="column" style="border: solid #C4F2C4;">
+            <img src="reporting_results/plotKillsByTimesAI.png">
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    let app = new Vue({
+        el: "#app",
+        data: {
+            filter: "all"
+        },
+
+        async beforeCreate() {
+
+        }
+    })
+</script>
+</html>
