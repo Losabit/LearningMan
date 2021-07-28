@@ -8,7 +8,7 @@ public:
     UserConfiguration();
     std::string getPseudo();
     std::string getToken();
-    void saveUser(std::string pseudo);
+    void saveUser(std::string pseudo1);
     void clickEvent(sf::Vector2f point);
     void keyEvent(int letter);
     void draw(sf::RenderWindow* window);

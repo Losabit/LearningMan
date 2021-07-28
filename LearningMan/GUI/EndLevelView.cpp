@@ -100,7 +100,7 @@ void EndLevelView::setTime(sf::Time time) {
 }
 
 void EndLevelView::maximumTime() {
-    textTimeValue.setString("0 sec");
+    textTimeValue.setString("");
     timePoints = 0;
     textTimePoints.setString(std::to_string(timePoints));
     textTotalPoints.setString(std::to_string(killsPoints + timePoints));
@@ -116,10 +116,12 @@ void EndLevelView::setKill(int kills) {
 }
 
 void EndLevelView::draw(sf::RenderWindow* window) {
-    window->draw(textTime);
-    window->draw(textTimeValue);
-    window->draw(textTimeEqual);
-    window->draw(textTimePoints);
+    if(timePoints != 0) {
+        window->draw(textTime);
+        window->draw(textTimeValue);
+        window->draw(textTimeEqual);
+        window->draw(textTimePoints);
+    }
     window->draw(textKills);
     window->draw(textKillsValue);
     window->draw(textKillsEqual);
