@@ -94,6 +94,7 @@ int main() {
     BossEnvironment bossEnv(475);
     predefinePlayerController.character.sprite.setPosition(HEROS_INITIAL_POSITION);
     CollisionManager predefinePlayerCollision(&predefinePlayerController);
+    bool alreadyTrainOnBoss = false;
 
     Map map;
     std::list<Character> ennemiesCharacters;
@@ -169,6 +170,9 @@ int main() {
                         model.loadModel(models.at(0));
                         if(models.size() > 1){
                             modelBoss.loadModel(models.at(1));
+                            if(!alreadyTrainOnBoss) {
+                                alreadyTrainOnBoss = true;
+                            }
                         }
                         clickClock.restart();
                     }
@@ -286,7 +290,7 @@ int main() {
                     if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
                         PolicyAndActionValueFunction policyAndActionValueFunction = model.compile();
                         PolicyAndActionValueFunction policyAndActionValueFunctionBoss;
-                        if(takePortal){
+                        if(alreadyTrainOnBoss){
                             policyAndActionValueFunctionBoss = modelBoss.compile();
                         }
                         modelBoss.save(policyAndActionValueFunction, policyAndActionValueFunctionBoss);
@@ -359,12 +363,18 @@ int main() {
                                     bossEnv.getBossState(predefinePlayerController.character.sprite.getPosition(), bossController.character.sprite.getPosition()),
                                     bossEnv.getReward(predefinePlayerController, bossController.character.sprite),
                                     predefinePlayerController.availableActions());
+                            if(!alreadyTrainOnBoss) {
+                                alreadyTrainOnBoss = true;
+                            }
                         }
                         else {
                             action = modelBoss.getAction(
                                     bossEnv.getBossState(predefinePlayerController.character.sprite.getPosition(), bossController.character.sprite.getPosition()),
                                     bossEnv.getReward(predefinePlayerController, bossController.character.sprite),
                                     predefinePlayerController.availableActions());
+                            if(!alreadyTrainOnBoss) {
+                                alreadyTrainOnBoss = true;
+                            }
                         }
                     }
                     else {
@@ -662,6 +672,9 @@ int main() {
                             bossEnv.getBossState(predefinePlayerController.character.sprite.getPosition(), bossController.character.sprite.getPosition()),
                             bossEnv.getReward(predefinePlayerController, bossController.character.sprite),
                             false);
+                    if(!alreadyTrainOnBoss) {
+                        alreadyTrainOnBoss = true;
+                    }
                 }
             }
 

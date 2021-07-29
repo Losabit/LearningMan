@@ -2,6 +2,8 @@
 #include <fstream>
 #include <iostream>
 #include <dirent.h>
+#include <sstream>
+#include <iomanip>
 
 QLearning::QLearning(float alpha1, float epsilon1, float gamma1) {
     if(epsilon1 <= 0.0){
@@ -236,7 +238,10 @@ std::string QLearning::mapToString(std::map<int, std::map<int, float>> parameter
         result += std::to_string(it->first) + ":{";
         int count2 = 0;
         for(std::map<int, float>::iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
-            result += std::to_string(it2->first) + ":" + std::to_string(it2->second);
+            //result += std::to_string(it2->first) + ":";
+            std::stringstream floatBuffer;
+            floatBuffer << std::fixed << std::setprecision(1) << it2->second;
+            result += floatBuffer.str();
             if(count2 != it->second.size() - 1) {
                 result += ",";
             }
@@ -259,7 +264,10 @@ std::vector<std::string> QLearning::mapToStrings(std::map<int, std::map<int, flo
         val += std::to_string(it->first) + ":{";
         int count2 = 0;
         for(std::map<int, float>::iterator it2 = it->second.begin(); it2 != it->second.end(); ++it2) {
-            val += std::to_string(it2->first) + ":" + std::to_string(it2->second);
+            //val += std::to_string(it2->first) + ":";
+            std::stringstream floatBuffer;
+            floatBuffer << std::fixed << std::setprecision(1) << it2->second;
+            val += floatBuffer.str();
             if(count2 != it->second.size() - 1) {
                 val += ",";
             }
@@ -276,6 +284,7 @@ std::vector<std::string> QLearning::mapToStrings(std::map<int, std::map<int, flo
         }
         count++;
     }
+    result.push_back(val);
     return result;
 }
 
@@ -298,18 +307,34 @@ std::map<int, std::map<int, float>> QLearning::stringToMap(std::string parameter
             if(it == 0){
                 size_t newPos = actionContent.find("{") + 1;
                 actionContent = actionContent.substr(newPos, actionContent.length());
-                it++;
             }
             states.at(i).erase(0, pos + 1);
             pos = states.at(i).find(":");
-            int action = stoi(actionContent.substr(0, pos));
-            float proba = stof(actionContent.substr(pos + 1, actionContent.length()));
+            if(pos == std::string::npos){
+                pos = 0;
+            }
+            else{
+                pos += 1;
+            }
+            //int action = stoi(actionContent.substr(0, pos));
+            int action = it;
+            float proba = stof(actionContent.substr(pos, actionContent.length()));
+            //float proba = stof(actionContent.substr(pos + 1, actionContent.length()));
             result[state].insert(std::pair<int, float>(action, proba));
+            it++;
         }
         std::string actionContent = states.at(i).substr(0, states.at(i).length());
         pos = states.at(i).find(":");
-        int action = stoi(actionContent.substr(0, pos));
-        float proba = stof(actionContent.substr(pos + 1, actionContent.length()));
+        if(pos == std::string::npos){
+            pos = 0;
+        }
+        else{
+            pos += 1;
+        }
+        //int action = stoi(actionContent.substr(0, pos));
+        int action = it;
+        float proba = stof(actionContent.substr(pos, actionContent.length()));
+        //float proba = stof(actionContent.substr(pos + 1, actionContent.length()));
         result[state].insert(std::pair<int, float>(action, proba));
     }
     return result;
@@ -322,6 +347,7 @@ std::vector<PolicyAndActionValueFunction> QLearning::loadFromFile(std::string fi
     while (getline (MyReadFile, line)) {
         content += line;
     }
+
     MyReadFile.close();
 
     std::string delimiter = "/";
@@ -331,10 +357,9 @@ std::vector<PolicyAndActionValueFunction> QLearning::loadFromFile(std::string fi
         models.push_back(content.substr(0, pos));
         content.erase(0, pos + delimiter.length());
     }
-
     std::vector<PolicyAndActionValueFunction> result;
     result.push_back(PolicyAndActionValueFunction{.pi = stringToMap(models.at(0)), .q = stringToMap(models.at(1))});
-    if(models.at(2).length() != 0) {
+    if(models.size() == 4 && models.at(2).length() != 0 && models.at(3).length() != 0) {
         result.push_back(PolicyAndActionValueFunction{.pi = stringToMap(models.at(2)), .q = stringToMap(models.at(3))});
     }
     return result;
