@@ -96,10 +96,23 @@ def endGamePourcentage():
     df = generateDf()
     pourcentageDf = (df["isDead"].value_counts()).to_frame()
     x = getRealValue(pourcentageDf.values)
-    plt.pie(x, labels=['Level not completed', "Level completed"], autopct='%1.1f%%', shadow=True,
+    labels = ['Level not completed', "Level completed"]
+    pourcentageDf = (df["isDead"].value_counts()).to_frame()
+    if len(pourcentageDf) < 2:
+        index = pourcentageDf.index
+        print(index[0])
+        if index[0] == 1:
+            labels = ['Level Not Completed']
+        else:
+            labels = ['Level Completed']
+    else:
+        labels = ['Level not completed', "Level completed"]
+
+    x = getRealValue(pourcentageDf.values)
+    plt.pie(x, labels=labels, autopct='%1.1f%%', shadow=True,
             startangle=90)
     plt.title("Level distribution completed")
-    savePlotAsFile(plt.gcf(), "resources/plotEndPourcentage")
+    savePlotAsFile(plt.gcf(), "resources/plotEndPourcentageAI")
     plt.show()
     clearPlot()
 
@@ -183,9 +196,20 @@ def plotScoreByTimesAI():
 def endGamePourcentageIA():
     df = generateDf()
     df = df.loc[((df['playerType']) == 1)]
+    labels = ['Level not completed', "Level completed"]
     pourcentageDf = (df["isDead"].value_counts()).to_frame()
+    if len(pourcentageDf) < 2:
+        index = pourcentageDf.index
+        print(index[0])
+        if index[0] == 1:
+            labels = ['Level Not Completed']
+        else:
+            labels = ['Level Completed']
+    else:
+        labels = ['Level not completed', "Level completed"]
+
     x = getRealValue(pourcentageDf.values)
-    plt.pie(x, labels=['Level not completed', "Level completed"], autopct='%1.1f%%', shadow=True,
+    plt.pie(x, labels=labels, autopct='%1.1f%%', shadow=True,
             startangle=90)
     plt.title("Level distribution completed")
     savePlotAsFile(plt.gcf(), "resources/plotEndPourcentageAI")
